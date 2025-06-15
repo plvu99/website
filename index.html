@@ -300,7 +300,25 @@
       margin-bottom: 1rem;
       text-transform: uppercase;
       position: relative;
+      z-index: 1;
     }
+    
+    .who-label::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: -25px;
+      width: 70px;
+      height: 70px;
+      background-color: var(--02);
+      -webkit-mask: url("Images/Curve.svg") no-repeat center;
+      -webkit-mask-size: contain;
+      mask: url("Images/Curve.svg") no-repeat center;
+      mask-size: contain;
+      z-index: -1;
+      opacity: 0.8;
+    }
+
     
     .who-title {
       font-family: var(--font-poppins);
