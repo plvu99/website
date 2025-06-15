@@ -68,15 +68,16 @@
     }
 
     .nav-menu a {
-      color: var(--01);
+      color: var(--02);
       text-decoration: none;
       font-weight: 600;
       font-size: 16px;
-      transition: color 0.3s ease;
+      transition: transform 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
     }
 
     .nav-menu a:hover {
-      color: var(--07); /* gold highlight on hover */
+      transform: scale(1.05); /* slight grow */
+      text-shadow: 0 0 6px var(--02); /* soft white glow */
     }
 
     .btn-contact {
@@ -92,7 +93,7 @@
     }
 
     .btn-contact:hover {
-      background-color: var(--06); /* teal */
+      background-color: var(--03); /* teal */
       transform: scale(1.05);
     }
 
@@ -124,7 +125,7 @@
       font-style: italic;
       font-size: 1.5rem;
       margin-bottom: 1rem;
-      color: var(--07); /* golden intro message */
+      color: var(--02); /* golden intro message */
     }
 
     .intro-name {
@@ -145,17 +146,21 @@
       position: relative;
       padding-left: 2rem;
       margin-bottom: 1rem;
-      font-size: 1rem;
+      font-size: 0.875rem;
       color: var(--01); /* light text */
     }
 
     .intro-bullets li::before {
-      content: "⦿";
+      content: "";
+      background-image: url("Images/Bullet point.png"); /* ← replace with correct path */
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 18px;
+      height: 18px;
       position: absolute;
       left: 0;
-      top: 0.1rem;
-      font-size: 1rem;
-      color: var(--06); /* teal bullets */
+      top: 50%;
+      transform: translateY(-50%);
     }
 
     .intro-image {
@@ -210,11 +215,11 @@
     <div class="nav-container">
       <div class="logo">PHUONG VU</div>
       <nav class="nav-menu">
-        <a href="#home">HOME</a>
-        <a href="#story">MY STORY</a>
-        <a href="#experience">MY EXPERIENCE</a>
-        <a href="#work">MY WORK</a>
-        <a href="#contact" class="btn-contact">CONTACT ME</a>
+        <a href="home">HOME</a>
+        <a href="story">MY STORY</a>
+        <a href="experience">MY EXPERIENCE</a>
+        <a href="work">MY WORK</a>
+        <a href="contact" class="btn-contact">CONTACT ME</a>
       </nav>
     </div>
   </header>
