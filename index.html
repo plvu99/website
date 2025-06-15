@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>PHUONG VU</title>
   <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@400;600;900&display=swap" rel="stylesheet" />
 
   <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     :root {
       --01: #f2f2f2;
       --02: #eae4d5;
@@ -30,15 +33,14 @@
       background-color: var(--05);
     }
 
-    /* Header */
     .site-header {
       background-color: var(--04);
-      padding: 0; /* remove top/bottom padding */
       width: 100%;
-      height: 80px; /* set fixed height for alignment */
       display: flex;
-      align-items: center; /* vertical centering */
-      justify-content: center; /* horizontal centering */
+      justify-content: center;
+      align-items: center;
+      height: auto;
+      padding: 1rem 0;
       z-index: 1000;
     }
 
@@ -46,113 +48,94 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 100%;
       max-width: 1200px;
-      padding: 0 2rem; /* keep left-right spacing */
+      width: 100%;
+      padding: 0 2rem;
+      flex-wrap: wrap;
     }
 
     .logo {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--font-family-playfair_display);
       font-size: 24px;
       font-weight: 700;
       color: var(--02);
       text-shadow: 2px 0px 4px var(--03);
+      flex: 1 1 100%;
+      text-align: center;
+      margin-bottom: 0.5rem;
     }
 
     .nav-menu {
       display: flex;
-      align-items: center;
       flex-wrap: wrap;
-      gap: 1.5rem;
+      justify-content: center;
+      align-items: center;
+      gap: 1.25rem;
+      width: 100%;
     }
 
     .nav-menu a {
-      display: flex;          
-      align-items: center;
       color: var(--02);
       text-decoration: none;
       font-weight: 600;
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--font-family-poppins);
       font-size: 16px;
       transition: color 0.3s ease;
       line-height: 1;
     }
+
     .nav-menu a:hover {
       color: var(--01);
     }
 
     .btn-contact {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background-color: var(--03);
       color: var(--05);
-      padding: 0.75rem 1.5rem;
-      font-size: 18px;
+      padding: 0.6rem 1.2rem;
+      font-size: 16px;
       font-weight: 600;
-      font-family: 'Poppins', sans-serif;
-      border-radius: 12px;
+      border-radius: 10px;
+      text-align: center;
       cursor: pointer;
-      line-height: 1;
+      transition: all 0.2s ease-in-out;
     }
 
     .btn-contact:hover {
       background-color: #a39b87;
       transform: scale(1.05);
-      transition: all 0.2s ease-in-out;
     }
 
+    /* Mobile Adjustments */
     @media (max-width: 768px) {
-      .site-header {
-        background-color: var(--04);
-        width: 100%;
-        min-height: 70px;                  /* ensures space for header content */
-        padding: env(safe-area-inset-top) 1.5rem 1rem 1.5rem;  /* safe area padding */
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-      }
-    
       .nav-container {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 0.75rem;
-        padding: 1rem 1.5rem;
-        width: 100%;
+        align-items: center;
+        padding: 1rem 1.25rem;
       }
-    
+
       .logo {
         font-size: 20px;
-        display: block;
-        color: var(--02);
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.75rem;
       }
-    
+
       .nav-menu {
         flex-direction: column;
-        align-items: flex-start;
         gap: 0.5rem;
         width: 100%;
-        margin-top: 0.5rem;
       }
-    
+
       .nav-menu a {
-        font-size: 16px;
-        padding: 0.25rem 0;
-        font-weight: 600;
-        color: var(--02);
-      }
-    
-      .btn-contact {
-        padding: 0.75rem 1.25rem;        /* wider & taller */
-        font-size: 16px;
-        border-radius: 8px;
-        width: auto;
-        display: inline-block;
+        width: 100%;
         text-align: center;
+        padding: 0.5rem 0;
+      }
+
+      .btn-contact {
+        width: 100%;
+        padding: 0.75rem 0;
+        font-size: 16px;
       }
     }
-
   </style>
 </head>
 
