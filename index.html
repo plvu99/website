@@ -1,110 +1,2668 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PHUONG VU</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;900&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --black: #000000;
-      --cloud: #c4c4c4;
-      --paragraph-color: #6e6e6e;
-      --primary: #757575;
-      --white: #ffffff;
-      --white-smoke: #f3f3f3;
-      --x02: #eae4d5;
-      --x03: #b6b09f;
-      --x04: #090c08;
-      --font-poppins: 'Poppins', sans-serif;
-      --font-playfair: 'Playfair Display', serif;
-    }
 
-    body {
-      margin: 0;
-      font-family: var(--font-poppins);
-      background-color: var(--white);
-    }
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=1440, maximum-scale=1.0"><link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png"><meta name="og:type" content="website"><meta name="twitter:card" content="photo"><script id="anima-load-script" src="load.js"></script><script id="anima-hotspots-script" src="hotspots.js"></script><script id="anima-overrides-script" src="overrides.js"></script><script src="https://animaapp.s3.amazonaws.com/js/timeline.js"></script><style>
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
-    header {
-      background-color: var(--x04);
-      color: var(--x02);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      flex-wrap: wrap;
-    }
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:600italic,600,500italic,700italic,800,800italic,500,700|Poppins:400,900,600");
 
-    .logo {
-      font-family: var(--font-playfair);
-      font-size: 1.5rem;
-      font-weight: 700;
-      text-shadow: 3px 0px 4px var(--x03);
-    }
 
-    nav {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }
+@font-face {
+  font-family: "Font Awesome 5 Free-Solid";
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://anima-uploads.s3.amazonaws.com/5aa4ed775d7c3d000ce877fc/Font Awesome 5 Free-Solid-900.otf') format("opentype");
+}
+/* The following line is used to measure usage of this code. You can remove it if you want. */
+@import url("https://px.animaapp.com/684d3e2169ce0f3f75d61c6e.684d3e2269ce0f3f75d61c71.WYPIvRM.hch.png");
 
-    .nav-item {
-      font-family: var(--font-poppins);
-      position: relative;
-      font-weight: 600;
-      cursor: pointer;
-    }
 
-    .nav-item.active::after {
-      content: "";
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: var(--x02);
-    }
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
 
-    .contact-button {
-      font-family: var(--font-poppins);
-      background-color: var(--x03);
-      color: var(--white);
-      padding: 0.75rem 1.5rem;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-    }
+.screen * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
 
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        gap: 1rem;
-        margin-top: 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="logo">PHUONG VU</div>
-    <nav>
-      <div class="nav-item active">HOME</div>
-      <div class="nav-item">MY STORY</div>
-      <div class="nav-item">MY EXPERIENCE</div>
-      <div class="nav-item">MY WORK</div>
-    </nav>
-    <button class="contact-button">CONTACT ME</button>
-  </header>
+.screen div {
+  -webkit-text-size-adjust: none;
+}
 
-  <script>
-    const items = document.querySelectorAll('.nav-item');
-    items.forEach(item => {
-      item.addEventListener('click', () => {
-        items.forEach(el => el.classList.remove('active'));
-        item.classList.add('active');
-      });
-    });
-  </script>
-</body>
-</html>
+.component-wrapper a {
+  display: contents;
+  pointer-events: auto;
+  text-decoration: none;
+}
+
+.component-wrapper * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.component-wrapper a *,
+.component-wrapper input,
+.component-wrapper video,
+.component-wrapper iframe {
+  pointer-events: auto;
+}
+
+.component-wrapper.not-ready,
+.component-wrapper.not-ready * {
+  visibility: hidden !important;
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.full-width-a {
+  width: 100%;
+}
+
+.full-height-a {
+  height: 100%;
+}
+
+.container-center-vertical {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  pointer-events: none;
+}
+
+.container-center-vertical > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.auto-animated div {
+  --z-index: -1;
+  opacity: 0;
+  position: absolute;
+}
+
+.auto-animated input {
+  --z-index: -1;
+  opacity: 0;
+  position: absolute;
+}
+
+.auto-animated .container-center-vertical,
+.auto-animated .container-center-horizontal {
+  opacity: 1;
+}
+
+.overlay-base {
+  display: none;
+  height: 100%;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.overlay-base.animate-appear {
+  align-items: center;
+  animation: reveal 0.3s ease-in-out 1 normal forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+}
+
+.overlay-base.animate-disappear {
+  animation: reveal 0.3s ease-in-out 1 reverse forwards;
+  display: block;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.overlay-base.animate-disappear * {
+  pointer-events: none;
+}
+
+@keyframes reveal {
+  from { opacity: 0 }
+ to { opacity: 1 }
+}
+
+.animate-nodelay {
+  animation-delay: 0s;
+}
+
+.align-self-flex-start {
+  align-self: flex-start;
+}
+
+.align-self-flex-end {
+  align-self: flex-end;
+}
+
+.align-self-flex-center {
+  align-self: flex-center;
+}
+
+.valign-text-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.valign-text-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+input:focus {
+  outline: none;
+}
+
+.listeners-active,
+.listeners-active * {
+  pointer-events: auto;
+}
+
+.hidden,
+.hidden * {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.smart-layers-pointers,
+.smart-layers-pointers * {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.listeners-active-click,
+.listeners-active-click * {
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+:root { 
+  --black: #000000;
+  --cloud: #c4c4c4;
+  --paragraph-color: #6e6e6e;
+  --primary: #757575;
+  --white: #ffffff;
+  --white-smoke: #f3f3f3;
+  --x01: #f2f2f2;
+  --x02: #eae4d5;
+  --x03: #b6b09f;
+  --x04: #090c08;
+  --x05: #ffffff;
+  --x06: #117a65;
+  --x08: #757575;
+ 
+  --font-size-60px: 60px;
+  --font-size-l: 20px;
+  --font-size-m: 17px;
+  --font-size-s: 15px;
+  --font-size-xl: 22px;
+  --font-size-xxl: 25px;
+  --font-size-xxxl: 30px;
+  --font-size-xxxxl: 34px;
+ 
+  --font-family-font_awesome_5_free-solid: "Font Awesome 5 Free-Solid", Helvetica;
+  --font-family-playfair_display: "Playfair Display", Helvetica;
+  --font-family-poppins: "Poppins", Helvetica;
+}
+.heading {
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-60px);
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 4.2px;
+}
+
+.text {
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+.text-button {
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.h4 {
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 1.75px;
+}
+
+.h6 {
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 1.19px;
+}
+
+.poppins-normal-dove-gray-20px {
+  color: var(--paragraph-color);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.poppins-black-marshland-30px {
+  color: var(--x04);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxl);
+  font-style: normal;
+  font-weight: 900;
+}
+
+.poppins-black-genoa-34px {
+  color: var(--x06);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxxl);
+  font-style: normal;
+  font-weight: 900;
+}
+
+.fontawesome5free-solid-normal-nomad-20px {
+  color: var(--x03);
+  font-family: var(--font-family-font_awesome_5_free-solid);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.fontawesome5free-solid-normal-marshland-45px {
+  color: var(--x04);
+  font-family: var(--font-family-font_awesome_5_free-solid);
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+:root {
+}
+
+
+/* screen - home */
+
+.home {
+  background-color: var(--white);
+  height: 6731px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 1440px;
+}
+
+.home .header-xl4bh6 {
+  background-color: var(--x04);
+  height: 918px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 1440px;
+}
+
+.home .headshot-PyZBxz {
+  background-color: transparent;
+  height: 621px;
+  left: 677px;
+  position: absolute;
+  top: 143px;
+  width: 690px;
+}
+
+.home .progress-not-perfect-vR8R4T {
+  background-color: transparent;
+  color: var(--x02);
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-xl);
+  font-style: italic;
+  font-weight: 600;
+  height: auto;
+  left: 451px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 169px;
+  width: auto;
+}
+
+.home .phuong_-vu-removebg-1-vR8R4T {
+  background-color: transparent;
+  height: 621px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 621px;
+}
+
+.home .intro-PyZBxz {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  height: 376px;
+  left: 70px;
+  position: absolute;
+  top: 218px;
+  width: 703px;
+}
+
+.home .welcome-nice-to-meet-you-xM9kS7 {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--x02);
+  font-family: var(--font-family-playfair_display);
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 500;
+  height: 44.0078125px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+}
+
+.home .my-name-is-phuong-vu-xM9kS7 {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 900;
+  height: 184.21875px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: 654.097900390625px;
+}
+
+.home .bullet-points-xM9kS7 {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: transparent;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: -0.23px;
+  position: relative;
+  width: 100%;
+}
+
+.home .point-1-tVx17q {
+  background-color: transparent;
+  height: 26px;
+  margin-right: -2.43px;
+  position: relative;
+  width: 705.4310302734375px;
+}
+
+.home .i-bring-strong-globa-hIxxIB {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 36px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: 667px;
+}
+
+.home .point-2-tVx17q {
+  background-color: transparent;
+  height: 26px;
+  position: relative;
+  width: 649.9008178710938px;
+}
+
+.home .im-known-for-working-Jyd4XI {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 36px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: 612px;
+}
+
+.home .point-3-tVx17q {
+  background-color: transparent;
+  height: 26px;
+  margin-right: -2.06px;
+  position: relative;
+  width: 705.0579223632812px;
+}
+
+.home .im-driven-by-data-an-GuSSAM {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 36px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: 667px;
+}
+
+.home .header-bar-PyZBxz {
+  background-color: transparent;
+  height: 126px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 1440px;
+}
+
+.home .underline-xLOBIy {
+  background-color: transparent;
+  height: 2px;
+  left: 589px;
+  position: absolute;
+  top: 83px;
+  width: 69px;
+}
+
+.home .header-xLOBIy {
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  left: 70px;
+  position: absolute;
+  top: 26px;
+  width: 1300px;
+}
+
+.home .phuong-vu-chPvSx {
+  position: relative;
+  width: fit-content;
+}
+
+.home .menu-chPvSx {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 53px;
+  position: relative;
+}
+
+.home .home-Pj3gU4 {
+  background-color: transparent;
+  color: var(--x02);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  width: 68.83882141113281px;
+}
+
+.home .my-story-Pj3gU4 {
+  background-color: transparent;
+  color: var(--x02);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+}
+
+.home .my-experience-Pj3gU4 {
+  background-color: transparent;
+  color: var(--x02);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+}
+
+.home .my-work-Pj3gU4 {
+  background-color: transparent;
+  color: var(--x02);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+}
+
+.home .button-Pj3gU4 {
+  margin-right: -2.00px;
+  width: 199.72727966308594px;
+}
+
+.home .box-vCFAPq {
+  background-color: var(--x03);
+  height: 74px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 198px;
+}
+
+.home .contact-me-vCFAPq {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 600;
+  height: 23px;
+  left: 42px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 25px;
+  width: 113px;
+}
+
+.home .line-1-PyZBxz {
+  background-color: transparent;
+  height: 1px;
+  left: 2px;
+  object-fit: cover;
+  position: absolute;
+  top: 127px;
+  width: 1438px;
+}
+
+.home .who-i-am-xl4bh6 {
+  background-color: var(--x01);
+  height: 1038px;
+  left: 0px;
+  position: absolute;
+  top: 918px;
+  width: 1440px;
+}
+
+.home .dsc08639-1-3xSkMN {
+  background-color: transparent;
+  height: 704px;
+  left: 70px;
+  position: absolute;
+  top: 236px;
+  width: 469px;
+}
+
+.home .text-3xSkMN {
+  height: 701px;
+  left: 682px;
+  top: 235px;
+  width: 690px;
+}
+
+.home .text_label-Z5nYFS {
+  color: var(--x02);
+  font-family: var(--font-family-font_awesome_5_free-solid);
+  font-size: 150px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 152px;
+}
+
+.home .content-Z5nYFS {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  left: 28px;
+  position: absolute;
+  top: 29px;
+  width: 660px;
+}
+
+.home .heading-ABUN8M {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+  width: 602.4168701171875px;
+}
+
+.home .who-i-am-xeXx02 {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--primary);
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+}
+
+.home .problem-solver-with-xeXx02 {
+  align-self: stretch;
+  background-color: transparent;
+  letter-spacing: 2.38px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+}
+
+.home .flex-container-331992-ABUN8M {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 264px;
+}
+
+.home .text0-331992-e5Qvc9 {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--paragraph-color);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
+  text-align: justify;
+}
+
+.home .span0-FM7JAi {
+  font-style: normal;
+}
+
+.home .text1-331992-e5Qvc9 {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--paragraph-color);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
+  text-align: justify;
+}
+
+.home .span1-mdVGh0 {
+  font-style: normal;
+}
+
+.home .text2-331992-e5Qvc9 {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--paragraph-color);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
+  text-align: justify;
+}
+
+.home .span2-5Ko4hk {
+  font-style: normal;
+}
+
+.home .logo-ABUN8M {
+  background-color: transparent;
+  height: 154.41624450683594px;
+  position: relative;
+  width: 613px;
+}
+
+.home .microsoft-power-bi-symbol-l1PJqI {
+  background-color: transparent;
+  height: 65px;
+  left: 347px;
+  object-fit: cover;
+  position: absolute;
+  top: 89px;
+  width: 116px;
+}
+
+.home .image-1-l1PJqI {
+  background-color: transparent;
+  height: 77px;
+  left: 60px;
+  position: absolute;
+  top: 0px;
+  width: 116px;
+}
+
+.home .microsoft_-office_-p-l1PJqI {
+  background-color: transparent;
+  height: 55px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 99px;
+  width: 60px;
+}
+
+.home .sql-database-3-560-l1PJqI {
+  background-color: transparent;
+  height: 70px;
+  left: 266px;
+  object-fit: cover;
+  position: absolute;
+  top: 4px;
+  width: 112px;
+}
+
+.home .jqycac4nitgaoauawrxg-l1PJqI {
+  background-color: transparent;
+  height: 66px;
+  left: 546px;
+  object-fit: cover;
+  position: absolute;
+  top: 87px;
+  width: 67px;
+}
+
+.home .python-symbol-l1PJqI {
+  background-color: transparent;
+  height: 58px;
+  left: 442px;
+  object-fit: cover;
+  position: absolute;
+  top: 10px;
+  width: 104px;
+}
+
+.home .tableau-emblem-l1PJqI {
+  background-color: transparent;
+  height: 59px;
+  left: 178px;
+  object-fit: cover;
+  position: absolute;
+  top: 94px;
+  width: 105px;
+}
+
+.home .info-box-xl4bh6 {
+  background-color: transparent;
+  height: 296px;
+  left: 70px;
+  position: absolute;
+  top: 764px;
+  width: 1302px;
+}
+
+.home .content-D3p4QJ {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  left: 0px;
+  position: relative;
+  top: 0px;
+}
+
+.home .box-my-story-P0rZj1 {
+  background-color: var(--x02);
+  height: 296px;
+  position: relative;
+  width: 434.00933837890625px;
+}
+
+.home .box-content-1NBk8Y {
+  align-items: flex-start;
+  gap: 25px;
+  left: 35px;
+  top: 35px;
+  width: 373px;
+}
+
+.home .my-story-shPmex {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--x04);
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+}
+
+.home .from-a-turning-point-shPmex {
+  background-color: transparent;
+  color: var(--x04);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
+  text-align: justify;
+  width: 363px;
+}
+
+.home .text_label-shPmex {
+  align-self: stretch;
+  position: relative;
+}
+
+.home .box-my-experience-P0rZj1 {
+  background-color: var(--x01);
+  height: 296px;
+  position: relative;
+  width: 434.010009765625px;
+}
+
+.home .box-content-Kn5Zgw {
+  align-items: flex-start;
+  gap: 25px;
+  left: 35px;
+  top: 35px;
+  width: 364px;
+}
+
+.home .my-experience-W7YmA8 {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--x04);
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+}
+
+.home .my-journey-from-wher-W7YmA8 {
+  background-color: transparent;
+  color: var(--x04);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
+  text-align: justify;
+  width: 363px;
+}
+
+.home .text_label-W7YmA8 {
+  align-self: stretch;
+  position: relative;
+}
+
+.home .box-my-work-P0rZj1 {
+  background-color: var(--x03);
+  height: 296px;
+  position: relative;
+  width: 434.00933837890625px;
+}
+
+.home .box-content-UbLowD {
+  align-items: flex-start;
+  gap: 25px;
+  left: 35px;
+  top: 35px;
+  width: 364px;
+}
+
+.home .my-work-hcpDio {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--x04);
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+}
+
+.home .a-collection-of-my-h-hcpDio {
+  background-color: transparent;
+  color: var(--x04);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
+  text-align: justify;
+  width: 363px;
+}
+
+.home .text_label-hcpDio {
+  align-self: stretch;
+  position: relative;
+}
+
+.home .values-xl4bh6 {
+  background-color: var(--x02);
+  height: 952px;
+  left: 0px;
+  position: absolute;
+  top: 1956px;
+  width: 1440px;
+}
+
+.home .all-9nxFPm {
+  left: 70px;
+  top: 81px;
+  width: 1299px;
+}
+
+.home .above-MSp8lO {
+  align-self: stretch;
+  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+.home .heading-eVKFrE {
+  background-color: transparent;
+  height: 173px;
+  position: relative;
+  width: 585.5968627929688px;
+}
+
+.home .text_label-E6zFib {
+  color: var(--x01);
+  font-family: var(--font-family-font_awesome_5_free-solid);
+  font-size: 150px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 9px;
+  position: absolute;
+  top: 0px;
+  width: 144px;
+}
+
+.home .heading-E6zFib {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  left: 0px;
+  position: absolute;
+  top: 29px;
+  width: 584px;
+}
+
+.home .what-drives-me-gYieY1 {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--primary);
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+}
+
+.home .values-that-i-carry-gYieY1 {
+  align-self: stretch;
+  background-color: transparent;
+  letter-spacing: 2.38px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+}
+
+.home .info-box-eVKFrE {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 28px;
+  margin-right: -0.86px;
+  position: relative;
+}
+
+.home .box-collaboration-h2JUmY {
+  background-color: var(--x03);
+  height: 442px;
+  position: relative;
+  width: 413.93505859375px;
+}
+
+.home .box-content-uJf1K4 {
+  align-items: flex-end;
+  gap: 25px;
+  left: 35px;
+  top: 53px;
+  width: 344px;
+}
+
+.home .text_label-IukmgF {
+  align-self: stretch;
+  color: var(--white);
+  font-family: var(--font-family-font_awesome_5_free-solid);
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: -1.00px;
+  position: relative;
+}
+
+.home .collaboration-IukmgF {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+}
+
+.home .whether-working-on-p-IukmgF {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
+  text-align: justify;
+  width: 344px;
+}
+
+.home .box-resilience-h2JUmY {
+  background-color: var(--x04);
+  height: 442px;
+  position: relative;
+  width: 413.93505859375px;
+}
+
+.home .box-content-AxK8oj {
+  align-items: flex-start;
+  gap: 25px;
+  left: 35px;
+  top: 53px;
+  width: 356px;
+}
+
+.home .text_label-0Qmzz5 {
+  align-self: stretch;
+  color: var(--white);
+  font-family: var(--font-family-font_awesome_5_free-solid);
+  font-size: 40.3px;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: -1.00px;
+  position: relative;
+}
+
+.home .resilience-0Qmzz5 {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+}
+
+.home .i-view-challenges-as-0Qmzz5 {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
+  text-align: justify;
+  width: 345px;
+}
+
+.home .box-courage-h2JUmY {
+  background-color: var(--primary);
+  height: 442px;
+  position: relative;
+  width: 416px;
+}
+
+.home .box-content-Sf7raX {
+  align-items: flex-start;
+  gap: 25px;
+  left: 31px;
+  top: 48px;
+  width: 355px;
+}
+
+.home .text_label-AYGEJy {
+  align-self: stretch;
+  color: var(--white);
+  font-family: var(--font-family-font_awesome_5_free-solid);
+  font-size: 42.2px;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: -1.00px;
+  position: relative;
+}
+
+.home .courage-AYGEJy {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+}
+
+.home .i-challenge-myself-t-AYGEJy {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
+  text-align: justify;
+  width: 344px;
+}
+
+.home .button-MSp8lO {
+  width: 351.9999694824219px;
+}
+
+.home .box-PwJmd7 {
+  background-color: var(--x03);
+  height: 74px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 350px;
+}
+
+.home .learn-more-about-my-story-PwJmd7 {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 600;
+  height: auto;
+  left: 29px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 25px;
+  width: 292px;
+}
+
+.home .what-im-working-toward-xl4bh6 {
+  background-color: var(--x02);
+  height: 952px;
+  left: -1px;
+  position: absolute;
+  top: 4737px;
+  width: 1442px;
+}
+
+.home .right-Lk9xs8 {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  left: 729px;
+  position: absolute;
+  top: 97px;
+  width: 611px;
+}
+
+.home .box-turning-insights-into-strategy-dlcVAo {
+  align-self: stretch;
+  background-color: var(--x03);
+  height: 234px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.home .box-content-koXQzK {
+  align-items: flex-start;
+  gap: 35px;
+  left: 36px;
+  top: 31px;
+  width: 540px;
+}
+
+.home .heading-HixQ6K {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  width: 496px;
+}
+
+.home .turning-insights-into-strategy-dyRWSt {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+}
+
+.home .i-deepen-my-ability-HixQ6K {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
+  text-align: justify;
+}
+
+.home .box-communicating-with-clarity-dlcVAo {
+  align-self: stretch;
+  background-color: var(--x04);
+  height: 234px;
+  position: relative;
+  width: 100%;
+}
+
+.home .box-content-5RPZXz {
+  align-items: flex-start;
+  gap: 35px;
+  height: 166px;
+  left: 34px;
+  top: 33px;
+  width: 543px;
+}
+
+.home .heading-PcOyHB {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  width: 463px;
+}
+
+.home .communicating-with-clarity-GGGKBc {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+}
+
+.home .i-strengthen-how-i-c-PcOyHB {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
+  text-align: justify;
+}
+
+.home .box-building-practical-solutions-dlcVAo {
+  align-self: stretch;
+  background-color: var(--primary);
+  height: 234px;
+  position: relative;
+  width: 100%;
+}
+
+.home .box-content-VFvPGx {
+  align-items: flex-start;
+  gap: 35px;
+  left: 34px;
+  top: 33px;
+  width: 539px;
+}
+
+.home .heading-OLoMp9 {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  width: 467px;
+}
+
+.home .building-practical-solutions-QiENOu {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+}
+
+.home .i-focus-on-designing-OLoMp9 {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
+  text-align: justify;
+}
+
+.home .left-Lk9xs8 {
+  align-items: flex-end;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  left: 71px;
+  position: absolute;
+  top: 264px;
+  width: 503px;
+}
+
+.home .title-lS4J79 {
+  height: 224px;
+  margin-right: -2.00px;
+  width: 505px;
+}
+
+.home .text_label-P4TNrJ {
+  color: var(--white-smoke);
+  font-family: var(--font-family-font_awesome_5_free-solid);
+  font-size: 150px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  white-space: nowrap;
+  width: auto;
+}
+
+.home .heading-P4TNrJ {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  left: 0px;
+  position: absolute;
+  top: 30px;
+  width: 503px;
+}
+
+.home .what-im-working-toward-n4j1Or {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--primary);
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+}
+
+.home .bridging-analytics-s-n4j1Or {
+  align-self: stretch;
+  background-color: transparent;
+  letter-spacing: 2.38px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+}
+
+.home .flex-container-3319171-lS4J79 {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 171px;
+}
+
+.home .text0-3319171-nFInxC {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--paragraph-color);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
+  text-align: justify;
+}
+
+.home .span0-N6PcUw {
+  font-style: normal;
+}
+
+.home .text1-3319171-nFInxC {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--paragraph-color);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
+  text-align: justify;
+}
+
+.home .span1-LcLDGd {
+  font-style: normal;
+}
+
+.home .footer-xl4bh6 {
+  background-color: var(--x04);
+  height: 353px;
+  left: 0px;
+  position: absolute;
+  top: 6378px;
+  width: 1440px;
+}
+
+.home .navigation-peWZqm {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  left: 1044px;
+  position: absolute;
+  top: 97px;
+  width: 197px;
+}
+
+.home .navigation-50tcC5 {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 900;
+  height: 27.47353172302246px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.home .home-50tcC5 {
+  background-color: transparent;
+  height: 18.797679901123047px;
+  margin-right: -202.00px;
+  position: relative;
+  width: 399px;
+}
+
+.home .home-a7A7PN {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+  height: 19px;
+  left: 25px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: -0px;
+  white-space: nowrap;
+  width: 370px;
+}
+
+.home .text_label-a7A7PN {
+  height: 17px;
+  left: 0px;
+  position: absolute;
+  top: 1px;
+  white-space: nowrap;
+  width: 13px;
+}
+
+.home .my-story-50tcC5 {
+  background-color: transparent;
+  height: 18.797679901123047px;
+  margin-right: -202.00px;
+  position: relative;
+  width: 399px;
+}
+
+.home .my-story-Ynk5Dj {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+  height: 19px;
+  left: 25px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: -0px;
+  white-space: nowrap;
+  width: 370px;
+}
+
+.home .text_label-Ynk5Dj {
+  height: 17px;
+  left: 0px;
+  position: absolute;
+  top: 1px;
+  white-space: nowrap;
+  width: 13px;
+}
+
+.home .my-experience-50tcC5 {
+  background-color: transparent;
+  height: 18.797679901123047px;
+  margin-right: -202.00px;
+  position: relative;
+  width: 399px;
+}
+
+.home .my-experience-NEHmWw {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+  height: 19px;
+  left: 25px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: -0px;
+  white-space: nowrap;
+  width: 370px;
+}
+
+.home .text_label-NEHmWw {
+  height: 17px;
+  left: 0px;
+  position: absolute;
+  top: 1px;
+  white-space: nowrap;
+  width: 13px;
+}
+
+.home .my-work-50tcC5 {
+  background-color: transparent;
+  height: 18.797679901123047px;
+  margin-right: -202.00px;
+  position: relative;
+  width: 399px;
+}
+
+.home .my-work-C8Wq4F {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+  height: 19px;
+  left: 25px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: -0px;
+  white-space: nowrap;
+  width: 370px;
+}
+
+.home .text_label-C8Wq4F {
+  height: 17px;
+  left: 0px;
+  position: absolute;
+  top: 1px;
+  white-space: nowrap;
+  width: 13px;
+}
+
+.home .contact-info-peWZqm {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  left: 534px;
+  position: absolute;
+  top: 97px;
+  width: 278px;
+}
+
+.home .contact-fxiaoA {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 900;
+  height: 27.47353172302246px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.home .phone-fxiaoA {
+  background-color: transparent;
+  height: 26px;
+  position: relative;
+  width: 145px;
+}
+
+.home .x213-566-5734-5X4YFw {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+  height: 26px;
+  left: 26px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.home .vuesaxboldcall-calling-5X4YFw {
+  background-color: transparent;
+  height: 17px;
+  left: 1px;
+  position: absolute;
+  top: 5px;
+  width: 17px;
+}
+
+.home .vector-5X4YFw {
+  height: 20px;
+  left: -800px;
+  top: -6770px;
+  width: 20px;
+}
+
+.home .email-fxiaoA {
+  height: 26px;
+  width: 228px;
+}
+
+.home .vuesaxboldsms-E3NmZ2 {
+  background-color: transparent;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 6px;
+  width: 20px;
+}
+
+.home .plvumarshalluscedu-E3NmZ2 {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+  height: 26px;
+  left: 27px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.home .location-fxiaoA {
+  background-color: transparent;
+  height: 26px;
+  margin-right: -2.00px;
+  position: relative;
+  width: 280px;
+}
+
+.home .los-angeles-ca-united-states-5CevRz {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+  height: 26px;
+  left: 25px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.home .vector-5CevRz {
+  height: 18px;
+  left: 0px;
+  top: 4px;
+  width: 16px;
+}
+
+.home .social-fxiaoA {
+  background-color: transparent;
+  height: 26px;
+  position: relative;
+  width: 168px;
+}
+
+.home .vuesaxboldglobal-qnwkXF {
+  background-color: transparent;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 3px;
+  width: 20px;
+}
+
+.home .linked-in-git-hub-qnwkXF {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+  height: 26px;
+  left: 26px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.home .phuong-vu-peWZqm {
+  height: 51px;
+  left: 70px;
+  position: absolute;
+  top: 84px;
+  width: auto;
+}
+
+.home .work-gallery-xl4bh6 {
+  background-color: var(--x01);
+  height: 1829px;
+  left: -1px;
+  position: absolute;
+  top: 2908px;
+  width: 1440px;
+}
+
+.home .below-g3t5Su {
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  left: -185px;
+  position: absolute;
+  top: 1340px;
+  width: 1686px;
+}
+
+.home .beyond-that-i-enjoy-xInOxW {
+  background-color: transparent;
+  color: var(--x06);
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-xxxxl);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: center;
+  width: 1042px;
+}
+
+.home .slide-xInOxW {
+  background-color: transparent;
+  height: 252px;
+  margin-left: -0.50px;
+  margin-right: -0.50px;
+  position: relative;
+  width: 1687px;
+}
+
+.home .carousel-uNiyIC {
+  background-color: transparent;
+  height: 252px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 1687px;
+}
+
+.home .image-placeholder-hPozYs {
+  height: 252px;
+  left: 0px;
+  width: 313px;
+}
+
+.home .image-placeholder-miTZJv {
+  height: 252px;
+  left: 343px;
+  width: 313px;
+}
+
+.home .image-placeholder-cRKguS {
+  height: 252px;
+  left: 686px;
+  width: 313px;
+}
+
+.home .image-placeholder-jHUfTX {
+  height: 252px;
+  left: 1029px;
+  width: 314px;
+}
+
+.home .image-placeholder-hUbbDh {
+  height: 252px;
+  left: 1373px;
+  width: 314px;
+}
+
+.home .above-g3t5Su {
+  left: 71px;
+  position: absolute;
+  top: 90px;
+  width: 1300px;
+}
+
+.home .title-AchSoI {
+  height: 173px;
+  width: 781px;
+}
+
+.home .text_label-P9vM9a {
+  color: var(--x02);
+  font-family: var(--font-family-font_awesome_5_free-solid);
+  font-size: 150px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  white-space: nowrap;
+  width: auto;
+}
+
+.home .heading-P9vM9a {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  left: 0px;
+  position: absolute;
+  top: 30px;
+  width: 779px;
+}
+
+.home .what-ive-accomplished-XDHy2L {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--primary);
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+}
+
+.home .projects-presentatio-XDHy2L {
+  align-self: stretch;
+  background-color: transparent;
+  letter-spacing: 2.38px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+}
+
+.home .work-AchSoI {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: transparent;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  width: 100%;
+}
+
+.home .first-row-bYwmSV {
+  align-items: center;
+  align-self: stretch;
+  background-color: transparent;
+  display: flex;
+  height: 295px;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.home .box-Xq2sAI {
+  background-color: transparent;
+  height: 295px;
+  position: relative;
+  width: 515px;
+}
+
+.home .image-placeholder-boZwJy {
+  height: 295px;
+  left: 0px;
+  width: 515px;
+}
+
+.home .text-boZwJy {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  left: 34px;
+  top: 46px;
+  width: 427px;
+}
+
+.home .retail-qfJ3Kn {
+  align-self: stretch;
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+}
+
+.home .campaign-analysis-se-qfJ3Kn {
+  align-self: stretch;
+  background-color: transparent;
+  letter-spacing: 2.10px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+}
+
+.home .box-tbkrEK {
+  background-color: transparent;
+  height: 295px;
+  position: relative;
+  width: 746px;
+}
+
+.home .image-placeholder-SNGNdk {
+  height: 295px;
+  left: 0px;
+  width: 746px;
+}
+
+.home .text-SNGNdk {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  left: 33px;
+  top: 46px;
+  width: 587px;
+}
+
+.home .logistics-transportation-bOOEE1 {
+  align-self: stretch;
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+}
+
+.home .clustering-trend-ana-bOOEE1 {
+  align-self: stretch;
+  background-color: transparent;
+  letter-spacing: 2.10px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+}
+
+.home .second-row-bYwmSV {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 39px;
+  position: relative;
+}
+
+.home .box-VJX5HP {
+  background-color: transparent;
+  height: 295px;
+  position: relative;
+  width: 515px;
+}
+
+.home .image-placeholder-bhj0Kc {
+  height: 295px;
+  left: 0px;
+  width: 515px;
+}
+
+.home .text-bhj0Kc {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  left: 34px;
+  top: 47px;
+  width: 427px;
+}
+
+.home .marketing-sales-Fw9LYK {
+  align-self: stretch;
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+}
+
+.home .analysis-of-sales-pe-Fw9LYK {
+  align-self: stretch;
+  background-color: transparent;
+  letter-spacing: 2.10px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+}
+
+.home .box-pEVEmS {
+  background-color: transparent;
+  height: 295px;
+  position: relative;
+  width: 474px;
+}
+
+.home .image-placeholder-yOxoES {
+  height: 295px;
+  left: 0px;
+  width: 474px;
+}
+
+.home .text-yOxoES {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  left: 34px;
+  top: 47px;
+  width: 389px;
+}
+
+.home .human-resources-m3xmXx {
+  align-self: stretch;
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+}
+
+.home .impact-of-salary-hik-m3xmXx {
+  align-self: stretch;
+  background-color: transparent;
+  letter-spacing: 2.10px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+}
+
+.home .action-VJX5HP {
+  background-color: transparent;
+  height: 167px;
+  position: relative;
+  width: 182px;
+}
+
+.home .explore-more-8GkHMb {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  left: 14px;
+  top: 0px;
+  width: 182px;
+}
+
+.home .explore-more-3exrUK {
+  align-self: stretch;
+  color: var(--x03);
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-xxxxl);
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  text-align: left;
+}
+
+.home .text_label-3exrUK {
+  align-self: stretch;
+  color: var(--x03);
+  font-family: var(--font-family-font_awesome_5_free-solid);
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 400;
+  position: relative;
+}
+
+.home .third-row-bYwmSV {
+  align-items: center;
+  align-self: stretch;
+  background-color: transparent;
+  display: flex;
+  gap: 44px;
+  height: 295px;
+  position: relative;
+  width: 100%;
+}
+
+.home .box-iyRl6z {
+  background-color: transparent;
+  height: 295px;
+  position: relative;
+  width: 323px;
+}
+
+.home .image-placeholder-j1xHCZ {
+  height: 295px;
+  left: 0px;
+  width: 323px;
+}
+
+.home .text-j1xHCZ {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  left: 33px;
+  top: 44px;
+  width: 278px;
+}
+
+.home .insurance-5TJlWX {
+  align-self: stretch;
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+}
+
+.home .insurance-loss-analytics-5TJlWX {
+  align-self: stretch;
+  background-color: transparent;
+  letter-spacing: 2.10px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+}
+
+.home .box-rBNHL7 {
+  background-color: transparent;
+  height: 295px;
+  position: relative;
+  width: 361px;
+}
+
+.home .image-placeholder-AMZJNh {
+  height: 295px;
+  left: 0px;
+  width: 361px;
+}
+
+.home .text-AMZJNh {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  left: 34px;
+  top: 47px;
+  width: 277px;
+}
+
+.home .hom-e-team-bias-in-mlb-umpiring-Uxxnr7 {
+  background-color: transparent;
+  letter-spacing: 2.10px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: 266px;
+}
+
+.home .box-u9RJyl {
+  background-color: transparent;
+  height: 295px;
+  position: relative;
+  width: 528px;
+}
+
+.home .image-placeholder-caXrS2 {
+  height: 295px;
+  left: 0px;
+  width: 528px;
+}
+
+.home .text-caXrS2 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  left: 32px;
+  top: 47px;
+  width: 434px;
+}
+
+.home .athlete-valuation-fo-EVgpdD {
+  align-self: stretch;
+  background-color: transparent;
+  letter-spacing: 2.10px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+}
+
+.home .contact-xl4bh6 {
+  background-color: var(--x06);
+  height: 689px;
+  left: 0px;
+  position: absolute;
+  top: 5689px;
+  width: 1439px;
+}
+
+.home .all-ciZqh7 {
+  left: 484px;
+  top: 89px;
+  width: 472px;
+}
+
+.home .above-elxgGA {
+  align-self: stretch;
+  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+.home .heading-oWBz5N {
+  align-items: center;
+  align-self: stretch;
+  background-color: transparent;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+  width: 100%;
+}
+
+.home .id-love-to-connect-lOmxN2 {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--x02);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxxl);
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 2.38px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: center;
+}
+
+.home .schedule-a-coffee-chat-with-me-lOmxN2 {
+  align-self: stretch;
+  background-color: transparent;
+  color: var(--x01);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+}
+
+.home .form-oWBz5N {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: transparent;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.home .name-VxORC0 {
+  background-color: transparent;
+  height: 43px;
+  margin-right: -2.00px;
+  position: relative;
+  width: 474px;
+}
+
+.home .rounded-rectangle-un8CuX {
+  background-color: var(--x01);
+  border-radius: 3px;
+  height: 43px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 472px;
+}
+
+.home .your-name-un8CuX {
+  background-color: transparent;
+  color: var(--x03);
+  font-style: normal;
+  font-weight: 400;
+  height: 18px;
+  left: 14px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 13px;
+  white-space: nowrap;
+  width: 143px;
+}
+
+.home .email-VxORC0 {
+  height: 43px;
+  margin-right: -2.00px;
+  width: 474px;
+}
+
+.home .rectangle-63-kNlLxh {
+  background-color: var(--x01);
+  border-radius: 3px;
+  height: 43px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 472px;
+}
+
+.home .your-email-kNlLxh {
+  background-color: transparent;
+  color: var(--x03);
+  font-style: normal;
+  font-weight: 400;
+  height: 18px;
+  left: 15px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 13px;
+  white-space: nowrap;
+  width: 143px;
+}
+
+.home .linked-in-VxORC0 {
+  background-color: transparent;
+  height: 43px;
+  margin-right: -2.00px;
+  position: relative;
+  width: 474px;
+}
+
+.home .rectangle-65-XxJzOz {
+  background-color: var(--x01);
+  border-radius: 3px;
+  height: 43px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 472px;
+}
+
+.home .your-linked-in-XxJzOz {
+  background-color: transparent;
+  color: var(--x03);
+  font-style: normal;
+  font-weight: 400;
+  height: 18px;
+  left: 15px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 13px;
+  white-space: nowrap;
+  width: 143px;
+}
+
+.home .message-VxORC0 {
+  background-color: transparent;
+  height: 93px;
+  margin-right: -2.00px;
+  position: relative;
+  width: 474px;
+}
+
+.home .rectangle-64-dyv73X {
+  background-color: var(--x01);
+  border-radius: 3px;
+  height: 93px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 472px;
+}
+
+.home .your-message-dyv73X {
+  background-color: transparent;
+  color: var(--x03);
+  font-style: normal;
+  font-weight: 400;
+  height: 18px;
+  left: 15px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 13px;
+  white-space: nowrap;
+  width: 143px;
+}
+
+.home .button-elxgGA {
+  width: 149px;
+}
+
+.home .rectangle-2-Uj1YOY {
+  background-color: var(--x03);
+  height: 74px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 147px;
+}
+
+.home .submit-Uj1YOY {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 600;
+  height: 23px;
+  left: 32px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 25px;
+  width: 84px;
+}
+
+.home .above {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.home .all {
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  position: relative;
+}
+
+.home .box-content {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.home .button {
+  background-color: transparent;
+  height: 74px;
+  position: relative;
+}
+
+.home .email {
+  background-color: transparent;
+  position: relative;
+}
+
+.home .explore-more {
+  background-color: transparent;
+  position: relative;
+}
+
+.home .image-placeholder {
+  background-color: var(--cloud);
+  position: absolute;
+  top: 0px;
+}
+
+.home .line-4 {
+  background-color: transparent;
+  height: 5px;
+  margin-bottom: -2.50px;
+  position: relative;
+  width: 300px;
+}
+
+.home .phuong-vu {
+  background-color: transparent;
+  color: var(--x02);
+  font-family: var(--font-family-playfair_display);
+  font-size: 38px;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  text-align: center;
+  text-shadow: 3px 0px 4px #b6b09f;
+}
+
+.home .sports-entertainment {
+  align-self: stretch;
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+}
+
+.home .text {
+  background-color: transparent;
+  position: absolute;
+}
+
+.home .text_label {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  text-align: left;
+}
+
+.home .title {
+  background-color: transparent;
+  position: relative;
+}
+
+.home .ui-iconplay_circledfilled {
+  background-color: transparent;
+  height: 24px;
+  left: 0px;
+  position: absolute;
+  top: 1px;
+  width: 24px;
+}
+
+.home .vector {
+  background-color: transparent;
+  position: absolute;
+}
+</style></head><body style="margin: 0;background: #ffffff;"><input type="hidden" id="anPageName" name="page" value="home"><div class="container-center-horizontal"><div class="home screen " data-id="3319:53"><div class="header-xl4bh6" data-id="3319:54"><div class="headshot-PyZBxz" data-id="3319:55"><p class="progress-not-perfect-vR8R4T" data-id="3319:56">Progress, not perfection <br>Trust the process</p><img class="phuong_-vu-removebg-1-vR8R4T" data-id="3319:57" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/phuong-vu-removebg-1.png" alt="Phuong_Vu-removebg 1"></div><div class="intro-PyZBxz" data-id="3319:58"><p class="welcome-nice-to-meet-you-xM9kS7" data-id="3319:59">Welcome, nice to meet you!</p><h1 class="my-name-is-phuong-vu-xM9kS7 heading" data-id="3319:60">MY NAME IS PHUONG VU</h1><div class="bullet-points-xM9kS7" data-id="3319:61"><div class="point-1-tVx17q" data-id="3319:62"><p class="i-bring-strong-globa-hIxxIB text" data-id="3319:63">I bring strong global experience in analytics, business, and technology.</p><img class="ui-iconplay_circledfilled" data-id="3319:64" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/ui-icon-play-circled-filled.svg" alt="UI icon/play_circled/filled"></div><div class="point-2-tVx17q" data-id="3319:65"><p class="im-known-for-working-Jyd4XI text" data-id="3319:66">I’m known for working effectively across functions and cultures.</p><img class="ui-iconplay_circledfilled" data-id="3319:67" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/ui-icon-play-circled-filled-1.svg" alt="UI icon/play_circled/filled"></div><div class="point-3-tVx17q" data-id="3319:68"><p class="im-driven-by-data-an-GuSSAM text" data-id="3319:69">I’m driven by data and insights that lead to smarter business decisions.</p><img class="ui-iconplay_circledfilled" data-id="3319:70" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/ui-icon-play-circled-filled-1.svg" alt="UI icon/play_circled/filled"></div></div></div><div class="header-bar-PyZBxz" data-id="3319:71"><img class="underline-xLOBIy" data-id="3319:72" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/underline.svg" alt="Underline"><div class="header-xLOBIy" data-id="3319:73"><div class="phuong-vu-chPvSx valign-text-middle phuong-vu" data-id="3319:74">PHUONG VU</div><div class="menu-chPvSx" data-id="3319:75"><div class="home-Pj3gU4 valign-text-middle text-button" data-id="3319:76">HOME</div><div class="my-story-Pj3gU4 valign-text-middle text-button" data-id="3319:77">MY STORY</div><div class="my-experience-Pj3gU4 valign-text-middle text-button" data-id="3319:78">MY EXPERIENCE</div><div class="my-work-Pj3gU4 valign-text-middle text-button" data-id="3319:79">MY WORK</div><div class="button-Pj3gU4 button" data-id="3319:80"><div class="box-vCFAPq" data-id="3319:81"></div><div class="contact-me-vCFAPq valign-text-middle text-button" data-id="3319:82">CONTACT ME</div></div></div></div></div><img class="line-1-PyZBxz" data-id="3319:83" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/line-1.svg" alt="Line 1"></div><div class="who-i-am-xl4bh6" data-id="3319:84"><img class="dsc08639-1-3xSkMN" data-id="3319:85" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/dsc08639-1.png" alt="DSC08639 1"><div class="text-3xSkMN text" data-id="3319:86"><div class="text_label-Z5nYFS text_label" data-id="3319:87"></div><div class="content-Z5nYFS" data-id="3319:88"><div class="heading-ABUN8M" data-id="3319:89"><h6 class="who-i-am-xeXx02 h6" data-id="3319:90">WHO I AM</h6><p class="problem-solver-with-xeXx02 poppins-black-genoa-34px" data-id="3319:91">PROBLEM SOLVER WITH BACKGROUND IN ANALYTICS, BUSINESS, AND TECHNOLOGY</p></div><div class="flex-container-331992-ABUN8M" data-id="3319:92-container"><div class="text0-331992-e5Qvc9 text" data-id="3319:92-text0"><span class="span0-FM7JAi text">I’m passionate about turning complex data into clear, meaningful insights that help teams make smarter decisions. <br></span></div><div class="text1-331992-e5Qvc9 text" data-id="3319:92-text1"><span class="span1-mdVGh0 text">Over the past few years, I’ve worked in fast-paced companies across industries like logistics, blockchain, and HR — where I’ve learned to solve problems, communicate across cultures, and collaborate with global teams. <br></span></div><div class="text2-331992-e5Qvc9 text" data-id="3319:92-text2"><span class="span2-5Ko4hk text">With a strong foundation in SQL, Python, and data visualization, I enjoy connecting the dots between data and business goals, and I&#39;m excited to support cross-functional teams in making data-driven decisions that truly move the needle.</span></div></div><div class="logo-ABUN8M" data-id="3319:93"><img class="microsoft-power-bi-symbol-l1PJqI" data-id="3319:94" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/microsoft-power-bi-symbol.png" alt="Microsoft-Power-BI-Symbol"><img class="image-1-l1PJqI" data-id="3319:95" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/image-1@2x.png" alt="image 1"><img class="microsoft_-office_-p-l1PJqI" data-id="3319:96" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/microsoft-office-powerpoint--2019-present--svg-1.png" alt="Microsoft_Office_PowerPoint_(2019present).svg 1"><img class="sql-database-3-560-l1PJqI" data-id="3319:97" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/sql-database-3-560.png" alt="sql-database-3-560"><img class="jqycac4nitgaoauawrxg-l1PJqI" data-id="3319:98" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/jqycac4nitgaoauawrxg.png" alt="jqycac4nitgaoauawrxg"><img class="python-symbol-l1PJqI" data-id="3319:99" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/python-symbol.png" alt="Python-Symbol"><img class="tableau-emblem-l1PJqI" data-id="3319:100" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/tableau-emblem.png" alt="Tableau-Emblem"></div></div></div></div><div class="info-box-xl4bh6" data-id="3319:101"><div class="content-D3p4QJ" data-id="3319:102"><div class="box-my-story-P0rZj1" data-id="3319:103"><div class="box-content-1NBk8Y box-content" data-id="3319:104"><h4 class="my-story-shPmex h4" data-id="3319:105">MY STORY</h4><p class="from-a-turning-point-shPmex valign-text-middle text" data-id="3319:106">From a turning point that shaped who I am today to the adventures, movement, and meaningful experiences I’ve embraced along the way.</p><div class="text_label-shPmex text_label fontawesome5free-solid-normal-marshland-45px" data-id="3319:107"></div></div></div><div class="box-my-experience-P0rZj1" data-id="3319:108"><div class="box-content-Kn5Zgw box-content" data-id="3319:109"><h4 class="my-experience-W7YmA8 h4" data-id="3319:110">MY EXPERIENCE</h4><p class="my-journey-from-wher-W7YmA8 text" data-id="3319:111">My journey from where I started and what I learned to how I’ve grown. You’ll find key milestones, achievements, and numbers showing the impact I’ve made.</p><div class="text_label-W7YmA8 text_label fontawesome5free-solid-normal-marshland-45px" data-id="3319:112"></div></div></div><div class="box-my-work-P0rZj1" data-id="3319:113"><div class="box-content-UbLowD box-content" data-id="3319:114"><h4 class="my-work-hcpDio h4" data-id="3319:115">MY WORK</h4><p class="a-collection-of-my-h-hcpDio text" data-id="3319:116">A collection of my hands-on projects and storytelling presentations. Click through to see how I turn data into solutions through analysis, design, and insight.</p><div class="text_label-hcpDio text_label fontawesome5free-solid-normal-marshland-45px" data-id="3319:117"></div></div></div></div></div><div class="values-xl4bh6" data-id="3319:118"><div class="all-9nxFPm all" data-id="3319:119"><div class="above-MSp8lO above" data-id="3319:120"><div class="heading-eVKFrE" data-id="3319:121"><div class="text_label-E6zFib text_label" data-id="3319:122"></div><div class="heading-E6zFib" data-id="3319:123"><h6 class="what-drives-me-gYieY1 h6" data-id="3319:124">WHAT DRIVES ME</h6><p class="values-that-i-carry-gYieY1 poppins-black-genoa-34px" data-id="3319:125">VALUES THAT I CARRY INTO BUSINESS AND ANALYTICS</p></div></div><div class="info-box-eVKFrE" data-id="3319:126"><div class="box-collaboration-h2JUmY" data-id="3319:127"><div class="box-content-uJf1K4 box-content" data-id="3319:128"><div class="text_label-IukmgF text_label" data-id="3319:129"></div><h4 class="collaboration-IukmgF h4" data-id="3319:130">COLLABORATION</h4><p class="whether-working-on-p-IukmgF text" data-id="3319:131">“Whether working on projects, across teams, or with stakeholders, I listen actively to diverse perspectives and adapt to different working styles. I strive for clarity, find common ground, and help teams work more efficiently toward shared goals.”</p></div></div><div class="box-resilience-h2JUmY" data-id="3319:132"><div class="box-content-AxK8oj box-content" data-id="3319:133"><div class="text_label-0Qmzz5 text_label" data-id="3319:134"></div><h4 class="resilience-0Qmzz5 h4" data-id="3319:135">RESILIENCE</h4><p class="i-view-challenges-as-0Qmzz5 text" data-id="3319:136">“I view challenges as opportunities to grow. When facing deadlines or obstacles, I prioritize, track progress, and adapt quickly. With a clear goal in mind, I ensure timely delivery without compromising quality.”</p></div></div><div class="box-courage-h2JUmY" data-id="3319:137"><div class="box-content-Sf7raX box-content" data-id="3319:138"><div class="text_label-AYGEJy text_label" data-id="3319:139"></div><h4 class="courage-AYGEJy h4" data-id="3319:140">COURAGE</h4><p class="i-challenge-myself-t-AYGEJy text" data-id="3319:141">“I challenge myself to step out of my comfort zone — whether it&#39;s starting new conversations, joining events, or contributing solutions. I speak up when needed and welcome feedback to help the team grow. When things get tough, I keep pushing foward — because as long as I don’t stop, I know I’ll reach the goal.”</p></div></div></div></div><div class="button-MSp8lO button" data-id="3319:142"><div class="box-PwJmd7" data-id="3319:143"></div><p class="learn-more-about-my-story-PwJmd7 text-button" data-id="3319:144">LEARN MORE ABOUT MY STORY</p></div></div></div><div class="what-im-working-toward-xl4bh6" data-id="3319:145"><div class="right-Lk9xs8" data-id="3319:146"><div class="box-turning-insights-into-strategy-dlcVAo" data-id="3319:147"><div class="box-content-koXQzK box-content" data-id="3319:148"><div class="heading-HixQ6K" data-id="3319:149"><h4 class="turning-insights-into-strategy-dyRWSt h4" data-id="3319:150">TURNING INSIGHTS INTO STRATEGY</h4><img class="line-4" data-id="3319:151" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/line-4.svg" alt="Line 4"></div><p class="i-deepen-my-ability-HixQ6K text" data-id="3319:152">I deepen my ability to connect data with business goals — using analytics not just for reporting, but to inform strategic decisions and shape long-term direction.</p></div></div><div class="box-communicating-with-clarity-dlcVAo" data-id="3319:153"><div class="box-content-5RPZXz box-content" data-id="3319:154"><div class="heading-PcOyHB" data-id="3319:155"><h4 class="communicating-with-clarity-GGGKBc h4" data-id="3319:156">COMMUNICATING WITH CLARITY</h4><img class="line-4" data-id="3319:157" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/line-4.svg" alt="Line 4"></div><p class="i-strengthen-how-i-c-PcOyHB text" data-id="3319:158">I strengthen how I communicate insights — through visual storytelling, structured thinking, and clear narratives that align technical findings with business priorities.</p></div></div><div class="box-building-practical-solutions-dlcVAo" data-id="3319:159"><div class="box-content-VFvPGx box-content" data-id="3319:160"><div class="heading-OLoMp9" data-id="3319:161"><h4 class="building-practical-solutions-QiENOu h4" data-id="3319:162">BUILDING PRACTICAL SOLUTIONS</h4><img class="line-4" data-id="3319:163" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/line-4.svg" alt="Line 4"></div><p class="i-focus-on-designing-OLoMp9 text" data-id="3319:164">I focus on designing efficient, flexible solutions — especially in fast-paced or resource-constrained settings — that drive value across teams and functions.</p></div></div></div><div class="left-Lk9xs8" data-id="3319:165"><div class="title-lS4J79 title" data-id="3319:166"><div class="text_label-P4TNrJ text_label" data-id="3319:167"></div><div class="heading-P4TNrJ" data-id="3319:168"><h6 class="what-im-working-toward-n4j1Or h6" data-id="3319:169">WHAT I’M WORKING TOWARD</h6><p class="bridging-analytics-s-n4j1Or poppins-black-genoa-34px" data-id="3319:170">BRIDGING ANALYTICS, STRATEGY &amp; REAL-WORLD IMPACT</p></div></div><div class="flex-container-3319171-lS4J79" data-id="3319:171-container"><div class="text0-3319171-nFInxC text" data-id="3319:171-text0"><span class="span0-N6PcUw text">I’m advancing not only my technical knowledge—such as linear and logistic regression, statistical modeling, and data visualization—but also strengthening interpersonal skills and business acumen. <br></span></div><div class="text1-3319171-nFInxC text" data-id="3319:171-text1"><span class="span1-LcLDGd text">I’m eager to apply these in real-world tech, marketing, and strategy challenges to contribute to meaningful outcomes.</span></div></div></div></div><footer class="footer-xl4bh6" data-id="3319:172"><div class="navigation-peWZqm" data-id="3319:173"><h4 class="navigation-50tcC5 valign-text-middle h4" data-id="3319:174">NAVIGATION</h4><div class="home-50tcC5" data-id="3319:175"><div class="home-a7A7PN valign-text-middle text" data-id="3319:176">Home</div><div class="text_label-a7A7PN valign-text-middle text_label fontawesome5free-solid-normal-nomad-20px" data-id="3319:177"></div></div><div class="my-story-50tcC5" data-id="3319:178"><div class="my-story-Ynk5Dj valign-text-middle text" data-id="3319:179">My Story</div><div class="text_label-Ynk5Dj valign-text-middle text_label fontawesome5free-solid-normal-nomad-20px" data-id="3319:180"></div></div><div class="my-experience-50tcC5" data-id="3319:181"><div class="my-experience-NEHmWw valign-text-middle text" data-id="3319:182">My Experience</div><div class="text_label-NEHmWw valign-text-middle text_label fontawesome5free-solid-normal-nomad-20px" data-id="3319:183"></div></div><div class="my-work-50tcC5" data-id="3319:184"><div class="my-work-C8Wq4F valign-text-middle text" data-id="3319:185">My Work</div><div class="text_label-C8Wq4F valign-text-middle text_label fontawesome5free-solid-normal-nomad-20px" data-id="3319:186"></div></div></div><div class="contact-info-peWZqm" data-id="3319:187"><h4 class="contact-fxiaoA valign-text-middle h4" data-id="3319:188">CONTACT</h4><div class="phone-fxiaoA" data-id="3319:189"><div class="x213-566-5734-5X4YFw valign-text-middle text" data-id="3319:190">213-566-5734</div><img class="vuesaxboldcall-calling-5X4YFw" data-id="3319:191" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/vuesax-bold-call-calling.svg" alt="vuesax/bold/call-calling"><img class="vector-5X4YFw vector" data-id="3319:197" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/vector@2x.png" alt="Vector"></div><div class="email-fxiaoA email" data-id="3319:198"><img class="vuesaxboldsms-E3NmZ2" data-id="3319:199" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/vuesax-bold-sms.svg" alt="vuesax/bold/sms"><div class="plvumarshalluscedu-E3NmZ2 valign-text-middle text" data-id="3319:200">plvu@marshall.usc.edu</div></div><div class="location-fxiaoA" data-id="3319:201"><p class="los-angeles-ca-united-states-5CevRz valign-text-middle text" data-id="3319:202">Los Angeles, CA, United States</p><img class="vector-5CevRz vector" data-id="3319:203" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/vector-1.svg" alt="Vector"></div><div class="social-fxiaoA" data-id="3319:204"><img class="vuesaxboldglobal-qnwkXF" data-id="3319:205" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/684d3e2369ce0f3f75d61c73/releases/684d3e6b365b4fe1d220220c/img/vuesax-bold-global.svg" alt="vuesax/bold/global"><div class="linked-in-git-hub-qnwkXF valign-text-middle text" data-id="3319:206">LinkedIn | GitHub</div></div></div><div class="phuong-vu-peWZqm valign-text-middle phuong-vu" data-id="3319:207">PHUONG VU</div></footer><div class="work-gallery-xl4bh6" data-id="3319:208"><div class="below-g3t5Su" data-id="3319:209"><p class="beyond-that-i-enjoy-xInOxW" data-id="3319:210">Beyond that, I enjoy the journey and have built meaningful connections with people from around the globe.</p><div class="slide-xInOxW" data-id="3319:211"><div class="carousel-uNiyIC" data-id="3319:212"><div class="image-placeholder-hPozYs image-placeholder" data-id="3319:213"></div><div class="image-placeholder-miTZJv image-placeholder" data-id="3319:214"></div><div class="image-placeholder-cRKguS image-placeholder" data-id="3319:215"></div><div class="image-placeholder-jHUfTX image-placeholder" data-id="3319:216"></div><div class="image-placeholder-hUbbDh image-placeholder" data-id="3319:217"></div></div></div></div><div class="above-g3t5Su above" data-id="3319:218"><div class="title-AchSoI title" data-id="3319:219"><div class="text_label-P9vM9a text_label" data-id="3319:220"></div><div class="heading-P9vM9a" data-id="3319:221"><h6 class="what-ive-accomplished-XDHy2L h6" data-id="3319:222">WHAT I’VE ACCOMPLISHED</h6><p class="projects-presentatio-XDHy2L poppins-black-genoa-34px" data-id="3319:223">PROJECTS &amp; PRESENTATIONS I’VE BUILT<br>INDIVIDUALLY AND TOGETHER</p></div></div><div class="work-AchSoI" data-id="3319:224"><div class="first-row-bYwmSV" data-id="3319:225"><div class="box-Xq2sAI" data-id="3319:226"><div class="image-placeholder-boZwJy image-placeholder" data-id="3319:227"></div><div class="text-boZwJy text" data-id="3319:228"><div class="retail-qfJ3Kn poppins-normal-dove-gray-20px" data-id="3319:229">Retail</div><p class="campaign-analysis-se-qfJ3Kn poppins-black-marshland-30px" data-id="3319:230">CAMPAIGN ANALYSIS &amp; SEGMENTATION FOR MARKET STRATEGY</p></div></div><div class="box-tbkrEK" data-id="3319:231"><div class="image-placeholder-SNGNdk image-placeholder" data-id="3319:232"></div><div class="text-SNGNdk text" data-id="3319:233"><div class="logistics-transportation-bOOEE1 poppins-normal-dove-gray-20px" data-id="3319:234">Logistics &amp; Transportation</div><p class="clustering-trend-ana-bOOEE1 poppins-black-marshland-30px" data-id="3319:235">CLUSTERING &amp; TREND ANALYSIS FOR RIDE-SHARING DEMAND AND BEHAVIOR</p></div></div></div><div class="second-row-bYwmSV" data-id="3319:236"><div class="box-VJX5HP" data-id="3319:237"><div class="image-placeholder-bhj0Kc image-placeholder" data-id="3319:238"></div><div class="text-bhj0Kc text" data-id="3319:239"><div class="marketing-sales-Fw9LYK poppins-normal-dove-gray-20px" data-id="3319:240">Marketing &amp; Sales</div><p class="analysis-of-sales-pe-Fw9LYK poppins-black-marshland-30px" data-id="3319:241">ANALYSIS OF SALES PERFORMANCE AND CUSTOMER BEHAVIOR</p></div></div><div class="box-pEVEmS" data-id="3319:242"><div class="image-placeholder-yOxoES image-placeholder" data-id="3319:243"></div><div class="text-yOxoES text" data-id="3319:244"><div class="human-resources-m3xmXx poppins-normal-dove-gray-20px" data-id="3319:245">Human Resources</div><p class="impact-of-salary-hik-m3xmXx poppins-black-marshland-30px" data-id="3319:246">IMPACT OF SALARY HIKES ON EMPLOYEE ATTRITION</p></div></div><div class="action-VJX5HP" data-id="3319:247"><div class="explore-more-8GkHMb explore-more" data-id="3319:248"><div class="explore-more-3exrUK explore-more" data-id="3319:249">EXPLORE MORE</div><div class="text_label-3exrUK text_label" data-id="3319:250"></div></div></div></div><div class="third-row-bYwmSV" data-id="3319:251"><div class="box-iyRl6z" data-id="3319:252"><div class="image-placeholder-j1xHCZ image-placeholder" data-id="3319:253"></div><div class="text-j1xHCZ text" data-id="3319:254"><div class="insurance-5TJlWX poppins-normal-dove-gray-20px" data-id="3319:255">Insurance</div><div class="insurance-loss-analytics-5TJlWX poppins-black-marshland-30px" data-id="3319:256">INSURANCE LOSS ANALYTICS</div></div></div><div class="box-rBNHL7" data-id="3319:257"><div class="image-placeholder-AMZJNh image-placeholder" data-id="3319:258"></div><div class="text-AMZJNh text" data-id="3319:259"><div class="sports-entertainment poppins-normal-dove-gray-20px" data-id="3319:260">Sports &amp; Entertainment</div><p class="hom-e-team-bias-in-mlb-umpiring-Uxxnr7 poppins-black-marshland-30px" data-id="3319:261">HOME-TEAM BIAS IN MLB UMPIRING</p></div></div><div class="box-u9RJyl" data-id="3319:262"><div class="image-placeholder-caXrS2 image-placeholder" data-id="3319:263"></div><div class="text-caXrS2 text" data-id="3319:264"><div class="sports-entertainment poppins-normal-dove-gray-20px" data-id="3319:265">Sports &amp; Entertainment</div><p class="athlete-valuation-fo-EVgpdD poppins-black-marshland-30px" data-id="3319:266">ATHLETE VALUATION FOR PERFORMANCE &amp; BRAND ALIGNMENT</p></div></div></div></div></div></div><div class="contact-xl4bh6" data-id="3319:267"><div class="all-ciZqh7 all" data-id="3319:268"><div class="above-elxgGA above" data-id="3319:269"><div class="heading-oWBz5N" data-id="3319:270"><div class="id-love-to-connect-lOmxN2 valign-text-middle" data-id="3319:271">I’D LOVE TO CONNECT!</div><p class="schedule-a-coffee-chat-with-me-lOmxN2" data-id="3319:272">Schedule a coffee chat with me.</p></div><div class="form-oWBz5N" data-id="3319:273"><div class="name-VxORC0" data-id="3319:274"><div class="rounded-rectangle-un8CuX" data-id="3319:275"></div><div class="your-name-un8CuX valign-text-middle text" data-id="3319:276">Your Name</div></div><div class="email-VxORC0 email" data-id="3319:277"><div class="rectangle-63-kNlLxh" data-id="3319:278"></div><div class="your-email-kNlLxh valign-text-middle text" data-id="3319:279">Your Email</div></div><div class="linked-in-VxORC0" data-id="3319:280"><div class="rectangle-65-XxJzOz" data-id="3319:281"></div><div class="your-linked-in-XxJzOz valign-text-middle text" data-id="3319:282">Your LinkedIn</div></div><div class="message-VxORC0" data-id="3319:283"><div class="rectangle-64-dyv73X" data-id="3319:284"></div><div class="your-message-dyv73X valign-text-middle text" data-id="3319:285">Your Message</div></div></div></div><div class="button-elxgGA button" data-id="3319:286"><div class="rectangle-2-Uj1YOY" data-id="3319:287"></div><div class="submit-Uj1YOY valign-text-middle text-button" data-id="3319:288">SUBMIT</div></div></div></div></div></div><script src="launchpad-js/launchpad-banner.js" async></script><script defer src="https://animaapp.s3.amazonaws.com/static/restart-btn.min.js"></script></body></html>
