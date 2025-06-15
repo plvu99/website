@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;900&display=swap');
 
 :root {
   --black: #000000;
@@ -15,7 +16,7 @@
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-poppins);
   background-color: var(--white);
 }
 
@@ -30,7 +31,7 @@ header {
 }
 
 .logo {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-playfair);
   font-size: 1.5rem;
   font-weight: 700;
   text-shadow: 3px 0px 4px var(--x03);
@@ -43,7 +44,7 @@ nav {
 }
 
 .nav-item {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-poppins);
   position: relative;
   font-weight: 600;
   cursor: pointer;
@@ -60,7 +61,7 @@ nav {
 }
 
 .contact-button {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-poppins);
   background-color: var(--x03);
   color: var(--white);
   padding: 0.75rem 1.5rem;
@@ -76,4 +77,3 @@ nav {
     margin-top: 1rem;
   }
 }
-
