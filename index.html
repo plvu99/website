@@ -306,14 +306,13 @@
     .who-label::before {
       content: '';
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); /* 👈 Centers it on the text */
+      top: 0.25rem; /* slight vertical shift down */
+      left: -1.5rem; /* left of the text */
       width: 70px;
       height: 70px;
-      background-color: #f39c12;
-      -webkit-mask: url("Images/Curve.svg") no-repeat center;
-      mask: url("Images/Curve.svg") no-repeat center;
+      background-color: var(--02);
+      -webkit-mask: url("Images/curve.svg") no-repeat center;
+      mask: url("Images/curve.svg") no-repeat center;
       -webkit-mask-size: contain;
       mask-size: contain;
       z-index: -1;
@@ -444,6 +443,12 @@
       
       .who-content {
         flex: 1 1 100%;
+      }
+
+      .who-label::before {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
       
       .who-title {
