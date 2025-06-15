@@ -18,12 +18,8 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--color-01);
-  color: var(--color-04);
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
+  background-color: red;
+  color: red;
 }
 
 /* Header */
