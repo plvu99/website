@@ -11,15 +11,14 @@
 
   <style>
     :root {
-      --black: #000000;
-      --cloud: #c4c4c4;
-      --paragraph-color: #6e6e6e;
-      --primary: #757575;
-      --white: #ffffff;
-      --white-smoke: #f3f3f3;
-      --x02: #eae4d5;
-      --x03: #b6b09f;
-      --x04: #090c08;
+      --01: #f2f2f2;
+      --02: #eae4d5;
+      --03: #b6b09f;
+      --04: #090c08;
+      --05: #ffffff;
+      --06: #117a65;
+      --07: #f39c12;
+      --08: #757575;
 
       --font-family-playfair_display: 'Playfair Display', serif;
       --font-family-poppins: 'Poppins', sans-serif;
@@ -28,12 +27,12 @@
     body {
       margin: 0;
       font-family: var(--font-family-poppins);
-      background-color: var(--white);
+      background-color: var(--05);
     }
 
-    /* Header Styles */
+    /* Header */
     .site-header {
-      background-color: var(--x04);
+      background-color: var(--04);
       padding: 0; /* remove top/bottom padding */
       width: 100%;
       height: 80px; /* set fixed height for alignment */
@@ -52,13 +51,12 @@
       padding: 0 2rem; /* keep left-right spacing */
     }
 
-
     .logo {
       font-family: 'Playfair Display', serif;
       font-size: 24px;
       font-weight: 700;
-      color: var(--x02);
-      text-shadow: 2px 0px 4px var(--x03);
+      color: var(--02);
+      text-shadow: 2px 0px 4px var(--03);
     }
 
     .nav-menu {
@@ -71,7 +69,7 @@
     .nav-menu a {
       display: flex;          
       align-items: center;
-      color: var(--x02);
+      color: var(--02);
       text-decoration: none;
       font-weight: 600;
       font-family: 'Poppins', sans-serif;
@@ -80,15 +78,15 @@
       line-height: 1;
     }
     .nav-menu a:hover {
-      color: var(--white-smoke);
+      color: var(--01);
     }
 
     .btn-contact {
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: var(--x03);
-      color: var(--white);
+      background-color: var(--03);
+      color: var(--05);
       padding: 0.75rem 1.5rem;
       font-size: 18px;
       font-weight: 600;
@@ -107,16 +105,30 @@
     @media (max-width: 768px) {
       .nav-container {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem;
       }
-
+    
       .nav-menu {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        margin-top: 1rem;
+        align-items: center;
+        gap: 0.75rem;
+        margin-top: 0.5rem;
+      }
+    
+      .nav-menu a {
+        font-size: 18px;
+      }
+    
+      .btn-contact {
+        margin-top: 0.75rem;
+        font-size: 18px;
+        padding: 0.75rem 1.75rem;
+        width: auto;
       }
     }
+
   </style>
 </head>
 
