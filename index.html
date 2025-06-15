@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>PHUONG VU</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;900&display=swap" rel="stylesheet" />
-
-<---------->
   
   <style>
     *, *::before, *::after {
@@ -262,6 +260,63 @@
       background-color: var(--03);
     }
 
+    .who-section {
+      background-color: var(--05);
+      color: var(--04);
+      padding: 4rem 2rem;
+    }
+    
+    .who-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: center;
+      max-width: 1200px;
+      margin: auto;
+      gap: 2rem;
+    }
+    
+    .who-image img {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 12px;
+    }
+    
+    .who-content {
+      flex: 1 1 500px;
+    }
+    
+    .who-label {
+      font-family: var(--font-poppins);
+      font-weight: 600;
+      color: var(--08);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      position: relative;
+    }
+    
+    .who-title {
+      font-family: var(--font-poppins);
+      font-weight: 900;
+      font-size: 1.75rem;
+      color: var(--06);
+      margin-bottom: 1.5rem;
+      line-height: 1.4;
+    }
+    
+    .skills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .skills-row img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
     @media (max-width: 768px) {
       .nav-container {
         flex-direction: column;
@@ -355,11 +410,22 @@
         margin-top: 1.5rem;
         align-self: flex-start; /* Or center if preferred */
       }
+      .who-grid {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .who-content {
+        flex: 1 1 100%;
+      }
+      
+      .who-title {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
-
-<---------->
   
 <body>
   <header class="site-header">
@@ -419,9 +485,36 @@
         </div>
       </div>
     </section>
-  </main>
 
-<---------->
+    <section class="who-section">
+      <div class="who-grid">
+        <div class="who-image">
+          <img src="Images/Profile.png" alt="Phuong Vu">
+        </div>
+        <div class="who-content">
+          <div class="who-label">WHO I AM</div>
+          <h2 class="who-title">
+            PROBLEM SOLVER WITH<br>
+            BACKGROUND IN ANALYTICS,<br>
+            BUSINESS, AND TECHNOLOGY
+          </h2>
+          <p>I’m passionate about turning complex data into clear, meaningful insights that help teams make smarter decisions.</p>
+          <p>Over the past few years, I’ve worked in fast-paced companies across industries like logistics, blockchain, and HR — where I’ve learned to solve problems, communicate across cultures, and collaborate with global teams.</p>
+          <p>With a strong foundation in SQL, Python, and data visualization, I enjoy connecting the dots between data and business goals, and I’m excited to support cross-functional teams in making data-driven decisions that truly move the needle.</p>
+    
+          <div class="skills-row">
+            <img src="Images/Excel.png" alt="Excel">
+            <img src="Images/SQL.png" alt="SQL">
+            <img src="Images/Python.png" alt="Python">
+            <img src="Images/PPT.png" alt="PowerPoint">
+            <img src="Images/Tableau.png" alt="Tableau">
+            <img src="Images/PowerBI.png" alt="Power BI">
+            <img src="Images/Looker.png" alt="Looker">
+          </div>
+        </div>
+      </div>
+    </section>   
+  </main>
   
   <!-- Toggle menu visibility and icon -->
   <script>
