@@ -1,3 +1,4 @@
+
 :root {
   --black: #000000;
   --cloud: #c4c4c4;
@@ -14,7 +15,7 @@
 
 body {
   margin: 0;
-  font-family: var(--font-poppins);
+  font-family: 'Poppins', sans-serif;
   background-color: var(--white);
 }
 
@@ -29,7 +30,7 @@ header {
 }
 
 .logo {
-  font-family: var(--font-playfair);
+  font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   font-weight: 700;
   text-shadow: 3px 0px 4px var(--x03);
@@ -42,6 +43,7 @@ nav {
 }
 
 .nav-item {
+  font-family: 'Poppins', sans-serif;
   position: relative;
   font-weight: 600;
   cursor: pointer;
@@ -58,6 +60,7 @@ nav {
 }
 
 .contact-button {
+  font-family: 'Poppins', sans-serif;
   background-color: var(--x03);
   color: var(--white);
   padding: 0.75rem 1.5rem;
