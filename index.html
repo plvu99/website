@@ -139,6 +139,95 @@
         font-size: 16px;
       }
     }
+
+    /* Intro Section */
+    .intro-section {
+      background-color: var(--04);
+      padding: 4rem 2rem;
+      color: var(--02);
+    }
+
+    .intro-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+      gap: 2rem;
+    }
+
+    .intro-content {
+      flex: 1 1 500px;
+    }
+
+    .intro-welcome {
+      font-family: var(--font-family-playfair_display);
+      font-style: italic;
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .intro-name {
+      font-family: var(--font-family-poppins);
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1.2;
+      color: var(--05);
+      margin-bottom: 2rem;
+    }
+
+    .intro-bullets {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      font-size: 1rem;
+      color: var(--white);
+    }
+
+    .intro-bullets li {
+      margin-bottom: 1rem;
+    }
+
+    .intro-image {
+      flex: 1 1 400px;
+      text-align: center;
+      position: relative;
+    }
+
+    .intro-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .intro-quote {
+      font-family: var(--font-family-playfair_display);
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--02);
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .intro-grid {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .intro-content, .intro-image {
+        flex: 1 1 100%;
+      }
+
+      .intro-name {
+        font-size: 2.25rem;
+      }
+
+      .intro-bullets {
+        padding-left: 1rem;
+        text-align: left;
+      }
+    }
   </style>
 </head>
 
@@ -155,7 +244,25 @@
       </nav>
     </div>
   </header>
+
   <main style="padding-top: 100px;">
+    <section class="intro-section">
+      <div class="intro-grid">
+        <div class="intro-content">
+          <p class="intro-welcome">Welcome, nice to meet you!</p>
+          <h1 class="intro-name">MY NAME IS<br>PHUONG VU</h1>
+          <ul class="intro-bullets">
+            <li>I bring strong global experience in analytics, business, and technology.</li>
+            <li>I’m known for working effectively across functions and cultures.</li>
+            <li>I’m driven by data and insights that lead to smarter business decisions.</li>
+          </ul>
+        </div>
+        <div class="intro-image">
+          <img src="Images/Profile.png" alt="Phuong Vu" />
+          <p class="intro-quote">Progress, not perfection<br><span>Trust the process</span></p>
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>
