@@ -12,14 +12,14 @@
     }
 
     :root {
-      --01: #f2f2f2;     /* light gray */
-      --02: #eae4d5;     /* beige */
-      --03: #b6b09f;     /* taupe */
-      --04: #090c08;     /* black */
-      --05: #ffffff;     /* white */
-      --06: #117a65;     /* teal green */
-      --07: #f39c12;     /* orange gold */
-      --08: #757575;     /* medium gray */
+      --01: #f2f2f2;
+      --02: #eae4d5;
+      --03: #b6b09f;
+      --04: #090c08;
+      --05: #ffffff;
+      --06: #117a65;
+      --07: #f39c12;
+      --08: #757575;
 
       --font-playfair: 'Playfair Display', serif;
       --font-poppins: 'Poppins', sans-serif;
@@ -52,6 +52,7 @@
       max-width: 1200px;
       width: 100%;
       padding: 0 2rem;
+      position: relative;
     }
 
     .logo {
@@ -77,13 +78,13 @@
     }
 
     .nav-menu a:hover {
-      transform: scale(1.05); /* slight grow */
-      text-shadow: 0 0 6px var(--02); /* soft white glow */
+      transform: scale(1.05);
+      text-shadow: 0 0 6px var(--02);
     }
 
     .btn-contact {
-      background-color: var(--03); /* taupe */
-      color: var(--05);            /* white */
+      background-color: var(--03);
+      color: var(--05);
       padding: 0.6rem 1.2rem;
       font-size: 16px;
       font-weight: 600;
@@ -94,12 +95,22 @@
     }
 
     .btn-contact:hover {
-      background-color: var(--03); /* teal */
+      background-color: var(--03);
       transform: scale(1.05);
     }
 
     main {
       padding-top: 100px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: var(--05);
+      cursor: pointer;
+      background: none;
+      border: none;
+      z-index: 1001;
     }
 
     .intro-section {
@@ -119,6 +130,7 @@
 
     .intro-content {
       flex: 1 1 500px;
+      margin-top: -20px;
     }
 
     .intro-welcome {
@@ -126,14 +138,14 @@
       font-style: italic;
       font-size: 1.5rem;
       margin-bottom: 1rem;
-      color: var(--02); /* golden intro message */
+      color: var(--02);
     }
 
     .intro-name {
       font-family: var(--font-poppins);
       font-size: 3rem;
       font-weight: 900;
-      color: var(--05); /* white heading */
+      color: var(--05);
       margin-bottom: 2rem;
       line-height: 1.2;
     }
@@ -148,12 +160,12 @@
       padding-left: 2rem;
       margin-bottom: 1rem;
       font-size: 0.875rem;
-      color: var(--01); /* light text */
+      color: var(--01);
     }
 
     .intro-bullets li::before {
       content: "";
-      background-image: url("Images/Bullet point.png"); /* ← replace with correct path */
+      background-image: url("Images/Bullet point.png");
       background-size: contain;
       background-repeat: no-repeat;
       width: 18px;
@@ -180,7 +192,7 @@
       font-family: var(--font-playfair);
       font-style: italic;
       font-size: 1.2rem;
-      color: var(--02); /* beige quote */
+      color: var(--02);
       margin-top: 1rem;
     }
 
@@ -191,32 +203,55 @@
         gap: 1rem;
         padding: 1rem;
       }
-  
+
       .logo {
         font-size: 24px;
         margin-bottom: 0.5rem;
       }
-    
+
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 2rem;
+        top: 1rem;
+      }
+
       .nav-menu {
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 0.75rem;
         width: 100%;
+        background-color: var(--04);
+        padding: 0;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: all 0.3s ease;
       }
-    
+
+      .nav-menu.show {
+        max-height: 500px;
+        padding: 1rem 0;
+        opacity: 1;
+      }
+
       .nav-menu a {
         width: 100%;
         text-align: center;
+        padding: 0.75rem 0;
       }
-    
+
       .btn-contact {
         display: block;
         margin: 0 auto;
         padding: 0.6rem 1.5rem;
         font-size: 16px;
       }
-  
+
       .intro-grid {
         flex-direction: column;
         text-align: center;
@@ -242,7 +277,11 @@
   <header class="site-header">
     <div class="nav-container">
       <div class="logo">PHUONG VU</div>
-      <nav class="nav-menu">
+
+      <!-- ✅ Hamburger icon toggles open/close -->
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+
+      <nav class="nav-menu" id="nav-menu">
         <a href="home">HOME</a>
         <a href="story">MY STORY</a>
         <a href="experience">MY EXPERIENCE</a>
@@ -271,5 +310,18 @@
       </div>
     </section>
   </main>
+
+  <!-- ✅ JS: Toggle menu visibility and icon -->
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    function toggleMenu() {
+      navMenu.classList.toggle('show');
+      toggleBtn.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
+    }
+
+    toggleBtn.addEventListener('click', toggleMenu);
+  </script>
 </body>
 </html>
