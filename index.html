@@ -33,6 +33,7 @@
       background-color: var(--05);
     }
 
+    /* Header (default: not fixed on mobile) */
     .site-header {
       background-color: var(--04);
       width: 100%;
@@ -42,9 +43,19 @@
       height: auto;
       padding: 1rem 0;
       z-index: 1000;
-      position: fixed;
-      top: 0;
-      left: 0;
+    }
+
+    /* Freeze header only on tablet & desktop */
+    @media (min-width: 769px) {
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+      main {
+        padding-top: 100px;
+      }
     }
 
     .nav-container {
@@ -81,10 +92,8 @@
       color: var(--02);
       text-decoration: none;
       font-weight: 600;
-      font-family: var(--font-family-poppins);
       font-size: 16px;
       transition: color 0.3s ease;
-      line-height: 1;
     }
 
     .nav-menu a:hover {
@@ -108,7 +117,7 @@
       transform: scale(1.05);
     }
 
-    /* Mobile Adjustments */
+    /* Responsive adjustments for mobile */
     @media (max-width: 768px) {
       .nav-container {
         flex-direction: column;
@@ -137,6 +146,10 @@
         width: 100%;
         padding: 0.75rem 0;
         font-size: 16px;
+      }
+
+      main {
+        padding-top: 0;
       }
     }
 
@@ -178,14 +191,28 @@
     }
 
     .intro-bullets {
-      list-style-type: disc;
-      padding-left: 1.5rem;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .intro-bullets li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
       font-size: 1rem;
       color: var(--white);
     }
 
-    .intro-bullets li {
-      margin-bottom: 1rem;
+    .intro-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.2rem;
+      width: 18px;
+      height: 18px;
+      background-image: url("Images/Bullet point.png"); /* Update if needed */
+      background-size: contain;
+      background-repeat: no-repeat;
     }
 
     .intro-image {
@@ -245,7 +272,7 @@
     </div>
   </header>
 
-  <main style="padding-top: 100px;">
+  <main>
     <section class="intro-section">
       <div class="intro-grid">
         <div class="intro-content">
