@@ -6,7 +6,7 @@
   <title>PHUONG VU</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;900&display=swap" rel="stylesheet" />
 
-----------
+<---------->
   
   <style>
     *, *::before, *::after {
@@ -211,6 +211,10 @@
     }
     
     .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 340px; /* optional fixed height for alignment */
       padding: 2rem;
       border-radius: 8px;
       font-size: 0.95rem;
@@ -233,9 +237,13 @@
     }
     
     .card .arrow {
-      margin-top: 2rem;
-      font-size: 1.5rem;
-      color: var(--04);
+      margin-top: auto;
+      width: 24px;
+      height: 24px;
+      background-image: url("Images/Arrow.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left center;
     }
     
     .card:hover {
@@ -332,6 +340,7 @@
       }
     
       .card {
+        min-height: auto;
         padding: 1.5rem;
         font-size: 0.9rem;
       }
@@ -341,13 +350,16 @@
       }
     
       .card .arrow {
-        font-size: 1.3rem;
+        width: 20px;
+        height: 20px;
+        margin-top: 1.5rem;
+        align-self: flex-start; /* Or center if preferred */
       }
     }
   </style>
 </head>
 
-----------
+<---------->
   
 <body>
   <header class="site-header">
@@ -391,23 +403,25 @@
         <div class="card card-story">
           <h2>MY STORY</h2>
           <p>From a turning point that shaped who I am today to the adventures, movement, and meaningful experiences I’ve embraced along the way.</p>
-          <div class="arrow">⟶</div>
+          <div class="arrow"></div>
         </div>
+        
         <div class="card card-experience">
           <h2>MY EXPERIENCE</h2>
           <p>My journey from where I started and what I learned to how I’ve grown. You’ll find key milestones, achievements, and numbers showing the impact I’ve made.</p>
-          <div class="arrow">⟶</div>
+          <div class="arrow"></div>
         </div>
+        
         <div class="card card-work">
           <h2>MY WORK</h2>
           <p>A collection of my hands-on projects and storytelling presentations. Click through to see how I turn data into solutions through analysis, design, and insight.</p>
-          <div class="arrow">⟶</div>
+          <div class="arrow"></div>
         </div>
       </div>
     </section>
   </main>
 
-----------
+<---------->
   
   <!-- Toggle menu visibility and icon -->
   <script>
