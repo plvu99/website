@@ -104,8 +104,13 @@
 
     @media (max-width: 768px) {
       .site-header {
-        padding: 0;                     /* remove default spacing */
-        background-color: var(--04);  /* force black to wrap */
+        background-color: var(--04);
+        width: 100%;
+        min-height: 70px;                  /* ensures space for header content */
+        padding: env(safe-area-inset-top) 1.5rem 1rem 1.5rem;  /* safe area padding */
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
       }
     
       .nav-container {
