@@ -6,6 +6,8 @@
   <title>PHUONG VU</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;900&display=swap" rel="stylesheet" />
 
+----------
+  
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -78,7 +80,7 @@
     }
 
     .nav-menu a:hover {
-      transform: scale(1.02);
+      transform: scale(1.05);
       text-shadow: 0 0 6px var(--02);
     }
 
@@ -96,7 +98,7 @@
 
     .btn-contact:hover {
       background-color: var(--03);
-      transform: scale(1.02);
+      transform: scale(1.05);
     }
 
     main {
@@ -195,6 +197,63 @@
       margin-top: 1rem;
     }
 
+    .cards-section {
+      background-color: var(--04);
+      padding: 4rem 2rem;
+    }
+    
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    
+    .card {
+      padding: 2rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+    
+    .card h2 {
+      font-family: var(--font-poppins);
+      font-size: 1.25rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      color: var(--04);
+    }
+    
+    .card p {
+      font-family: var(--font-poppins);
+      line-height: 1.6;
+      color: var(--04);
+    }
+    
+    .card .arrow {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      color: var(--04);
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .card-story {
+      background-color: var(--02);
+    }
+    
+    .card-experience {
+      background-color: var(--05);
+    }
+    
+    .card-work {
+      background-color: var(--03);
+    }
+
     @media (max-width: 768px) {
       .nav-container {
         flex-direction: column;
@@ -268,16 +327,34 @@
         padding-left: 1.5rem;
         text-align: left;
       }
+      .cards-section {
+        padding: 2rem 1rem;
+      }
+    
+      .card {
+        padding: 1.5rem;
+        font-size: 0.9rem;
+      }
+    
+      .card h2 {
+        font-size: 1.1rem;
+      }
+    
+      .card .arrow {
+        font-size: 1.3rem;
+      }
     }
   </style>
 </head>
 
+----------
+  
 <body>
   <header class="site-header">
     <div class="nav-container">
       <div class="logo">PHUONG VU</div>
 
-      <!-- ✅ Hamburger icon toggles open/close -->
+      <!-- Hamburger icon toggles open/close -->
       <button class="menu-toggle" id="menu-toggle">☰</button>
 
       <nav class="nav-menu" id="nav-menu">
@@ -308,9 +385,31 @@
         </div>
       </div>
     </section>
+
+    <section class="cards-section">
+      <div class="cards-grid">
+        <div class="card card-story">
+          <h2>MY STORY</h2>
+          <p>From a turning point that shaped who I am today to the adventures, movement, and meaningful experiences I’ve embraced along the way.</p>
+          <div class="arrow">⟶</div>
+        </div>
+        <div class="card card-experience">
+          <h2>MY EXPERIENCE</h2>
+          <p>My journey from where I started and what I learned to how I’ve grown. You’ll find key milestones, achievements, and numbers showing the impact I’ve made.</p>
+          <div class="arrow">⟶</div>
+        </div>
+        <div class="card card-work">
+          <h2>MY WORK</h2>
+          <p>A collection of my hands-on projects and storytelling presentations. Click through to see how I turn data into solutions through analysis, design, and insight.</p>
+          <div class="arrow">⟶</div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- ✅ JS: Toggle menu visibility and icon -->
+----------
+  
+  <!-- Toggle menu visibility and icon -->
   <script>
     const toggleBtn = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
