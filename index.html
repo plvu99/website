@@ -210,7 +210,9 @@
     .card {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start; /* Align all from top */
+      align-items: flex-start; /* Align children left */
+      height: 100%; /* Ensure equal height for alignment */
       padding: 2rem;
       border-radius: 8px;
       position: relative;
@@ -360,7 +362,9 @@
       background-color: var(--03);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start; /* Align all from top */
+      align-items: flex-start; /* Align children left */
+      height: 100%; /* Ensure equal height for alignment */
     }
 
     .icon img {
