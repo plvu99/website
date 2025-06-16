@@ -57,7 +57,7 @@
     
     .logo {
       font-family: var(--font-playfair);
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 700;
       color: var(--02);
       text-shadow: 2px 0px 4px var(--03);
@@ -73,7 +73,7 @@
       color: var(--02);
       text-decoration: none;
       font-weight: 600;
-      font-size: 16px;
+      font-size: 18px;
       transition: transform 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
     }
 
@@ -86,7 +86,7 @@
       background-color: var(--03);
       color: var(--05);
       padding: 0.75rem 1.25rem;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 600;
       border-radius: 10px;
       text-align: center;
@@ -136,14 +136,14 @@
     .intro-welcome {
       font-family: var(--font-playfair);
       font-style: italic;
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       margin-bottom: 1rem;
       color: var(--02);
     }
 
     .intro-name {
       font-family: var(--font-poppins);
-      font-size: 3rem;
+      font-size: 3.5rem;
       font-weight: 900;
       color: var(--05);
       margin-bottom: 2rem;
@@ -192,7 +192,7 @@
     .intro-quote {
       font-family: var(--font-playfair);
       font-style: italic;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       color: var(--02);
       margin-top: 1rem;
     }
@@ -224,7 +224,7 @@
     
     .card h2 {
       font-family: var(--font-poppins);
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       font-weight: 900;
       color: var(--04);
     }
@@ -297,7 +297,7 @@
     .who-title {
       font-family: var(--font-poppins);
       font-weight: 900;
-      font-size: 1.75rem;
+      font-size: 2rem;
       color: var(--06);
       line-height: 1.4;
     }
@@ -349,7 +349,7 @@
     .values-title {
       font-family: var(--font-poppins);
       font-weight: 900;
-      font-size: 1.75rem;
+      font-size: 2rem;
       color: var(--06);
       line-height: 1.4;
       margin-bottom: 2.25rem;
@@ -381,7 +381,7 @@
     
     .value-card h3 {
       font-family: var(--font-poppins);
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       font-weight: 900;
       color: var(--05)
     }
@@ -412,7 +412,7 @@
       color: var(--05);
       padding: 1rem 1.5rem;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 1.125rem;
       border-radius: 10px;
       text-align: center;
       text-decoration: none;
@@ -473,10 +473,6 @@
         text-align: center;
         padding: 0.75rem 0;
       }
-
-      .intro-section {
-        padding: 2rem 1rem;
-      }
       
       .intro-grid {
         flex-direction: column;
@@ -487,22 +483,22 @@
         flex: 1 1 100%;
       }
 
+      .intro-welcome {
+        font-size: 1.5rem;
+      }
+      
       .intro-name {
         font-size: 2.25rem;
       }
 
-      .intro-bullets {
+      .intro-bullets li, .card p, .who-content p, .value-card p {
+        font-size: 0.875rem;
         padding-left: 1.5rem;
         text-align: left;
       }
-      
-      .card {
-        padding: 1.75rem;
-        font-size: 1rem;
-      }
     
-      .card h2 {
-        font-size: 1.1rem;
+      .card h2, .value-card h3 {
+        font-size: 1.125rem;
       }
     
       .card .arrow {
@@ -534,15 +530,6 @@
       .values-title {
         font-size: 1.5rem;
         text-align: center;
-      }
-    
-      .value-card {
-        padding: 1.75rem;
-        font-size: 1rem;
-      }
-    
-      .value-card h3 {
-        font-size: 1.1rem;
       }
     }
   </style>
