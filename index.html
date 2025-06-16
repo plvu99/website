@@ -427,6 +427,112 @@
       transform: scale(1.05);
     }
 
+    .projects-section {
+      background-color: var(--05);
+      padding: 6rem 2rem;
+    }
+    
+    .projects-header {
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+    
+    .projects-label {
+      font-family: var(--font-poppins);
+      font-weight: 600;
+      color: var(--08);
+      text-transform: uppercase;
+      font-size: 1.125rem;
+    }
+    
+    .projects-title {
+      font-family: var(--font-poppins);
+      font-size: 2rem;
+      color: var(--06);
+      font-weight: 900;
+      line-height: 1.4;
+      margin-bottom: 2.5rem;      
+    }
+    
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .project-card {
+      background-color: #ccc;
+      background-size: cover;
+      background-position: center;
+      padding: 2rem;
+      color: var(--04);
+      text-decoration: none;
+      border-radius: 8px;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: transform 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .project-sub {
+      font-size: 0.875rem;
+      color: var(--08);
+    }
+    
+    .project-title {
+      font-size: 1.125rem;
+      font-weight: 900;
+      margin-top: 0.25rem;
+    }
+    
+    .explore-more {
+      align-self: center;
+      justify-self: center;
+      font-style: italic;
+      font-family: var(--font-playfair);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .projects-footer {
+      font-family: var(--font-playfair);
+      font-style: italic;
+      color: var(--06);
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 1.125rem;
+    }
+    
+    .project-slider {
+      margin-top: 2rem;
+      overflow: hidden;
+    }
+    
+    .slider-track {
+      display: flex;
+      gap: 1rem;
+      animation: slide 25s linear infinite;
+    }
+    
+    .slider-track img {
+      height: 100px;
+      width: auto;
+      flex-shrink: 0;
+    }
+    
+    @keyframes slide {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
 /* Responsive for mobile */
     @media (max-width: 768px) {
       .nav-container {
@@ -665,6 +771,74 @@
         </div>
       </div>
     </section>
+
+    <section class="projects-section">
+      <div class="section-container">
+        <div class="projects-header">
+          <p class="projects-label">WHAT I’VE ACCOMPLISHED</p>
+          <h2 class="projects-title">PROJECTS & PRESENTATIONS I’VE BUILT INDIVIDUALLY AND TOGETHER</h2>
+        </div>
+    
+        <div class="projects-grid">
+          <a href="https://github.com/plvu99/Analysis-of-Starbucks-Promotional-Campaign-and-Customer-Segmentation" class="project-card" style="background-image: url('Images/Projects/Campaign Analysis & Segmentation.webp');">
+            <p class="project-sub">Retail</p>
+            <h3 class="project-title">CAMPAIGN ANALYSIS & SEGMENTATION FOR MARKET STRATEGY</h3>
+          </a>
+    
+          <a href="https://github.com/plvu99/Clustering-and-Trend-Analysis-for-Ride-Sharing-Demand-and-Behavior" class="project-card" style="background-image: url('Images/Projects/Ride Sharing.jpg');">
+            <p class="project-sub">Logistics & Transportation</p>
+            <h3 class="project-title">CLUSTERING & TREND ANALYSIS FOR RIDE-SHARING DEMAND AND BEHAVIOR</h3>
+          </a>
+    
+          <a href="https://github.com/plvu99/SQL-Driven-Analysis-of-Sales-Performance-and-Customer-Behavior" class="project-card" style="background-image: url('Images/Projects/Sales Performance.webp');">
+            <p class="project-sub">Marketing & Sales</p>
+            <h3 class="project-title">ANALYSIS OF SALES PERFORMANCE AND CUSTOMER BEHAVIOR</h3>
+          </a>
+    
+          <a href="https://github.com/plvu99/Impact-of-Salary-Hikes-on-Employee-Attrition" class="project-card" style="background-image: url('Images/Projects/Salary Hikes.avif');">
+            <p class="project-sub">Human Resources</p>
+            <h3 class="project-title">IMPACT OF SALARY HIKES ON EMPLOYEE ATTRITION</h3>
+          </a>
+    
+          <a href="https://github.com/plvu99/Car-Insurance-Loss-Analytics" class="project-card" style="background-image: url('Images/Projects/Car Insurance.avif');">
+            <p class="project-sub">Insurance</p>
+            <h3 class="project-title">CAR INSURANCE LOSS ANALYTICS</h3>
+          </a>
+    
+          <a href="https://github.com/plvu99/Home-Team-Bias-in-MLB-Umpiring" class="project-card" style="background-image: url('Images/Projects/MLB Games.webp');">
+            <p class="project-sub">Sports & Entertainment</p>
+            <h3 class="project-title">HOME-TEAM BIAS IN MLB UMPIRING</h3>
+          </a>
+    
+          <a href="https://github.com/yourgithub/project7" class="project-card" style="background-image: url('Images/Projects/Sports Performance.jpeg');">
+            <p class="project-sub">Sports & Entertainment</p>
+            <h3 class="project-title">ATHLETE VALUATION FOR PERFORMANCE & BRAND ALIGNMENT</h3>
+          </a>
+    
+          <div class="explore-more">
+            <span>EXPLORE MORE</span>
+            <img src="Images/Icons/Arrow.png" alt="arrow" />
+          </div>
+        </div>
+    
+        <p class="projects-footer">Beyond that, I enjoy the journey and have built meaningful connections with people from around the globe.</p>
+    
+        <div class="project-slider">
+          <div class="slider-track">
+            <img src="Images/Slider/Abivin Workshop.jpg" alt="Abivin Workshop">
+            <img src="Images/Slider/Payboy in Hanoi.JPG" alt="Payboy in Hanoi">
+            <img src="Images/Slider/Night Outing.JPG" alt="Night Outing">            
+            <img src="Images/Slider/Study Group.JPG" alt="Study Group">
+            <img src="Images/Slider/Beach Outing.JPEG" alt="Beach Outing">
+            <img src="Images/Slider/Career Spark.JPG" alt="Career Spark">
+            <img src="Images/Slider/BASA Photoshoot.JPG" alt="BASA Photoshoot">            
+            <img src="Images/Slider/BASA Dinner.HEIC" alt="BASA Dinner">
+            <img src="Images/Slider/Bowling.JPG" alt="Bowling">
+            <img src="Images/Slider/Case Competition.JPG" alt="Case Competition">
+          </div>
+        </div>
+      </div>
+    </section>    
   </main>
   
   <!-- Toggle menu visibility and icon -->
