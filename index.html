@@ -211,7 +211,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 1.5rem;
+      padding: 2rem;
       border-radius: 8px;
       position: relative;
       transition: transform 0.3s ease;
@@ -222,7 +222,6 @@
       font-size: 1.25rem;
       font-weight: 900;
       color: var(--04);
-      margin-bottom: 0.75rem;
     }
     
     .card p {
@@ -230,7 +229,6 @@
       font-size: 0.875rem;
       line-height: 1.6;
       color: var(--04);
-      margin-bottom: 0.75rem;
     }
     
     .card .arrow {
@@ -288,6 +286,7 @@
       font-weight: 600;
       color: var(--08);
       text-transform: uppercase;
+      margin-bottom: 0.25rem
     }
    
     .who-title {
@@ -296,6 +295,7 @@
       font-size: 1.75rem;
       color: var(--06);
       line-height: 1.4;
+      margin-bottom: 1.5rem
     }
     
     .who-content {
@@ -305,6 +305,7 @@
     .who-content p {
       font-size: 0.875rem;
       line-height: 1.6;
+      margin-bottom: 1.5rem
     }
     
     .skills-row {
@@ -328,6 +329,13 @@
       max-width: 1200px;
       margin: auto;
     }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      text-align: left;
+    }
     
     .values-label {
       display: inline-block;
@@ -337,6 +345,7 @@
       font-weight: 600;
       color: var(--08);
       text-transform: uppercase;
+      margin-bottom: 0.25rem
     }
 
     .values-title {
@@ -345,13 +354,7 @@
       font-size: 1.75rem;
       color: var(--06);
       line-height: 1.4;
-    }
-    
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      text-align: left;
+      margin-bottom: 1.5rem
     }
     
     .value-card {
@@ -405,6 +408,7 @@
       text-decoration: none;
       text-align: center;
       transition: all 0.2s ease-in-out;
+      margin-top: 1.5rem      
     }
     
     .btn-learn-more:hover {
