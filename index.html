@@ -55,7 +55,7 @@
       position: relative;
     }
     
-    .logo {
+    .logo, .footer-brand h2 {
       font-family: var(--font-playfair);
       font-size: 30px;
       font-weight: 700;
@@ -221,7 +221,7 @@
       transition: transform 0.3s ease;
     }
 
-    .card h2, .value-card h3, .project-title, .impact-card h3 {
+    .card h2, .value-card h3, .project-title, .impact-card h3, .footer-contact h3, .footer-nav h3 {
       font-family: var(--font-poppins);
       font-size: 1.5rem;
       font-weight: 900;
@@ -465,6 +465,16 @@
       border-radius: 10px;
       flex-shrink: 0;
     }
+
+    .footer-container {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5rem;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
     
     @keyframes slide {
       from { transform: translateX(0); }
@@ -525,7 +535,7 @@
 
     .contact-section {
       background-color: var(--06);
-      padding: 3rem 2rem 6rem;
+      padding: 4rem 2rem 6rem;
       text-align: center;
     } 
 
@@ -568,6 +578,39 @@
       outline: none;
       box-shadow: none;
     }
+
+    .site-footer {
+      background-color: var(--04);
+      color: var(--05);
+      padding: 6rem 2rem;
+    }
+
+    .footer-contact h3, .footer-nav h3 {
+      color: var(--02);
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-contact ul,
+    .footer-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .footer-contact li,
+    .footer-nav li {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--05);
+    }
+    
+    .footer-contact a,
+    .footer-nav a {
+      color: var(--05);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    
 /* Responsive for mobile */
     @media (max-width: 768px) {
       .nav-container {
@@ -934,6 +977,33 @@
   </div>
 </section>
 
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>PHUONG VU</h2>
+    </div>
+
+    <div class="footer-contact">
+      <h3>CONTACT</h3>
+      <ul>
+        <li>📞 213-588-5734</li>
+        <li>✉️ plvu@marshall.usc.edu</li>
+        <li>📍 Los Angeles, CA, United States</li>
+        <li><a href="https://www.linkedin.com/in/phuong-vu-lan/" target="_blank">LinkedIn</a> | <a href="https://github.com/plvu99" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-nav">
+      <h3>NAVIGATION</h3>
+      <ul>
+        <li><a href="home">› Home</a></li>
+        <li><a href="story">› My Story</a></li>
+        <li><a href="experience">› My Experience</a></li>
+        <li><a href="work">› My Work</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
 </main>
   
   <!-- Toggle menu visibility and icon -->
