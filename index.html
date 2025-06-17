@@ -302,7 +302,7 @@
     }
     
     .who-content, .impact-left {
-      flex: 1 1 450px;
+      flex: 1 1 350px;
     }
 
     .who-content p, .impact-text {
@@ -476,7 +476,7 @@
     }
 
     .impact-right {
-      flex: 1 1 600px;
+      flex: 1 1 350px;
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
@@ -503,10 +503,17 @@
       background-color: var(--08);
     } 
 
+    .impact-card h3 {
+      position: relative;
+    }
+    
     .impact-card h3::after {
       content: '';
+      position: absolute;
+      bottom: -0.25rem;
       display: block;
-      width: 100px;
+      left: 0;
+      width: 50%;
       height: 4px;
       background-color: var(--02);
       margin-top: 0.5rem;
@@ -625,7 +632,7 @@
         width: 100%;
       }
 
-      .intro-bullets li, .card p, .who-content p, .value-card p, .project-sub, .impact-card p {
+      .intro-bullets li, .card p, .who-content p, .value-card p, .project-sub, .impact-text, .impact-card p {
         font-size: 0.875rem;
       }
 
