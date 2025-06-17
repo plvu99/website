@@ -292,13 +292,13 @@
       margin-bottom: 1rem;
     }
    
-    .who-title, .values-title, .projects-title, .impact-title {
+    .who-title, .values-title, .projects-title, .impact-title, .contact-title {
       font-family: var(--font-poppins);
       font-weight: 900;
       font-size: 1.75rem;
       color: var(--06);
       line-height: 1.4;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.375rem;
     }
       
     .who-content, .impact-left {
@@ -337,11 +337,11 @@
     }
 
     .values-title, .projects-title {
-      margin-bottom: 2.375rem;
+      margin-bottom: 2.125rem;
     }
     
-    .values-grid {
-      margin-bottom: 4.25rem;
+    .values-grid, .projects-grid {
+      margin-bottom: 4rem;
     }
     
     .value-card {
@@ -376,7 +376,7 @@
       text-align: center;
     }
     
-    .btn-learn-more, .btn-explore-more {
+    .btn-learn-more, .btn-explore-more, .contact-submit {
       background-color: var(--03);
       color: var(--05);
       padding: 1rem 1.5rem;
@@ -388,15 +388,11 @@
       transition: all 0.2s ease-in-out;
     }
     
-    .btn-learn-more:hover, .btn-explore-more:hover {
+    .btn-learn-more:hover, .btn-explore-more:hover, .contact-submit:hover {
       background-color: var(--06);
       transform: scale(1.05);
     }
 
-    .projects-grid {
-      margin-bottom: 4.25rem;
-    }
-    
     .project-card {
       position: relative;
       background-size: cover;
@@ -443,21 +439,17 @@
       font-size: 1.375rem;
     }
 
-    .projects-button {
-      margin-top: 3rem;
-    }    
-
     .projects-footer {
       font-family: var(--font-playfair);
       font-style: italic;
       color: var(--06);
       text-align: center;
-      margin-top: 3.5rem;
+      margin-top: 3rem;
       font-size: 1.25rem;
     }
     
     .project-slider {
-      margin-top: 2.5rem;
+      margin-top: 2.375rem;
       overflow: hidden;
     }
     
@@ -529,6 +521,46 @@
       height: 4px;
       background-color: var(--02);
       margin-top: 1rem;
+    }
+
+    .contact-section {
+      background-color: var(--06);
+      padding: 6rem 2rem;
+      text-align: center;
+    } 
+
+    .contact-container {
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    .contact-title {
+      color: var(--02);
+    }
+
+    .contact-subtitle {
+      font-family: var(--font-poppins);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--05);
+      margin-bottom: 2rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      font-family: var(--font-poppins);
+      border: none;
+      border-radius: 5px;
+      background-color: var(--05);
+      color: var(--04);
+    }
+    
+    .contact-form textarea {
+      resize: vertical;
     }
     
 /* Responsive for mobile */
@@ -880,7 +912,23 @@
       </div>
     </div>
   </div>
-</section>  
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+    <h2 class="contact-title">I’D LOVE TO CONNECT!</h2>
+    <p class="contact-subtitle">Schedule a coffee chat with me.</p>
+
+    <form class="contact-form" action="#" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="text" name="linkedin" placeholder="Your LinkedIn" />
+      <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit" class="contact-submit">SUBMIT</button>
+    </form>
+  </div>
+</section>
+
 </main>
   
   <!-- Toggle menu visibility and icon -->
