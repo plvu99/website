@@ -222,14 +222,14 @@
       transition: transform 0.3s ease;
     }
 
-    .card h2, .value-card h3, .project-title {
+    .card h2, .value-card h3, .project-title, .impact-card h3 {
       font-family: var(--font-poppins);
       font-size: 1.5rem;
       font-weight: 900;
       color: var(--04);
     }
 
-    .card p, .value-card p {
+    .card p, .value-card p, .impact-card p {
       font-family: var(--font-poppins);
       font-size: 1.125rem;
       line-height: 1.6;
@@ -255,7 +255,7 @@
     }
     
     .card-experience {
-      background-color: var(--01);
+      background-color: var(--05);
     }
     
     .card-work {
@@ -263,11 +263,11 @@
     }
 
     .who-section, .projects-section {
-      background-color: var(--01);
+      background-color: var(--05);
       padding: 6rem 2rem;
     }
     
-    .who-grid {
+    .who-grid, .impact-container {
       display: flex;
       flex-wrap: wrap;
       align-items: flex-start;
@@ -283,18 +283,16 @@
       border-radius: 10px;
     }
 
-    .who-label, .values-label, .projects-label {
-      display: inline-block;
-      position: relative;
-      z-index: 1;
+    .who-label, .values-label, .projects-label, .impact-label {
       font-family: var(--font-poppins);
       font-weight: 600;
       font-size: 1.125rem;
       color: var(--08);
       text-transform: uppercase;
+      margin-bottom: 1rem;
     }
    
-    .who-title, .values-title, .projects-title {
+    .who-title, .values-title, .projects-title, .impact-title {
       font-family: var(--font-poppins);
       font-weight: 900;
       font-size: 2rem;
@@ -303,11 +301,11 @@
       margin-bottom: 2.375rem;
     }
     
-    .who-content {
+    .who-content, .impact-left {
       flex: 1 1 450px;
     }
 
-    .who-content p {
+    .who-content p, .impact-text {
       font-size: 1.125rem;
       color: var(--08);
       line-height: 1.6;
@@ -328,7 +326,7 @@
       object-fit: contain;
     }
 
-    .values-section {
+    .values-section, .impact-section {
       background-color: var(--02);
       padding: 6rem 2rem;
     }
@@ -358,22 +356,16 @@
       height: auto;
     }
     
-    .value-card h3 {
+    .value-card h3, .value-card p {
       color: var(--05)
-    }
-    
-    .value-card p {
-      color: var(--05);
     }
     
     .value-resilience {
       background-color: var(--04);
-      color: var(--05);
     }
 
     .value-courage {
       background-color: var(--08);
-      color: var(--05);
     }
     
     .values-button, .projects-button {
@@ -483,6 +475,43 @@
       to { transform: translateX(-50%); }
     }
 
+    .impact-right {
+      flex: 1 1 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .impact-card {
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    .impact-card h3, .impact-card p {
+      color: var(--05);
+    }
+
+    .impact-card-1 {
+      background-color: var(--03);
+    }
+    
+    .impact-card-2 {
+      background-color: var(--04);
+    }
+    
+    .impact-card-3 {
+      background-color: var(--08);
+    } 
+
+    .impact-card h3::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 4px;
+      background-color: var(--02);
+      margin-top: 0.5rem;
+    }
+    
 /* Responsive for mobile */
     @media (max-width: 768px) {
       .nav-container {
@@ -565,7 +594,7 @@
         font-size: 0.875rem;
       }
 
-      .card h2, .value-card h3 {
+      .card h2, .value-card h3, .impact-card h3 {
         font-size: 1.125rem;
       }
     
@@ -581,22 +610,22 @@
         text-align: center;
       }
       
-      .who-title, .values-title, .projects-title {
+      .who-title, .values-title, .projects-title, .impact-title {
         font-size: 1.5rem;
         text-align: center;
       }
 
-      .who-content {
+      .who-content, .impact-left, .impact-right {
         flex: 1 1 100%;
       }
       
-      .values-label, .projects-label {
+      .values-label, .projects-label, .impact-label {
         text-align: center;
         display: block;
         width: 100%;
       }
 
-      .intro-bullets li, .card p, .who-content p, .value-card p, .project-sub {
+      .intro-bullets li, .card p, .who-content p, .value-card p, .project-sub, .impact-card p {
         font-size: 0.875rem;
       }
 
