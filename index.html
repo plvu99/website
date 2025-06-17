@@ -334,7 +334,7 @@
       padding: 6rem 2rem;
     }
     
-    .values-container {
+    .values-container, .projects-container {
       max-width: 1440px;
       margin: auto;
     }
@@ -398,13 +398,6 @@
       transform: scale(1.05);
     }
 
-    .projects-container {
-      max-width: 1440px;    
-      margin: 0 auto;
-      padding: 0 2rem;   
-      box-sizing: border-box;
-    }
-    
     .projects-grid {
       margin-bottom: 4.25rem;
     }
@@ -433,15 +426,18 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.45);
-      padding: 1.5rem;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
     }
-    
+
+    .project-text {
+      padding: 2rem;
+    }
+
     .project-sub {
-      font-size: 1.125rem;
+      font-size: 1rem;
       color: rgba(255, 255, 255, 0.85);
       margin: 0;
     }
@@ -449,10 +445,11 @@
     .project-title {
       margin: 0.25rem 0 0;
       color: #fff;
+      font-size: 1.375rem;
     }
 
     .projects-button {
-      margin-top: 2rem;
+      margin-top: 3rem;
     }    
 
     .projects-footer {
@@ -729,49 +726,61 @@
     <div class="projects-grid">
       <a href="https://github.com/plvu99/Analysis-of-Starbucks-Promotional-Campaign-and-Customer-Segmentation" class="project-card" style="background-image: url('Images/Projects/Campaign Analysis & Segmentation.webp');">
         <div class="project-overlay">
-          <p class="project-sub">Retail</p>
-          <h3 class="project-title">CAMPAIGN ANALYSIS & SEGMENTATION FOR MARKET STRATEGY</h3>
+          <div class="project-text">
+            <p class="project-sub">Retail</p>
+            <h3 class="project-title">CAMPAIGN ANALYSIS & SEGMENTATION FOR MARKET STRATEGY</h3>
+          </div>
         </div>
       </a>
 
       <a href="https://github.com/plvu99/Clustering-and-Trend-Analysis-for-Ride-Sharing-Demand-and-Behavior" class="project-card" style="background-image: url('Images/Projects/Ride Sharing.jpg');">
         <div class="project-overlay">
-          <p class="project-sub">Logistics & Transportation</p>
-          <h3 class="project-title">CLUSTERING & TREND ANALYSIS FOR RIDE-SHARING DEMAND AND BEHAVIOR</h3>
+          <div class="project-text">
+            <p class="project-sub">Logistics & Transportation</p>
+            <h3 class="project-title">CLUSTERING & TREND ANALYSIS FOR RIDE-SHARING DEMAND AND BEHAVIOR</h3>
+          </div>
         </div>
       </a>
 
       <a href="https://github.com/plvu99/SQL-Driven-Analysis-of-Sales-Performance-and-Customer-Behavior" class="project-card" style="background-image: url('Images/Projects/Sales Performance.webp');">
         <div class="project-overlay">
-          <p class="project-sub">Marketing & Sales</p>
-          <h3 class="project-title">ANALYSIS OF SALES PERFORMANCE AND CUSTOMER BEHAVIOR</h3>
+          <div class="project-text">
+            <p class="project-sub">Marketing & Sales</p>
+            <h3 class="project-title">ANALYSIS OF SALES PERFORMANCE AND CUSTOMER BEHAVIOR</h3>
+          </div>
         </div>
       </a>
 
       <a href="https://github.com/plvu99/Impact-of-Salary-Hikes-on-Employee-Attrition" class="project-card" style="background-image: url('Images/Projects/Salary Hikes.avif');">
         <div class="project-overlay">
-          <p class="project-sub">Human Resources</p>
-          <h3 class="project-title">IMPACT OF SALARY HIKES ON EMPLOYEE ATTRITION</h3>
+          <div class="project-text">
+            <p class="project-sub">Human Resources</p>
+            <h3 class="project-title">IMPACT OF SALARY HIKES ON EMPLOYEE ATTRITION</h3>
+          </div>
         </div>
       </a>
 
       <a href="https://github.com/plvu99/Car-Insurance-Loss-Analytics" class="project-card" style="background-image: url('Images/Projects/Car Insurance.avif');">
         <div class="project-overlay">
-          <p class="project-sub">Insurance</p>
-          <h3 class="project-title">CAR INSURANCE LOSS ANALYTICS</h3>
+          <div class="project-text">
+            <p class="project-sub">Insurance</p>
+            <h3 class="project-title">CAR INSURANCE LOSS ANALYTICS</h3>
+          </div>
         </div>
       </a>
 
       <a href="https://github.com/plvu99/Home-Team-Bias-in-MLB-Umpiring" class="project-card" style="background-image: url('Images/Projects/MLB Games.webp');">
         <div class="project-overlay">
-          <p class="project-sub">Sports & Entertainment</p>
-          <h3 class="project-title">HOME-TEAM BIAS IN MLB UMPIRING</h3>
+          <div class="project-text">
+            <p class="project-sub">Sports & Entertainment</p>
+            <h3 class="project-title">HOME-TEAM BIAS IN MLB UMPIRING</h3>
+          </div>
         </div>
       </a>
+    </div>
 
-      <div class="projects-button">
-        <a href="story" class="btn-explore-more">EXPLORE MORE PROJECTS</a>
-      </div>
+    <div class="projects-button">
+      <a href="story" class="btn-explore-more">EXPLORE MORE PROJECTS</a>
     </div>
 
     <p class="projects-footer">Beyond that, I enjoy the journey and have built meaningful connections with people from around the globe.</p>
@@ -785,7 +794,7 @@
         <img src="Images/Slider/Beach Outing.JPEG" alt="Beach Outing">
         <img src="Images/Slider/Career Spark.JPG" alt="Career Spark">
         <img src="Images/Slider/BASA Photoshoot.JPG" alt="BASA Photoshoot">            
-        <img src="Images/Slider/BASA Dinner.HEIC" alt="BASA Dinner">
+        <img src="Images/Slider/BASA Dinner.jpg" alt="BASA Dinner">
         <img src="Images/Slider/Bowling.JPG" alt="Bowling">
         <img src="Images/Slider/Case Competition.JPG" alt="Case Competition">
       </div>
