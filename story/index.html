@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Phuong Vu | My Story</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;900&display=swap" rel="stylesheet" />
+  
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --01: #f2f2f2;
+      --02: #eae4d5;
+      --03: #b6b09f;
+      --04: #090c08;
+      --05: #ffffff;
+      --06: #117a65;
+      --07: #f39c12;
+      --08: #757575;
+
+      --font-playfair: 'Playfair Display', serif;
+      --font-poppins: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-poppins);
+      background-color: var(--04);
+      color: var(--01);
+    }
+
+    header.site-header {
+      background-color: var(--04);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--03);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      width: 100%;
+      padding: 0 2rem;
+      position: relative;
+    }
+    
+    .logo, .footer-brand h2 {
+      font-family: var(--font-playfair);
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--02);
+      text-shadow: 2px 0px 4px var(--03);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+    }
+
+    .nav-menu a {
+      color: var(--02);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: transform 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
+    }
+
+    .nav-menu a:hover {
+      transform: scale(1.05);
+      text-shadow: 0 0 6px var(--02);
+    }
+
+    .btn-contact {
+      background-color: var(--03);
+      color: var(--05);
+      padding: 1rem 1.5rem;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .btn-contact:hover {
+      background-color: var(--06);
+      transform: scale(1.05);
+    }
+    
+    main {
+      padding-top: 100px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: var(--05);
+      background: none;
+      border: none;
+      z-index: 1001;
+    }
+
+    .intro-section {
+      background-color: var(--04);
+      padding: 3rem 0;
+    }
+
+    .intro-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      padding: 0 2rem;
+      margin: 0 auto;
+      gap: 2rem;
+      flex-wrap: wrap;
+      box-sizing: border-box; 
+    }
+
+    .intro-content {
+      flex: 1 1 600px;
+    }
+
+    .intro-welcome {
+      font-family: var(--font-playfair);
+      font-style: italic;
+      font-size: 1.5rem;
+      color: var(--02);
+    }
+
+    .intro-name {
+      font-family: var(--font-poppins);
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--05);
+      margin-bottom: 2rem;
+      line-height: 1.2;
+    }
+
+    .intro-bullets {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .intro-bullets li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      color: var(--01);
+      line-height: 1.6
+    }
+
+    .intro-bullets li::before {
+      content: "";
+      background-image: url("Images/Icons/Bullet point.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .intro-image {
+      flex: 1 1 400px;
+      text-align: center;
+    }
+
+    .intro-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      background-color: transparent;
+    }
+
+    .intro-quote {
+      font-family: var(--font-playfair);
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--02);
+      margin-top: 1.25rem;
+    }
+
+    .cards-section {
+      background-color: var(--04);
+      padding: 6rem 2rem;
+    }
+    
+    .cards-grid, .values-grid, .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* Align all from top */
+      align-items: flex-start; /* Align children left */
+      height: 100%; /* Ensure equal height for alignment */
+      padding: 2rem;
+      border-radius: 10px;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .card h2, .value-card h3, .project-title, .impact-card h3, .footer-contact h3, .footer-nav h3 {
+      font-family: var(--font-poppins);
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--04);
+    }
+
+    .card p, .value-card p, .impact-card p {
+      font-family: var(--font-poppins);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--04);
+      text-align: justify;
+    }
+
+    .card .arrow {
+      width: 28px;
+      height: 28px;
+      background-image: url("Images/Icons/Arrow.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left center;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .card-story {
+      background-color: var(--02);
+    }
+    
+    .card-experience {
+      background-color: var(--05);
+    }
+    
+    .card-work {
+      background-color: var(--03);
+    }
+
+    .who-section, .projects-section {
+      background-color: var(--05);
+      padding: 6rem 2rem;
+    }
+    
+    .who-grid, .impact-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: center;
+      max-width: 1200px;
+      margin: auto;
+      gap: 5rem;
+    }
+    
+    .who-image img {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 10px;
+    }
+
+    .who-label, .values-label, .projects-label, .impact-label {
+      font-family: var(--font-poppins);
+      font-weight: 600;
+      font-size: 1.125rem;
+      color: var(--08);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+   
+    .who-title, .values-title, .projects-title, .impact-title, .contact-title {
+      font-family: var(--font-poppins);
+      font-weight: 900;
+      font-size: 1.75rem;
+      color: var(--06);
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+    }
+      
+    .who-content, .impact-left {
+      flex: 1 1 300px;
+    }
+
+    .who-content p, .impact-text {
+      font-size: 1rem;
+      color: var(--08);
+      line-height: 1.6;
+      text-align: justify;
+    }
+    
+    .skills-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+      margin-top: 2rem;
+    }
+    
+    .skills-row img {
+      height: 46px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .values-section, .impact-section {
+      background-color: var(--02);
+      padding: 6rem 2rem;
+    }
+    
+    .values-container, .projects-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .values-title, .projects-title {
+      margin-bottom: 2.25rem;
+    }
+    
+    .values-grid, .projects-grid {
+      margin-bottom: 3.5rem;
+    }
+    
+    .value-card {
+      padding: 2rem;
+      border-radius: 10px;
+      background-color: var(--03);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* Align all from top */
+      align-items: flex-start; /* Align children left */
+      height: 100%; /* Ensure equal height for alignment */
+    }
+
+    .icon img {
+      width: 30px;
+      height: auto;
+    }
+    
+    .value-card h3, .value-card p {
+      color: var(--05)
+    }
+    
+    .value-resilience {
+      background-color: var(--04);
+    }
+
+    .value-courage {
+      background-color: var(--08);
+    }
+    
+    .values-button, .projects-button {
+      text-align: center;
+    }
+    
+    .btn-learn-more, .btn-explore-more, .contact-submit {
+      background-color: var(--03);
+      color: var(--05);
+      padding: 1rem 1.5rem;
+      font-weight: 600;
+      font-size: 1.125rem;
+      border: none;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+    }
+    
+    .btn-learn-more:hover, .btn-explore-more:hover {
+      background-color: var(--06);
+      transform: scale(1.05);
+    }
+
+    .project-card {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      min-height: 200px; 
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.45);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .project-text {
+      padding: 2rem;
+    }
+
+    .project-sub {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin: 0;
+    }
+    
+    .project-title {
+      margin: 0.5rem 0 0;
+      color: #fff;
+      font-size: 1.375rem;
+    }
+
+    .projects-footer {
+      font-family: var(--font-playfair);
+      font-style: italic;
+      color: var(--06);
+      text-align: center;
+      margin-top: 5rem;
+      font-size: 1.25rem;
+    }
+    
+    .project-slider {
+      margin-top: 2.375rem;
+      overflow: hidden;
+    }
+    
+    .slider-track {
+      display: flex;
+      gap: 2rem;
+      animation: slide 10s linear infinite;
+    }
+    
+    .slider-track img {
+      height: 200px;
+      width: auto;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+    
+    @keyframes slide {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .impact-container {
+      align-items: center;
+    }
+    
+    .impact-right {
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .impact-card {
+      padding: 1.5rem 2rem;
+      border-radius: 10px;
+    }
+
+    .impact-card h3, .impact-card p {
+      color: var(--05);
+    }
+
+    .impact-card h3 {
+      font-size: 1.375rem;
+    }
+    
+    .impact-card-1 {
+      background-color: var(--03);
+    }
+    
+    .impact-card-2 {
+      background-color: var(--04);
+    }
+    
+    .impact-card-3 {
+      background-color: var(--08);
+    } 
+
+    .impact-card h3 {
+      position: relative;
+    }
+    
+    .impact-card h3::after {
+      content: '';
+      position: absolute;
+      bottom: -0.25rem;
+      display: block;
+      left: 0;
+      width: 30%;
+      height: 4px;
+      background-color: var(--02);
+      margin-top: 1rem;
+    }
+
+    .contact-section {
+      background-color: var(--06);
+      padding: 4rem 2rem 6rem;
+      text-align: center;
+    } 
+
+    .contact-container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .contact-title {
+      color: var(--02);
+      margin-bottom: 1.75;
+    }
+
+    .contact-subtitle {
+      font-family: var(--font-poppins);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--05);
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      font-family: var(--font-poppins);
+      border: none;
+      border-radius: 5px;
+      background-color: var(--05);
+      color: var(--04);
+    }
+    
+    .contact-form textarea {
+      resize: vertical;
+    }
+    
+    .contact-submit {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .site-footer {
+      background-color: var(--04);
+      color: var(--05);
+      padding: 4rem 2rem 6rem;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 2rem;
+      gap: 5rem;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    
+    .footer-contact h3, .footer-nav h3 {
+      color: var(--02);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-contact ul,
+    .footer-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .footer-contact li,
+    .footer-nav li {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--05);
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-contact a,
+    .footer-nav a {
+      color: var(--05);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 1rem;
+      margin-top: 0.5rem;
+    }
+    
+/* Responsive for mobile */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .logo, .footer-brand h2 {
+        font-size: 28px;
+        margin-bottom: 0.5rem;
+      }
+
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 2rem;
+        top: 1rem;
+      }
+
+      .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        width: 100%;
+        background-color: var(--04);
+        padding: 0;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .nav-menu.show {
+        max-height: 500px;
+        padding: 1rem 0;
+        opacity: 1;
+      }
+
+      .nav-menu a {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 0;
+      }
+      
+      .intro-grid {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .intro-content, .intro-image {
+        flex: 1 1 100%;
+      }
+
+      .intro-welcome {
+        font-size: 1.5rem;
+        margin-bottom: 2.5rem;
+      }
+      
+      .intro-name {
+        font-size: 2.25rem;
+      }
+
+      .intro-bullets {
+        padding-left: 1.5rem;
+        text-align: left;
+      }
+
+      .intro-quote, .projects-footer {
+        font-size: 1.125rem;
+      }
+      
+      .card, .value-card {
+        padding: 1.75rem;
+        font-size: 0.875rem;
+      }
+
+      .card h2, .value-card h3, .impact-card h3 {
+        font-size: 1.25rem;
+      }
+    
+      .card .arrow {
+        width: 22px;
+        height: 22px;
+        align-self: flex-start;
+      }
+      
+      .who-grid {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .who-title, .values-title, .projects-title, .impact-title {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      .who-content, .impact-left, .impact-right {
+        flex: 1 1 100%;
+      }
+      
+      .values-label, .projects-label, .impact-label {
+        text-align: center;
+        display: block;
+        width: 100%;
+      }
+
+      .intro-bullets li, .card p, .who-content p, .value-card p, .project-sub, .impact-text, .impact-card p {
+        font-size: 0.875rem;
+      }
+
+      .impact-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .contact-subtitle, .contact-form input, .contact-form textarea {
+        font-size: 0.95rem;
+      }
+      
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .footer-contact h3, .footer-nav h3, .footer-contact ul, .footer-nav ul, .footer-contact li, .footer-nav li {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+  
+<body>
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="logo">PHUONG VU</div>
+
+      <!-- Hamburger icon toggles open/close -->
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="home">HOME</a>
+        <a href="story">MY STORY</a>
+        <a href="experience">MY EXPERIENCE</a>
+        <a href="work">MY WORK</a>
+        <a href="contact" class="btn-contact">CONTACT ME</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro-section">
+      <div class="intro-container">
+        <h1>MY STORY</h1>
+        <p>From a turning point that shaped who I am today to the adventures, movement, and meaningful experiences I’ve embraced along the way.</p>
+      </div>
+    </section>
+
+    <section class="dance-section">
+      <div class="dance-grid">
+        <div class="dance-image">
+          <img src="Images/Photo.JPG" alt="Phuong Vu">
+          <img src="Images/Photo.JPG" alt="Phuong Vu">
+        </div>        
+        <div class="dance-content">
+          <div class="dance-label">A TURNING POINT</div>
+          <h2 class="dance-title">DANCING SHAPED MY COLLABORATION, RESILIENCE, AND COURAGE</h2>
+          <p>In my first year, I joined a dance competition with a team I had just met. None of us had battle experience, but we shared a love for dance and a desire to challenge ourselves on one of the biggest stages for university students.</p>
+          <p>For 5 months, we trained from scratch: learning basics, practicing tricks, and building strength. We juggled conflicting schedules, long rehearsals, and even injuries. Despite all the chaos and self-doubt, we kept pushing forward. In the end, we pulled it together and delivered performances we were genuinely proud of.</p>
+          <p>Since then, dance has become more than a hobby. It’s how I recharge, express myself, and stay grounded. What seems unrelated has actually shaped how I work with others, adapt under pressure, and keep going when things get tough.</p>
+          <p>That experience laid the foundation for the values I carry into my work today: collaboration, resilience, and courage.<p>
+        </div>
+      </div>
+    </section>
+
+    <section class="music-section">
+      <div class="music-grid">
+        <div class="music-content">
+          <div class="music-label">SOUNDTRACK OF ME</div>
+          <h2 class="music-title">MUSIC ECHOES WITH WHAT I'M FEELING INSIDE</h2>
+          <p>Music has always been my emotional anchor. I don’t stick to one genre — I follow whatever matches my mood. </p>
+          <p>When I’m feeling joyful, I reach for upbeat songs with cheerful melodies. When I need encouragement or energy, I turn to lyrics that speak to me. And when I want to relieve stress, I let the rhythm take over — dancing it out and letting my body process what words can’t.</p>
+          <p>Through every high and low, music connects with my emotions, softens the hard days, and gives me space to just be. That said, when I’m in deep focus mode, I prefer complete silence — no background music, just clarity and concentration.</p>
+        </div>
+        <div class="music-image">
+          <img src="Images/Photo.JPG" alt="Phuong Vu">
+        </div>        
+      </div>
+    </section>
+
+    <section class="travel-section">
+      <div class="travel-container">
+        <div class="travel-label">WANDER TO WONDER</div>
+        <h2 class="travel-title">TRAVELING FUELS MY CURIOSITY<br>TO EXPLORE AND EXPERIENCE AS MUCH AS POSSIBLE</h2>
+    
+        <!-- WEST COAST -->
+        <div class="travel-entry">
+          <div class="travel-text">
+            <h3>WEST COAST (03/2025)</h3>
+            <p>This was my first solo trip ever during Spring Break! I flew to Seattle and took the Amtrak down to Los Angeles, stopping to explore Portland, Sacramento, Oakland, and San Francisco. It rained for most of the trip, but on the last day, I was rewarded with a stunning sunset view from the Amtrak Coast Starlight.</p>
+            <ul class="travel-stats">
+              <li><strong>7</strong><br>DAYS</li>
+              <li><strong>5</strong><br>STATES</li>
+              <li><strong>5</strong><br>CITIES</li>
+              <li><strong>70+</strong><br>ATTRACTIONS</li>
+              <li><strong>2K+</strong><br>MILES 🚄</li>
+              <li><strong>5</strong><br>HOTELS</li>
+              <li><strong>331K+</strong><br>STEPS</li>
+            </ul>
+          </div>
+          <div class="travel-image">
+            <div class="slider-images" id="slider-west">
+              <img src="../Images/Trips/WestCoast1.jpg" class="slide active" alt="West Coast 1">
+              <img src="../Images/Trips/WestCoast2.jpg" class="slide" alt="West Coast 2">
+              <img src="../Images/Trips/WestCoast3.jpg" class="slide" alt="West Coast 3">
+              <img src="../Images/Trips/WestCoast4.jpg" class="slide" alt="West Coast 4">
+              <img src="../Images/Trips/WestCoast5.jpg" class="slide" alt="West Coast 5">
+            </div>
+            <div class="slider-dots">
+              <span onclick="showSlide('slider-west', 0)" class="dot active"></span>
+              <span onclick="showSlide('slider-west', 1)" class="dot"></span>
+              <span onclick="showSlide('slider-west', 2)" class="dot"></span>
+              <span onclick="showSlide('slider-west', 3)" class="dot"></span>
+              <span onclick="showSlide('slider-west', 4)" class="dot"></span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- EAST COAST -->
+        <div class="travel-entry reverse">
+          <div class="travel-text">
+            <h3>EAST COAST (12/2024 – 01/2025)</h3>
+            <p>This was my first road trip during Winter Break! I flew from Los Angeles to Georgia to meet my cousin, then we drove to New York and back. I also spent a few days exploring Atlanta before flying home. Along the way, I experienced all kinds of weather. 🌦</p>
+            <ul class="travel-stats">
+              <li><strong>25</strong><br>DAYS</li>
+              <li><strong>10</strong><br>STATES</li>
+              <li><strong>20+</strong><br>CITIES</li>
+              <li><strong>200+</strong><br>ATTRACTIONS</li>
+              <li><strong>7K+</strong><br>MILES 🚗</li>
+              <li><strong>10</strong><br>ACCOMMODATIONS</li>
+              <li><strong>335K+</strong><br>STEPS</li>
+            </ul>
+          </div>
+          <div class="travel-image">
+            <div class="slider-images" id="slider-east">
+              <img src="../Images/Trips/EastCoast1.jpg" class="slide active" alt="East Coast 1">
+              <img src="../Images/Trips/EastCoast2.jpg" class="slide" alt="East Coast 2">
+              <img src="../Images/Trips/EastCoast3.jpg" class="slide" alt="East Coast 3">
+              <img src="../Images/Trips/EastCoast4.jpg" class="slide" alt="East Coast 4">
+              <img src="../Images/Trips/EastCoast5.jpg" class="slide" alt="East Coast 5">
+            </div>
+            <div class="slider-dots">
+              <span onclick="showSlide('slider-east', 0)" class="dot active"></span>
+              <span onclick="showSlide('slider-east', 1)" class="dot"></span>
+              <span onclick="showSlide('slider-east', 2)" class="dot"></span>
+              <span onclick="showSlide('slider-east', 3)" class="dot"></span>
+              <span onclick="showSlide('slider-east', 4)" class="dot"></span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- INDONESIA -->
+        <div class="travel-entry">
+          <div class="travel-text">
+            <h3>INDONESIA (05/2024)</h3>
+            <p>This was my last trip with colleagues before studying abroad. I took 5 flights in 10 days, traveling from Hanoi to 3 different cities and back. I explored Bali, Yogyakarta, and Jakarta. The food was amazing—though quite spicy. I got to try many kinds of rice dishes with a variety of proteins.</p>
+          </div>
+          <div class="travel-image">
+            <div class="slider-images" id="slider-indonesia">
+              <img src="../Images/Trips/Indonesia1.jpg" class="slide active" alt="Indonesia 1">
+              <img src="../Images/Trips/Indonesia2.jpg" class="slide" alt="Indonesia 2">
+              <img src="../Images/Trips/Indonesia3.jpg" class="slide" alt="Indonesia 3">
+              <img src="../Images/Trips/Indonesia4.jpg" class="slide" alt="Indonesia 4">
+              <img src="../Images/Trips/Indonesia5.jpg" class="slide" alt="Indonesia 5">
+            </div>
+            <div class="slider-dots">
+              <span onclick="showSlide('slider-indonesia', 0)" class="dot active"></span>
+              <span onclick="showSlide('slider-indonesia', 1)" class="dot"></span>
+              <span onclick="showSlide('slider-indonesia', 2)" class="dot"></span>
+              <span onclick="showSlide('slider-indonesia', 3)" class="dot"></span>
+              <span onclick="showSlide('slider-indonesia', 4)" class="dot"></span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- TREKKING -->
+        <div class="travel-entry reverse">
+          <div class="travel-text">
+            <h3>TREKKING (02/2024)</h3>
+            <p>This was my first trip of the year—and maybe a sign of the challenges ahead. As a first-time hiker, I somehow found myself climbing Vietnam’s highest mountain (3,147m). I slipped, staggered, got pushed by the wind, and doubted myself more times than I could count. But I made it to the summit and felt deeply fulfilled.</p>
+          </div>
+          <div class="travel-image">
+            <div class="slider-images" id="slider-trekking">
+              <img src="../Images/Trips/Trekking1.jpg" class="slide active" alt="Trekking 1">
+              <img src="../Images/Trips/Trekking2.jpg" class="slide" alt="Trekking 2">
+              <img src="../Images/Trips/Trekking3.jpg" class="slide" alt="Trekking 3">
+              <img src="../Images/Trips/Trekking4.jpg" class="slide" alt="Trekking 4">
+              <img src="../Images/Trips/Trekking5.jpg" class="slide" alt="Trekking 5">
+            </div>
+            <div class="slider-dots">
+              <span onclick="showSlide('slider-trekking', 0)" class="dot active"></span>
+              <span onclick="showSlide('slider-trekking', 1)" class="dot"></span>
+              <span onclick="showSlide('slider-trekking', 2)" class="dot"></span>
+              <span onclick="showSlide('slider-trekking', 3)" class="dot"></span>
+              <span onclick="showSlide('slider-trekking', 4)" class="dot"></span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- SINGAPORE -->
+        <div class="travel-entry">
+          <div class="travel-text">
+            <h3>SINGAPORE (08, 11/2023)</h3>
+            <p>This trip was a dream come true—I finally saw my longtime favorite singer live in concert. I squeezed in sightseeing between shifts on the MRT and buses, and reconnected with friends over hawker center food. I experienced the city like a local—not just a tourist.</p>
+          </div>
+          <div class="travel-image">
+            <div class="slider-images" id="slider-singapore">
+              <img src="../Images/Trips/Singapore1.jpg" class="slide active" alt="Singapore 1">
+              <img src="../Images/Trips/Singapore2.jpg" class="slide" alt="Singapore 2">
+              <img src="../Images/Trips/Singapore3.jpg" class="slide" alt="Singapore 3">
+              <img src="../Images/Trips/Singapore4.jpg" class="slide" alt="Singapore 4">
+              <img src="../Images/Trips/Singapore5.jpg" class="slide" alt="Singapore 5">
+            </div>
+            <div class="slider-dots">
+              <span onclick="showSlide('slider-singapore', 0)" class="dot active"></span>
+              <span onclick="showSlide('slider-singapore', 1)" class="dot"></span>
+              <span onclick="showSlide('slider-singapore', 2)" class="dot"></span>
+              <span onclick="showSlide('slider-singapore', 3)" class="dot"></span>
+              <span onclick="showSlide('slider-singapore', 4)" class="dot"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <h2 class="contact-title">I’D LOVE TO CONNECT!</h2>
+        <p class="contact-subtitle">Schedule a coffee chat with me.</p>
+    
+        <form class="contact-form" action="#" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <input type="text" name="linkedin" placeholder="Your LinkedIn" />
+          <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+          <button type="submit" class="contact-submit">SUBMIT</button>
+        </form>
+      </div>
+    </section>
+    
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h2>PHUONG VU</h2>
+        </div>
+    
+        <div class="footer-contact">
+          <h3>CONTACT</h3>
+          <ul>
+            <li>213-566-5734</li>
+            <li>plvu@marshall.usc.edu</li>
+            <li>Los Angeles, CA, United States</li>
+            <li><a href="https://www.linkedin.com/in/phuong-vu-lan/" target="_blank"><img src="Images/Logos/LinkedIn.webp" alt="LinkedIn" class="footer-icon" /></a> <a href="https://github.com/plvu99" target="_blank"><img src="Images/Logos/GitHub.png" alt="GitHub" class="footer-icon" /></a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-nav">
+          <h3>NAVIGATION</h3>
+          <ul>
+            <li><a href="home">Home</a></li>
+            <li><a href="story">My Story</a></li>
+            <li><a href="experience">My Experience</a></li>
+            <li><a href="work">My Work</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </main>
+      
+<!-- Toggle menu visibility and icon -->
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+    
+  function toggleMenu() {
+    navMenu.classList.toggle('show');
+    toggleBtn.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
+  }
+    
+  toggleBtn.addEventListener('click', toggleMenu);
+  </script>
+</body>
+</html>
