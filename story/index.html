@@ -111,7 +111,7 @@
 
     .intro-section {
       background-color: var(--02);
-      padding: 6rem 2rem 3rem;
+      padding: 8rem 2rem 3rem;
     }
 
     .intro-container {
@@ -160,8 +160,9 @@
       gap: 5rem;
     }
 
-    .dance-image {
+    .dance-image, .music-image {
       display: flex;
+      flex: 1 1 400px;
       flex-direction: column;
       gap: 1.5rem;
     }
@@ -223,10 +224,6 @@
       gap: 5rem;
     } 
 
-    .travel-title {
-      margin-bottom: 2.25rem;
-    }
-
     .travel-entry {
       display: flex;
       flex-wrap: wrap;
@@ -242,7 +239,6 @@
       font-family: var(--font-poppins);
       font-size: 1.5rem;
       font-weight: 900;
-      margin-bottom: 0.5rem;
       color: var(--08);
       position: relative;
     }
@@ -282,14 +278,14 @@
     }
 
     .stat-number {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--08);
       display: block;
     }
     
     .stat-label {
-      font-size: 0.75rem;
+      font-size: 0.95rem;
       margin-top: 0.25rem;
       text-align: center;
       color: var(--08);
@@ -298,7 +294,7 @@
 
     .slider-wrapper {
       position: relative;
-      height: 500px;
+      height: 350px;
       border-radius: 10px;
       overflow: hidden;
     }
@@ -597,8 +593,8 @@
     <section class="dance-section">
       <div class="dance-grid">
         <div class="dance-image">
-          <img src="../Images/Story/VUG 1.jpg" alt="VUG">
           <img src="../Images/Story/VUG 2.jpg" alt="VUG">
+          <img src="../Images/Story/VUG 1.jpg" alt="VUG">
         </div>        
         <div class="dance-content">
           <div class="dance-label">A TURNING POINT</div>
@@ -650,7 +646,7 @@
           <li><span class="stat-number">5</span><span class="stat-label">STATES</span></li>
           <li><span class="stat-number">5</span><span class="stat-label">CITIES</span></li>
           <li><span class="stat-number">70+</span><span class="stat-label">ATTRACTIONS</span></li>
-          <li><span class="stat-number">2K+</span><span class="stat-label">MILES ✈️ 🚆 🚗</span></li>
+          <li><span class="stat-number">2K+</span><span class="stat-label">MILES<br>✈️ 🚆 🚗</span></li>
           <li><span class="stat-number">5</span><span class="stat-label">HOTELS</span></li>
           <li><span class="stat-number">331K+</span><span class="stat-label">STEPS</span></li>
         </ul>
@@ -685,7 +681,7 @@
           <li><span class="stat-number">10</span><span class="stat-label">STATES</span></li>
           <li><span class="stat-number">20+</span><span class="stat-label">CITIES</span></li>
           <li><span class="stat-number">200+</span><span class="stat-label">ATTRACTIONS</span></li>
-          <li><span class="stat-number">7K+</span><span class="stat-label">MILES ✈️ 🚘 🚆 🚍</span></li>
+          <li><span class="stat-number">7K+</span><span class="stat-label">MILES<br>✈️ 🚘 🚆 🚍</span></li>
           <li><span class="stat-number">10</span><span class="stat-label">ACCOMMODATIONS</span></li>
           <li><span class="stat-number">335K+</span><span class="stat-label">STEPS</span></li>
         </ul>
@@ -848,5 +844,33 @@
     
   toggleBtn.addEventListener('click', toggleMenu);
   </script>
+
+<!-- Clickable slider -->
+<script>
+  function showSlide(sliderId, index) {
+    const slider = document.getElementById(sliderId);
+    const slides = slider.querySelectorAll('.slide');
+    const dots = slider.querySelectorAll('.dot');
+
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? 'block' : 'none';
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+  }
+
+  // Show the first slide by default
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.slider-images').forEach(slider => {
+      const slides = slider.querySelectorAll('.slide');
+      slides.forEach((slide, i) => {
+        slide.style.display = i === 0 ? 'block' : 'none';
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
