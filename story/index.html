@@ -316,7 +316,7 @@
       width: 100%;
     }
     
-    .slider-images img {
+    .slide {
       position: absolute;
       top: 0; 
       left: 0;
@@ -325,11 +325,7 @@
       object-fit: cover;
       opacity: 0;
       transition: opacity 0.4s ease-in-out;
-    }
-
-    .slide {
-      opacity: 0;
-      transition: opacity 0.4s ease-in-out;
+      z-index: 0;
     }
     
     .slide.active {
@@ -863,8 +859,8 @@
 
 <!-- Clickable slider -->
 <script>
-  function showSlide(sliderId, index) {
-    const slider = document.getElementById(sliderId);
+  function showSlide(containerId, index) {
+    const slider = document.getElementById(containerId);
     const slides = slider.querySelectorAll('.slide');
     const dots = slider.querySelectorAll('.dot');
   
