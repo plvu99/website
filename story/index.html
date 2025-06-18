@@ -111,7 +111,7 @@
 
     .intro-section {
       background-color: var(--02);
-      padding: 8rem 2rem 3rem;
+      padding: 7rem 2rem 3rem;
     }
 
     .intro-container {
@@ -160,9 +160,9 @@
       gap: 5rem;
     }
 
-    .dance-image, .music-image {
+    .dance-image {
       display: flex;
-      flex: 1 1 400px;
+      flex: 1 1 300px;
       flex-direction: column;
       gap: 1.5rem;
     }
@@ -207,6 +207,10 @@
       padding: 6rem 2rem;
     }
     
+    .music-image {
+      flex: 1 1 350px;
+    }
+    
     .music-label, .music-content p {
       color: var(--05);
     }
@@ -227,8 +231,9 @@
     .travel-entry {
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 3rem;
       align-items: flex-start;
+      margin-top: 2rem;
     }
 
     .travel-entry.reverse {
@@ -256,7 +261,7 @@
     }
 
     .travel-text p {
-      margin: 2rem 0;
+      margin: 1.5rem 0;
     }
 
     .travel-stats {
@@ -278,14 +283,14 @@
     }
 
     .stat-number {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: var(--08);
       display: block;
     }
     
     .stat-label {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       margin-top: 0.25rem;
       text-align: center;
       color: var(--08);
@@ -294,7 +299,7 @@
 
     .slider-wrapper {
       position: relative;
-      height: 350px;
+      height: 400px;
       border-radius: 10px;
       overflow: hidden;
     }
@@ -316,14 +321,15 @@
       transition: opacity 0.4s ease-in-out;
     }
     
-    .slider-images img.active {
-      opacity: 1;
-      z-index: 1;
+    .slider-images img.slide {
+      width: 100%;
+      border-radius: 10px;
+      display: none;
     }
-
+    
     .slider-dots {
       position: absolute;
-      bottom: 16px;
+      bottom: 18px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 2;
