@@ -162,7 +162,6 @@
 
     .dance-image {
       display: flex;
-      flex: 1 1 300px;
       flex-direction: column;
       gap: 1.5rem;
     }
@@ -233,7 +232,6 @@
       flex-wrap: wrap;
       gap: 3rem;
       align-items: flex-start;
-      margin-top: 2rem;
     }
 
     .travel-entry.reverse {
@@ -283,14 +281,14 @@
     }
 
     .stat-number {
-      font-size: 1.25rem;
+      font-size: 1.375rem;
       font-weight: 700;
       color: var(--08);
       display: block;
     }
     
     .stat-label {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       margin-top: 0.25rem;
       text-align: center;
       color: var(--08);
@@ -320,11 +318,15 @@
       opacity: 0;
       transition: opacity 0.4s ease-in-out;
     }
-    
-    .slider-images img.slide {
+
+    .slide {
+      display: none;
       width: 100%;
       border-radius: 10px;
-      display: none;
+    }
+    
+    .slide.active {
+      display: block;
     }
     
     .slider-dots {
@@ -857,11 +859,11 @@
     const slider = document.getElementById(sliderId);
     const slides = slider.querySelectorAll('.slide');
     const dots = slider.querySelectorAll('.dot');
-
+  
     slides.forEach((slide, i) => {
-      slide.style.display = i === index ? 'block' : 'none';
+      slide.classList.toggle('active', i === index);
     });
-
+  
     dots.forEach((dot, i) => {
       dot.classList.toggle('active', i === index);
     });
@@ -872,7 +874,7 @@
     document.querySelectorAll('.slider-images').forEach(slider => {
       const slides = slider.querySelectorAll('.slide');
       slides.forEach((slide, i) => {
-        slide.style.display = i === 0 ? 'block' : 'none';
+        slide.classList.toggle('active', i === 0);
       });
     });
   });
