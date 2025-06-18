@@ -99,10 +99,6 @@
       transform: scale(1.05);
     }
     
-    main {
-      padding-top: 100px;
-    }
-
     .menu-toggle {
       display: none;
       font-size: 28px;
@@ -114,7 +110,7 @@
 
     .intro-section {
       background-color: var(--02);
-      padding: 6rem 2rem;
+      padding: 3rem 2rem;
     }
 
     .intro-container {
@@ -130,7 +126,7 @@
     }
    
     .intro-content {
-      flex: 1 1 600px;
+      flex: 1 1 300px;
     }
     
     .intro-content h1 {
@@ -138,13 +134,11 @@
       font-size: 2rem;
       font-weight: 900;
       color: var(--04);
-      margin-bottom: 2rem;
-      line-height: 1.4;
+      margin-bottom: 1rem;
     }
 
     .intro-content p {
       position: relative;
-      padding-left: 2rem;
       font-size: 1rem;
       color: var(--04);
       line-height: 1.6
@@ -171,7 +165,7 @@
       border-radius: 10px;
     }
 
-    .dance-content, .music-content, .travel-text, .travel-image {
+    .dance-content, .music-content, .travel-content, .travel-text, .travel-image {
       flex: 1 1 300px;
     }    
 
@@ -252,37 +246,37 @@
       bottom: -0.25rem;
       display: block;
       left: 0;
-      width: 30%;
+      width: 20%;
       height: 4px;
       background-color: var(--08);
       margin-top: 1rem;
     }
 
     .travel-text p {
-      margin-bottom: 1rem;
+      margin: 2rem 0;
     }
 
     .travel-stats {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      justify-items: center;
       gap: 1rem 2rem;
       list-style: none;
       padding: 0;
       margin: 0;
       font-family: var(--font-poppins);
-      font-size: 0.875rem;
       color: var(--08);
     }
 
     .travel-stats li {
-      font-size: 1.25rem;
+      font-size: 1rem;
       color: var(--08);
       text-align: center;
     }
 
     .slider-wrapper {
       position: relative;
-      height: 250px;
+      height: 500px;
       border-radius: 10px;
       overflow: hidden;
     }
@@ -345,14 +339,14 @@
 
     .contact-title {
       color: var(--02);
-      margin-bottom: 1.75;
+      margin-bottom: 1.625;
     }
 
     .contact-subtitle {
       font-family: var(--font-poppins);
       font-size: 1rem;
       color: var(--05);
-      margin-bottom: 2.5rem;
+      margin-bottom: 2.375rem;
     }
 
     .contact-form input,
@@ -493,60 +487,43 @@
         text-align: center;
       }
 
-      .intro-content {
+      .intro-content, .dance-content, .music-content, .travel-text, .travel-image {
         flex: 1 1 100%;
       }
       
       .intro-content h1 {
         font-size: 2rem;
       }
-
-      .card, .value-card {
-        padding: 1.75rem;
-        font-size: 0.875rem;
-      }
-
-      .card h2, .value-card h3, .impact-card h3 {
-        font-size: 1.25rem;
-      }
-    
-      .card .arrow {
-        width: 22px;
-        height: 22px;
-        align-self: flex-start;
-      }
       
-      .dance-grid {
+      .dance-grid, .music.grid {
         flex-direction: column;
         align-items: center;
         text-align: center;
       }
       
-      .dance-title, .values-title, .projects-title, .impact-title {
+      .dance-title, .music-title, .travel-title {
         font-size: 1.5rem;
         text-align: center;
       }
 
-      .dance-content, .impact-left, .impact-right {
+      .dance-content, .music.content {
         flex: 1 1 100%;
       }
       
-      .dance-label, values-label, .projects-label, .impact-label {
+      .dance-label, .music-label, .travel-label {
         text-align: center;
         display: block;
         width: 100%;
       }
 
-      .intro-content p, .card p, .dance-content p, .value-card p, .project-sub, .impact-text, .impact-card p {
+      .intro-content p, .dance-content p, .music-content p, .travel-text p, .travel-stats li {
         font-size: 0.875rem;
       }
-
-      .impact-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
+      
+      .travel-text h3 {
+        font-size: 1.25rem;
       }
-
+      
       .contact-subtitle, .contact-form input, .contact-form textarea {
         font-size: 0.95rem;
       }
@@ -595,8 +572,8 @@
     <section class="dance-section">
       <div class="dance-grid">
         <div class="dance-image">
-          <img src="Images/Photo.JPG" alt="Phuong Vu">
-          <img src="Images/Photo.JPG" alt="Phuong Vu">
+          <img src="../Images/Photo.JPG" alt="Phuong Vu">
+          <img src="../Images/Photo.JPG" alt="Phuong Vu">
         </div>        
         <div class="dance-content">
           <div class="dance-label">A TURNING POINT</div>
@@ -619,16 +596,18 @@
           <p>Through every high and low, music connects with my emotions, softens the hard days, and gives me space to just be. That said, when I’m in deep focus mode, I prefer complete silence — no background music, just clarity and concentration.</p>
         </div>
         <div class="music-image">
-          <img src="Images/Photo.JPG" alt="Phuong Vu">
+          <img src="../Images/Photo.JPG" alt="Phuong Vu">
         </div>        
       </div>
     </section>
 
 <section class="travel-section">
   <div class="travel-container">
-    <div class="travel-label">WANDER TO WONDER</div>
-    <h2 class="travel-title">TRAVELING FUELS MY CURIOSITY<br>TO EXPLORE AND EXPERIENCE AS MUCH AS POSSIBLE</h2>
-
+    <div class="travel-content">
+      <div class="travel-label">WANDER TO WONDER</div>
+      <h2 class="travel-title">TRAVELING FUELS MY CURIOSITY TO EXPLORE AND EXPERIENCE AS MUCH AS POSSIBLE</h2>
+    </div>
+    
     <!-- WEST COAST -->
     <div class="travel-entry">
       <div class="travel-text">
@@ -639,7 +618,7 @@
           <li><strong>5</strong><br>STATES</li>
           <li><strong>5</strong><br>CITIES</li>
           <li><strong>70+</strong><br>ATTRACTIONS</li>
-          <li><strong>2K+</strong><br>MILES 🚄</li>
+          <li><strong>2K+</strong><br>MILES ✈ 🚆 🚍</li>
           <li><strong>5</strong><br>HOTELS</li>
           <li><strong>331K+</strong><br>STEPS</li>
         </ul>
@@ -668,13 +647,13 @@
     <div class="travel-entry reverse">
       <div class="travel-text">
         <h3>EAST COAST (12/2024 – 01/2025)</h3>
-        <p>This was my first road trip during Winter Break! I flew from Los Angeles to Georgia to meet my cousin, then we drove to New York and back. I also spent a few days exploring Atlanta before flying home. Along the way, I experienced all kinds of weather. 🌦</p>
+        <p>This was my first road trip during Winter Break! I flew from Los Angeles to Georgia to meet my cousin, then we drove to New York and back. I also spent a few days exploring Atlanta before flying home. Along the way, I experienced all kinds of weather: ☀️ ☁ ️⛈️ 🌨️ 💨</p>
         <ul class="travel-stats">
           <li><strong>25</strong><br>DAYS</li>
           <li><strong>10</strong><br>STATES</li>
           <li><strong>20+</strong><br>CITIES</li>
           <li><strong>200+</strong><br>ATTRACTIONS</li>
-          <li><strong>7K+</strong><br>MILES 🚗</li>
+          <li><strong>7K+</strong><br>MILES ✈ 🚘 🚆 🚍</li>
           <li><strong>10</strong><br>ACCOMMODATIONS</li>
           <li><strong>335K+</strong><br>STEPS</li>
         </ul>
