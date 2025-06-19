@@ -321,13 +321,6 @@
       height: 100%;
     }
     
-    .slider-images img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: bottom;
-    }
-    
     .slide {
       position: absolute;
       top: 0; 
@@ -541,7 +534,7 @@
         font-size: 2rem;
       }
       
-      .dance-grid, .music.grid {
+      .dance-grid, .music-grid {
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -552,7 +545,7 @@
         text-align: center;
       }
 
-      .dance-content, .music.content {
+      .dance-content, .music-content {
         flex: 1 1 100%;
       }
       
@@ -564,10 +557,6 @@
 
       .intro-content p, .dance-content p, .music-content p, .travel-text p, .travel-stats li, .stat-label {
         font-size: 0.875rem;
-      }
-
-      .music-content {
-        margin-bottom: 0;
       }
       
       .travel-entry {
@@ -689,12 +678,12 @@
             <p>This was my first solo trip ever during Spring Break! I flew to Seattle and took the Amtrak down to Los Angeles, stopping to explore Portland, Sacramento, Oakland, and San Francisco. It rained for most of the trip, but on the last day, I was rewarded with a stunning sunset view from the Amtrak Coast Starlight.</p>
             <ul class="travel-stats">
               <li><span class="stat-number">7</span><span class="stat-label">DAYS</span></li>
-              <li><span class="stat-number">5</span><span class="stat-label">STATES</span></li>
+              <li><span class="stat-number">3</span><span class="stat-label">STATES</span></li>
               <li><span class="stat-number">5</span><span class="stat-label">CITIES</span></li>
               <li><span class="stat-number">70+</span><span class="stat-label">ATTRACTIONS</span></li>
-              <li><span class="stat-number">2K+</span><span class="stat-label">MILES</span><span class="stat-icon">✈️ 🚆 🚗</span></li>
               <li><span class="stat-number">5</span><span class="stat-label">HOTELS</span></li>
-              <li><span class="stat-number">331K+</span><span class="stat-label">STEPS</span></li>
+              <li><span class="stat-number">2K+</span><span class="stat-label">MILES</span><span class="stat-icon">✈️ 🚆 🚍</span></li>
+              <li><span class="stat-number">33K+</span><span class="stat-label">STEPS</span></li>
             </ul>
           </div>
           <div class="travel-image">
@@ -727,19 +716,20 @@
               <li><span class="stat-number">10</span><span class="stat-label">STATES</span></li>
               <li><span class="stat-number">20+</span><span class="stat-label">CITIES</span></li>
               <li><span class="stat-number">200+</span><span class="stat-label">ATTRACTIONS</span></li>
-              <li><span class="stat-number">7K+</span><span class="stat-label">MILES</span><span class="stat-icon">✈️ 🚘 🚆 🚍</span></li>
               <li><span class="stat-number">10</span><span class="stat-label">ACCOMS</span></li>
+              <li><span class="stat-number">15</span><span class="stat-label">CUISINES</span></li>
+              <li><span class="stat-number">7K+</span><span class="stat-label">MILES</span><span class="stat-icon">✈️ 🚘 🚆 🚍</span></li>            
               <li><span class="stat-number">335K+</span><span class="stat-label">STEPS</span></li>
             </ul>
           </div>
           <div class="travel-image">
             <div class="slider-wrapper">
               <div class="slider-images" id="slider-east">
-                <img src="../Images/Story/EastCoast1.jpg" class="slide active" alt="East Coast 1">
-                <img src="../Images/Story/EastCoast2.jpg" class="slide" alt="East Coast 2">
-                <img src="../Images/Story/EastCoast3.jpg" class="slide" alt="East Coast 3">
-                <img src="../Images/Story/EastCoast4.jpg" class="slide" alt="East Coast 4">
-                <img src="../Images/Story/EastCoast5.jpg" class="slide" alt="East Coast 5">
+                <img src="../Images/Story/East Coast 5.jpeg" class="slide active" alt="East Coast 1">
+                <img src="../Images/Story/East Coast 2.jpeg" class="slide" alt="East Coast 2">
+                <img src="../Images/Story/East Coast 3.jpeg" class="slide" alt="East Coast 3">
+                <img src="../Images/Story/East Coast 4.jpeg" class="slide" alt="East Coast 4">
+                <img src="../Images/Story/East Coast 1.jpeg" class="slide" alt="East Coast 5">
                 <div class="slider-dots">
                   <span onclick="showSlide('slider-east', 0)" class="dot active"></span>
                   <span onclick="showSlide('slider-east', 1)" class="dot"></span>
@@ -761,11 +751,11 @@
           <div class="travel-image">
             <div class="slider-wrapper">
               <div class="slider-images" id="slider-indonesia">
-                <img src="../Images/Story/Indonesia1.jpg" class="slide active" alt="Indonesia 1">
-                <img src="../Images/Story/Indonesia2.jpg" class="slide" alt="Indonesia 2">
-                <img src="../Images/Story/Indonesia3.jpg" class="slide" alt="Indonesia 3">
-                <img src="../Images/Story/Indonesia4.jpg" class="slide" alt="Indonesia 4">
-                <img src="../Images/Story/Indonesia5.jpg" class="slide" alt="Indonesia 5">
+                <img src="../Images/Story/Indonesia 4.JPG" class="slide active" alt="Indonesia 1">
+                <img src="../Images/Story/Indonesia 2.JPG" class="slide" alt="Indonesia 2">
+                <img src="../Images/Story/Indonesia 3.JPG" class="slide" alt="Indonesia 3">
+                <img src="../Images/Story/Indonesia 1.JPG" class="slide" alt="Indonesia 4">
+                <img src="../Images/Story/Indonesia 5.JPG" class="slide" alt="Indonesia 5">
                 <div class="slider-dots">
                   <span onclick="showSlide('slider-indonesia', 0)" class="dot active"></span>
                   <span onclick="showSlide('slider-indonesia', 1)" class="dot"></span>
@@ -787,11 +777,11 @@
           <div class="travel-image">
             <div class="slider-wrapper">
               <div class="slider-images" id="slider-trekking">
-                <img src="../Images/Story/Trekking1.jpg" class="slide active" alt="Trekking 1">
-                <img src="../Images/Story/Trekking2.jpg" class="slide" alt="Trekking 2">
-                <img src="../Images/Story/Trekking3.jpg" class="slide" alt="Trekking 3">
-                <img src="../Images/Story/Trekking4.jpg" class="slide" alt="Trekking 4">
-                <img src="../Images/Story/Trekking5.jpg" class="slide" alt="Trekking 5">
+                <img src="../Images/Story/Trekking 4.jpeg" class="slide active" alt="Trekking 1">
+                <img src="../Images/Story/Trekking 2.jpeg" class="slide" alt="Trekking 2">
+                <img src="../Images/Story/Trekking 3.jpeg" class="slide" alt="Trekking 3">
+                <img src="../Images/Story/Trekking 1.jpeg" class="slide" alt="Trekking 4">
+                <img src="../Images/Story/Trekking 5.JPG" class="slide" alt="Trekking 5">
                 <div class="slider-dots">
                   <span onclick="showSlide('slider-trekking', 0)" class="dot active"></span>
                   <span onclick="showSlide('slider-trekking', 1)" class="dot"></span>
@@ -813,11 +803,11 @@
           <div class="travel-image">
             <div class="slider-wrapper">
               <div class="slider-images" id="slider-singapore">
-                <img src="../Images/Story/Singapore1.jpg" class="slide active" alt="Singapore 1">
-                <img src="../Images/Story/Singapore2.jpg" class="slide" alt="Singapore 2">
-                <img src="../Images/Story/Singapore3.jpg" class="slide" alt="Singapore 3">
-                <img src="../Images/Story/Singapore4.jpg" class="slide" alt="Singapore 4">
-                <img src="../Images/Story/Singapore5.jpg" class="slide" alt="Singapore 5">
+                <img src="../Images/Story/Singapore 2.JPG" class="slide active" alt="Singapore 1">
+                <img src="../Images/Story/Singapore 1.JPG" class="slide" alt="Singapore 2">
+                <img src="../Images/Story/Singapore 3.JPG" class="slide" alt="Singapore 3">
+                <img src="../Images/Story/Singapore 4.JPG" class="slide" alt="Singapore 4">
+                <img src="../Images/Story/Singapore 5.JPG" class="slide" alt="Singapore 5">
                 <div class="slider-dots">
                   <span onclick="showSlide('slider-singapore', 0)" class="dot active"></span>
                   <span onclick="showSlide('slider-singapore', 1)" class="dot"></span>
