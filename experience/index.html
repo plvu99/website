@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+  <title>Phuong Vu | My Experience</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;900&display=swap" rel="stylesheet" />
+  
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --01: #f2f2f2;
+      --02: #eae4d5;
+      --03: #b6b09f;
+      --04: #090c08;
+      --05: #ffffff;
+      --06: #117a65;
+      --07: #f39c12;
+      --08: #757575;
+
+      --font-playfair: 'Playfair Display', serif;
+      --font-poppins: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-poppins);
+      background-color: var(--04);
+      color: var(--01);
+    }
+
+    header.site-header {
+      background-color: var(--04);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 0;
+      margin-bottom: 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--03);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      width: 100%;
+      padding: 0 2rem;
+      position: relative;
+    }
+    
+    .logo, .footer-brand h2 {
+      font-family: var(--font-playfair);
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--02);
+      text-shadow: 2px 0px 4px var(--03);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+    }
+
+    .nav-menu a {
+      color: var(--02);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: transform 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
+    }
+
+    .nav-menu a:hover {
+      transform: scale(1.05);
+      text-shadow: 0 0 6px var(--02);
+    }
+
+    .btn-contact {
+      background-color: var(--03);
+      color: var(--05);
+      padding: 1rem 1.5rem;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .btn-contact:hover {
+      background-color: var(--06);
+      transform: scale(1.05);
+    }
+    
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: var(--05);
+      background: none;
+      border: none;
+      z-index: 1001;
+    }
+
+    .intro-section {
+      background-color: var(--05);
+      padding: 7rem 2rem 2.5rem;
+    }
+
+    .intro-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      padding: 0 2rem;
+      margin: 0 auto;
+      gap: 2rem;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+    }
+   
+    .intro-content h1 {
+      font-family: var(--font-poppins);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--04);
+      margin-bottom: 0.25rem;
+    }
+
+    .intro-content p {
+      position: relative;
+      font-size: 1rem;
+      color: var(--04);
+      line-height: 1.6
+    }
+
+    .milestone-section {
+      background-color: var(--04);
+      padding: 6rem 2rem;
+    }
+
+    .milestone-title, .skills-title, .contact-title {
+      text-align: center;
+      font-family: var(--font-poppins);
+      font-weight: 900;
+      font-size: 1.75rem;
+      color: var(--06);
+      margin-bottom: 1.5rem;
+    }
+
+    .milestone-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .milestone-block {
+      background-color: var(--02);
+      border-radius: 10px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: var(--05);
+    } 
+    
+    .milestone-year {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    
+    .milestone-block ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    
+    .milestone-block li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .milestone-block .location {
+      font-weight: 600;
+    }
+    
+    .milestone-stage {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      color: var(--05);
+    }
+
+    .resume-button {
+      text-align: center;
+    }
+    
+    .btn-resume, .contact-submit {
+      background-color: var(--03);
+      color: var(--05);
+      padding: 1rem 1.5rem;
+      font-weight: 600;
+      font-size: 1.125rem;
+      border: none;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+    }
+    
+    .btn-resume:hover {
+      background-color: var(--06);
+      transform: scale(1.05);
+    }    
+
+    .skills-section {
+      background-color: var(--02);
+      padding: 6rem 2rem;
+    }
+
+    .skills-menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+    
+    .skill-tab {
+      border: 1px solid var(--08);
+      background-color: transparent;
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .skill-tab.active {
+      background-color: var(--08);
+      color: white;
+    }
+    
+    .skill-panel {
+      display: none;
+      padding: 2rem;
+      border-radius: 12px;
+      background-color: var(--05);
+      max-width: 1100px;
+      margin: auto;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+    }
+    
+    .skill-panel.active {
+      display: block;
+    }
+
+    .skills-intro {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      margin-bottom: 2rem;
+      color: var(--05);
+      font-size: 1rem;
+    }   
+
+    .decision-columns, .content-columns, .project-columns, .collab-columns, .research-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+        
+    .decision-box h3, .content-box h3, .project-box h3, .collab-box h3, .research-box h3 {
+      font-size: 1.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      color: var(--05);
+    }
+
+    .decision-box h3::after, .content-box h3::after, .project-box h3::after, .collab-box h3::after, .research-box h3::after {
+      content: '';
+      position: absolute;
+      bottom: -0.25rem;
+      display: block;
+      left: 0;
+      width: 30%;
+      height: 4px;
+      background-color: var(--02);
+      margin-top: 1rem;
+    }
+    
+    .decision-box ul, .content-box ul, .project-box ul, .collab-box ul, .research-box ul {
+      list-style: disc;
+      padding-left: 1rem;
+      color: var(--05);
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+    
+    .contact-section {
+      background-color: var(--06);
+      padding: 4rem 2rem 6rem;
+      text-align: center;
+    } 
+
+    .contact-container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .contact-title {
+      color: var(--02);
+    }
+
+    .contact-subtitle {
+      font-family: var(--font-poppins);
+      font-size: 1rem;
+      color: var(--05);
+      margin-bottom: 2.375rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      font-family: var(--font-poppins);
+      border: none;
+      border-radius: 5px;
+      background-color: var(--05);
+      color: var(--04);
+    }
+    
+    .contact-form textarea {
+      resize: vertical;
+    }
+
+    .contact-submit {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .site-footer {
+      background-color: var(--04);
+      color: var(--05);
+      padding: 4rem 2rem 5rem;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 2rem;
+      gap: 5rem;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    
+    .footer-contact h3, .footer-nav h3 {
+      font-family: var(--font-poppins);
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--02);
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-contact ul, .footer-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .footer-contact li, .footer-nav li {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--05);
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-contact a, .footer-nav a {
+      color: var(--05);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 1rem;
+      margin-top: 0.5rem;
+    }
+    
+/* Responsive for mobile */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .logo, .footer-brand h2 {
+        font-size: 28px;
+        margin-bottom: 0.5rem;
+      }
+
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 2rem;
+        top: 1rem;
+      }
+
+      .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        width: 100%;
+        background-color: var(--04);
+        padding: 0;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .nav-menu.show {
+        max-height: 500px;
+        padding: 1rem 0;
+        opacity: 1;
+      }
+
+      .nav-menu a {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 0;
+      }
+
+      .intro-section {
+        background-color: var(--02);
+        padding: 8rem 2rem 2.5rem;
+      }  
+      
+      .intro-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .intro-content {
+        flex: 1 1 100%;
+      }
+      
+      .milestone-title {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 1.75rem;
+      }
+      
+      .milestone-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+      }
+    
+      .milestone-block {
+        padding: 1.5rem;
+        border-radius: 10px;
+      }
+    
+      .milestone-year {
+        font-size: 1.125rem;
+        margin-bottom: 0.75rem;
+      }
+    
+      .milestone-block ul {
+        font-size: 0.875rem;
+      }
+      
+      .milestone-stage {
+        font-size: 0.75rem;
+        margin-top: 1rem;
+        text-align: left;
+      }
+      
+      .contact-title {
+        font-size: 1.625rem;
+      }
+      
+      .contact-subtitle, .contact-form input, .contact-form textarea {
+        font-size: 0.95rem;
+      }
+      
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .footer-contact h3, .footer-nav h3, .footer-contact ul, .footer-nav ul, .footer-contact li, .footer-nav li {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+  
+<body>
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="logo">PHUONG VU</div>
+
+      <!-- Hamburger icon toggles open/close -->
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="home">HOME</a>
+        <a href="story">MY STORY</a>
+        <a href="experience">MY EXPERIENCE</a>
+        <a href="work">MY WORK</a>
+        <a href="contact" class="btn-contact">CONTACT ME</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro-section">
+      <div class="intro-container">
+        <div class="intro-content">
+          <h1>MY EXPERIENCE</h1>
+          <p>My journey from where I started and what I learned to how I’ve grown. You’ll find key milestones, achievements, and numbers showing the impact I made.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="milestone-section">
+      <div class="milestone-title">MILESTONES</div>
+    
+      <div class="milestone-grid">
+        <!-- Milestone block -->
+        <div class="milestone-block">
+          <div class="milestone-year">2017 – 2019</div>
+          <ul>
+            <li>Started BBA (English-taught Program), Foreign Trade University</li>
+            <li>Joined FTU Dancing Club & Vietnam University Games (Dance Battle)</li>
+            <li>Marketing Executive, AIESEC in Vietnam (Global volunteer)</li>
+            <li><span class="location">📍 HANOI, VIETNAM</span></li>
+          </ul>
+          <div class="milestone-stage">DISCOVER MYSELF</div>
+        </div>
+    
+        <div class="milestone-block">
+          <div class="milestone-year">2020</div>
+          <ul>
+            <li>Content Creator, Unstatic (Summerian) – Summarized non-fiction books</li>
+            <li>Marketing Intern, ABIVIN – Supported logistics marketing ops</li>
+            <li><span class="location">📍 HANOI, VIETNAM</span></li>
+          </ul>
+          <div class="milestone-stage">SHAPE MY CAREER</div>
+        </div>
+    
+        <div class="milestone-block">
+          <div class="milestone-year">2021</div>
+          <ul>
+            <li>Marketing Executive, ABIVIN – Promoted logistics solutions</li>
+            <li>Graduated with BBA, Foreign Trade University</li>
+            <li><span class="location">📍 HANOI, VIETNAM</span></li>
+          </ul>
+          <div class="milestone-stage">ADVANCE PROFESSIONALLY</div>
+        </div>
+    
+        <div class="milestone-block">
+          <div class="milestone-year">2021 – 2024</div>
+          <ul>
+            <li>Growth Executive, GemUni – Contributed to blockchain ecosystem</li>
+            <li><span class="location">📍 HO CHI MINH, VIETNAM</span></li>
+            <li>Marketing Executive, Payboy – Ran HR tech campaigns</li>
+            <li><span class="location">📍 SINGAPORE</span></li>
+          </ul>
+          <div class="milestone-stage">EXPAND REGIONALLY</div>
+        </div>
+    
+        <div class="milestone-block">
+          <div class="milestone-year">2024 – PRESENT</div>
+          <ul>
+            <li>MS in Business Analytics, USC Marshall</li>
+            <li>Board Member, BASA</li>
+            <li>4th place, MSBA Global Case Competition</li>
+            <li><span class="location">📍 LOS ANGELES, USA</span></li>
+          </ul>
+          <div class="milestone-stage">GO GLOBAL</div>
+        </div>
+      </div>
+    
+      <div class="resume-button">
+        <a href="Resume.pdf" class="btn-resume">VIEW MY RESUME</a>
+      </div>
+    </section>
+    
+    <section class="skills-section">
+      <h2 class="skills-title">KEY SKILLS & ACHIEVEMENTS</h2>
+      <div class="skills-menu">
+        <button class="skill-tab active" data-target="decision">Data-Driven Decision Making</button>
+        <button class="skill-tab" data-target="content">Strategic Content Creation</button>
+        <button class="skill-tab" data-target="project">Project Planning & Execution</button>
+        <button class="skill-tab" data-target="collab">Cross-Functional Collaboration</button>
+        <button class="skill-tab" data-target="research">Research & Strategic Thinking</button>
+      </div>
+    
+      <div class="skills-content">
+        <div class="skill-panel" id="decision">
+          <p class="skills-intro">I turn data into clear, actionable insights—improving marketing performance, customer experience, and strategic outcomes through testing, analytics, and reporting.</p>
+          <div class="decision-columns">
+            <div class="decision-box">
+              <h3>EMAIL PERFORMANCE ANALYSIS</h3>
+              <ul>
+                <li>A/B tested messaging (cost-saving vs. time-saving)</li>
+                <li>Identified best-performing content based on open rate & CTR</li>
+                <li>Campaigns achieved 30–40% open rate, ~2% CTR</li>
+              </ul>
+            </div>
+            <div class="decision-box">
+              <h3>DASHBOARDS & PERFORMANCE REPORTS</h3>
+              <ul>
+                <li>Built real-time dashboards in Looker Studio to track user engagement</li>
+                <li>Presented findings to internal teams to drive UX & engagement</li>
+                <li>Enabled data-driven iterations across channels and teams</li>
+              </ul>
+            </div>
+            <div class="decision-box">
+              <h3>SURVEY & STAKEHOLDER INSIGHTS</h3>
+              <ul>
+                <li>Designed online surveys to guide pricing and product development</li>
+                <li>Created Looker dashboards on feature ratings & decision drivers</li>
+                <li>Informed strategy decisions across teams</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    
+        <div class="skill-panel" id="content">
+          <p class="skills-intro">I craft content that converts — from eBooks that generate leads to whitepapers that land investors. My work combines storytelling with strategic goals, tailored for both B2B and community audiences.</p>
+          <div class="content-columns">
+            <div class="content-box">
+              <h3>LEAD-GENERATING CONTENT</h3>
+              <ul>
+                <li>Created and optimized content for 20+ landing pages promoting events and campaigns</li>
+                <li>Wrote and distributed 5 eBooks across HR and logistics, generating 1,000+ leads</li>
+                <li>Wrote and proofread 80+ blogs and guides on HR, logistics, and blockchain trends</li>
+              </ul>
+            </div>
+            <div class="content-box">
+              <h3>THOUGHT LEADERSHIP ASSETS</h3>
+              <ul>
+                <li>Launched LinkedIn newsletter (500+ subscribers, 150–200 views per post)</li>
+                <li>Built whitepapers and pitch decks securing fundraising and nearly 30 investors and  partners</li>
+                <li>Drove alignment across investor, product, and marketing teams</li>
+              </ul>
+            </div>
+            <div class="content-box">
+              <h3>SOCIAL & EVENT CONTENT</h3>
+              <ul>
+                <li>Wrote and proofread 100+ Facebook and LinkedIn posts, including ad variations for HR tech promotions</li>
+                <li>Edited daily Twitter and Telegram content for an NFT blockchain project</li>
+                <li>Created targeted content for event engagement, community building, and brand awareness campaigns</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    
+        <div class="skill-panel" id="project">
+          <p class="skills-intro">I lead the execution of data-driven marketing initiatives — managing segmented audiences, automating communication workflows, and optimizing engagement to drive measurable outcomes.</p>
+          <div class="project-columns">
+            <div class="project-box">
+              <h3>AUDIENCE MANAGEMENT & OPTIMIZATION</h3>
+              <ul>
+                <li>Define targeted audience personas for each campaign</li>
+                <li>Managed 10K+ contacts, growing subscriber base by 5% monthly and maintaining <0.01% unsubscribe rate</li>
+                <li>Improved deliverability with database cleaning and segmentation</li>
+              </ul>
+            </div>
+            <div class="project-box">
+              <h3>AUTOMATION & ENGAGEMENT</h3>
+              <ul>
+                <li>Built 20+ email workflows with up to 57% open rate, 26% CTR  </li>
+                <li>Created audience journeys for HR, logistics, and blockchain campaigns</li>
+                <li>Aligned content to audience behavior and funnel stage</li>
+              </ul>
+            </div>
+            <div class="project-box">
+              <h3>COMMUNITY & CAMPAIGN ACTIVATION</h3>
+              <ul>
+                <li>Ran engagement campaign with 75 returnees for user-generated content</li>
+                <li>Promoted campaigns through personalized email & social content</li>
+                <li>Balanced retention, nurturing, and lead gen goals</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-panel" id="collab">
+          <p class="skills-intro">I collaborate across departments and borders to align marketing efforts, drive consistency, and deliver measurable results.</p>
+          <div class="collab-columns">
+            <div class="collab-box">
+              <h3>INTERNAL ALIGNMENT</h3>
+              <ul>
+                <li>Collaborated with Sales, HR, and Product teams on 20+ campaigns</li>
+                <li>Ensured content mapped to the full customer journey</li>
+                <li>Unified messaging across marketing, consulting, and dev teams</li>
+              </ul>
+            </div>
+            <div class="collab-box">
+              <h3>CREATIVE & CONTENT PRODUCTION</h3>
+              <ul>
+                <li>Led a team of 3 to execute content strategies</li>
+                <li>Worked with designers, video editors, and copywriters</li>
+                <li>Delivered branded materials across 3 business units</li>
+              </ul>
+            </div>
+            <div class="collab-box">
+              <h3>EXTERNAL & GLOBAL PARTNERSHIPS</h3>
+              <ul>
+                <li>Worked with SEO agencies in UK, Australia, India</li>
+                <li>Conducted audits and built plans to boost web rankings</li>
+                <li>Created community livestreams and quizzes (10K–100K audiences)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    
+        <div class="skill-panel active" id="research">
+          <p class="skills-intro">I conduct in-depth research to guide market strategy, positioning, and product development — blending qualitative insight with measurable outcomes.</p>
+          <div class="research-columns">
+            <div class="research-box">
+              <h3>MARKET & TREND RESEARCH</h3>
+              <ul>
+                <li>Researched HR and SaaS trends to fuel newsletters</li>
+                <li>Created weekly blogs on logistics and innovation</li>
+                <li>Translated secondary research into thought leadership content</li>
+              </ul>
+            </div>
+            <div class="research-box">
+              <h3>SURVEY & FEEDBACK ANALYSIS</h3>
+              <ul>
+                <li>Designed surveys for business users and stakeholders</li>
+                <li>Synthesized feedback into dashboards and product insights</li>
+                <li>Identified patterns to inform pricing and product features</li>
+              </ul>
+            </div>
+            <div class="research-box">
+              <h3>STRATEGIC PLANNING & GO-TO-MARKET</h3>
+              <ul>
+                <li>Supported go-to-market planning with survey-driven data</li>
+                <li>Contributed to pricing strategy and audience segmentation</li>
+                <li>Positioned content and product based on user expectations</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <h2 class="contact-title">I’D LOVE TO CONNECT!</h2>
+        <p class="contact-subtitle">Schedule a coffee chat with me.</p>
+    
+        <form class="contact-form" action="#" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <input type="text" name="linkedin" placeholder="Your LinkedIn" />
+          <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+          <button type="submit" class="contact-submit">SUBMIT</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>PHUONG VU</h2>
+      </div>
+  
+      <div class="footer-contact">
+        <h3>CONTACT</h3>
+        <ul>
+          <li>213-566-5734</li>
+          <li>plvu@marshall.usc.edu</li>
+          <li>Los Angeles, CA, United States</li>
+          <li><a href="https://www.linkedin.com/in/phuong-vu-lan/" target="_blank"><img src="../Images/Logos/LinkedIn.webp" alt="LinkedIn" class="footer-icon" /></a> <a href="https://github.com/plvu99" target="_blank"><img src="../Images/Logos/GitHub.png" alt="GitHub" class="footer-icon" /></a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-nav">
+        <h3>NAVIGATION</h3>
+        <ul>
+          <li><a href="home">Home</a></li>
+          <li><a href="story">My Story</a></li>
+          <li><a href="experience">My Experience</a></li>
+          <li><a href="work">My Work</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+      
+<!-- Toggle menu visibility and icon -->
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+    
+  function toggleMenu() {
+    navMenu.classList.toggle('show');
+    toggleBtn.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
+  }
+    
+  toggleBtn.addEventListener('click', toggleMenu);
+  </script>
+
+</body>
+</html>
