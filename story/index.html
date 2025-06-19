@@ -231,17 +231,19 @@
       flex-wrap: wrap;
       gap: 5rem;
       align-items: flex-start;
-      margin-top: 0;  
       margin-bottom: 3rem;
     }
+    
+    .travel-content {
+      margin-bottom: 0;
+    }
 
-    .travel-entry.reverse {
-      flex-direction: row-reverse;
+    .travel-entry:first-of-type {
+      margin-top: 0;
     }
     
-    .travel-text,
-    .travel-image {
-      align-self: flex-start;
+    .travel-entry.reverse {
+      flex-direction: row-reverse;
     }
     
     .travel-text h3 {
@@ -251,6 +253,7 @@
       color: var(--08);
       position: relative;
       text-decoration: none;
+      color: inherit;
     }
     
     .travel-text h3::after {
@@ -272,7 +275,7 @@
     .travel-stats {
       display: grid;
       grid-template-columns: repeat(4, minmax(80px, 1fr));
-      gap: 1.25rem;
+      gap: 1.375rem;
       list-style: none;
       padding: 0;
       margin: 1rem 0 0;
@@ -631,8 +634,8 @@
     <section class="dance-section">
       <div class="dance-grid">
         <div class="dance-image">
-          <img src="Story/VUG 2.jpg" alt="VUG">
-          <img src="Story/VUG 1.jpg" alt="VUG">
+          <img src="../Images/Story/VUG 2.jpg" alt="VUG">
+          <img src="../Images/Story/VUG 1.jpg" alt="VUG">
         </div>        
         <div class="dance-content">
           <div class="dance-label">A TURNING POINT</div>
@@ -692,11 +695,11 @@
           <div class="travel-image">
             <div class="slider-wrapper">
               <div class="slider-images" id="slider-west">
-                <img src="Story/West Coast 1.jpeg" class="slide active" alt="West Coast 1">
-                <img src="Story/West Coast 2.jpeg" class="slide" alt="West Coast 2">
-                <img src="Story/West Coast 3.jpeg" class="slide" alt="West Coast 3">
-                <img src="Story/West Coast 4.jpeg" class="slide" alt="West Coast 4">
-                <img src="Story/West Coast 5.jpeg" class="slide" alt="West Coast 5">
+                <img src="../Images/Story/West Coast 1.jpeg" class="slide active" alt="West Coast 1">
+                <img src="../Images/Story/West Coast 2.jpeg" class="slide" alt="West Coast 2">
+                <img src="../Images/Story/West Coast 3.jpeg" class="slide" alt="West Coast 3">
+                <img src="../Images/Story/West Coast 4.jpeg" class="slide" alt="West Coast 4">
+                <img src="../Images/Story/West Coast 5.jpeg" class="slide" alt="West Coast 5">
                 <div class="slider-dots">
                   <span onclick="showSlide('slider-west', 0)" class="dot active"></span>
                   <span onclick="showSlide('slider-west', 1)" class="dot"></span>
@@ -727,11 +730,11 @@
           <div class="travel-image">
             <div class="slider-wrapper">
               <div class="slider-images" id="slider-east">
-                <img src="Story/EastCoast1.jpg" class="slide active" alt="East Coast 1">
-                <img src="Story/EastCoast2.jpg" class="slide" alt="East Coast 2">
-                <img src="Story/EastCoast3.jpg" class="slide" alt="East Coast 3">
-                <img src="Story/EastCoast4.jpg" class="slide" alt="East Coast 4">
-                <img src="Story/EastCoast5.jpg" class="slide" alt="East Coast 5">
+                <img src="../Images/Story/EastCoast1.jpg" class="slide active" alt="East Coast 1">
+                <img src="../Images/Story/EastCoast2.jpg" class="slide" alt="East Coast 2">
+                <img src="../Images/Story/EastCoast3.jpg" class="slide" alt="East Coast 3">
+                <img src="../Images/Story/EastCoast4.jpg" class="slide" alt="East Coast 4">
+                <img src="../Images/Story/EastCoast5.jpg" class="slide" alt="East Coast 5">
                 <div class="slider-dots">
                   <span onclick="showSlide('slider-east', 0)" class="dot active"></span>
                   <span onclick="showSlide('slider-east', 1)" class="dot"></span>
@@ -753,11 +756,11 @@
           <div class="travel-image">
             <div class="slider-wrapper">
               <div class="slider-images" id="slider-indonesia">
-                <img src="Story/Indonesia1.jpg" class="slide active" alt="Indonesia 1">
-                <img src="Story/Indonesia2.jpg" class="slide" alt="Indonesia 2">
-                <img src="Story/Indonesia3.jpg" class="slide" alt="Indonesia 3">
-                <img src="Story/Indonesia4.jpg" class="slide" alt="Indonesia 4">
-                <img src="Story/Indonesia5.jpg" class="slide" alt="Indonesia 5">
+                <img src="../Images/Story/Indonesia1.jpg" class="slide active" alt="Indonesia 1">
+                <img src="../Images/Story/Indonesia2.jpg" class="slide" alt="Indonesia 2">
+                <img src="../Images/Story/Indonesia3.jpg" class="slide" alt="Indonesia 3">
+                <img src="../Images/Story/Indonesia4.jpg" class="slide" alt="Indonesia 4">
+                <img src="../Images/Story/Indonesia5.jpg" class="slide" alt="Indonesia 5">
                 <div class="slider-dots">
                   <span onclick="showSlide('slider-indonesia', 0)" class="dot active"></span>
                   <span onclick="showSlide('slider-indonesia', 1)" class="dot"></span>
@@ -779,11 +782,11 @@
           <div class="travel-image">
             <div class="slider-wrapper">
               <div class="slider-images" id="slider-trekking">
-                <img src="Story/Trekking1.jpg" class="slide active" alt="Trekking 1">
-                <img src="Story/Trekking2.jpg" class="slide" alt="Trekking 2">
-                <img src="Story/Trekking3.jpg" class="slide" alt="Trekking 3">
-                <img src="Story/Trekking4.jpg" class="slide" alt="Trekking 4">
-                <img src="Story/Trekking5.jpg" class="slide" alt="Trekking 5">
+                <img src="../Images/Story/Trekking1.jpg" class="slide active" alt="Trekking 1">
+                <img src="../Images/Story/Trekking2.jpg" class="slide" alt="Trekking 2">
+                <img src="../Images/Story/Trekking3.jpg" class="slide" alt="Trekking 3">
+                <img src="../Images/Story/Trekking4.jpg" class="slide" alt="Trekking 4">
+                <img src="../Images/Story/Trekking5.jpg" class="slide" alt="Trekking 5">
                 <div class="slider-dots">
                   <span onclick="showSlide('slider-trekking', 0)" class="dot active"></span>
                   <span onclick="showSlide('slider-trekking', 1)" class="dot"></span>
@@ -805,11 +808,11 @@
           <div class="travel-image">
             <div class="slider-wrapper">
               <div class="slider-images" id="slider-singapore">
-                <img src="Story/Singapore1.jpg" class="slide active" alt="Singapore 1">
-                <img src="Story/Singapore2.jpg" class="slide" alt="Singapore 2">
-                <img src="Story/Singapore3.jpg" class="slide" alt="Singapore 3">
-                <img src="Story/Singapore4.jpg" class="slide" alt="Singapore 4">
-                <img src="Story/Singapore5.jpg" class="slide" alt="Singapore 5">
+                <img src="../Images/Story/Singapore1.jpg" class="slide active" alt="Singapore 1">
+                <img src="../Images/Story/Singapore2.jpg" class="slide" alt="Singapore 2">
+                <img src="../Images/Story/Singapore3.jpg" class="slide" alt="Singapore 3">
+                <img src="../Images/Story/Singapore4.jpg" class="slide" alt="Singapore 4">
+                <img src="../Images/Story/Singapore5.jpg" class="slide" alt="Singapore 5">
                 <div class="slider-dots">
                   <span onclick="showSlide('slider-singapore', 0)" class="dot active"></span>
                   <span onclick="showSlide('slider-singapore', 1)" class="dot"></span>
