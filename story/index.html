@@ -227,7 +227,7 @@
     }
 
     .travel-content {
-      margin-bottom: 1rem;
+      margin-bottom: 0;
     }
 
     .travel-entry {
@@ -240,6 +240,11 @@
 
     .travel-entry.reverse {
       flex-direction: row-reverse;
+    }
+    
+    .travel-text,
+    .travel-image {
+      align-self: flex-start;
     }
     
     .travel-text h3 {
@@ -513,6 +518,11 @@
         text-align: center;
         padding: 0.75rem 0;
       }
+
+      .intro-section {
+        background-color: var(--02);
+        padding: 8rem 2rem 3rem;
+      }  
       
       .intro-container {
         flex-direction: column;
@@ -551,11 +561,26 @@
       .intro-content p, .dance-content p, .music-content p, .travel-text p, .travel-stats li {
         font-size: 0.875rem;
       }
+
+      .travel-entry {
+        flex-direction: column;
+        gap: 3rem;
+      }
+      
+      .travel-image {
+        align-self: center;
+      } 
       
       .travel-text h3 {
         font-size: 1.25rem;
       }
-
+      
+      .travel-stats {
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        width: 100%;
+      }
+      
       .contact-title {
         font-size: 1.625rem;
       }
@@ -600,7 +625,7 @@
       <div class="intro-container">
         <div class="intro-content">
           <h1>MY STORY</h1>
-          <p>From a turning point that shaped who I am today to the adventures, movement, and meaningful experiences I’ve embraced along the way.</p>
+          <p>From a turning point shaping who I am today to the adventures, movement, and meaningful experiences I’ve embraced along the way.</p>
         </div>
       </div>
     </section>
@@ -690,14 +715,14 @@
         <div class="travel-entry reverse">
           <div class="travel-text">
             <h3>EAST COAST (12/2024 – 01/2025)</h3>
-            <p>This was my first road trip during Winter Break! I flew from Los Angeles to Georgia to meet my cousin, then we drove to New York and back. I also spent a few days exploring Atlanta before flying home. Along the way, I experienced all kinds of weather: ☀️ ☁ ️⛈️ 🌨️ 💨</p>
+            <p>This was my first road trip during Winter Break! I flew from Los Angeles to Georgia to meet my cousin, then we drove to New York and back. I also spent a few days exploring Atlanta before flying home. Along the way, I experienced all kinds of weather: ☀️ ☁️ ⛈️ 🌨️ 💨</p>
             <ul class="travel-stats">
               <li><span class="stat-number">25</span><span class="stat-label">DAYS</span></li>
               <li><span class="stat-number">10</span><span class="stat-label">STATES</span></li>
               <li><span class="stat-number">20+</span><span class="stat-label">CITIES</span></li>
               <li><span class="stat-number">200+</span><span class="stat-label">ATTRACTIONS</span></li>
               <li><span class="stat-number">7K+</span><span class="stat-label">MILES</span><span class="stat-icon">✈️ 🚘 🚆 🚍</span></li>
-              <li><span class="stat-number">10</span><span class="stat-label">ACCOMMODATIONS</span></li>
+              <li><span class="stat-number">10</span><span class="stat-label">ACCOMS</span></li>
               <li><span class="stat-number">335K+</span><span class="stat-label">STEPS</span></li>
             </ul>
           </div>
