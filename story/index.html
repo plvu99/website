@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="format-detection" content="date=no">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
   <title>Phuong Vu | My Story</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;900&display=swap" rel="stylesheet" />
   
@@ -227,13 +227,12 @@
       flex-direction: column;
     }
 
-    .travel-title {
-      margin-bottom: 1rem;
-    }
-    
     .travel-content {
       margin-bottom: 0;
-      padding-bottom: 0;
+    }
+    
+    .travel-title {
+      margin-bottom: 0;
     }
     
     .travel-entry {
@@ -242,6 +241,10 @@
       gap: 5rem;
       align-items: flex-start;
       margin-bottom: 3rem;
+    }
+
+    .travel-entry:first-of-type {
+      margin-top: 0;
     }
     
     .travel-entry.reverse {
