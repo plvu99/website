@@ -217,7 +217,7 @@
 
     .travel-section {
       background-color: var(--02);
-      padding: 3rem 2rem 6rem;
+      padding: 6rem 2rem;
     }
 
     .travel-container {
@@ -227,20 +227,21 @@
       flex-direction: column;
     }
 
+    .travel-title {
+      margin-bottom: 1rem;
+    }
+    
+    .travel-content {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
     .travel-entry {
       display: flex;
       flex-wrap: wrap;
       gap: 5rem;
       align-items: flex-start;
       margin-bottom: 3rem;
-    }
-    
-    .travel-content {
-      margin-bottom: 0;
-    }
-
-    .travel-entry:first-of-type {
-      margin-top: 0;
     }
     
     .travel-entry.reverse {
@@ -275,7 +276,7 @@
     .travel-stats {
       display: grid;
       grid-template-columns: repeat(4, minmax(80px, 1fr));
-      gap: 1.375rem;
+      gap: 1.5rem;
       list-style: none;
       padding: 0;
       margin: 1rem 0 0;
