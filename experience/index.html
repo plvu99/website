@@ -188,8 +188,10 @@
       bottom: 0;
       left: 50%;
       width: 4px;
-      background-color: var(--04); /* same as milestone-section background */
-      z-index: 1;
+      background-color: var(--02);
+      height: 100%;
+      transform: translateX(-50%);
+      z-index: 2;
     }
     
     .milestone-step.left {
@@ -216,14 +218,6 @@
       font-family: var(--font-poppins);
     }
     
-    .milestone-step.left .milestone-circle {
-      right: -20px;
-    }
-        
-    .milestone-step.right .milestone-circle {
-      left: -20px;
-    }
-    
     .milestone-box {
       background-color: var(--02);
       border-radius: 10px;
@@ -244,6 +238,10 @@
       list-style: disc;
       font-size: 1rem;
       line-height: 1.6;
+    }
+
+    .milestone-box p {
+      font-size: 1rem;
     }
     
     .resume-button {
@@ -546,6 +544,11 @@
       .milestone-step {
         width: 100%;
       }
+    
+      .milestone-step.right {
+        left: 0;
+        text-align: left;
+      } 
       
       .milestone-circle {
         left: 0;
@@ -562,7 +565,7 @@
         margin-bottom: 0.75rem;
       }
     
-      .milestone-box ul, .skills-intro, .decision-box ul, .content-box ul, .project-box ul, .collab-box ul, .research-box ul {
+      .milestone-box ul, .milestone-box p, .skills-intro, .decision-box ul, .content-box ul, .project-box ul, .collab-box ul, .research-box ul {
         font-size: 0.875rem;
       }
 
@@ -634,7 +637,7 @@
       <div class="milestone-timeline">
     
         <div class="milestone-step left">
-          <div class="milestone-circle">GO GLOBAL</div>
+          <div class="milestone-circle">GO<br>GLOBAL</div>
           <div class="milestone-box">
             <h3>2024 – PRESENT</h3>
             <ul>
@@ -647,53 +650,50 @@
         </div>
     
         <div class="milestone-step right">
-          <div class="milestone-circle">EXPAND REGIONALLY</div>
+          <div class="milestone-circle">EXPAND<br>REGIONALLY</div>
           <div class="milestone-box">
             <h3>2021 – 2024</h3>
             <ul>
-              <li>Growth Executive, GemUni<br>Contributed to NFT blockchain gaming ecosystem</li>
-              <li><span class="location">📍 HO CHI MINH, VIETNAM</span></li>
-              <li>Marketing Executive, Payboy <br>Drove HR tech campaigns for a cloud-based HRMS</li>
-              <li><span class="location">📍 SINGAPORE</span></li>
+              <li>Growth Executive, GemUni<br>Contributed to NFT blockchain gaming ecosystem<br>📍 HO CHI MINH, VIETNAM</li>
+              <li>Marketing Executive, Payboy <br>Drove HR tech campaigns for a cloud-based HRMS<br>📍 SINGAPORE</li>
             </ul>
           </div>
         </div>
     
         <div class="milestone-step left">
-          <div class="milestone-circle">ADVANCE PROFESSIONALLY</div>
+          <div class="milestone-circle">ADVANCE<br>PROFESSIONALLY</div>
           <div class="milestone-box">
-            <h3>2021</h3>
-            <p><strong>ADVANCE PROFESSIONALLY</strong></p>
+            <h3>2021</h3
             <ul>
               <li>Marketing Executive at ABIVIN<br>Promoted enterprise logistics solutions</li>
               <li>Graduated with Bachelor of Business Administration, Foreign Trade University</li>
-              <li><span class="location">📍 HANOI, VIETNAM</span></li>
             </ul>
+            <p>📍 HANOI, VIETNAM</p>
           </div>
         </div>
     
         <div class="milestone-step right">
-          <div class="milestone-circle">SHAPE MY CAREER</div>
+          <div class="milestone-circle">SHAPE MY<br>CAREER</div>
           <div class="milestone-box">
             <h3>2020</h3>
             <ul>
               <li>Content Creator, Unstatic (Summerian)<br>Created summaries of non-fiction books in English</li>
               <li>Marketing Intern, ABIVIN<br>Supported logistics startup marketing operations</li>
-              <li><span class="location">📍 HANOI, VIETNAM</span></li>
             </ul>
+            <p>📍 HANOI, VIETNAM</p>
           </div>
         </div>
     
         <div class="milestone-step left">
-          <div class="milestone-circle">DISCOVER MYSELF</div>
+          <div class="milestone-circle">DISCOVER<br>MYSELF</div>
           <div class="milestone-box">
             <h3>2017 – 2019</h3>
             <ul>
               <li>Started BBA (English-taught Program), Foreign Trade University</li>
               <li>Joined FTU Dancing Club & Vietnam University Games (Dance Battle)</li>
               <li>Marketing Executive, AIESEC in Vietnam (Global Volunteer)<br>Facilitated cross-cultural programs for students to develop leadership</li>
-              <li><span class="location">📍 HANOI, VIETNAM</span></li>
             </ul>
+            <p>📍 HANOI, VIETNAM</p>
           </div>
         </div>
       </div>
