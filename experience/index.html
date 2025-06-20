@@ -175,7 +175,7 @@
     .milestone-step {
       position: relative;
       width: 50%;
-      padding: 2rem;
+      padding: 2rem 2rem 2rem 6rem;
       box-sizing: border-box;
     }
     
@@ -191,18 +191,26 @@
 
     .milestone-circle {
       position: absolute;
-      top: 2rem;  
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
       width: 100px;
       height: 100px;
       background: var(--06);
       color: var(--05);
       font-weight: 700;
       border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-poppins);
+      font-size: 1rem;
+      line-height: 1.2;
       text-align: center;
-      line-height: 100px;
       z-index: 2;
+      white-space: pre-line;
+      padding: 0.5rem;
     }
     
     .milestone-box {
@@ -274,6 +282,7 @@
       font-size: 1rem;
       text-align: center;
       transition: background-color 0.3s ease;
+      align-items: center;
     }
     
     .skill-tab.active {
@@ -290,6 +299,7 @@
       max-width: 1200px;
       margin: 1rem auto;
       box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+      font-family: var(--font-poppins);
     }
     
     .skill-panel.active {
@@ -320,7 +330,7 @@
     .decision-columns, .content-columns, .project-columns, .collab-columns, .research-columns {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      row-gap: 1rem;
+      row-gap: 0.5rem;
       column-gap: 2rem;
     }
         
@@ -570,8 +580,10 @@
         font-size: 0.875rem;
         border-radius: 10px;
         border: 1px solid var(--08);
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
         background-color: var(--05);
+        color: var(--08);
+        text-align: center;
         appearance: none;
         background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
         background-repeat: no-repeat;
@@ -644,9 +656,9 @@
           <div class="milestone-circle">GO<br>GLOBAL</div>
           <div class="milestone-box">
             <h3>2024 – PRESENT</h3>
-            <p><span style="font-weight: 500;">MS in Business Analytics (STEM)</span>, USC Marshall School of Business</p>
-            <p><span style="font-weight: 500;">Board Member</span>, Business Analytics Student Association</p>
-            <p><span style="font-weight: 500;">4th place</span>, 2025 USC Marshall MSBA Global Case Competition</p>
+            <p><span style="font-weight: 600;">MS in Business Analytics (STEM)</span>, USC Marshall School of Business</p>
+            <p><span style="font-weight: 600;">Board Member</span>, Business Analytics Student Association</p>
+            <p><span style="font-weight: 600;">4th place</span>, 2025 USC Marshall MSBA Global Case Competition</p>
             <p>📍 LOS ANGELES, CA, USA</p>
           </div>
         </div>
@@ -655,8 +667,8 @@
           <div class="milestone-circle">EXPAND<br>REGIONALLY</div>
           <div class="milestone-box">
             <h3>2021 – 2024</h3>
-            <p><span style="font-weight: 500;">Growth Executive, GemUni</span><br>Contributed to NFT blockchain gaming ecosystem<br>📍 HO CHI MINH, VIETNAM</p>
-            <p><span style="font-weight: 500;">Marketing Executive, Payboy</span><br>Drove HR tech campaigns for a cloud-based HRMS<br>📍 SINGAPORE</p>
+            <p><span style="font-weight: 600;">Growth Executive, GemUni</span><br>Contributed to NFT blockchain gaming ecosystem<br>📍 HO CHI MINH, VIETNAM</p>
+            <p><span style="font-weight: 600;">Marketing Executive, Payboy</span><br>Drove HR tech campaigns for a cloud-based HRMS<br>📍 SINGAPORE</p>
           </div>
         </div>
     
@@ -664,8 +676,8 @@
           <div class="milestone-circle">ADVANCE<br>PROFESSIONALLY</div>
           <div class="milestone-box">
             <h3>2021</h3>
-            <p><span style="font-weight: 500;">Marketing Executive at ABIVIN</span><br>Promoted enterprise logistics solutions</p>
-            <p><span style="font-weight: 500;">Graduated with Bachelor of Business Administration</span>, Foreign Trade University</p>
+            <p><span style="font-weight: 600;">Marketing Executive at ABIVIN</span><br>Promoted enterprise logistics solutions</p>
+            <p><span style="font-weight: 600;">Graduated with Bachelor of Business Administration</span>, Foreign Trade University</p>
             <p>📍 HANOI, VIETNAM</p>
           </div>
         </div>
@@ -674,8 +686,8 @@
           <div class="milestone-circle">SHAPE MY<br>CAREER</div>
           <div class="milestone-box">
             <h3>2020</h3>
-            <p><span style="font-weight: 500;">Content Creator, Unstatic (Summerian)</span><br>Created summaries of non-fiction books in English</p>
-            <p><span style="font-weight: 500;">Marketing Intern, ABIVIN</span><br>Supported logistics startup marketing operations</p>
+            <p><span style="font-weight: 600;">Content Creator, Unstatic (Summerian)</span><br>Created summaries of non-fiction books in English</p>
+            <p><span style="font-weight: 600;">Marketing Intern, ABIVIN</span><br>Supported logistics startup marketing operations</p>
             <p>📍 HANOI, VIETNAM</p>
           </div>
         </div>
@@ -684,9 +696,9 @@
           <div class="milestone-circle">DISCOVER<br>MYSELF</div>
           <div class="milestone-box">
             <h3>2017 – 2019</h3>
-            <p><span style="font-weight: 500;">Started BBA (English-taught Program),</span> Foreign Trade University</p>
+            <p><span style="font-weight: 600;">Started BBA (English-taught Program),</span> Foreign Trade University</p>
             <p>Joined FTU Dancing Club & Vietnam University Games (Dance Battle)</p>
-            <p><span style="font-weight: 500;">Marketing Executive, AIESEC in Vietnam (Global Volunteer)</span><br>Facilitated cross-cultural programs for students to develop leadership</p>
+            <p><span style="font-weight: 600;">Marketing Executive, AIESEC in Vietnam (Global Volunteer)</span><br>Facilitated cross-cultural programs for students to develop leadership</p>
             <p>📍 HANOI, VIETNAM</p>
           </div>
         </div>
