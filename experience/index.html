@@ -180,19 +180,6 @@
       padding: 2rem;
       box-sizing: border-box;
     }
-
-    .milestone-step:first-of-type::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 4px;
-      background-color: var(--02);
-      height: 100%;
-      transform: translateX(-50%);
-      z-index: 2;
-    }
     
     .milestone-step.left {
       left: 0;
@@ -206,7 +193,9 @@
 
     .milestone-circle {
       position: absolute;
-      top: 1rem;      
+      top: 50%;  
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 100px;
       height: 100px;
       background: var(--06);
@@ -214,7 +203,7 @@
       font-weight: 700;
       border-radius: 50%;
       text-align: center;
-      line-height: 40px;
+      line-height: 100px;
       font-family: var(--font-poppins);
     }
     
@@ -238,15 +227,17 @@
       list-style: disc;
       font-size: 1rem;
       line-height: 1.6;
+      gap: 1rem;
     }
 
     .milestone-box p {
       font-size: 1rem;
+      margin-top: 1rem;
     }
     
     .resume-button {
       text-align: center;
-      margin-top: 3.5rem;
+      margin-top: 3.75rem;
     }
     
     .btn-resume, .contact-submit {
@@ -269,7 +260,7 @@
 
     .skills-section {
       background-color: var(--02);
-      padding: 3.5rem 2rem 6rem;
+      padding: 3.75rem 2rem 6rem;
     }
 
     .skills-menu {
@@ -277,7 +268,7 @@
       flex-wrap: wrap;
       gap: 2rem;
       justify-content: center;
-      margin-bottom: 3rem;
+      margin-bottom: 2.75rem;
     }
     
     .skill-tab {
@@ -344,15 +335,14 @@
     .decision-box h3, .content-box h3, .project-box h3, .collab-box h3, .research-box h3 {
       font-size: 1.5rem;
       font-weight: 900;
-      margin-bottom: 1rem;
       color: var(--05);
+      position: relative;
     }
 
     .decision-box h3::after, .content-box h3::after, .project-box h3::after, .collab-box h3::after, .research-box h3::after {
       content: '';
       position: absolute;
       bottom: -0.25rem;
-      display: block;
       left: 0;
       width: 30%;
       height: 4px;
@@ -644,8 +634,8 @@
               <li>MS in Business Analytics (STEM), USC Marshall School of Business</li>
               <li>Board Member, Business Analytics Student Association</li>
               <li>4th place, 2025 USC Marshall MSBA Global Case Competition</li>
-              <li><span class="location">📍 LOS ANGELES, CA, USA</span></li>
             </ul>
+            <p>📍 LOS ANGELES, CA, USA</p>
           </div>
         </div>
     
