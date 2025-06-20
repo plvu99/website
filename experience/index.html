@@ -193,9 +193,9 @@
 
     .milestone-circle {
       position: absolute;
-      top: 50%;  
+      top: 2rem;  
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateX(-50%);
       width: 100px;
       height: 100px;
       background: var(--06);
@@ -203,7 +203,6 @@
       font-weight: 700;
       border-radius: 50%;
       text-align: center;
-      line-height: 100px;
       font-family: var(--font-poppins);
     }
     
@@ -268,7 +267,7 @@
       flex-wrap: wrap;
       gap: 2rem;
       justify-content: center;
-      margin-bottom: 2.75rem;
+      margin-bottom: 2.875rem;
     }
     
     .skill-tab {
@@ -295,7 +294,7 @@
       border-radius: 10px;
       background-color: var(--05);
       max-width: 1200px;
-      margin: auto;
+      margin: 2rem auto;
       box-shadow: 0 8px 16px rgba(0,0,0,0.05);
       font-family: var(--font-poppins);
     }
@@ -318,9 +317,8 @@
     
     .skills-intro {
       text-align: center;
-      max-width: 800px;
-      margin: auto;
-      margin-bottom: 2rem;
+      max-width: 900px;
+      margin-bottom: 1rem;
       color: var(--05);
       font-size: 1rem;
       line-height: 1.6;
@@ -329,7 +327,8 @@
     .decision-columns, .content-columns, .project-columns, .collab-columns, .research-columns {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+      gap: 2rem 1rem;
+      align-self: flex-start;
     }
         
     .decision-box h3, .content-box h3, .project-box h3, .collab-box h3, .research-box h3 {
@@ -344,7 +343,7 @@
       position: absolute;
       bottom: -0.25rem;
       left: 0;
-      width: 30%;
+      width: 20%;
       height: 4px;
       background-color: var(--02);
       margin-top: 1rem;
@@ -533,16 +532,20 @@
       
       .milestone-step {
         width: 100%;
+        padding-left: 2rem;
       }
     
+      .milestone-step.left,
       .milestone-step.right {
         left: 0;
         text-align: left;
-      } 
+      }
       
       .milestone-circle {
         left: 0;
-        right: auto;
+        transform: none;
+        top: 0;
+        margin-left: -50px;
       }
   
       .milestone-box {
@@ -560,14 +563,25 @@
       }
 
       .skills-menu {
-        flex-direction: column;
-        align-items: center;
+        display: none;
       }
 
-      .skill-tab {
+      .skill-dropdown {
+        display: block;
         width: 100%;
+        padding: 1rem 1.5rem;
         font-size: 0.875rem;
-      }
+        border-radius: 10px;
+        border: 1px solid var(--08);
+        margin-bottom: 2rem;
+        background-color: var(--05);
+        font-family: var(--font-poppins);
+        appearance: none;
+        background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 1rem;
+      }     
 
       .decision-box h3, .content-box h3, .project-box h3, .collab-box h3, .research-box h3 {
         font-size: 1.25rem;
@@ -631,9 +645,9 @@
           <div class="milestone-box">
             <h3>2024 – PRESENT</h3>
             <ul>
-              <li>MS in Business Analytics (STEM), USC Marshall School of Business</li>
-              <li>Board Member, Business Analytics Student Association</li>
-              <li>4th place, 2025 USC Marshall MSBA Global Case Competition</li>
+              <li><strong>MS in Business Analytics (STEM)<strong>, USC Marshall School of Business</li>
+              <li><strong>Board Member<strong>, Business Analytics Student Association</li>
+              <li><strong>4th place<strong>, 2025 USC Marshall MSBA Global Case Competition</li>
             </ul>
             <p>📍 LOS ANGELES, CA, USA</p>
           </div>
@@ -644,8 +658,8 @@
           <div class="milestone-box">
             <h3>2021 – 2024</h3>
             <ul>
-              <li>Growth Executive, GemUni<br>Contributed to NFT blockchain gaming ecosystem<br>📍 HO CHI MINH, VIETNAM</li>
-              <li>Marketing Executive, Payboy <br>Drove HR tech campaigns for a cloud-based HRMS<br>📍 SINGAPORE</li>
+              <li><strong>Growth Executive, GemUni<strong><br>Contributed to NFT blockchain gaming ecosystem<br>📍 HO CHI MINH, VIETNAM</li>
+              <li><strong>Marketing Executive, Payboy<strong><br>Drove HR tech campaigns for a cloud-based HRMS<br>📍 SINGAPORE</li>
             </ul>
           </div>
         </div>
@@ -653,10 +667,10 @@
         <div class="milestone-step left">
           <div class="milestone-circle">ADVANCE<br>PROFESSIONALLY</div>
           <div class="milestone-box">
-            <h3>2021</h3
+            <h3>2021</h3>
             <ul>
-              <li>Marketing Executive at ABIVIN<br>Promoted enterprise logistics solutions</li>
-              <li>Graduated with Bachelor of Business Administration, Foreign Trade University</li>
+              <li><strong>Marketing Executive at ABIVIN<strong><br>Promoted enterprise logistics solutions</li>
+              <li><strong>Graduated with Bachelor of Business Administration<strong>, Foreign Trade University</li>
             </ul>
             <p>📍 HANOI, VIETNAM</p>
           </div>
@@ -667,8 +681,8 @@
           <div class="milestone-box">
             <h3>2020</h3>
             <ul>
-              <li>Content Creator, Unstatic (Summerian)<br>Created summaries of non-fiction books in English</li>
-              <li>Marketing Intern, ABIVIN<br>Supported logistics startup marketing operations</li>
+              <li><strong>Content Creator, Unstatic (Summerian)<strong><br>Created summaries of non-fiction books in English</li>
+              <li><strong>Marketing Intern, ABIVIN<strong><br>Supported logistics startup marketing operations</li>
             </ul>
             <p>📍 HANOI, VIETNAM</p>
           </div>
@@ -679,9 +693,9 @@
           <div class="milestone-box">
             <h3>2017 – 2019</h3>
             <ul>
-              <li>Started BBA (English-taught Program), Foreign Trade University</li>
+              <li><strong>Started BBA (English-taught Program),<strong> Foreign Trade University</li>
               <li>Joined FTU Dancing Club & Vietnam University Games (Dance Battle)</li>
-              <li>Marketing Executive, AIESEC in Vietnam (Global Volunteer)<br>Facilitated cross-cultural programs for students to develop leadership</li>
+              <li><strong>Marketing Executive, AIESEC in Vietnam (Global Volunteer)<strong><br>Facilitated cross-cultural programs for students to develop leadership</li>
             </ul>
             <p>📍 HANOI, VIETNAM</p>
           </div>
@@ -927,7 +941,12 @@
       document.getElementById(tab.getAttribute('data-target')).classList.add('active');
     });
   });
-</script>
-  
+
+  function showSkillPanel(panelId) {
+  document.querySelectorAll('.skill-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById(panelId).classList.add('active');
+  }
+</script>           
+
 </body>
 </html>
