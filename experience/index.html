@@ -111,7 +111,7 @@
     }
 
     .intro-section {
-      background-color: var(--05);
+      background-color: var(--01);
       padding: 7rem 2rem 2.5rem;
     }
 
@@ -153,59 +153,95 @@
       font-weight: 900;
       font-size: 1.75rem;
       color: var(--06);
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
-    .milestone-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
+    .milestone-timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 0;
+    }
+
+    .milestone-timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background-color: var(--06);
+      transform: translateX(-50%);
+    }
+
+    .milestone-step {
+      position: relative;
+      width: 50%;
+      padding: 2rem;
+      box-sizing: border-box;
     }
     
-    .milestone-block {
+    .milestone-step.left {
+      left: 0;
+      text-align: right;
+    }
+    
+    .milestone-step.right {
+      left: 50%;
+      text-align: left;
+    }
+
+    .milestone-circle {
+      position: absolute;
+      top: 1rem;
+      width: 40px;
+      height: 40px;
+      background: var(--06);
+      color: white;
+      font-weight: 700;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      z-index: 1;
+    }
+
+    .milestone-step.left .milestone-circle {
+      right: -20px;
+    }
+        
+    .milestone-step.right .milestone-circle {
+      left: -20px;
+    }
+    
+    .milestone-box {
       background-color: var(--02);
       border-radius: 10px;
       padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      color: var(--05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      position: relative;
+      color: var(--04);
     } 
     
-    .milestone-year {
+    .milestone-box h3 {
       font-size: 1.25rem;
       font-weight: 800;
       margin-bottom: 1rem;
     }
     
-    .milestone-block ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    .milestone-box ul {
+      list-style: disc;
+      padding-left: 1.25rem;
       font-size: 1rem;
       line-height: 1.6;
     }
     
-    .milestone-block li {
+    .milestone-box p, .location {
       margin-bottom: 0.5rem;
-    }
-    
-    .milestone-block .location {
-      font-weight: 600;
-    }
-    
-    .milestone-stage {
-      font-size: 0.875rem;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin-top: 1.5rem;
-      color: var(--05);
     }
 
     .resume-button {
       text-align: center;
+      margin-top: 2rem;
     }
     
     .btn-resume, .contact-submit {
@@ -220,7 +256,7 @@
       text-decoration: none;
       transition: all 0.2s ease-in-out;
     }
-    
+  
     .btn-resume:hover {
       background-color: var(--06);
       transform: scale(1.05);
@@ -242,32 +278,48 @@
     .skill-tab {
       border: 1px solid var(--08);
       background-color: transparent;
-      padding: 0.75rem 1.25rem;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      font-family: var(--font-poppins);
+      color: var(--08);
+      font-size: 1.125rem;
+      text-align: center;
       transition: background-color 0.3s ease;
     }
     
     .skill-tab.active {
       background-color: var(--08);
       color: white;
+      font-weight: 600;
     }
     
     .skill-panel {
       display: none;
       padding: 2rem;
-      border-radius: 12px;
+      border-radius: 10px;
       background-color: var(--05);
-      max-width: 1100px;
+      max-width: 900px;
       margin: auto;
       box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+      font-family: var(--font-poppins);
     }
     
     .skill-panel.active {
       display: block;
     }
-
+    
+    #decision, #collab {
+      background-color: var(--03);
+    }
+    
+    #content, #research {
+      background-color: var(--04);
+    }
+    
+     #content, #research {
+      background-color: var(--08);
+    }   
+    
     .skills-intro {
       text-align: center;
       max-width: 800px;
@@ -476,43 +528,50 @@
         margin-bottom: 1.75rem;
       }
       
-      .milestone-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 0 1rem;
+      .milestone-step {
+        width: 100%;
+        left: 0;
+        text-align: left;
+        padding-left: 3rem;
       }
-    
-      .milestone-block {
+      
+      .milestone-circle {
+        left: 0;
+        right: auto;
+      }
+      
+      .milestone-timeline::before {
+        left: 20px;
+      } 
+      
+      .milestone-box {
         padding: 1.5rem;
         border-radius: 10px;
       }
     
-      .milestone-year {
+      .milestone-box h3 {
         font-size: 1.125rem;
         margin-bottom: 0.75rem;
       }
     
-      .milestone-block ul {
+      .milestone-box ul {
         font-size: 0.875rem;
-      }
-      
-      .milestone-stage {
-        font-size: 0.75rem;
-        margin-top: 1rem;
-        text-align: left;
       }
 
       .skills-menu {
         flex-direction: column;
         align-items: center;
       }
+      
       .skill-tab {
         width: 100%;
         text-align: center;
       }
+      
       .skills-content {
         padding: 1rem;
       }
+      
       .collab-columns {
         grid-template-columns: 1fr;
       }  
@@ -567,61 +626,75 @@
     </section>
 
     <section class="milestone-section">
-      <div class="milestone-title">MILESTONES</div>
+      <h2 class="milestone-title">MILESTONES</h2>
+      <div class="milestone-timeline">
     
-      <div class="milestone-grid">
-        <!-- Milestone block -->
-        <div class="milestone-block">
-          <div class="milestone-year">2017 – 2019</div>
-          <ul>
-            <li>Started BBA (English-taught Program), Foreign Trade University</li>
-            <li>Joined FTU Dancing Club & Vietnam University Games (Dance Battle)</li>
-            <li>Marketing Executive, AIESEC in Vietnam (Global volunteer)</li>
-            <li><span class="location">📍 HANOI, VIETNAM</span></li>
-          </ul>
-          <div class="milestone-stage">DISCOVER MYSELF</div>
+        <div class="milestone-step left">
+          <div class="milestone-circle">1</div>
+          <div class="milestone-box">
+            <h3>2017 – 2019</h3>
+            <p><strong>DISCOVER MYSELF</strong></p>
+            <ul>
+              <li>Started BBA (English-taught Program), FTU</li>
+              <li>Joined FTU Dancing Club & VUG</li>
+              <li>Marketing Executive at AIESEC Vietnam</li>
+              <li><span class="location">📍 HANOI, VIETNAM</span></li>
+            </ul>
+          </div>
         </div>
     
-        <div class="milestone-block">
-          <div class="milestone-year">2020</div>
-          <ul>
-            <li>Content Creator, Unstatic (Summerian) – Summarized non-fiction books</li>
-            <li>Marketing Intern, ABIVIN – Supported logistics marketing ops</li>
-            <li><span class="location">📍 HANOI, VIETNAM</span></li>
-          </ul>
-          <div class="milestone-stage">SHAPE MY CAREER</div>
+        <div class="milestone-step right">
+          <div class="milestone-circle">2</div>
+          <div class="milestone-box">
+            <h3>2020</h3>
+            <p><strong>SHAPE MY CAREER</strong></p>
+            <ul>
+              <li>Content Creator, Unstatic (Sumerian)</li>
+              <li>Marketing Intern, ABIVIN</li>
+              <li><span class="location">📍 HANOI, VIETNAM</span></li>
+            </ul>
+          </div>
         </div>
     
-        <div class="milestone-block">
-          <div class="milestone-year">2021</div>
-          <ul>
-            <li>Marketing Executive, ABIVIN – Promoted logistics solutions</li>
-            <li>Graduated with BBA, Foreign Trade University</li>
-            <li><span class="location">📍 HANOI, VIETNAM</span></li>
-          </ul>
-          <div class="milestone-stage">ADVANCE PROFESSIONALLY</div>
+        <div class="milestone-step left">
+          <div class="milestone-circle">3</div>
+          <div class="milestone-box">
+            <h3>2021</h3>
+            <p><strong>ADVANCE PROFESSIONALLY</strong></p>
+            <ul>
+              <li>Marketing Executive at ABIVIN</li>
+              <li>Graduated BBA, Foreign Trade University</li>
+              <li><span class="location">📍 HANOI, VIETNAM</span></li>
+            </ul>
+          </div>
         </div>
     
-        <div class="milestone-block">
-          <div class="milestone-year">2021 – 2024</div>
-          <ul>
-            <li>Growth Executive, GemUni – Contributed to blockchain ecosystem</li>
-            <li><span class="location">📍 HO CHI MINH, VIETNAM</span></li>
-            <li>Marketing Executive, Payboy – Ran HR tech campaigns</li>
-            <li><span class="location">📍 SINGAPORE</span></li>
-          </ul>
-          <div class="milestone-stage">EXPAND REGIONALLY</div>
+        <div class="milestone-step right">
+          <div class="milestone-circle">4</div>
+          <div class="milestone-box">
+            <h3>2021 – 2024</h3>
+            <p><strong>EXPAND REGIONALLY</strong></p>
+            <ul>
+              <li>Growth Executive, GemUni</li>
+              <li><span class="location">📍 HO CHI MINH, VIETNAM</span></li>
+              <li>Marketing Executive, Payboy</li>
+              <li><span class="location">📍 SINGAPORE</span></li>
+            </ul>
+          </div>
         </div>
     
-        <div class="milestone-block">
-          <div class="milestone-year">2024 – PRESENT</div>
-          <ul>
-            <li>MS in Business Analytics, USC Marshall</li>
-            <li>Board Member, BASA</li>
-            <li>4th place, MSBA Global Case Competition</li>
-            <li><span class="location">📍 LOS ANGELES, USA</span></li>
-          </ul>
-          <div class="milestone-stage">GO GLOBAL</div>
+        <div class="milestone-step left">
+          <div class="milestone-circle">5</div>
+          <div class="milestone-box">
+            <h3>2024 – PRESENT</h3>
+            <p><strong>GO GLOBAL</strong></p>
+            <ul>
+              <li>MSBA, USC Marshall</li>
+              <li>Board Member, BASA</li>
+              <li>4th Place, MSBA Global Case Competition</li>
+              <li><span class="location">📍 LOS ANGELES, USA</span></li>
+            </ul>
+          </div>
         </div>
       </div>
     
@@ -641,7 +714,7 @@
       </div>
     
       <div class="skills-content">
-        <div class="skill-panel" id="decision">
+        <div class="skill-panel active" id="decision">
           <p class="skills-intro">I turn data into clear, actionable insights—improving marketing performance, customer experience, and strategic outcomes through testing, analytics, and reporting.</p>
           <div class="decision-columns">
             <div class="decision-box">
@@ -761,7 +834,7 @@
           </div>
         </div>
     
-        <div class="skill-panel active" id="research">
+        <div class="skill-panel" id="research">
           <p class="skills-intro">I conduct in-depth research to guide market strategy, positioning, and product development — blending qualitative insight with measurable outcomes.</p>
           <div class="research-columns">
             <div class="research-box">
