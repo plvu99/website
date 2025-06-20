@@ -128,7 +128,6 @@
     }
    
     .intro-content h1 {
-      font-family: var(--font-poppins);
       font-size: 2rem;
       font-weight: 900;
       color: var(--04);
@@ -149,7 +148,6 @@
 
     .milestone-title, .skills-title {
       text-align: center;
-      font-family: var(--font-poppins);
       font-weight: 900;
       font-size: 1.75rem;
       color: var(--06);
@@ -203,7 +201,8 @@
       font-weight: 700;
       border-radius: 50%;
       text-align: center;
-      font-family: var(--font-poppins);
+      line-height: 100px;
+      z-index: 2;
     }
     
     .milestone-box {
@@ -213,7 +212,6 @@
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       position: relative;
       color: var(--04);
-      font-family: var(--font-poppins);
     } 
     
     .milestone-box h3 {
@@ -221,17 +219,10 @@
       font-weight: 900;
       margin-bottom: 1rem;
     }
-    
-    .milestone-box ul {
-      list-style: disc;
-      font-size: 1rem;
-      line-height: 1.6;
-      gap: 1rem;
-    }
 
     .milestone-box p {
       font-size: 1rem;
-      margin-top: 1rem;
+      line-height: 1.6;
     }
     
     .resume-button {
@@ -261,10 +252,14 @@
       background-color: var(--02);
       padding: 3.75rem 2rem 6rem;
     }
-
+    
+    .skills-dropdown {
+      display: none;
+    } 
+    
     .skills-menu {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
       justify-content: center;
       margin-bottom: 2.875rem;
@@ -275,7 +270,6 @@
       background-color: transparent;
       padding: 1rem 1.5rem;
       border-radius: 10px;
-      font-family: var(--font-poppins);
       color: var(--08);
       font-size: 1rem;
       text-align: center;
@@ -290,13 +284,12 @@
     
     .skill-panel {
       display: none;
-      padding: 3rem;
+      padding: 2.5rem;
       border-radius: 10px;
       background-color: var(--05);
       max-width: 1200px;
-      margin: 2rem auto;
+      margin: 1rem auto;
       box-shadow: 0 8px 16px rgba(0,0,0,0.05);
-      font-family: var(--font-poppins);
     }
     
     .skill-panel.active {
@@ -318,17 +311,17 @@
     .skills-intro {
       text-align: center;
       max-width: 900px;
-      margin-bottom: 1rem;
       color: var(--05);
       font-size: 1rem;
       line-height: 1.6;
+      margin-bottom: 1rem;
     }   
 
     .decision-columns, .content-columns, .project-columns, .collab-columns, .research-columns {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem 1rem;
-      align-self: flex-start;
+      row-gap: 1rem;
+      column-gap: 2rem;
     }
         
     .decision-box h3, .content-box h3, .project-box h3, .collab-box h3, .research-box h3 {
@@ -370,7 +363,6 @@
 
     .contact-title {
       text-align: center;
-      font-family: var(--font-poppins);
       font-weight: 900;
       font-size: 1.75rem;
       color: var(--02);
@@ -378,7 +370,6 @@
     }
 
     .contact-subtitle {
-      font-family: var(--font-poppins);
       font-size: 1rem;
       color: var(--05);
       margin-bottom: 2.375rem;
@@ -390,7 +381,6 @@
       padding: 0.75rem 1rem;
       margin-bottom: 1rem;
       font-size: 1rem;
-      font-family: var(--font-poppins);
       border: none;
       border-radius: 5px;
       background-color: var(--05);
@@ -424,7 +414,6 @@
     }
     
     .footer-contact h3, .footer-nav h3 {
-      font-family: var(--font-poppins);
       font-size: 1.5rem;
       font-weight: 900;
       color: var(--02);
@@ -508,7 +497,7 @@
       }
 
       .intro-section {
-        background-color: var(--02);
+        background-color: var(--01);
         padding: 8rem 2rem 2.5rem;
       }  
       
@@ -532,9 +521,13 @@
       
       .milestone-step {
         width: 100%;
-        padding-left: 2rem;
+        padding-left: 3.5rem;
+        padding-right: 1rem;
+        position: relative;
+        line-height: 60px;
+        font-size: 0.75rem;
       }
-    
+      
       .milestone-step.left,
       .milestone-step.right {
         left: 0;
@@ -542,12 +535,20 @@
       }
       
       .milestone-circle {
-        left: 0;
+        top: 1rem;
+        left: 1rem;
         transform: none;
-        top: 0;
-        margin-left: -50px;
+        margin: 0;
+        z-index: 2;
       }
-  
+      
+      .milestone-timeline::before {
+        left: 1.75rem;
+        transform: none;
+        width: 3px;
+        background-color: var(--06);
+      }  
+      
       .milestone-box {
         padding: 1.75rem;
         font-size: 0.875rem;
@@ -558,15 +559,11 @@
         margin-bottom: 0.75rem;
       }
     
-      .milestone-box ul, .milestone-box p, .skills-intro, .decision-box ul, .content-box ul, .project-box ul, .collab-box ul, .research-box ul {
+      .milestone-box p, .skills-intro, .decision-box ul, .content-box ul, .project-box ul, .collab-box ul, .research-box ul {
         font-size: 0.875rem;
       }
 
-      .skills-menu {
-        display: none;
-      }
-
-      .skill-dropdown {
+      .skills-dropdown {
         display: block;
         width: 100%;
         padding: 1rem 1.5rem;
@@ -575,7 +572,6 @@
         border: 1px solid var(--08);
         margin-bottom: 2rem;
         background-color: var(--05);
-        font-family: var(--font-poppins);
         appearance: none;
         background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
         background-repeat: no-repeat;
@@ -583,6 +579,10 @@
         background-size: 1rem;
       }     
 
+      .skills-menu {
+        display: none;
+      } 
+      
       .decision-box h3, .content-box h3, .project-box h3, .collab-box h3, .research-box h3 {
         font-size: 1.25rem;
       }
@@ -644,11 +644,9 @@
           <div class="milestone-circle">GO<br>GLOBAL</div>
           <div class="milestone-box">
             <h3>2024 – PRESENT</h3>
-            <ul>
-              <li><strong>MS in Business Analytics (STEM)</strong>, USC Marshall School of Business</li>
-              <li><strong>Board Member</strong>, Business Analytics Student Association</li>
-              <li><strong>4th place</strong>, 2025 USC Marshall MSBA Global Case Competition</li>
-            </ul>
+            <p><span style="font-weight: 500;">MS in Business Analytics (STEM)</span>, USC Marshall School of Business</p>
+            <p><span style="font-weight: 500;">Board Member</span>, Business Analytics Student Association</p>
+            <p><span style="font-weight: 500;">4th place</span>, 2025 USC Marshall MSBA Global Case Competition</p>
             <p>📍 LOS ANGELES, CA, USA</p>
           </div>
         </div>
@@ -657,10 +655,8 @@
           <div class="milestone-circle">EXPAND<br>REGIONALLY</div>
           <div class="milestone-box">
             <h3>2021 – 2024</h3>
-            <ul>
-              <li><strong>Growth Executive, GemUni</strong><br>Contributed to NFT blockchain gaming ecosystem<br>📍 HO CHI MINH, VIETNAM</li>
-              <li><strong>Marketing Executive, Payboy</strong><br>Drove HR tech campaigns for a cloud-based HRMS<br>📍 SINGAPORE</li>
-            </ul>
+            <p><span style="font-weight: 500;">Growth Executive, GemUni</span><br>Contributed to NFT blockchain gaming ecosystem<br>📍 HO CHI MINH, VIETNAM</p>
+            <p><span style="font-weight: 500;">Marketing Executive, Payboy</span><br>Drove HR tech campaigns for a cloud-based HRMS<br>📍 SINGAPORE</p>
           </div>
         </div>
     
@@ -668,10 +664,8 @@
           <div class="milestone-circle">ADVANCE<br>PROFESSIONALLY</div>
           <div class="milestone-box">
             <h3>2021</h3>
-            <ul>
-              <li><strong>Marketing Executive at ABIVIN</strong><br>Promoted enterprise logistics solutions</li>
-              <li><strong>Graduated with Bachelor of Business Administration</strong>, Foreign Trade University</li>
-            </ul>
+            <p><span style="font-weight: 500;">Marketing Executive at ABIVIN</span><br>Promoted enterprise logistics solutions</p>
+            <p><span style="font-weight: 500;">Graduated with Bachelor of Business Administration</span>, Foreign Trade University</p>
             <p>📍 HANOI, VIETNAM</p>
           </div>
         </div>
@@ -680,10 +674,8 @@
           <div class="milestone-circle">SHAPE MY<br>CAREER</div>
           <div class="milestone-box">
             <h3>2020</h3>
-            <ul>
-              <li><strong>Content Creator, Unstatic (Summerian)</strong><br>Created summaries of non-fiction books in English</li>
-              <li><strong>Marketing Intern, ABIVIN</strong><br>Supported logistics startup marketing operations</li>
-            </ul>
+            <p><span style="font-weight: 500;">Content Creator, Unstatic (Summerian)</span><br>Created summaries of non-fiction books in English</p>
+            <p><span style="font-weight: 500;">Marketing Intern, ABIVIN</span><br>Supported logistics startup marketing operations</p>
             <p>📍 HANOI, VIETNAM</p>
           </div>
         </div>
@@ -692,11 +684,9 @@
           <div class="milestone-circle">DISCOVER<br>MYSELF</div>
           <div class="milestone-box">
             <h3>2017 – 2019</h3>
-            <ul>
-              <li><strong>Started BBA (English-taught Program),</strong> Foreign Trade University</li>
-              <li>Joined FTU Dancing Club & Vietnam University Games (Dance Battle)</li>
-              <li><strong>Marketing Executive, AIESEC in Vietnam (Global Volunteer)</strong><br>Facilitated cross-cultural programs for students to develop leadership</li>
-            </ul>
+            <p><span style="font-weight: 500;">Started BBA (English-taught Program),</span> Foreign Trade University</p>
+            <p>Joined FTU Dancing Club & Vietnam University Games (Dance Battle)</p>
+            <p><span style="font-weight: 500;">Marketing Executive, AIESEC in Vietnam (Global Volunteer)</span><br>Facilitated cross-cultural programs for students to develop leadership</p>
             <p>📍 HANOI, VIETNAM</p>
           </div>
         </div>
@@ -709,6 +699,15 @@
     
     <section class="skills-section">
       <h2 class="skills-title">KEY SKILLS & ACHIEVEMENTS</h2>
+ 
+      <select class="skills-dropdown" onchange="showSkillPanel(this.value)">
+        <option value="decision">Data-Driven Decision Making</option>
+        <option value="content">Strategic Content Creation</option>
+        <option value="project">Project Planning & Execution</option>
+        <option value="collab">Cross-Functional Collaboration</option>
+        <option value="research">Research & Strategic Thinking</option>
+      </select>
+      
       <div class="skills-menu">
         <button class="skill-tab active" data-target="decision">Data-Driven Decision Making</button>
         <button class="skill-tab" data-target="content">Strategic Content Creation</button>
