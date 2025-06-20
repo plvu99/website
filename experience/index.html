@@ -180,9 +180,16 @@
       padding: 2rem;
       box-sizing: border-box;
     }
-    
-    .milestone-step:first-of-type {
-      background-color: var(--04);
+
+    .milestone-step:first-of-type::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background-color: var(--04); /* same as milestone-section background */
+      z-index: 1;
     }
     
     .milestone-step.left {
