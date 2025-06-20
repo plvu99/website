@@ -219,6 +219,9 @@
       border-radius: 10px;
       position: relative;
       transition: transform 0.3s ease;
+      text-decoration: none; /* remove underline */
+      width: 100%;            /* ensure block-like behavior */
+      box-sizing: border-box;
     }
 
     .card h2, .value-card h3, .project-title, .impact-card h3, .footer-contact h3, .footer-nav h3 {
@@ -811,23 +814,25 @@
 
     <section class="cards-section">
       <div class="cards-grid">
-        <div class="card card-story">
+        
+        <a href="https://plvu99.github.io/website/story/" class="card card-story">
           <h2>MY STORY</h2>
           <p>From a turning point shaping who I am today to the adventures, movement, and meaningful experiences I’ve embraced along the way.</p>
           <div class="arrow"></div>
-        </div>
-        
-        <div class="card card-experience">
+        </a>
+    
+        <a href="https://plvu99.github.io/website/experience/" class="card card-experience">
           <h2>MY EXPERIENCE</h2>
           <p>My journey from where I started and what I learned to how I’ve grown. You’ll find key milestones, achievements, and numbers showing the impact I made.</p>
           <div class="arrow"></div>
-        </div>
-        
-        <div class="card card-work">
+        </a>
+    
+        <a href="https://plvu99.github.io/website/work/" class="card card-work">
           <h2>MY WORK</h2>
           <p>A collection of my hands-on projects and presentations. Click through to see how I turn data into solutions through analysis, design, and insight.</p>
           <div class="arrow"></div>
-        </div>
+        </a>
+    
       </div>
     </section>
 
