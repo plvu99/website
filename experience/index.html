@@ -194,16 +194,19 @@
       top: 2rem;
       left: 50%;
       transform: translateX(-50%);
-      width: 100px;
-      height: 100px;
-      line-height: 1.2;
-      text-align: center;
+      width: 120px;
+      height: 120px;
       background: var(--06);
       color: var(--05);
       font-weight: 700;
-      border-radius: 50%;
       font-family: var(--font-poppins);
-      font-size: 0.875rem;
+      font-size: 1rem;
+      border-radius: 50%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
       z-index: 2;
     }
     
@@ -538,8 +541,12 @@
       }
       
       .milestone-circle {
-        left: 1rem;
+        top: 1rem;
+        left: 1.75rem;
         transform: translateX(-50%);
+        width: 80px;
+        height: 80px;
+        font-size: 0.75rem;
       }
       
       .milestone-timeline::before {
