@@ -177,8 +177,8 @@
       top: 2rem;
       left: 50%;
       transform: translateX(-50%);
-      width: 100px;
-      height: 100px;
+      width: 120px;
+      height: 120px;
       background: var(--06);
       color: var(--05);
       font-weight: 700;
@@ -263,12 +263,12 @@
     } 
     
     .skills-menu {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 2rem;
       justify-content: center;
       align-items: center;
-      margin-bottom: 2.875rem;
+      margin: 0 auto 2.875rem;
       max-width: 900px;
     }
     
@@ -279,6 +279,7 @@
       border-radius: 10px;
       color: var(--08);
       font-size: 0.875rem;
+      min-width: 260px;     
       text-align: center;
       transition: background-color 0.3s ease;
       font-family: var(--font-poppins);
@@ -329,13 +330,8 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       column-gap: 2rem;
+      row-gap: 2rem;
       align-items: start;
-    }
-    
-    .decision-box, .content-box, .project-box, .collab-box, .research-box {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
     }
         
     .decision-box h3, .content-box h3, .project-box h3, .collab-box h3, .research-box h3 {
@@ -356,7 +352,7 @@
       margin-top: 1rem;
     }
     
-    .decision-box ul, .content-box ul, .project-box ul, .collab-box ul, .research-box ul {
+    .decision-box ul, .content-box ul, .project-box ul, .collab-box ul, .research-box ul {     
       list-style: disc;
       padding-left: 1rem;
       color: var(--05);
