@@ -181,6 +181,10 @@
       box-sizing: border-box;
     }
     
+    .milestone-step:first-of-type {
+      content: none !important;
+    }
+    
     .milestone-step.left {
       left: 0;
       text-align: left;
@@ -203,10 +207,6 @@
       text-align: center;
       line-height: 40px;
       font-family: var(--font-poppins);
-    }
-
-    .milestone-step:first-of-type::before {
-      content: none !important;
     }
     
     .milestone-step.left .milestone-circle {
