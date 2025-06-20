@@ -191,26 +191,20 @@
 
     .milestone-circle {
       position: absolute;
-      top: 50%;
+      top: 2rem;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateX(-50%);
       width: 100px;
       height: 100px;
+      line-height: 1.2;
+      text-align: center;
       background: var(--06);
       color: var(--05);
       font-weight: 700;
       border-radius: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       font-family: var(--font-poppins);
-      font-size: 1rem;
-      line-height: 1.2;
-      text-align: center;
+      font-size: 0.875rem;
       z-index: 2;
-      white-space: pre-line;
-      padding: 0.5rem;
     }
     
     .milestone-box {
@@ -271,7 +265,7 @@
       gap: 2rem;
       justify-content: center;
       margin-bottom: 2.875rem;
-      align-items: center;
+      font-family: var(--font-poppins);
     }
     
     .skill-tab {
@@ -299,7 +293,6 @@
       max-width: 1200px;
       margin: 1rem auto;
       box-shadow: 0 8px 16px rgba(0,0,0,0.05);
-      font-family: var(--font-poppins);
     }
     
     .skill-panel.active {
@@ -330,7 +323,6 @@
     .decision-columns, .content-columns, .project-columns, .collab-columns, .research-columns {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      row-gap: 0.5rem;
       column-gap: 2rem;
     }
         
@@ -546,18 +538,13 @@
       }
       
       .milestone-circle {
-        top: 1rem;
         left: 1rem;
-        transform: none;
-        margin: 0;
-        z-index: 2;
+        transform: translateX(-50%);
       }
       
       .milestone-timeline::before {
         left: 1.75rem;
         transform: none;
-        width: 3px;
-        background-color: var(--06);
       }  
       
       .milestone-box {
@@ -590,6 +577,7 @@
         background-repeat: no-repeat;
         background-position: right 1rem center;
         background-size: 1rem;
+        font-family: var(--font-poppins);
       }     
 
       .skills-menu {
@@ -907,8 +895,8 @@
       <div class="footer-contact">
         <h3>CONTACT</h3>
         <ul>
-          <li>213-566-5734</li>
-          <li>plvu@marshall.usc.edu</li>
+          <li><a href="tel:+12135665734">213-566-5734</li>
+          <li><a href="mailto:plvu@marshall.usc.edu">plvu@marshall.usc.edu</li>
           <li>Los Angeles, CA, United States</li>
           <li><a href="https://www.linkedin.com/in/phuong-vu-lan/" target="_blank"><img src="../Images/Logos/LinkedIn.webp" alt="LinkedIn" class="footer-icon" /></a> <a href="https://github.com/plvu99" target="_blank"><img src="../Images/Logos/GitHub.png" alt="GitHub" class="footer-icon" /></a></li>
         </ul>
