@@ -172,6 +172,26 @@
       transform: translateX(-50%);
     }
     
+    .milestone-circle {
+      position: absolute;
+      top: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 100px;
+      background: var(--06);
+      color: var(--05);
+      font-weight: 700;
+      font-family: var(--font-poppins);
+      font-size: 1rem;
+      border-radius: 50%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      z-index: 2;
+    }    
     .milestone-step {
       position: relative;
       width: 50%;
@@ -187,27 +207,6 @@
     .milestone-step.right {
       left: 50%;
       text-align: left;
-    }
-
-    .milestone-circle {
-      position: absolute;
-      top: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120px;
-      height: 120px;
-      background: var(--06);
-      color: var(--05);
-      font-weight: 700;
-      font-family: var(--font-poppins);
-      font-size: 1rem;
-      border-radius: 50%;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      line-height: 1.2;
-      z-index: 2;
     }
     
     .milestone-box {
@@ -264,10 +263,11 @@
     } 
     
     .skills-menu {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2rem;
       justify-content: center;
+      align-items: center;
       margin-bottom: 2.875rem;
       max-width: 900px;
     }
@@ -278,7 +278,7 @@
       padding: 1rem 1.5rem;
       border-radius: 10px;
       color: var(--08);
-      font-size: 1rem;
+      font-size: 0.875rem;
       text-align: center;
       transition: background-color 0.3s ease;
       font-family: var(--font-poppins);
@@ -329,6 +329,13 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       column-gap: 2rem;
+      align-items: start;
+    }
+    
+    .decision-box, .content-box, .project-box, .collab-box, .research-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
         
     .decision-box h3, .content-box h3, .project-box h3, .collab-box h3, .research-box h3 {
@@ -522,6 +529,10 @@
         font-size: 0.875rem;
       }
       
+      .milestone-title, .skills-title {
+        margin-bottom: 1.5rem;
+      }
+      
       .milestone-step {
         width: 100%;
         padding-left: 3.5rem;
@@ -558,7 +569,7 @@
     
       .milestone-box h3 {
         font-size: 1.25rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0rem;
       }
     
       .milestone-box p, .skills-intro, .decision-box ul, .content-box ul, .project-box ul, .collab-box ul, .research-box ul {
