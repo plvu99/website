@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Phuong Vu | Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;900&display=swap" rel="stylesheet" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8GLRVX10Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-C8GLRVX10Y');
+  </script> 
   
   <style>
     *, *::before, *::after {
@@ -1098,6 +1108,10 @@
     })
     .then(response => {
       if (response.ok) {
+      gtag('event', 'form_submit', {
+        event_category: 'Contact',
+        event_label: 'Home' // change per page
+      });        
         form.style.display = 'none';
         document.getElementById('thankYouMessage').style.display = 'block';
       } else {
