@@ -573,6 +573,14 @@
       box-shadow: none;
     }
 
+    .thank-you {
+      margin-top: 2rem;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--02);
+      text-align: center;
+    }
+    
     .site-footer {
       background-color: var(--04);
       color: var(--05);
@@ -759,7 +767,7 @@
         font-size: 1.625rem;
       }
       
-      .contact-subtitle, .contact-form input, .contact-form textarea {
+      .contact-subtitle, .contact-form input, .contact-form textarea, .thank-you {
         font-size: 0.95rem;
       }
       
@@ -1022,6 +1030,9 @@
           <input type="hidden" name="source" value="Home">
           <button type="submit" class="contact-submit">SUBMIT</button>
         </form>
+        <div id="thankYouMessage" class="thank-you" style="display: none;">
+          <p>🎉 Thank you! I can’t wait to connect with you!</p>
+        </div>
       </div>
     </section>
   </main> 
@@ -1068,23 +1079,22 @@
   </script>
 
   <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyPSmnqisTEkMmzWS_gb_lBsIG3vQKQ4rECTF7S6MLXv3m5DNADmSzToQV9ujp5ymJb9Q/exec';
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyPSmnqisTEkMmzWS_gb_lBsIG3vQKQ4rECTF7S6MLXv3m5DNADmSzToQV9ujp5ymJb9Q/exec';
   
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const formData = new FormData(this);
-      const data = Object.fromEntries(formData.entries());
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const formData = new FormData(this);
   
-      fetch(scriptURL, {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      .then(response => alert("Thank you! I can't wait to talk to you!"))
-      .catch(error => alert('Sorry, something went wrong!'));
-    });
+    fetch(scriptURL, {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('thankYouMessage').style.display = 'block';
+    })
+    .catch(error => alert('Sorry, something went wrong!'));
+  });
   </script>
   
   </body>
