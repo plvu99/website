@@ -6,6 +6,16 @@
   <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
   <title>Phuong Vu | My Story</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;900&display=swap" rel="stylesheet" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8GLRVX10Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-C8GLRVX10Y');
+  </script>
   
   <style>
     *, *::before, *::after {
@@ -944,6 +954,11 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
   })
   .then(response => {
     if (response.ok) {
+      gtag('event', 'form_submit', {
+        event_category: 'Contact',
+        event_label: 'Story' // change per page
+      });
+      
       form.style.display = 'none';
       document.getElementById('thankYouMessage').style.display = 'block';
     } else {
