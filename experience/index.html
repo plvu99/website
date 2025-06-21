@@ -409,6 +409,16 @@
       box-shadow: none;
     }
 
+    .thank-you {
+      margin-top: 2rem;
+      font-size: 1.125rem;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--02);
+      text-align: center;
+      font-family: var(--font-playfair);
+    }
+    
     .site-footer {
       background-color: var(--04);
       color: var(--05);
@@ -608,6 +618,10 @@
       .contact-subtitle, .contact-form input, .contact-form textarea {
         font-size: 0.95rem;
       }
+
+      .thank-you {
+        font-size: 1rem;
+      }      
       
       .footer-container {
         flex-direction: column;
@@ -888,14 +902,17 @@
         <h2 class="contact-title">I’D LOVE TO CONNECT!</h2>
         <p class="contact-subtitle">Schedule a coffee chat with me.</p>
     
-        <form class="contact-form" action="#" method="POST">
+        <form id="contactForm" class="contact-form" action="#" method="POST">
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
-          <input type="text" name="linkedin" placeholder="Your LinkedIn" />
+          <input type="url" name="linkedin" placeholder="Your LinkedIn" required/>
           <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-          <input type="hidden" name="source" value="Experience">
+          <input type="hidden" name="source" value="Home">
           <button type="submit" class="contact-submit">SUBMIT</button>
         </form>
+        <div id="thankYouMessage" class="thank-you" style="display: none;">
+          <p>Thank you! I can’t wait to connect with you!</p>
+        </div>
       </div>
     </section>
   </main>
@@ -963,23 +980,27 @@
 </script>           
 
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbyPSmnqisTEkMmzWS_gb_lBsIG3vQKQ4rECTF7S6MLXv3m5DNADmSzToQV9ujp5ymJb9Q/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyPSmnqisTEkMmzWS_gb_lBsIG3vQKQ4rECTF7S6MLXv3m5DNADmSzToQV9ujp5ymJb9Q/exec';
 
-  document.getElementById('contactForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData.entries());
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const form = this;
+  const formData = new FormData(form);
 
-    fetch(scriptURL, {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-    .then(response => alert('Thank you! I can't wait to talk to you!'))
-    .catch(error => alert('Sorry, there might have been an error!'));
-  });
+  fetch(scriptURL, {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (response.ok) {
+      form.style.display = 'none';
+      document.getElementById('thankYouMessage').style.display = 'block';
+    } else {
+      alert('Submission failed. Please try again.');
+    }
+  })
+  .catch(error => alert('Sorry, something went wrong!'));
+});
 </script>
   
 </body>
