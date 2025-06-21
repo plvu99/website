@@ -1022,7 +1022,7 @@
         <h2 class="contact-title">I’D LOVE TO CONNECT!</h2>
         <p class="contact-subtitle">Schedule a coffee chat with me.</p>
     
-        <form class="contact-form" action="#" method="POST">
+        <form id="contactForm" class="contact-form" action="#" method="POST">
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
           <input type="url" name="linkedin" placeholder="Your LinkedIn" required/>
@@ -1031,7 +1031,7 @@
           <button type="submit" class="contact-submit">SUBMIT</button>
         </form>
         <div id="thankYouMessage" class="thank-you" style="display: none;">
-          <p>🎉 Thank you! I can’t wait to connect with you!</p>
+          <p>Thank you! I can’t wait to connect with you!</p>
         </div>
       </div>
     </section>
@@ -1079,23 +1079,29 @@
   </script>
 
   <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbyPSmnqisTEkMmzWS_gb_lBsIG3vQKQ4rECTF7S6MLXv3m5DNADmSzToQV9ujp5ymJb9Q/exec';
+  const scriptURL = 'https://script.google.com/macros/s/AKfycb.../exec';
   
   document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
-    const formData = new FormData(this);
+    const form = this;
+    const formData = new FormData(form);
   
     fetch(scriptURL, {
       method: 'POST',
       body: formData
     })
     .then(response => {
-      document.getElementById('contactForm').style.display = 'none';
-      document.getElementById('thankYouMessage').style.display = 'block';
+      if (response.ok) {
+        form.style.display = 'none';
+        document.getElementById('thankYouMessage').style.display = 'block';
+      } else {
+        alert('Submission failed. Please try again.');
+      }
     })
     .catch(error => alert('Sorry, something went wrong!'));
   });
   </script>
+
   
-  </body>
-  </html>
+</body>
+</html>
