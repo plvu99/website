@@ -7,6 +7,16 @@
   <title>Phuong Vu | My Experience</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;900&display=swap" rel="stylesheet" />
   
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8GLRVX10Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-C8GLRVX10Y');
+  </script>
+  
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -907,7 +917,7 @@
           <input type="email" name="email" placeholder="Your Email" required />
           <input type="url" name="linkedin" placeholder="Your LinkedIn" required/>
           <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-          <input type="hidden" name="source" value="Home">
+          <input type="hidden" name="source" value="Experience">
           <button type="submit" class="contact-submit">SUBMIT</button>
         </form>
         <div id="thankYouMessage" class="thank-you" style="display: none;">
@@ -993,6 +1003,10 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
   })
   .then(response => {
     if (response.ok) {
+      gtag('event', 'form_submit', {
+        event_category: 'Contact',
+        event_label: 'Experience' // change per page
+      });
       form.style.display = 'none';
       document.getElementById('thankYouMessage').style.display = 'block';
     } else {
