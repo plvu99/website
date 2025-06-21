@@ -962,5 +962,25 @@
   }
 </script>           
 
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyPSmnqisTEkMmzWS_gb_lBsIG3vQKQ4rECTF7S6MLXv3m5DNADmSzToQV9ujp5ymJb9Q/exec';
+
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData.entries());
+
+    fetch(scriptURL, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    .then(response => alert('Thank you! I can't wait to talk to you!'))
+    .catch(error => alert('Sorry, there might have been an error!'));
+  });
+</script>
+  
 </body>
 </html>
