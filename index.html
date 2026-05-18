@@ -12,10 +12,9 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
     gtag('config', 'G-C8GLRVX10Y');
-  </script> 
-  
+  </script>
+
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -42,6 +41,7 @@
       color: var(--01);
     }
 
+    /* ─── HEADER / NAV ─── */
     header.site-header {
       background-color: var(--04);
       display: flex;
@@ -64,8 +64,8 @@
       padding: 0 2rem;
       position: relative;
     }
-    
-    .logo, .footer-brand h2 {
+
+    .logo {
       font-family: var(--font-playfair);
       font-size: 30px;
       font-weight: 700;
@@ -93,27 +93,6 @@
       text-shadow: 0 0 6px var(--02);
     }
 
-    .btn-contact {
-      background-color: var(--03);
-      color: var(--05);
-      padding: 1rem 1.5rem;
-      font-size: 16px;
-      font-weight: 600;
-      border-radius: 10px;
-      text-align: center;
-      text-decoration: none;
-      transition: all 0.2s ease-in-out;
-    }
-
-    .btn-contact:hover {
-      background-color: var(--06);
-      transform: scale(1.05);
-    }
-
-    main {
-      padding-top: 100px;
-    }
-    
     .menu-toggle {
       display: none;
       font-size: 28px;
@@ -121,128 +100,158 @@
       background: none;
       border: none;
       z-index: 1001;
+      cursor: pointer;
     }
 
-    .intro-section {
+    main {
+      padding-top: 100px;
+    }
+
+    /* ─── HERO ─── */
+    .hero-section {
       background-color: var(--04);
-      padding: 3rem 0;
+      padding: 4rem 2rem 3rem;
     }
 
-    .intro-grid {
+    .hero-grid {
       display: flex;
       justify-content: space-between;
       align-items: center;
       max-width: 1200px;
-      padding: 0 2rem;
       margin: 0 auto;
       gap: 2rem;
       flex-wrap: wrap;
-      box-sizing: border-box; 
     }
 
-    .intro-content {
+    .hero-content {
       flex: 1 1 600px;
     }
 
-    .intro-welcome {
+    .hero-welcome {
       font-family: var(--font-playfair);
       font-style: italic;
       font-size: 1.5rem;
       color: var(--02);
+      margin-bottom: 0.5rem;
     }
 
-    .intro-name {
+    .hero-name {
       font-family: var(--font-poppins);
       font-size: 3rem;
       font-weight: 900;
       color: var(--05);
+      margin: 0 0 0.75rem;
+      line-height: 1.2;
+    }
+
+    .hero-tagline {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--03);
       margin-bottom: 2rem;
-      line-height: 1.4;
+      line-height: 1.6;
+      max-width: 580px;
     }
 
-    .intro-bullets {
-      list-style: none;
-      padding-left: 0;
+    .hero-tagline span {
+      color: var(--02);
+      font-weight: 600;
     }
 
-    .intro-bullets li {
-      position: relative;
-      padding-left: 2rem;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      color: var(--01);
-      line-height: 1.6
-    }
-
-    .intro-bullets li::before {
-      content: "";
-      background-image: url("Images/Icons/Bullet point.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      width: 18px;
-      height: 18px;
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .intro-image {
+    .hero-image {
       flex: 1 1 300px;
       text-align: center;
     }
 
-    .intro-image img {
+    .hero-image img {
       max-width: 100%;
       height: auto;
       border-radius: 10px;
-      background-color: transparent;
     }
 
-    .intro-quote {
+    .hero-quote {
       font-family: var(--font-playfair);
       font-style: italic;
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       color: var(--02);
-      margin-top: 1.25rem;
+      margin-top: 1rem;
     }
 
+    /* ─── METRICS BAR ─── */
+    .metrics-section {
+      background-color: var(--06);
+      padding: 2.5rem 2rem;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .metric-item {
+      padding: 0.5rem 1rem;
+      border-right: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .metric-item:last-child {
+      border-right: none;
+    }
+
+    .metric-number {
+      font-family: var(--font-poppins);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--05);
+      line-height: 1.1;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.8);
+      margin-top: 0.35rem;
+      line-height: 1.4;
+    }
+
+    /* ─── NAV CARDS ─── */
     .cards-section {
       background-color: var(--04);
-      padding: 6rem 2rem;
+      padding: 5rem 2rem;
     }
-    
-    .cards-grid, .values-grid, .projects-grid {
+
+    .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
     }
 
     .card {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start; /* Align all from top */
-      align-items: flex-start; /* Align children left */
-      height: 100%; /* Ensure equal height for alignment */
+      justify-content: flex-start;
+      align-items: flex-start;
+      height: 100%;
       padding: 2rem;
       border-radius: 10px;
       position: relative;
       transition: transform 0.3s ease;
-      text-decoration: none; /* remove underline */
-      width: 100%;            /* ensure block-like behavior */
-      box-sizing: border-box;
+      text-decoration: none;
+      width: 100%;
     }
 
-    .card h2, .value-card h3, .project-title, .impact-card h3, .footer-contact h3, .footer-nav h3 {
+    .card h2 {
       font-family: var(--font-poppins);
       font-size: 1.5rem;
       font-weight: 900;
       color: var(--04);
     }
-    
-    .card p, .value-card p, .impact-card p {
+
+    .card p {
       font-family: var(--font-poppins);
       font-size: 1rem;
       line-height: 1.6;
@@ -260,29 +269,22 @@
       background-position: left center;
       margin-top: 0.5rem;
     }
-    
+
     .card:hover {
       transform: translateY(-5px);
     }
-    
-    .card-story {
-      background-color: var(--02);
-    }
-    
-    .card-experience {
-      background-color: var(--05);
-    }
-    
-    .card-work {
-      background-color: var(--03);
-    }
 
-    .who-section, .projects-section {
+    .card-portfolio  { background-color: var(--02); }
+    .card-worksamples { background-color: var(--05); }
+    .card-about      { background-color: var(--03); }
+
+    /* ─── WHO I AM ─── */
+    .who-section {
       background-color: var(--05);
       padding: 6rem 2rem;
     }
-    
-    .who-grid, .impact-container {
+
+    .who-grid {
       display: flex;
       flex-wrap: wrap;
       align-items: flex-start;
@@ -291,14 +293,18 @@
       margin: auto;
       gap: 5rem;
     }
-    
+
     .who-image img {
       width: 100%;
       max-width: 360px;
       border-radius: 10px;
     }
 
-    .who-label, .values-label, .projects-label, .impact-label {
+    .who-content {
+      flex: 1 1 300px;
+    }
+
+    .who-label {
       font-family: var(--font-poppins);
       font-weight: 600;
       font-size: 1.125rem;
@@ -306,8 +312,8 @@
       text-transform: uppercase;
       margin-bottom: 1rem;
     }
-   
-    .who-title, .values-title, .projects-title, .impact-title, .contact-title {
+
+    .who-title {
       font-family: var(--font-poppins);
       font-weight: 900;
       font-size: 1.75rem;
@@ -315,18 +321,43 @@
       line-height: 1.4;
       margin-bottom: 1.45rem;
     }
-      
-    .who-content, .impact-left {
-      flex: 1 1 300px;
-    }
 
-    .who-content p, .impact-text {
+    .who-content p {
       font-size: 1rem;
       color: var(--08);
       line-height: 1.6;
-      text-align: justify;
+      margin-bottom: 0.75rem;
     }
-    
+
+    /* proof points under bio */
+    .who-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-top: 1.75rem;
+    }
+
+    .who-stat {
+      background-color: var(--04);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+    }
+
+    .who-stat-num {
+      font-family: var(--font-poppins);
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--02);
+      line-height: 1.1;
+    }
+
+    .who-stat-label {
+      font-size: 0.78rem;
+      color: var(--03);
+      margin-top: 0.25rem;
+      line-height: 1.4;
+    }
+
     .skills-row {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
@@ -334,79 +365,47 @@
       justify-items: center;
       margin-top: 2rem;
     }
-    
+
     .skills-row img {
       height: 46px;
       width: auto;
       object-fit: contain;
     }
 
-    .values-section, .impact-section {
-      background-color: var(--02);
+    /* ─── PROJECTS ─── */
+    .projects-section {
+      background-color: var(--05);
       padding: 6rem 2rem;
     }
-    
-    .values-container, .projects-container {
+
+    .projects-container {
       max-width: 1200px;
       margin: auto;
     }
 
-    .values-title, .projects-title {
-      margin-bottom: 2.125rem;
-    }
-    
-    .values-grid, .projects-grid {
-      margin-bottom: 3.5rem;
-    }
-    
-    .value-card {
-      padding: 2rem;
-      border-radius: 10px;
-      background-color: var(--03);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start; /* Align all from top */
-      align-items: flex-start; /* Align children left */
-      height: 100%; /* Ensure equal height for alignment */
-    }
-
-    .icon img {
-      width: 30px;
-      height: auto;
-    }
-    
-    .value-card h3, .value-card p {
-      color: var(--05)
-    }
-    
-    .value-resilience {
-      background-color: var(--04);
-    }
-
-    .value-courage {
-      background-color: var(--08);
-    }
-    
-    .values-button, .projects-button {
-      text-align: center;
-    }
-    
-    .btn-learn-more, .btn-explore-more, .contact-submit {
-      background-color: var(--03);
-      color: var(--05);
-      padding: 1rem 1.5rem;
+    .projects-label {
+      font-family: var(--font-poppins);
       font-weight: 600;
       font-size: 1.125rem;
-      border: none;
-      border-radius: 10px;
-      text-align: center;
-      text-decoration: none;
-      transition: all 0.2s ease-in-out;
+      color: var(--08);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
     }
-    
-    .btn-learn-more:hover, .btn-explore-more:hover {
-      background-color: var(--06);
-      transform: scale(1.05);
+
+    .projects-title {
+      font-family: var(--font-poppins);
+      font-weight: 900;
+      font-size: 1.75rem;
+      color: var(--06);
+      line-height: 1.4;
+      margin-bottom: 2.125rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3.5rem;
     }
 
     .project-card {
@@ -414,26 +413,23 @@
       background-size: cover;
       background-position: center;
       border-radius: 10px;
-      min-height: 200px; 
+      min-height: 200px;
       overflow: hidden;
       display: flex;
       align-items: flex-end;
       text-decoration: none;
       transition: transform 0.3s ease;
     }
-    
+
     .project-card:hover {
       transform: translateY(-5px);
     }
 
     .project-overlay {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.45);
-      box-sizing: border-box;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.45);
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -445,14 +441,39 @@
 
     .project-sub {
       font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255,255,255,0.85);
       margin: 0;
     }
-    
+
     .project-title {
-      margin: 0.5rem 0 0;
-      color: #fff;
+      font-family: var(--font-poppins);
       font-size: 1.375rem;
+      font-weight: 900;
+      color: var(--05);
+      margin: 0.5rem 0 0;
+    }
+
+    .projects-button {
+      text-align: center;
+    }
+
+    .btn-explore-more {
+      background-color: var(--03);
+      color: var(--05);
+      padding: 1rem 1.5rem;
+      font-weight: 600;
+      font-size: 1.125rem;
+      border: none;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+      display: inline-block;
+    }
+
+    .btn-explore-more:hover {
+      background-color: var(--06);
+      transform: scale(1.05);
     }
 
     .projects-footer {
@@ -463,178 +484,96 @@
       margin-top: 5rem;
       font-size: 1.25rem;
     }
-    
+
+    /* ─── PHOTO SLIDER ─── */
     .project-slider {
       margin-top: 2.375rem;
       overflow: hidden;
     }
-    
+
     .slider-track {
       display: flex;
       gap: 2rem;
-      animation: slide 10s linear infinite;
+      animation: slide 20s linear infinite;
     }
-    
+
     .slider-track img {
       height: 200px;
       width: auto;
       border-radius: 10px;
       flex-shrink: 0;
     }
-    
+
     @keyframes slide {
       from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+      to   { transform: translateX(-50%); }
     }
 
-    .impact-container {
-      align-items: center;
-    }
-    
-    .impact-right {
-      flex: 1 1 300px;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .impact-card {
-      padding: 1.5rem 2rem;
-      border-radius: 10px;
-    }
-
-    .impact-card h3, .impact-card p {
-      color: var(--05);
-    }
-
-    .impact-card h3 {
-      font-size: 1.375rem;
-    }
-    
-    .impact-card-1 {
-      background-color: var(--03);
-    }
-    
-    .impact-card-2 {
-      background-color: var(--04);
-    }
-    
-    .impact-card-3 {
-      background-color: var(--08);
-    } 
-
-    .impact-card h3 {
-      position: relative;
-    }
-    
-    .impact-card h3::after {
-      content: '';
-      position: absolute;
-      bottom: -0.25rem;
-      display: block;
-      left: 0;
-      width: 30%;
-      height: 4px;
-      background-color: var(--02);
-      margin-top: 1rem;
-    }
-
-    .contact-section {
-      background-color: var(--06);
-      padding: 4rem 2rem 6rem;
-      text-align: center;
-    } 
-
-    .contact-container {
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    .contact-title {
-      color: var(--02);
-    }
-
-    .contact-subtitle {
-      font-family: var(--font-poppins);
-      font-size: 1rem;
-      color: var(--05);
-      margin-bottom: 2.375rem;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      font-family: var(--font-poppins);
-      border: none;
-      border-radius: 5px;
-      background-color: var(--05);
-      color: var(--04);
-    }
-    
-    .contact-form textarea {
-      resize: vertical;
-    }
-    
-    .contact-submit {
-      outline: none;
-      box-shadow: none;
-    }
-
-    .thank-you {
-      margin-top: 2rem;
-      font-size: 1.125rem;
-      font-weight: 500;
-      font-style: italic;
-      color: var(--02);
-      text-align: center;
-      font-family: var(--font-playfair);
-    }
-    
+    /* ─── FOOTER ─── */
     .site-footer {
       background-color: var(--04);
       color: var(--05);
-      padding: 4rem 2rem 5rem;
+      padding: 4rem 2rem 3rem;
+      border-top: 1px solid var(--03);
     }
-    
+
     .footer-container {
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
       padding: 0 2rem;
-      gap: 5rem;
+      gap: 4rem;
       justify-content: space-between;
       align-items: flex-start;
     }
-    
-    .footer-contact h3, .footer-nav h3 {
+
+    .footer-brand h2 {
+      font-family: var(--font-playfair);
+      font-size: 30px;
+      font-weight: 700;
       color: var(--02);
-      margin-bottom: 0.5rem;
+      text-shadow: 2px 0px 4px var(--03);
+      margin-bottom: 0.75rem;
     }
 
-    .footer-contact ul,
-    .footer-nav ul {
+    .footer-brand p {
+      font-size: 0.85rem;
+      color: var(--03);
+      line-height: 1.6;
+      max-width: 220px;
+    }
+
+    .footer-contact h3,
+    .footer-availability h3 {
+      font-family: var(--font-poppins);
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--02);
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-contact ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
-    
-    .footer-contact li,
-    .footer-nav li {
+
+    .footer-contact li {
       font-size: 1rem;
       line-height: 1.6;
       color: var(--05);
       margin-bottom: 0.5rem;
     }
-    
-    .footer-contact a,
-    .footer-nav a {
+
+    .footer-contact a {
       color: var(--05);
       text-decoration: none;
       transition: color 0.2s ease;
+    }
+
+    .footer-contact a:hover {
+      color: var(--02);
     }
 
     .footer-icon {
@@ -643,8 +582,32 @@
       margin-right: 1rem;
       margin-top: 0.5rem;
     }
-    
-/* Responsive for mobile */
+
+    .footer-availability p {
+      font-size: 0.9rem;
+      color: var(--03);
+      line-height: 1.8;
+    }
+
+    .footer-availability span {
+      color: var(--02);
+      font-weight: 600;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 2.5rem auto 0;
+      padding: 1.5rem 2rem 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: var(--08);
+    }
+
+    /* ─── RESPONSIVE ─── */
     @media (max-width: 768px) {
       .nav-container {
         flex-direction: column;
@@ -653,10 +616,7 @@
         padding: 1rem;
       }
 
-      .logo, .footer-brand h2 {
-        font-size: 28px;
-        margin-bottom: 0.5rem;
-      }
+      .logo { font-size: 28px; margin-bottom: 0.5rem; }
 
       .menu-toggle {
         display: block;
@@ -693,174 +653,161 @@
         text-align: center;
         padding: 0.75rem 0;
       }
-      
-      .intro-grid {
+
+      .hero-grid {
         flex-direction: column;
         text-align: center;
       }
 
-      .intro-content, .intro-image {
+      .hero-content, .hero-image {
         flex: 1 1 100%;
       }
 
-      .intro-welcome {
-        font-size: 1.5rem;
-        margin-bottom: 2.5rem;
-      }
-      
-      .intro-name {
-        font-size: 2.25rem;
+      .hero-welcome { font-size: 1.25rem; margin-bottom: 1.5rem; }
+      .hero-name    { font-size: 2.25rem; }
+      .hero-tagline { font-size: 0.875rem; margin: 0 auto 1.5rem; }
+
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .intro-bullets {
-        padding-left: 1.5rem;
-        text-align: left;
+      .metric-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+        padding-bottom: 1rem;
       }
 
-      .intro-quote, .projects-footer {
-        font-size: 1.125rem;
-      }
-      
-      .card, .value-card {
-        padding: 1.75rem;
-        font-size: 0.875rem;
+      .metric-item:nth-child(odd) {
+        border-right: 1px solid rgba(255,255,255,0.2);
       }
 
-      .card h2, .value-card h3, .impact-card h3 {
-        font-size: 1.25rem;
-      }
-    
-      .card .arrow {
-        width: 22px;
-        height: 22px;
-        align-self: flex-start;
-      }
-      
-      .who-grid {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      
-      .who-title, .impact-title {
-        font-size: 1.5rem;
-        text-align: center;
-        margin-bottom: 1.75rem;
-      }
-      
-      .values-title, .projects-title {
-        font-size: 1.5rem;
-        text-align: center;        
-        margin-bottom: 2.375rem;
-      }
-      
-      .who-content, .impact-left, .impact-right {
-        flex: 1 1 100%;
-      }
-      
-      .values-label, .projects-label, .impact-label {
-        text-align: center;
-        display: block;
-        width: 100%;
-        margin-bottom: 1.25rem;
+      .metric-item:last-child,
+      .metric-item:nth-last-child(2):nth-child(odd) {
+        border-bottom: none;
       }
 
-      .intro-bullets li, .card p, .who-content p, .value-card p, .project-sub, .impact-text, .impact-card p {
-        font-size: 0.875rem;
-      }
+      .card { padding: 1.75rem; }
+      .card h2 { font-size: 1.25rem; }
 
-      .impact-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-      }
+      .who-grid { flex-direction: column; align-items: center; text-align: center; }
+      .who-title { font-size: 1.5rem; }
+      .who-content { flex: 1 1 100%; }
 
-      .contact-title {
-        font-size: 1.625rem;
-      }
-      
-      .contact-subtitle, .contact-form input, .contact-form textarea {
-        font-size: 0.95rem;
-      }
+      .who-stats { grid-template-columns: repeat(2, 1fr); }
 
-      .thank-you {
-        font-size: 1rem;
-      }
-      
+      .projects-title { font-size: 1.5rem; text-align: center; }
+      .projects-footer { font-size: 1.125rem; }
+
       .footer-container {
         flex-direction: column;
         align-items: center;
-        gap: 0.75rem;
+        gap: 2rem;
+        padding: 0;
       }
 
-      .footer-contact h3, .footer-nav h3, .footer-contact ul, .footer-nav ul, .footer-contact li, .footer-nav li {
+      .footer-contact h3,
+      .footer-availability h3,
+      .footer-contact ul,
+      .footer-contact li {
         text-align: center;
       }
+
+      .footer-availability { text-align: center; }
+      .footer-brand { text-align: center; }
+      .footer-brand p { margin: 0 auto; }
     }
   </style>
 </head>
-  
+
 <body>
   <header class="site-header">
     <div class="nav-container">
-      <div class="logo">PHUONG VU</div>
+      <a href="https://plvu99.github.io/website/" class="logo">PHUONG VU</a>
 
-      <!-- Hamburger icon toggles open/close -->
       <button class="menu-toggle" id="menu-toggle">☰</button>
 
       <nav class="nav-menu" id="nav-menu">
         <a href="https://plvu99.github.io/website/">HOME</a>
-        <a href="https://plvu99.github.io/website/story/">MY STORY</a>
-        <a href="https://plvu99.github.io/website/experience/">MY EXPERIENCE</a>
-        <a href="https://github.com/plvu99">MY WORK</a>
-        <a href="#contact" class="btn-contact">CONTACT ME</a>
+        <a href="https://plvu99.github.io/website/portfolio/">PORTFOLIO</a>
+        <a href="https://plvu99.github.io/website/work-samples/">WORK SAMPLES</a>
+        <a href="https://plvu99.github.io/website/about/">ABOUT</a>
+        <a href="#contact">CONTACT</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="intro-section" id="home">
-      <div class="intro-grid">
-        <div class="intro-content">
-          <p class="intro-welcome">Welcome, nice to meet you!</p>
-          <h1 class="intro-name">MY NAME IS<br>PHUONG VU</h1>
-          <ul class="intro-bullets">
-            <li>I bring strong global experience in analytics, business, and technology.</li>
-            <li>I’m known for working effectively across functions and cultures.</li>
-            <li>I’m driven by data and insights that lead to smarter business decisions.</li>
-          </ul>
+
+    <!-- ─── HERO ─── -->
+    <section class="hero-section">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <p class="hero-welcome">Welcome, nice to meet you!</p>
+          <h1 class="hero-name">MY NAME IS<br>PHUONG VU</h1>
+          <p class="hero-tagline">
+            <span>Marketing, Growth & Product Data Analyst</span> ·
+            SQL, Python, BI · Experimentation, Funnel & Segmentation Analysis
+          </p>
         </div>
-        <div class="intro-image">
+        <div class="hero-image">
           <img src="Images/Profile.png" alt="Phuong Vu">
-          <p class="intro-quote">Progress, not perfection<br><span>Trust the process</span></p>
+          <p class="hero-quote">Progress, not perfection<br><span>Trust the process</span></p>
         </div>
       </div>
     </section>
 
+    <!-- ─── METRICS BAR ─── -->
+    <section class="metrics-section">
+      <div class="metrics-grid">
+        <div class="metric-item">
+          <div class="metric-number">69%</div>
+          <div class="metric-label">Cost per lead reduction<br>($172 → $53)</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-number">18–22%</div>
+          <div class="metric-label">CAC reduction via<br>A/B experimentation</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-number">+1,124</div>
+          <div class="metric-label">Leads generated<br>in 3 months</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-number">$2M+</div>
+          <div class="metric-label">Funding contributed to<br>via GTM strategy</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-number">3+</div>
+          <div class="metric-label">Years across SaaS,<br>Gaming & Logistics</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── NAV CARDS ─── -->
     <section class="cards-section">
       <div class="cards-grid">
-        
-        <a href="https://plvu99.github.io/website/story/" class="card card-story">
-          <h2>MY STORY</h2>
-          <p>From a turning point shaping who I am today to the adventures, movement, and meaningful experiences I’ve embraced along the way.</p>
+
+        <a href="https://plvu99.github.io/website/portfolio/" class="card card-portfolio">
+          <h2>PORTFOLIO</h2>
+          <p>12 hands-on projects across games analytics, marketing, operations, and machine learning — with tools, methods, and outcomes for each.</p>
           <div class="arrow"></div>
         </a>
-    
-        <a href="https://plvu99.github.io/website/experience/" class="card card-experience">
-          <h2>MY EXPERIENCE</h2>
-          <p>My journey from where I started and what I learned to how I’ve grown. You’ll find key milestones, achievements, and numbers showing the impact I made.</p>
+
+        <a href="https://plvu99.github.io/website/work-samples/" class="card card-worksamples">
+          <h2>WORK SAMPLES</h2>
+          <p>Real deliverables from professional experience — demand gen campaigns, CRM workflows, dashboards, GTM strategy, and measurement frameworks.</p>
           <div class="arrow"></div>
         </a>
-    
-        <a href="https://github.com/plvu99" class="card card-work">
-          <h2>MY WORK</h2>
-          <p>A collection of my hands-on projects and presentations. Click through to see how I turn data into solutions through analysis, design, and insight.</p>
+
+        <a href="https://plvu99.github.io/website/about/" class="card card-about">
+          <h2>ABOUT</h2>
+          <p>Background, career timeline, technical skills, and education — everything you need to know about where I've been and what I bring.</p>
           <div class="arrow"></div>
         </a>
-    
+
       </div>
     </section>
 
+    <!-- ─── WHO I AM ─── -->
     <section class="who-section">
       <div class="who-grid">
         <div class="who-image">
@@ -868,11 +815,30 @@
         </div>
         <div class="who-content">
           <div class="who-label">WHO I AM</div>
-          <h2 class="who-title">PROBLEM SOLVER WITH BACKGROUND IN ANALYTICS, BUSINESS, AND TECHNOLOGY</h2>
-          <p>I’m passionate about turning complex data into clear, meaningful insights that help teams make smarter decisions.</p>
-          <p>Over the past few years, I’ve worked in fast-paced companies across industries like logistics, blockchain, and HR — where I’ve learned to solve problems, communicate across cultures, and collaborate with global teams.</p>
-          <p>With a strong foundation in SQL, Python, and data visualization, I enjoy connecting the dots between data and business goals, and I’m excited to support cross-functional teams in making data-driven decisions that truly move the needle.</p>
-    
+          <h2 class="who-title">ANALYST WHO TURNS MESSY DATA INTO DECISIONS THAT MOVE THE NEEDLE</h2>
+          <p>3+ years working across B2B SaaS, blockchain gaming, and logistics — from Hanoi to Singapore to Los Angeles. I started in marketing and grew into analytics, which means I understand both the business context and the technical work behind the numbers.</p>
+          <p>Whether it's segmenting 10K+ CRM accounts in SQL, building a Looker dashboard for 40 stakeholders, or running A/B experiments on pricing strategy — I focus on the outcome, not just the output.</p>
+          <p>Currently finishing my MS in Business Analytics at USC Marshall (GPA 3.75) and eligible for F-1 OPT + STEM Extension — 36 months, no immediate sponsorship required.</p>
+
+          <div class="who-stats">
+            <div class="who-stat">
+              <div class="who-stat-num">10K+</div>
+              <div class="who-stat-label">CRM accounts segmented via SQL</div>
+            </div>
+            <div class="who-stat">
+              <div class="who-stat-num">40+</div>
+              <div class="who-stat-label">Stakeholders across Marketing, Sales & Product</div>
+            </div>
+            <div class="who-stat">
+              <div class="who-stat-num">30+</div>
+              <div class="who-stat-label">Tracking events built with Engineering</div>
+            </div>
+            <div class="who-stat">
+              <div class="who-stat-num">3.75</div>
+              <div class="who-stat-label">GPA · USC Marshall MSBA</div>
+            </div>
+          </div>
+
           <div class="skills-row">
             <img src="Images/Logos/Excel.png" alt="Excel">
             <img src="Images/Logos/PowerPoint.png" alt="PowerPoint">
@@ -886,113 +852,94 @@
       </div>
     </section>
 
-    <section class="values-section">
-      <div class="values-container">
-        <div class="values-label">WHAT DRIVES ME</div>
-        <h2 class="values-title">VALUES THAT I CARRY INTO BUSINESS AND ANALYTICS</h2>
-    
-        <div class="values-grid">
-          <div class="value-card value-collab">
-            <div class="icon"><img src="Images/Icons/Collaboration.png" alt="Collaboration Icon" /></div>
-            <h3>COLLABORATION</h3>
-            <p>“Whether working on projects, across teams, or with stakeholders, I listen actively to diverse perspectives and adapt to different working styles. I strive for clarity, find common ground, and help teams work more efficiently toward shared goals.”</p>
-          </div>
-    
-          <div class="value-card value-resilience">
-            <div class="icon"><img src="Images/Icons/Resilience.png" alt="Resilience Icon" /></div>
-            <h3>RESILIENCE</h3>
-            <p>“I view challenges as opportunities to grow. When facing deadlines or obstacles, I prioritize, track progress, and adapt quickly. With a clear goal in mind, I ensure timely delivery without compromising quality.”</p>
-          </div>
-    
-          <div class="value-card value-courage">
-            <div class="icon"><img src="Images/Icons/Courage.png" alt="Courage Icon" /></div>
-            <h3>COURAGE</h3>
-            <p>“I challenge myself to step out of my comfort zone — whether it’s starting new conversations, joining events, or contributing solutions. I speak up when needed and welcome feedback to help the team grow.”</p>
-          </div>
-        </div>
-    
-        <div class="values-button">
-          <a href="https://plvu99.github.io/website/story/" class="btn-learn-more">LEARN MORE ABOUT MY STORY</a>
-        </div>
-      </div>
-    </section>
-
+    <!-- ─── PROJECTS ─── -->
     <section class="projects-section">
       <div class="projects-container">
-        <div class="projects-label">WHAT I’VE ACCOMPLISHED</div>
-        <h2 class="projects-title">PROJECTS & PRESENTATIONS I’VE BUILT INDIVIDUALLY AND TOGETHER</h2> 
-    
+        <div class="projects-label">WHAT I'VE BUILT</div>
+        <h2 class="projects-title">SELECTED PROJECTS ACROSS ANALYTICS & MACHINE LEARNING</h2>
+
         <div class="projects-grid">
+          <a href="https://github.com/plvu99/Predicting-Day-14-Player-Retention-Using-Machine-Learning" class="project-card" style="background-image: url('Images/Projects/MLB Games.webp');">
+            <div class="project-overlay">
+              <div class="project-text">
+                <p class="project-sub">Sports & Games</p>
+                <h3 class="project-title">PREDICTING DAY-14 PLAYER RETENTION USING MACHINE LEARNING</h3>
+              </div>
+            </div>
+          </a>
+
           <a href="https://github.com/plvu99/Analysis-of-Starbucks-Promotional-Campaign-and-Customer-Segmentation" class="project-card" style="background-image: url('Images/Projects/Campaign Analysis & Segmentation.webp');">
             <div class="project-overlay">
               <div class="project-text">
-                <p class="project-sub">Retail</p>
-                <h3 class="project-title">CAMPAIGN ANALYSIS & SEGMENTATION FOR MARKET STRATEGY</h3>
+                <p class="project-sub">Marketing Analytics</p>
+                <h3 class="project-title">STARBUCKS CAMPAIGN ANALYSIS & CUSTOMER SEGMENTATION</h3>
               </div>
             </div>
           </a>
-    
-          <a href="https://github.com/plvu99/Clustering-and-Trend-Analysis-for-Ride-Sharing-Demand-and-Behavior" class="project-card" style="background-image: url('Images/Projects/Ride Sharing.jpg');">
-            <div class="project-overlay">
-              <div class="project-text">
-                <p class="project-sub">Logistics & Transportation</p>
-                <h3 class="project-title">CLUSTERING & TREND ANALYSIS FOR RIDE-SHARING DEMAND</h3>
-              </div>
-            </div>
-          </a>
-    
+
           <a href="https://github.com/plvu99/SQL-Driven-Analysis-of-Sales-Performance-and-Customer-Behavior" class="project-card" style="background-image: url('Images/Projects/Sales Performance.webp');">
             <div class="project-overlay">
               <div class="project-text">
-                <p class="project-sub">Marketing & Sales</p>
-                <h3 class="project-title">ANALYSIS OF SALES PERFORMANCE AND CUSTOMER BEHAVIOR</h3>
+                <p class="project-sub">SQL · Commercial Analytics</p>
+                <h3 class="project-title">SALES PERFORMANCE & CUSTOMER BEHAVIOR ANALYSIS</h3>
               </div>
             </div>
           </a>
-    
-          <a href="https://github.com/plvu99/Impact-of-Salary-Hikes-on-Employee-Attrition" class="project-card" style="background-image: url('Images/Projects/Salary Hikes.avif');">
-            <div class="project-overlay">
-              <div class="project-text">
-                <p class="project-sub">Human Resources</p>
-                <h3 class="project-title">IMPACT OF SALARY HIKES ON EMPLOYEE ATTRITION</h3>
-              </div>
-            </div>
-          </a>
-    
-          <a href="https://github.com/plvu99/Car-Insurance-Loss-Analytics" class="project-card" style="background-image: url('Images/Projects/Car Insurance.avif');">
-            <div class="project-overlay">
-              <div class="project-text">
-                <p class="project-sub">Insurance</p>
-                <h3 class="project-title">CAR INSURANCE LOSS ANALYTICS</h3>
-              </div>
-            </div>
-          </a>
-    
+
           <a href="https://github.com/plvu99/Home-Team-Bias-in-MLB-Umpiring" class="project-card" style="background-image: url('Images/Projects/MLB Games.webp');">
             <div class="project-overlay">
               <div class="project-text">
-                <p class="project-sub">Sports & Entertainment</p>
+                <p class="project-sub">Sports Analytics</p>
                 <h3 class="project-title">HOME-TEAM BIAS IN MLB UMPIRING</h3>
               </div>
             </div>
           </a>
+
+          <a href="https://github.com/plvu99/Car-Insurance-Loss-Analytics" class="project-card" style="background-image: url('Images/Projects/Car Insurance.avif');">
+            <div class="project-overlay">
+              <div class="project-text">
+                <p class="project-sub">Insurance · Risk Analytics</p>
+                <h3 class="project-title">INSURANCE LOSS PREDICTION & RISK-BASED PRICING</h3>
+              </div>
+            </div>
+          </a>
+
+          <a href="https://github.com/plvu99/Clustering-and-Trend-Analysis-for-Ride-Sharing-Demand-and-Behavior" class="project-card" style="background-image: url('Images/Projects/Ride Sharing.jpg');">
+            <div class="project-overlay">
+              <div class="project-text">
+                <p class="project-sub">Logistics & Transportation</p>
+                <h3 class="project-title">RIDE-SHARING DEMAND HOTSPOT DETECTION USING CLUSTERING</h3>
+              </div>
+            </div>
+          </a>
         </div>
-    
+
         <div class="projects-button">
-          <a href="https://github.com/plvu99" class="btn-explore-more">EXPLORE MORE PROJECTS</a>
+          <a href="https://plvu99.github.io/website/portfolio/" class="btn-explore-more">EXPLORE ALL PROJECTS</a>
         </div>
-    
-        <p class="projects-footer">Beyond that, I enjoy the journey and have built meaningful connections with people from around the globe.</p>
-    
+
+        <p class="projects-footer">Beyond the work, I enjoy the journey and have built meaningful connections with people from around the globe.</p>
+
         <div class="project-slider">
           <div class="slider-track">
             <img src="Images/Slider/Abivin Workshop.jpg" alt="Abivin Workshop">
             <img src="Images/Slider/Payboy in Hanoi.JPG" alt="Payboy in Hanoi">
-            <img src="Images/Slider/Night Outing.JPG" alt="Night Outing">            
+            <img src="Images/Slider/Night Outing.JPG" alt="Night Outing">
             <img src="Images/Slider/Study Group.JPG" alt="Study Group">
             <img src="Images/Slider/Beach Outing.JPEG" alt="Beach Outing">
             <img src="Images/Slider/Career Spark.JPG" alt="Career Spark">
-            <img src="Images/Slider/BASA Photoshoot.JPG" alt="BASA Photoshoot">            
+            <img src="Images/Slider/BASA Photoshoot.JPG" alt="BASA Photoshoot">
+            <img src="Images/Slider/BASA Dinner.jpg" alt="BASA Dinner">
+            <img src="Images/Slider/Bowling.JPG" alt="Bowling">
+            <img src="Images/Slider/Case Competition.JPG" alt="Case Competition">
+            <!-- duplicate for seamless loop -->
+            <img src="Images/Slider/Abivin Workshop.jpg" alt="Abivin Workshop">
+            <img src="Images/Slider/Payboy in Hanoi.JPG" alt="Payboy in Hanoi">
+            <img src="Images/Slider/Night Outing.JPG" alt="Night Outing">
+            <img src="Images/Slider/Study Group.JPG" alt="Study Group">
+            <img src="Images/Slider/Beach Outing.JPEG" alt="Beach Outing">
+            <img src="Images/Slider/Career Spark.JPG" alt="Career Spark">
+            <img src="Images/Slider/BASA Photoshoot.JPG" alt="BASA Photoshoot">
             <img src="Images/Slider/BASA Dinner.jpg" alt="BASA Dinner">
             <img src="Images/Slider/Bowling.JPG" alt="Bowling">
             <img src="Images/Slider/Case Competition.JPG" alt="Case Competition">
@@ -1000,128 +947,67 @@
         </div>
       </div>
     </section>
-    
-    <section class="impact-section">
-      <div class="impact-container">
-        <div class="impact-left">
-          <div class="impact-label">WHAT I’M WORKING TOWARD</div>
-          <h2 class="impact-title">BRIDGING ANALYTICS, STRATEGY & REAL-WORLD IMPACT</h2>
-          <p class="impact-text">
-            I’m advancing not only my technical knowledge—such as linear and logistic regression, statistical modeling, and data visualization—but also strengthening interpersonal skills and business acumen.
-          </p>
-          <p class="impact-text">
-            I’m eager to apply these in real-world tech, marketing, and strategy challenges to contribute to meaningful outcomes.
-          </p>
-        </div>
-    
-        <div class="impact-right">
-          <div class="impact-card impact-card-1">
-            <h3>TURNING INSIGHTS INTO STRATEGY</h3>
-            <p>I deepen my ability to connect data with business goals — using analytics not just for reporting, but to inform strategic decisions and shape long-term direction.</p>
-          </div>
-    
-          <div class="impact-card impact-card-2">
-            <h3>COMMUNICATING WITH CLARITY</h3>
-            <p>I strengthen how I communicate insights — through visual storytelling, structured thinking, and clear narratives that align technical findings with business priorities.</p>
-          </div>
-    
-          <div class="impact-card impact-card-3">
-            <h3>BUILDING PRACTICAL SOLUTIONS</h3>
-            <p>I focus on designing efficient, flexible solutions — especially in fast-paced or resource-constrained settings — that drive value across teams and functions.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <section class="contact-section" id="contact">
-      <div class="contact-container">
-        <h2 class="contact-title">I’D LOVE TO CONNECT!</h2>
-        <p class="contact-subtitle">Schedule a coffee chat with me.</p>
-    
-        <form id="contactForm" class="contact-form" action="#" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <input type="url" name="linkedin" placeholder="Your LinkedIn" required/>
-          <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-          <input type="hidden" name="source" value="Home">
-          <button type="submit" class="contact-submit">SUBMIT</button>
-        </form>
-        <div id="thankYouMessage" class="thank-you" style="display: none;">
-          <p>Thank you! I can’t wait to connect with you!</p>
-        </div>
-      </div>
-    </section>
-  </main> 
-  
-  <footer class="site-footer">
+
+  </main>
+
+  <!-- ─── FOOTER / CONTACT ─── -->
+  <footer class="site-footer" id="contact">
     <div class="footer-container">
+
       <div class="footer-brand">
         <h2>PHUONG VU</h2>
+        <p>Marketing, Growth & Product Data Analyst<br>MS Business Analytics · USC Marshall 2026</p>
       </div>
-    
+
       <div class="footer-contact">
         <h3>CONTACT</h3>
         <ul>
           <li><a href="tel:+12135665734">213-566-5734</a></li>
           <li><a href="mailto:plvu@marshall.usc.edu">plvu@marshall.usc.edu</a></li>
           <li>Los Angeles, CA, United States</li>
-          <li><a href="https://www.linkedin.com/in/phuong-vu-lan/" target="_blank"><img src="Images/Logos/LinkedIn.webp" alt="LinkedIn" class="footer-icon" /></a> <a href="https://github.com/plvu99" target="_blank"><img src="Images/Logos/GitHub.png" alt="GitHub" class="footer-icon" /></a></li>
+          <li style="margin-top:0.5rem;">
+            <a href="https://www.linkedin.com/in/phuong-vu-lan/" target="_blank"><img src="Images/Logos/LinkedIn.webp" alt="LinkedIn" class="footer-icon" /></a>
+            <a href="https://github.com/plvu99" target="_blank"><img src="Images/Logos/GitHub.png" alt="GitHub" class="footer-icon" /></a>
+          </li>
         </ul>
       </div>
-    
-      <div class="footer-nav">
-        <h3>NAVIGATION</h3>
-        <ul>
-          <li><a href="https://plvu99.github.io/website/">Home</a></li>
-          <li><a href="https://plvu99.github.io/website/story/">My Story</a></li>
-          <li><a href="https://plvu99.github.io/website/experience/">My Experience</a></li>
-          <li><a href="https://github.com/plvu99">My Work</a></li>
-        </ul>
+
+      <div class="footer-availability">
+        <h3>AVAILABILITY</h3>
+        <p>
+          <span>F-1 OPT + STEM Extension eligible</span><br>
+          36 months total<br>
+          No immediate sponsorship required<br>
+          <span>Available June 2026</span><br>
+          Open to hybrid & remote roles
+        </p>
       </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Phuong Vu · Built with care</p>
     </div>
   </footer>
-        
-  <!-- Toggle menu visibility and icon -->
+
+  <!-- Hamburger menu -->
   <script>
     const toggleBtn = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-      
-    function toggleMenu() {
+    const navMenu   = document.getElementById('nav-menu');
+
+    toggleBtn.addEventListener('click', function () {
       navMenu.classList.toggle('show');
       toggleBtn.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
-    }
-      
-    toggleBtn.addEventListener('click', toggleMenu);
+    });
+
+    // Close menu when any link is clicked
+    navMenu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navMenu.classList.remove('show');
+        toggleBtn.textContent = '☰';
+      });
+    });
   </script>
 
-  <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbyPSmnqisTEkMmzWS_gb_lBsIG3vQKQ4rECTF7S6MLXv3m5DNADmSzToQV9ujp5ymJb9Q/exec';
-  
-  document.getElementById('contactForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const form = this;
-    const formData = new FormData(form);
-  
-    fetch(scriptURL, {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => {
-      if (response.ok) {
-      gtag('event', 'form_submit', {
-        event_category: 'Contact',
-        event_label: 'Home' // change per page
-      });        
-        form.style.display = 'none';
-        document.getElementById('thankYouMessage').style.display = 'block';
-      } else {
-        alert('Submission failed. Please try again.');
-      }
-    })
-    .catch(error => alert('Sorry, something went wrong!'));
-  });
-  </script>
-
-  
 </body>
 </html>
