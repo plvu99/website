@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Phuong Vu | Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8GLRVX10Y"></script>
@@ -16,9 +16,7 @@
   </script>
 
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
 
     :root {
       --01: #f2f2f2;
@@ -27,21 +25,19 @@
       --04: #090c08;
       --05: #ffffff;
       --06: #117a65;
-      --07: #f39c12;
       --08: #757575;
-
-      --font-playfair: 'Playfair Display', serif;
-      --font-poppins: 'Poppins', sans-serif;
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body:    'Inter', sans-serif;
     }
 
     body {
       margin: 0;
-      font-family: var(--font-poppins);
+      font-family: var(--font-body);
       background-color: var(--04);
       color: var(--01);
     }
 
-    /* ─── HEADER / NAV ─── */
+    /* ─── NAV ─── */
     header.site-header {
       background-color: var(--04);
       display: flex;
@@ -52,7 +48,7 @@
       width: 100%;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid var(--03);
+      border-bottom: 1px solid rgba(182,176,159,0.25);
     }
 
     .nav-container {
@@ -66,11 +62,11 @@
     }
 
     .logo {
-      font-family: var(--font-playfair);
-      font-size: 30px;
+      font-family: var(--font-display);
+      font-size: 1.6rem;
       font-weight: 700;
       color: var(--02);
-      text-shadow: 2px 0px 4px var(--03);
+      letter-spacing: 0.03em;
       text-decoration: none;
     }
 
@@ -83,337 +79,379 @@
     .nav-menu a {
       color: var(--02);
       text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
-      transition: transform 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      transition: opacity 0.2s ease, color 0.2s ease;
     }
 
-    .nav-menu a:hover {
-      transform: scale(1.05);
-      text-shadow: 0 0 6px var(--02);
-    }
+    .nav-menu a:hover { opacity: 1; color: var(--05); }
 
     .menu-toggle {
       display: none;
-      font-size: 28px;
+      font-size: 26px;
       color: var(--05);
       background: none;
       border: none;
-      z-index: 1001;
       cursor: pointer;
+      z-index: 1001;
     }
 
-    main {
-      padding-top: 100px;
-    }
+    main { padding-top: 80px; }
 
     /* ─── HERO ─── */
     .hero-section {
       background-color: var(--04);
-      padding: 4rem 2rem 3rem;
+      padding: 6rem 2rem 5rem;
     }
 
-    .hero-grid {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .hero-inner {
       max-width: 1200px;
       margin: 0 auto;
-      gap: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
       flex-wrap: wrap;
     }
 
-    .hero-content {
-      flex: 1 1 600px;
-    }
+    .hero-content { flex: 1 1 560px; }
 
-    .hero-welcome {
-      font-family: var(--font-playfair);
+    .hero-greeting {
+      font-family: var(--font-display);
       font-style: italic;
-      font-size: 1.5rem;
-      color: var(--02);
-      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+      color: var(--03);
+      margin-bottom: 0.6rem;
+      display: block;
     }
 
     .hero-name {
-      font-family: var(--font-poppins);
-      font-size: 3rem;
-      font-weight: 900;
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+      font-weight: 700;
       color: var(--05);
-      margin: 0 0 0.75rem;
-      line-height: 1.2;
+      line-height: 1.1;
+      margin: 0 0 1.75rem;
+      letter-spacing: -0.01em;
+      white-space: normal;
     }
 
     .hero-tagline {
-      font-size: 0.95rem;
-      font-weight: 400;
-      color: var(--03);
-      margin-bottom: 2rem;
-      line-height: 1.6;
-      max-width: 580px;
-    }
-
-    .hero-tagline span {
-      color: var(--02);
+      font-family: var(--font-body);
+      font-size: 0.78rem;
       font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--02);
+      line-height: 2;
+      margin-bottom: 1.25rem;
     }
 
-    .hero-image {
-      flex: 1 1 300px;
-      text-align: center;
+    .hero-desc {
+      font-size: 0.97rem;
+      font-family: var(--font-body);
+      color: var(--03);
+      line-height: 1.8;
+      max-width: 520px;
+      margin-bottom: 2.5rem;
     }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background-color: var(--06);
+      color: var(--05);
+      padding: 0.75rem 1.75rem;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary:hover { background-color: #0e6654; transform: translateY(-1px); }
+
+    .btn-ghost {
+      color: var(--02);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      border-bottom: 1px solid rgba(234,228,213,0.35);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .btn-ghost:hover { color: var(--05); border-color: var(--05); }
+
+    .hero-image { flex: 1 1 260px; text-align: center; }
 
     .hero-image img {
-      max-width: 100%;
+      max-width: 300px;
+      width: 100%;
       height: auto;
-      border-radius: 10px;
+      border-radius: 8px;
     }
 
     .hero-quote {
-      font-family: var(--font-playfair);
+      font-family: var(--font-display);
       font-style: italic;
-      font-size: 1.125rem;
-      color: var(--02);
+      font-size: 1.05rem;
+      color: var(--03);
       margin-top: 1rem;
+      line-height: 1.5;
     }
 
-    /* ─── METRICS BAR ─── */
+    /* ─── METRICS ─── */
     .metrics-section {
       background-color: var(--06);
-      padding: 2.5rem 2rem;
+      padding: 3rem 2rem;
     }
 
     .metrics-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(5, 1fr);
       max-width: 1200px;
       margin: 0 auto;
-      text-align: center;
     }
 
     .metric-item {
-      padding: 0.5rem 1rem;
-      border-right: 1px solid rgba(255,255,255,0.2);
+      padding: 0.75rem 1.25rem;
+      border-right: 1px solid rgba(255,255,255,0.18);
+      text-align: center;
     }
 
-    .metric-item:last-child {
-      border-right: none;
-    }
+    .metric-item:last-child { border-right: none; }
 
+    /* metric number: Cormorant, white, large */
     .metric-number {
-      font-family: var(--font-poppins);
-      font-size: 2rem;
-      font-weight: 900;
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
       color: var(--05);
-      line-height: 1.1;
+      line-height: 1;
+      margin-bottom: 0.45rem;
     }
 
-    .metric-label {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.8);
-      margin-top: 0.35rem;
-      line-height: 1.4;
+    /* metric desc: Inter, same muted white, small */
+    .metric-desc {
+      font-family: var(--font-body);
+      font-size: 0.77rem;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.55;
     }
 
-    /* ─── NAV CARDS ─── */
-    .cards-section {
-      background-color: var(--04);
-      padding: 5rem 2rem;
+    /* ─── SHARED SECTION TOKENS ─── */
+    /* eyebrow: Inter, grey, 0.72rem, uppercase, tracked */
+    .section-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--08);
+      margin-bottom: 0.65rem;
     }
 
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
+    /* section title: Cormorant, green, large — ONE per section, no tagline below */
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+      font-weight: 700;
+      color: var(--06);
+      line-height: 1.2;
+      margin-bottom: 3rem;
     }
-
-    .card {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      height: 100%;
-      padding: 2rem;
-      border-radius: 10px;
-      position: relative;
-      transition: transform 0.3s ease;
-      text-decoration: none;
-      width: 100%;
-    }
-
-    .card h2 {
-      font-family: var(--font-poppins);
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: var(--04);
-    }
-
-    .card p {
-      font-family: var(--font-poppins);
-      font-size: 1rem;
-      line-height: 1.6;
-      color: var(--04);
-      text-align: justify;
-      margin-top: 0.25rem;
-    }
-
-    .card .arrow {
-      width: 28px;
-      height: 28px;
-      background-image: url("Images/Icons/Arrow.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: left center;
-      margin-top: 0.5rem;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card-portfolio  { background-color: var(--02); }
-    .card-worksamples { background-color: var(--05); }
-    .card-about      { background-color: var(--03); }
 
     /* ─── WHO I AM ─── */
     .who-section {
       background-color: var(--05);
-      padding: 6rem 2rem;
+      padding: 7rem 2rem 5rem;
     }
 
-    .who-grid {
+    .who-inner { max-width: 1200px; margin: 0 auto; }
+
+    .who-top {
       display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: center;
-      max-width: 1200px;
-      margin: auto;
       gap: 5rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
     }
 
-    .who-image img {
-      width: 100%;
-      max-width: 360px;
-      border-radius: 10px;
-    }
+    .who-photo { flex: 0 0 300px; }
+    .who-photo img { width: 100%; border-radius: 8px; }
 
-    .who-content {
-      flex: 1 1 300px;
-    }
+    .who-bio { flex: 1 1 360px; }
 
-    .who-label {
-      font-family: var(--font-poppins);
-      font-weight: 600;
-      font-size: 1.125rem;
+    /* body copy: Inter, --08, 0.95rem */
+    .who-bio p {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
       color: var(--08);
-      text-transform: uppercase;
-      margin-bottom: 1rem;
+      line-height: 1.85;
+      margin-bottom: 0.9rem;
     }
 
-    .who-title {
-      font-family: var(--font-poppins);
-      font-weight: 900;
-      font-size: 1.75rem;
-      color: var(--06);
-      line-height: 1.4;
-      margin-bottom: 1.45rem;
+    .who-bio p strong { color: var(--04); font-weight: 600; }
+
+    /* ─── WHAT I DO ─── */
+    .what-section {
+      background-color: var(--05);
+      padding: 5rem 2rem;
+      border-top: 1px solid #e8e4da;
     }
 
-    .who-content p {
+    .what-inner { max-width: 1200px; margin: 0 auto; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background-color: #dedad2;
+    }
+
+    .skill-card {
+      background-color: var(--05);
+      padding: 1.75rem 2rem;
+      transition: background-color 0.2s;
+    }
+
+    .skill-card:hover { background-color: #f8f7f3; }
+
+    /* skill icon: green, same size across all cards */
+    .skill-icon {
       font-size: 1rem;
+      color: var(--06);
+      margin-bottom: 0.7rem;
+    }
+
+    /* skill name: Cormorant, dark, 1.2rem */
+    .skill-name {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--04);
+      margin-bottom: 0.45rem;
+    }
+
+    /* skill desc: Inter, --08, 0.84rem */
+    .skill-desc {
+      font-family: var(--font-body);
+      font-size: 0.84rem;
       color: var(--08);
-      line-height: 1.6;
-      margin-bottom: 0.75rem;
+      line-height: 1.7;
     }
 
-    /* proof points under bio */
-    .who-stats {
+    /* ─── WHERE I'VE APPLIED IT ─── */
+    .exp-section {
+      background-color: var(--05);
+      padding: 5rem 2rem;
+      border-top: 1px solid #e8e4da;
+    }
+
+    .exp-inner { max-width: 1200px; margin: 0 auto; }
+
+    .exp-row {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1rem;
-      margin-top: 1.75rem;
+      grid-template-columns: 185px 1fr auto;
+      gap: 2rem;
+      align-items: start;
+      padding: 1.5rem 0;
+      border-top: 1px solid #dedad2;
     }
 
-    .who-stat {
-      background-color: var(--04);
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
+    .exp-row:last-of-type { border-bottom: 1px solid #dedad2; }
+
+    /* company: Inter, dark, 0.93rem, semibold */
+    .exp-company {
+      font-family: var(--font-body);
+      font-size: 0.93rem;
+      font-weight: 600;
+      color: var(--04);
     }
 
-    .who-stat-num {
-      font-family: var(--font-poppins);
-      font-size: 1.4rem;
-      font-weight: 900;
-      color: var(--02);
-      line-height: 1.1;
+    /* role: Inter, --08, 0.8rem */
+    .exp-role {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--08);
+      margin-top: 0.2rem;
     }
 
-    .who-stat-label {
-      font-size: 0.78rem;
-      color: var(--03);
-      margin-top: 0.25rem;
-      line-height: 1.4;
+    /* detail: Inter, --08, 0.87rem */
+    .exp-detail {
+      font-family: var(--font-body);
+      font-size: 0.87rem;
+      color: var(--08);
+      line-height: 1.72;
     }
 
-    .skills-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    .exp-meta    { text-align: right; white-space: nowrap; }
+
+    /* dates + location: Inter, same muted color, small */
+    .exp-dates    { font-family: var(--font-body); font-size: 0.8rem; color: var(--08); }
+    .exp-location { font-family: var(--font-body); font-size: 0.76rem; color: var(--03); margin-top: 0.2rem; }
+
+    .skills-logos {
+      display: flex;
       gap: 1.5rem;
-      justify-items: center;
-      margin-top: 2rem;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #dedad2;
     }
 
-    .skills-row img {
-      height: 46px;
+    .skills-logos img {
+      height: 38px;
       width: auto;
       object-fit: contain;
+      opacity: 0.65;
+      transition: opacity 0.2s;
     }
+
+    .skills-logos img:hover { opacity: 1; }
 
     /* ─── PROJECTS ─── */
     .projects-section {
-      background-color: var(--05);
-      padding: 6rem 2rem;
+      background-color: var(--02);
+      padding: 7rem 2rem;
     }
 
-    .projects-container {
-      max-width: 1200px;
-      margin: auto;
-    }
+    .projects-container { max-width: 1200px; margin: auto; }
 
-    .projects-label {
-      font-family: var(--font-poppins);
-      font-weight: 600;
-      font-size: 1.125rem;
-      color: var(--08);
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    .projects-title {
-      font-family: var(--font-poppins);
-      font-weight: 900;
-      font-size: 1.75rem;
-      color: var(--06);
-      line-height: 1.4;
-      margin-bottom: 2.125rem;
-    }
+    /* projects title: Cormorant, green — same as other section titles */
+    .projects-section .section-title { color: var(--06); margin-bottom: 3rem; }
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-bottom: 3.5rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
     }
 
     .project-card {
       position: relative;
       background-size: cover;
       background-position: center;
-      border-radius: 10px;
-      min-height: 200px;
+      border-radius: 8px;
+      min-height: 220px;
       overflow: hidden;
       display: flex;
       align-items: flex-end;
@@ -421,86 +459,82 @@
       transition: transform 0.3s ease;
     }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
+    .project-card:hover { transform: translateY(-4px); }
 
     .project-overlay {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.45);
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to bottom, rgba(9,12,8,0.15) 0%, rgba(9,12,8,0.78) 100%);
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: flex-end;
     }
 
-    .project-text {
-      padding: 2rem;
-    }
+    .project-text { padding: 1.5rem; }
 
+    /* project sub: Inter, muted white, 0.72rem uppercase */
     .project-sub {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.85);
-      margin: 0;
-    }
-
-    .project-title {
-      font-family: var(--font-poppins);
-      font-size: 1.375rem;
-      font-weight: 900;
-      color: var(--05);
-      margin: 0.5rem 0 0;
-    }
-
-    .projects-button {
-      text-align: center;
-    }
-
-    .btn-explore-more {
-      background-color: var(--03);
-      color: var(--05);
-      padding: 1rem 1.5rem;
+      font-family: var(--font-body);
+      font-size: 0.72rem;
       font-weight: 600;
-      font-size: 1.125rem;
-      border: none;
-      border-radius: 10px;
-      text-align: center;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.72);
+      margin: 0 0 0.3rem;
+    }
+
+    /* project title: Cormorant, white, 1.2rem */
+    .project-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--05);
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .projects-cta { text-align: center; margin-bottom: 5rem; }
+
+    .btn-explore {
+      background-color: var(--04);
+      color: var(--02);
+      padding: 0.85rem 2rem;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      border-radius: 4px;
       text-decoration: none;
-      transition: all 0.2s ease-in-out;
       display: inline-block;
+      transition: all 0.2s ease;
     }
 
-    .btn-explore-more:hover {
-      background-color: var(--06);
-      transform: scale(1.05);
-    }
+    .btn-explore:hover { background-color: var(--06); color: var(--05); transform: translateY(-1px); }
 
-    .projects-footer {
-      font-family: var(--font-playfair);
+    /* bold italic Cormorant, green */
+    .projects-footer-text {
+      font-family: var(--font-display);
       font-style: italic;
+      font-weight: 700;
       color: var(--06);
       text-align: center;
-      margin-top: 5rem;
-      font-size: 1.25rem;
+      font-size: 1.35rem;
+      margin-bottom: 2.5rem;
     }
 
-    /* ─── PHOTO SLIDER ─── */
-    .project-slider {
-      margin-top: 2.375rem;
-      overflow: hidden;
-    }
+    .project-slider { overflow: hidden; }
 
     .slider-track {
       display: flex;
-      gap: 2rem;
-      animation: slide 20s linear infinite;
+      gap: 1.5rem;
+      animation: slide 25s linear infinite;
     }
 
     .slider-track img {
       height: 200px;
       width: auto;
-      border-radius: 10px;
+      border-radius: 8px;
       flex-shrink: 0;
     }
 
@@ -512,111 +546,100 @@
     /* ─── FOOTER ─── */
     .site-footer {
       background-color: var(--04);
-      color: var(--05);
-      padding: 4rem 2rem 3rem;
-      border-top: 1px solid var(--03);
+      border-top: 1px solid rgba(182,176,159,0.18);
+      padding: 4rem 2rem 2.5rem;
     }
 
     .footer-container {
       max-width: 1200px;
       margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
       gap: 4rem;
-      justify-content: space-between;
-      align-items: flex-start;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
-    .footer-brand h2 {
-      font-family: var(--font-playfair);
-      font-size: 30px;
+    /* footer brand name: Cormorant, --02, larger */
+    .footer-brand-name {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
       font-weight: 700;
       color: var(--02);
-      text-shadow: 2px 0px 4px var(--03);
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-brand p {
-      font-size: 0.85rem;
-      color: var(--03);
-      line-height: 1.6;
-      max-width: 220px;
-    }
-
-    .footer-contact h3,
-    .footer-availability h3 {
-      font-family: var(--font-poppins);
-      font-size: 1.1rem;
-      font-weight: 900;
-      color: var(--02);
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-contact ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-contact li {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: var(--05);
+      letter-spacing: 0.02em;
       margin-bottom: 0.5rem;
     }
 
-    .footer-contact a {
-      color: var(--05);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .footer-contact a:hover {
-      color: var(--02);
-    }
-
-    .footer-icon {
-      width: 24px;
-      height: 24px;
-      margin-right: 1rem;
-      margin-top: 0.5rem;
-    }
-
-    .footer-availability p {
-      font-size: 0.9rem;
+    /* all footer body text: Inter, --03, 0.88rem — same color, font, size */
+    .footer-body-text {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
       color: var(--03);
       line-height: 1.8;
     }
 
-    .footer-availability span {
-      color: var(--02);
+    .footer-body-text a {
+      color: var(--03);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-body-text a:hover { color: var(--05); }
+
+    .footer-col-label {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
       font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--03);
+      margin-bottom: 1rem;
+      opacity: 0.7;
+    }
+
+    .footer-social { display: flex; gap: 0.75rem; margin-top: 1rem; }
+
+    .footer-social a img {
+      width: 22px; height: 22px;
+      opacity: 0.5;
+      transition: opacity 0.2s;
+    }
+
+    .footer-social a:hover img { opacity: 1; }
+
+    .footer-contact-list {
+      list-style: none;
+      padding: 0; margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
     }
 
     .footer-bottom {
       max-width: 1200px;
-      margin: 2.5rem auto 0;
-      padding: 1.5rem 2rem 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      margin: 2rem auto 0;
       text-align: center;
     }
 
     .footer-bottom p {
-      font-size: 0.8rem;
+      font-family: var(--font-body);
+      font-size: 0.76rem;
       color: var(--08);
     }
 
     /* ─── RESPONSIVE ─── */
-    @media (max-width: 768px) {
-      .nav-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem;
-      }
+    @media (max-width: 960px) {
+      .metrics-grid { grid-template-columns: repeat(3, 1fr); }
+      .metric-item:nth-child(3) { border-right: none; }
+      .metric-item:nth-child(n+4) { border-top: 1px solid rgba(255,255,255,0.18); }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-container { grid-template-columns: 1fr 1fr; }
+    }
 
-      .logo { font-size: 28px; margin-bottom: 0.5rem; }
+    @media (max-width: 768px) {
+      .nav-container { flex-direction: column; align-items: center; padding: 1rem; }
+      .logo { font-size: 1.4rem; margin-bottom: 0.25rem; }
 
       .menu-toggle {
         display: block;
@@ -628,297 +651,286 @@
       .nav-menu {
         flex-direction: column;
         align-items: center;
-        justify-content: center;
         gap: 0.75rem;
         width: 100%;
         background-color: var(--04);
-        padding: 0;
         position: absolute;
-        top: 70px;
-        left: 0;
+        top: 70px; left: 0;
         overflow: hidden;
         max-height: 0;
         opacity: 0;
         transition: all 0.3s ease;
       }
 
-      .nav-menu.show {
-        max-height: 500px;
-        padding: 1rem 0;
-        opacity: 1;
-      }
+      .nav-menu.show { max-height: 500px; padding: 1rem 0; opacity: 1; }
+      .nav-menu a { width: 100%; text-align: center; padding: 0.75rem 0; }
 
-      .nav-menu a {
-        width: 100%;
-        text-align: center;
-        padding: 0.75rem 0;
-      }
+      .hero-section { padding: 4rem 1.5rem 3rem; }
+      .hero-inner { flex-direction: column; gap: 2.5rem; }
+      .hero-content, .hero-image { flex: 1 1 100%; }
+      .hero-image img { max-width: 260px; }
 
-      .hero-grid {
-        flex-direction: column;
-        text-align: center;
-      }
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      .metric-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.14); }
+      .metric-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.18); }
+      .metric-item:last-child { border-bottom: none; }
 
-      .hero-content, .hero-image {
-        flex: 1 1 100%;
-      }
+      .who-top { flex-direction: column; gap: 2rem; }
+      .who-photo { flex: 1 1 100%; text-align: center; }
+      .who-photo img { max-width: 260px; }
+      .who-bio { flex: 1 1 100%; }
 
-      .hero-welcome { font-size: 1.25rem; margin-bottom: 1.5rem; }
-      .hero-name    { font-size: 2.25rem; }
-      .hero-tagline { font-size: 0.875rem; margin: 0 auto 1.5rem; }
+      .skills-grid { grid-template-columns: 1fr; }
 
-      .metrics-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .exp-row { grid-template-columns: 1fr; gap: 0.4rem; }
+      .exp-meta { text-align: left; }
 
-      .metric-item {
-        border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.15);
-        padding-bottom: 1rem;
-      }
+      .projects-grid { grid-template-columns: 1fr; }
 
-      .metric-item:nth-child(odd) {
-        border-right: 1px solid rgba(255,255,255,0.2);
-      }
-
-      .metric-item:last-child,
-      .metric-item:nth-last-child(2):nth-child(odd) {
-        border-bottom: none;
-      }
-
-      .card { padding: 1.75rem; }
-      .card h2 { font-size: 1.25rem; }
-
-      .who-grid { flex-direction: column; align-items: center; text-align: center; }
-      .who-title { font-size: 1.5rem; }
-      .who-content { flex: 1 1 100%; }
-
-      .who-stats { grid-template-columns: repeat(2, 1fr); }
-
-      .projects-title { font-size: 1.5rem; text-align: center; }
-      .projects-footer { font-size: 1.125rem; }
-
-      .footer-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-        padding: 0;
-      }
-
-      .footer-contact h3,
-      .footer-availability h3,
-      .footer-contact ul,
-      .footer-contact li {
-        text-align: center;
-      }
-
-      .footer-availability { text-align: center; }
-      .footer-brand { text-align: center; }
-      .footer-brand p { margin: 0 auto; }
+      .footer-container { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
+      .footer-social { justify-content: center; }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- NAV -->
   <header class="site-header">
     <div class="nav-container">
-      <a href="https://plvu99.github.io/website/" class="logo">PHUONG VU</a>
-
+      <a href="https://plvu99.github.io/website/" class="logo">Phuong Vu</a>
       <button class="menu-toggle" id="menu-toggle">☰</button>
-
       <nav class="nav-menu" id="nav-menu">
-        <a href="https://plvu99.github.io/website/">HOME</a>
-        <a href="https://plvu99.github.io/website/portfolio/">PORTFOLIO</a>
-        <a href="https://plvu99.github.io/website/work-samples/">WORK SAMPLES</a>
-        <a href="https://plvu99.github.io/website/about/">ABOUT</a>
-        <a href="#contact">CONTACT</a>
+        <a href="https://plvu99.github.io/website/">Home</a>
+        <a href="https://plvu99.github.io/website/portfolio/">Portfolio</a>
+        <a href="https://plvu99.github.io/website/work-samples/">Work Samples</a>
+        <a href="https://plvu99.github.io/website/about/">About</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
 
-    <!-- ─── HERO ─── -->
+    <!-- HERO -->
     <section class="hero-section">
-      <div class="hero-grid">
+      <div class="hero-inner">
         <div class="hero-content">
-          <p class="hero-welcome">Welcome, nice to meet you!</p>
-          <h1 class="hero-name">MY NAME IS<br>PHUONG VU</h1>
+          <span class="hero-greeting">Hi, I'm Phuong Vu.</span>
+          <h1 class="hero-name">Marketing &amp; Growth Data Analyst</h1>
           <p class="hero-tagline">
-            <span>Marketing, Growth & Product Data Analyst</span> ·
-            SQL, Python, BI · Experimentation, Funnel & Segmentation Analysis
+            SQL · Python · BI &nbsp;·&nbsp; Experimentation · Funnel &amp; Segmentation Analysis
           </p>
+          <p class="hero-desc">
+            3+ years turning complex datasets into decisions that move the needle —
+            across B2B SaaS, blockchain gaming, and supply chain.
+            Currently finishing an MS in Business Analytics at USC Marshall.
+          </p>
+          <div class="hero-actions">
+            <a href="https://plvu99.github.io/website/portfolio/" class="btn-primary">View Projects</a>
+            <a href="#contact" class="btn-ghost">Get in touch →</a>
+          </div>
         </div>
         <div class="hero-image">
           <img src="Images/Profile.png" alt="Phuong Vu">
-          <p class="hero-quote">Progress, not perfection<br><span>Trust the process</span></p>
+          <p class="hero-quote">Progress, not perfection.<br>Trust the process.</p>
         </div>
       </div>
     </section>
 
-    <!-- ─── METRICS BAR ─── -->
+    <!-- METRICS -->
     <section class="metrics-section">
       <div class="metrics-grid">
         <div class="metric-item">
           <div class="metric-number">69%</div>
-          <div class="metric-label">Cost per lead reduction<br>($172 → $53)</div>
+          <div class="metric-desc">CPL reduction via<br>targeted segmentation &amp; campaigns</div>
         </div>
         <div class="metric-item">
           <div class="metric-number">18–22%</div>
-          <div class="metric-label">CAC reduction via<br>A/B experimentation</div>
+          <div class="metric-desc">CAC reduction via<br>A/B experimentation</div>
         </div>
         <div class="metric-item">
-          <div class="metric-number">+1,124</div>
-          <div class="metric-label">Leads generated<br>in 3 months</div>
+          <div class="metric-number">~30%</div>
+          <div class="metric-desc">Lead reactivation via SQL<br>segmentation &amp; automated workflows</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-number">~20%</div>
+          <div class="metric-desc">Revenue growth via<br>SQL &amp; cohort analysis</div>
         </div>
         <div class="metric-item">
           <div class="metric-number">$2M+</div>
-          <div class="metric-label">Funding contributed to<br>via GTM strategy</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-number">3+</div>
-          <div class="metric-label">Years across SaaS,<br>Gaming & Logistics</div>
+          <div class="metric-desc">Funding raised via<br>GTM &amp; competitive analysis</div>
         </div>
       </div>
     </section>
 
-    <!-- ─── NAV CARDS ─── -->
-    <section class="cards-section">
-      <div class="cards-grid">
-
-        <a href="https://plvu99.github.io/website/portfolio/" class="card card-portfolio">
-          <h2>PORTFOLIO</h2>
-          <p>12 hands-on projects across games analytics, marketing, operations, and machine learning — with tools, methods, and outcomes for each.</p>
-          <div class="arrow"></div>
-        </a>
-
-        <a href="https://plvu99.github.io/website/work-samples/" class="card card-worksamples">
-          <h2>WORK SAMPLES</h2>
-          <p>Real deliverables from professional experience — demand gen campaigns, CRM workflows, dashboards, GTM strategy, and measurement frameworks.</p>
-          <div class="arrow"></div>
-        </a>
-
-        <a href="https://plvu99.github.io/website/about/" class="card card-about">
-          <h2>ABOUT</h2>
-          <p>Background, career timeline, technical skills, and education — everything you need to know about where I've been and what I bring.</p>
-          <div class="arrow"></div>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- ─── WHO I AM ─── -->
+    <!-- WHO I AM -->
     <section class="who-section">
-      <div class="who-grid">
-        <div class="who-image">
-          <img src="Images/Photo.JPG" alt="Phuong Vu">
-        </div>
-        <div class="who-content">
-          <div class="who-label">WHO I AM</div>
-          <h2 class="who-title">ANALYST WHO TURNS MESSY DATA INTO DECISIONS THAT MOVE THE NEEDLE</h2>
-          <p>3+ years working across B2B SaaS, blockchain gaming, and logistics — from Hanoi to Singapore to Los Angeles. I started in marketing and grew into analytics, which means I understand both the business context and the technical work behind the numbers.</p>
-          <p>Whether it's segmenting 10K+ CRM accounts in SQL, building a Looker dashboard for 40 stakeholders, or running A/B experiments on pricing strategy — I focus on the outcome, not just the output.</p>
-          <p>Currently finishing my MS in Business Analytics at USC Marshall (GPA 3.75) and eligible for F-1 OPT + STEM Extension — 36 months, no immediate sponsorship required.</p>
+      <div class="who-inner">
+        <div class="section-eyebrow">Who I Am</div>
+        <h2 class="section-title">Curious by nature. Analytical by practice.</h2>
 
-          <div class="who-stats">
-            <div class="who-stat">
-              <div class="who-stat-num">10K+</div>
-              <div class="who-stat-label">CRM accounts segmented via SQL</div>
-            </div>
-            <div class="who-stat">
-              <div class="who-stat-num">40+</div>
-              <div class="who-stat-label">Stakeholders across Marketing, Sales & Product</div>
-            </div>
-            <div class="who-stat">
-              <div class="who-stat-num">30+</div>
-              <div class="who-stat-label">Tracking events built with Engineering</div>
-            </div>
-            <div class="who-stat">
-              <div class="who-stat-num">3.75</div>
-              <div class="who-stat-label">GPA · USC Marshall MSBA</div>
-            </div>
+        <div class="who-top">
+          <div class="who-photo">
+            <img src="Images/Photo.JPG" alt="Phuong Vu">
           </div>
-
-          <div class="skills-row">
-            <img src="Images/Logos/Excel.png" alt="Excel">
-            <img src="Images/Logos/PowerPoint.png" alt="PowerPoint">
-            <img src="Images/Logos/SQL.png" alt="SQL">
-            <img src="Images/Logos/Python.png" alt="Python">
-            <img src="Images/Logos/Tableau.png" alt="Tableau">
-            <img src="Images/Logos/Power BI.png" alt="Power BI">
-            <img src="Images/Logos/Looker.webp" alt="Looker">
+          <div class="who-bio">
+            <p>
+              I'm a curious analyst who works best at the intersection of business context
+              and technical execution — <strong>translating messy datasets into clear decisions</strong>
+              for cross-functional teams.
+            </p>
+            <p>
+              I learn fast by doing, communicate with clarity, and care about outcomes over
+              outputs. Whether I'm segmenting CRM accounts in SQL, running A/B experiments,
+              or building a dashboard for 40 stakeholders — I stay focused on
+              <strong>what actually moves the needle.</strong>
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ─── PROJECTS ─── -->
+    <!-- WHAT I DO -->
+    <section class="what-section">
+      <div class="what-inner">
+        <div class="section-eyebrow">What I Do</div>
+        <h2 class="section-title">Six capabilities I bring to every role.</h2>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon">◈</div>
+            <div class="skill-name">Analytics &amp; Modeling</div>
+            <div class="skill-desc">SQL, Python (Pandas, Scikit-learn), regression, clustering, A/B testing, cohort analysis across 10K–150K+ record datasets.</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">◎</div>
+            <div class="skill-name">BI &amp; Dashboards</div>
+            <div class="skill-desc">Looker, Power BI, Tableau — building self-serve dashboards that track funnel, lifecycle, and operational KPIs for cross-functional teams.</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">◇</div>
+            <div class="skill-name">Growth &amp; Lifecycle</div>
+            <div class="skill-desc">Demand generation, CRM segmentation, lifecycle automation, and conversion optimization across paid and owned channels.</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">▷</div>
+            <div class="skill-name">Predictive Analytics</div>
+            <div class="skill-desc">Logistic Regression, XGBoost, Random Forest, clustering — applied to forecasting retention, segmenting users, and quantifying business outcomes.</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">◻</div>
+            <div class="skill-name">Strategy &amp; GTM</div>
+            <div class="skill-desc">Competitive analysis, market sizing, positioning, and go-to-market execution — from whitepapers that raised $2M+ to campaigns that drove 85K+ participants.</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">◉</div>
+            <div class="skill-name">Stakeholder Communication</div>
+            <div class="skill-desc">Translating technical findings into clear narratives for 40+ cross-functional stakeholders, including executive leadership, Sales, and Product.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHERE I'VE APPLIED IT -->
+    <section class="exp-section">
+      <div class="exp-inner">
+        <div class="section-eyebrow">Where I've Applied It</div>
+        <h2 class="section-title">3+ years across SaaS, gaming, and logistics.</h2>
+
+        <div class="exp-row">
+          <div>
+            <div class="exp-company">Payboy</div>
+            <div class="exp-role">Marketing Data Analyst</div>
+          </div>
+          <div class="exp-detail">
+            Led demand generation and lifecycle analytics for a cloud HR platform. Reduced CPL 69%,
+            increased leads 15.7% (+1,124) in 3 months, and built CRM segmentation workflows
+            across 10K+ accounts using SQL.
+          </div>
+          <div class="exp-meta">
+            <div class="exp-dates">2022 – 2024</div>
+            <div class="exp-location">Singapore</div>
+          </div>
+        </div>
+
+        <div class="exp-row">
+          <div>
+            <div class="exp-company">GemUni</div>
+            <div class="exp-role">Growth Analyst</div>
+          </div>
+          <div class="exp-detail">
+            Defined GTM strategy and built end-to-end measurement frameworks for a blockchain
+            gaming platform. Analyzed 27K+ user records via SQL cohort analysis; contributed
+            to $2M+ funding and $400K token sale raise.
+          </div>
+          <div class="exp-meta">
+            <div class="exp-dates">2021 – 2022</div>
+            <div class="exp-location">Vietnam</div>
+          </div>
+        </div>
+
+        <div class="exp-row">
+          <div>
+            <div class="exp-company">Abivin</div>
+            <div class="exp-role">Marketing Analyst</div>
+          </div>
+          <div class="exp-detail">
+            Built 10 email automation workflows achieving up to 57% open rates and 26% CTR.
+            Generated 200+ leads through SEO-optimized content and landing pages.
+          </div>
+          <div class="exp-meta">
+            <div class="exp-dates">2020 – 2021</div>
+            <div class="exp-location">Vietnam</div>
+          </div>
+        </div>
+
+        <div class="skills-logos">
+          <img src="Images/Logos/SQL.png" alt="SQL">
+          <img src="Images/Logos/Python.png" alt="Python">
+          <img src="Images/Logos/Tableau.png" alt="Tableau">
+          <img src="Images/Logos/Power BI.png" alt="Power BI">
+          <img src="Images/Logos/Looker.webp" alt="Looker">
+          <img src="Images/Logos/Excel.png" alt="Excel">
+          <img src="Images/Logos/PowerPoint.png" alt="PowerPoint">
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
     <section class="projects-section">
       <div class="projects-container">
-        <div class="projects-label">WHAT I'VE BUILT</div>
-        <h2 class="projects-title">SELECTED PROJECTS ACROSS ANALYTICS & MACHINE LEARNING</h2>
+        <div class="section-eyebrow">What I've Built</div>
+        <h2 class="section-title">Projects that mirror what I do at work.</h2>
 
         <div class="projects-grid">
-          <a href="https://github.com/plvu99/Predicting-Day-14-Player-Retention-Using-Machine-Learning" class="project-card" style="background-image: url('Images/Projects/MLB Games.webp');">
-            <div class="project-overlay">
-              <div class="project-text">
-                <p class="project-sub">Sports & Games</p>
-                <h3 class="project-title">PREDICTING DAY-14 PLAYER RETENTION USING MACHINE LEARNING</h3>
-              </div>
-            </div>
+          <a href="https://github.com/plvu99/Analysis-of-Starbucks-Promotional-Campaign-and-Customer-Segmentation" class="project-card" style="background-image:url('Images/Projects/Campaign Analysis & Segmentation.webp');">
+            <div class="project-overlay"><div class="project-text">
+              <p class="project-sub">Marketing Analytics · Segmentation</p>
+              <h3 class="project-title">Starbucks Campaign Analysis &amp; Customer Segmentation</h3>
+            </div></div>
           </a>
 
-          <a href="https://github.com/plvu99/Analysis-of-Starbucks-Promotional-Campaign-and-Customer-Segmentation" class="project-card" style="background-image: url('Images/Projects/Campaign Analysis & Segmentation.webp');">
-            <div class="project-overlay">
-              <div class="project-text">
-                <p class="project-sub">Marketing Analytics</p>
-                <h3 class="project-title">STARBUCKS CAMPAIGN ANALYSIS & CUSTOMER SEGMENTATION</h3>
-              </div>
-            </div>
+          <a href="https://github.com/plvu99/SQL-Driven-Analysis-of-Sales-Performance-and-Customer-Behavior" class="project-card" style="background-image:url('Images/Projects/Sales Performance.webp');">
+            <div class="project-overlay"><div class="project-text">
+              <p class="project-sub">Commercial Analytics · SQL</p>
+              <h3 class="project-title">Sales Performance &amp; Customer Behavior Analysis</h3>
+            </div></div>
           </a>
 
-          <a href="https://github.com/plvu99/SQL-Driven-Analysis-of-Sales-Performance-and-Customer-Behavior" class="project-card" style="background-image: url('Images/Projects/Sales Performance.webp');">
-            <div class="project-overlay">
-              <div class="project-text">
-                <p class="project-sub">SQL · Commercial Analytics</p>
-                <h3 class="project-title">SALES PERFORMANCE & CUSTOMER BEHAVIOR ANALYSIS</h3>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://github.com/plvu99/Home-Team-Bias-in-MLB-Umpiring" class="project-card" style="background-image: url('Images/Projects/MLB Games.webp');">
-            <div class="project-overlay">
-              <div class="project-text">
-                <p class="project-sub">Sports Analytics</p>
-                <h3 class="project-title">HOME-TEAM BIAS IN MLB UMPIRING</h3>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://github.com/plvu99/Car-Insurance-Loss-Analytics" class="project-card" style="background-image: url('Images/Projects/Car Insurance.avif');">
-            <div class="project-overlay">
-              <div class="project-text">
-                <p class="project-sub">Insurance · Risk Analytics</p>
-                <h3 class="project-title">INSURANCE LOSS PREDICTION & RISK-BASED PRICING</h3>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://github.com/plvu99/Clustering-and-Trend-Analysis-for-Ride-Sharing-Demand-and-Behavior" class="project-card" style="background-image: url('Images/Projects/Ride Sharing.jpg');">
-            <div class="project-overlay">
-              <div class="project-text">
-                <p class="project-sub">Logistics & Transportation</p>
-                <h3 class="project-title">RIDE-SHARING DEMAND HOTSPOT DETECTION USING CLUSTERING</h3>
-              </div>
-            </div>
+          <a href="https://github.com/plvu99/Predicting-Day-14-Player-Retention-Using-Machine-Learning" class="project-card" style="background-image:url('Images/Projects/Salary Hikes.avif');">
+            <div class="project-overlay"><div class="project-text">
+              <p class="project-sub">Games Analytics · Predictive Modeling</p>
+              <h3 class="project-title">Predicting Day-14 Player Retention</h3>
+            </div></div>
           </a>
         </div>
 
-        <div class="projects-button">
-          <a href="https://plvu99.github.io/website/portfolio/" class="btn-explore-more">EXPLORE ALL PROJECTS</a>
+        <div class="projects-cta">
+          <a href="https://plvu99.github.io/website/portfolio/" class="btn-explore">Explore All Projects</a>
         </div>
 
-        <p class="projects-footer">Beyond the work, I enjoy the journey and have built meaningful connections with people from around the globe.</p>
+        <p class="projects-footer-text">Beyond the work, I enjoy the journey and have built meaningful connections with people from around the globe.</p>
 
         <div class="project-slider">
           <div class="slider-track">
@@ -932,65 +944,69 @@
             <img src="Images/Slider/BASA Dinner.jpg" alt="BASA Dinner">
             <img src="Images/Slider/Bowling.JPG" alt="Bowling">
             <img src="Images/Slider/Case Competition.JPG" alt="Case Competition">
-            <!-- duplicate for seamless loop -->
-            <img src="Images/Slider/Abivin Workshop.jpg" alt="Abivin Workshop">
-            <img src="Images/Slider/Payboy in Hanoi.JPG" alt="Payboy in Hanoi">
-            <img src="Images/Slider/Night Outing.JPG" alt="Night Outing">
-            <img src="Images/Slider/Study Group.JPG" alt="Study Group">
-            <img src="Images/Slider/Beach Outing.JPEG" alt="Beach Outing">
-            <img src="Images/Slider/Career Spark.JPG" alt="Career Spark">
-            <img src="Images/Slider/BASA Photoshoot.JPG" alt="BASA Photoshoot">
-            <img src="Images/Slider/BASA Dinner.jpg" alt="BASA Dinner">
-            <img src="Images/Slider/Bowling.JPG" alt="Bowling">
-            <img src="Images/Slider/Case Competition.JPG" alt="Case Competition">
+            <img src="Images/Slider/Abivin Workshop.jpg" alt="">
+            <img src="Images/Slider/Payboy in Hanoi.JPG" alt="">
+            <img src="Images/Slider/Night Outing.JPG" alt="">
+            <img src="Images/Slider/Study Group.JPG" alt="">
+            <img src="Images/Slider/Beach Outing.JPEG" alt="">
+            <img src="Images/Slider/Career Spark.JPG" alt="">
+            <img src="Images/Slider/BASA Photoshoot.JPG" alt="">
+            <img src="Images/Slider/BASA Dinner.jpg" alt="">
+            <img src="Images/Slider/Bowling.JPG" alt="">
+            <img src="Images/Slider/Case Competition.JPG" alt="">
           </div>
         </div>
+
       </div>
     </section>
 
   </main>
 
-  <!-- ─── FOOTER / CONTACT ─── -->
+  <!-- FOOTER / CONTACT -->
   <footer class="site-footer" id="contact">
     <div class="footer-container">
 
-      <div class="footer-brand">
-        <h2>PHUONG VU</h2>
-        <p>Marketing, Growth & Product Data Analyst<br>MS Business Analytics · USC Marshall 2026</p>
+      <div>
+        <div class="footer-brand-name">Phuong Vu</div>
+        <p class="footer-body-text" style="max-width:230px;">
+          Marketing &amp; Growth Data Analyst<br>
+          MS Business Analytics · USC Marshall 2026
+        </p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/phuong-vu-lan/" target="_blank">
+            <img src="Images/Logos/LinkedIn.webp" alt="LinkedIn">
+          </a>
+          <a href="https://github.com/plvu99" target="_blank">
+            <img src="Images/Logos/GitHub.png" alt="GitHub">
+          </a>
+        </div>
       </div>
 
-      <div class="footer-contact">
-        <h3>CONTACT</h3>
-        <ul>
-          <li><a href="tel:+12135665734">213-566-5734</a></li>
-          <li><a href="mailto:plvu@marshall.usc.edu">plvu@marshall.usc.edu</a></li>
-          <li>Los Angeles, CA, United States</li>
-          <li style="margin-top:0.5rem;">
-            <a href="https://www.linkedin.com/in/phuong-vu-lan/" target="_blank"><img src="Images/Logos/LinkedIn.webp" alt="LinkedIn" class="footer-icon" /></a>
-            <a href="https://github.com/plvu99" target="_blank"><img src="Images/Logos/GitHub.png" alt="GitHub" class="footer-icon" /></a>
-          </li>
+      <div>
+        <div class="footer-col-label">Contact</div>
+        <ul class="footer-contact-list">
+          <li><a href="tel:+12135665734" class="footer-body-text">(213) 566-5734</a></li>
+          <li><a href="mailto:plvu@marshall.usc.edu" class="footer-body-text">plvu@marshall.usc.edu</a></li>
+          <li><span class="footer-body-text">Los Angeles, CA</span></li>
         </ul>
       </div>
 
-      <div class="footer-availability">
-        <h3>AVAILABILITY</h3>
-        <p>
-          <span>F-1 OPT + STEM Extension eligible</span><br>
-          36 months total<br>
-          No immediate sponsorship required<br>
-          <span>Available June 2026</span><br>
-          Open to hybrid & remote roles
+      <div>
+        <div class="footer-col-label">Availability</div>
+        <p class="footer-body-text">
+          F-1 OPT + STEM Extension<br>
+          36 months · no sponsorship required<br>
+          Open to relocation
         </p>
       </div>
 
     </div>
 
     <div class="footer-bottom">
-      <p>© 2026 Phuong Vu · Built with care</p>
+      <p>© 2026 Phuong Vu</p>
     </div>
   </footer>
 
-  <!-- Hamburger menu -->
   <script>
     const toggleBtn = document.getElementById('menu-toggle');
     const navMenu   = document.getElementById('nav-menu');
@@ -1000,7 +1016,6 @@
       toggleBtn.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
     });
 
-    // Close menu when any link is clicked
     navMenu.querySelectorAll('a').forEach(function(link) {
       link.addEventListener('click', function() {
         navMenu.classList.remove('show');
