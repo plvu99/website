@@ -3,24 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
-  <title>Phuong Vu | My Story</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;900&display=swap" rel="stylesheet" />
+  <title>Phuong Vu | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8GLRVX10Y"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
     gtag('config', 'G-C8GLRVX10Y');
   </script>
-  
+
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
 
     :root {
       --01: #f2f2f2;
@@ -29,32 +24,30 @@
       --04: #090c08;
       --05: #ffffff;
       --06: #117a65;
-      --07: #f39c12;
       --08: #757575;
-
-      --font-playfair: 'Playfair Display', serif;
-      --font-poppins: 'Poppins', sans-serif;
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body:    'Inter', sans-serif;
     }
 
     body {
       margin: 0;
-      font-family: var(--font-poppins);
+      font-family: var(--font-body);
       background-color: var(--04);
       color: var(--01);
     }
 
+    /* ─── NAV ─── */
     header.site-header {
       background-color: var(--04);
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 1rem 0;
-      margin-bottom: 0;
       position: fixed;
       width: 100%;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid var(--03);
+      border-bottom: 1px solid rgba(182,176,159,0.25);
     }
 
     .nav-container {
@@ -66,13 +59,14 @@
       padding: 0 2rem;
       position: relative;
     }
-    
-    .logo, .footer-brand h2 {
-      font-family: var(--font-playfair);
-      font-size: 30px;
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
       font-weight: 700;
       color: var(--02);
-      text-shadow: 2px 0px 4px var(--03);
+      letter-spacing: 0.02em;
+      text-decoration: none;
     }
 
     .nav-menu {
@@ -84,890 +78,656 @@
     .nav-menu a {
       color: var(--02);
       text-decoration: none;
+      font-family: var(--font-body);
       font-weight: 600;
-      font-size: 16px;
-      transition: transform 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      transition: opacity 0.2s ease, color 0.2s ease;
     }
 
-    .nav-menu a:hover {
-      transform: scale(1.05);
-      text-shadow: 0 0 6px var(--02);
-    }
+    .nav-menu a:hover,
+    .nav-menu a.active { opacity: 1; color: var(--05); }
 
-    .btn-contact {
-      background-color: var(--03);
-      color: var(--05);
-      padding: 1rem 1.5rem;
-      font-size: 16px;
-      font-weight: 600;
-      border-radius: 10px;
-      text-align: center;
-      text-decoration: none;
-      transition: all 0.2s ease-in-out;
-    }
-
-    .btn-contact:hover {
-      background-color: var(--06);
-      transform: scale(1.05);
-    }
-    
     .menu-toggle {
       display: none;
-      font-size: 28px;
+      font-size: 26px;
       color: var(--05);
       background: none;
       border: none;
+      cursor: pointer;
       z-index: 1001;
     }
 
-    .intro-section {
+    main { padding-top: 80px; }
+
+    /* ─── PAGE HEADER ─── */
+    .page-header {
       background-color: var(--02);
-      padding: 7rem 2rem 2.5rem;
+      padding: 5rem 2rem 3rem;
+      border-bottom: 1px solid rgba(9,12,8,0.08);
     }
 
-    .intro-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      padding: 0 2rem;
-      margin: 0 auto;
-      gap: 2rem;
-      flex-wrap: wrap;
-      box-sizing: border-box;
-    }
-    
-    .intro-content h1 {
-      font-family: var(--font-poppins);
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--04);
-      margin-bottom: 0.25rem;
-    }
+    .page-header-inner { max-width: 1200px; margin: 0 auto; }
 
-    .intro-content p {
-      position: relative;
-      font-size: 1rem;
-      color: var(--04);
-      line-height: 1.6
-    }
-
-    .dance-section {
-      background-color: var(--05);
-      padding: 6rem 2rem;
-    }
-
-    .dance-grid, .music-grid {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: center;
-      max-width: 1200px;
-      margin: auto;
-      gap: 5rem;
-    }
-
-    .dance-image {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .dance-image img, .music-image img {
-      width: 100%;
-      max-width: 360px;
-      border-radius: 10px;
-    }
-
-    .dance-content, .music-content, .travel-text, .travel-image {
-      flex: 1 1 300px;
-    }    
-
-    .dance-label, .music-label, .travel-label {
-      font-family: var(--font-poppins);
+    .section-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
       font-weight: 600;
-      font-size: 1.125rem;
-      color: var(--08);
+      letter-spacing: 0.13em;
       text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-   
-    .dance-title, .music-title, .travel-title, .contact-title {
-      font-family: var(--font-poppins);
-      font-weight: 900;
-      font-size: 1.75rem;
-      color: var(--06);
-      line-height: 1.4;
-      margin-bottom: 1.45rem;
-    }
-
-    .dance-content p, .music-content p, .travel-text p {
-      font-size: 1rem;
       color: var(--08);
-      line-height: 1.6;
-      text-align: justify;
-    }    
-
-    .music-section {
-      background-color: var(--04);
-      padding: 6rem 2rem;
-    }
-    
-    .music-image {
-      flex: 1 1 320px;
-    }
-    
-    .music-label, .music-content p {
-      color: var(--05);
+      margin-bottom: 0.65rem;
     }
 
-    .travel-section {
-      background-color: var(--02);
-      padding: 6rem 2rem 4rem;
+    .page-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      font-weight: 700;
+      color: var(--06);
+      line-height: 1.1;
+      margin: 0 0 1rem;
     }
 
-    .travel-container {
+    .page-desc {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--04);
+      line-height: 1.75;
+      max-width: 560px;
+    }
+
+    /* ─── FILTERS ─── */
+    .filters-bar {
+      background-color: var(--05);
+      padding: 1.75rem 2rem;
+      border-bottom: 1px solid #e8e4da;
+      position: sticky;
+      top: 80px;
+      z-index: 99;
+    }
+
+    .filters-inner {
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--08);
+      background: none;
+      border: 1px solid #dedad2;
+      border-radius: 2px;
+      padding: 0.45rem 1rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .filter-btn:hover { color: var(--04); border-color: var(--03); }
+    .filter-btn.active { background-color: var(--06); color: var(--05); border-color: var(--06); }
+
+    /* ─── PROJECTS BODY ─── */
+    .projects-body {
+      background-color: var(--05);
+      padding: 5rem 2rem;
+    }
+
+    .projects-inner { max-width: 1200px; margin: 0 auto; }
+
+    /* ─── CATEGORY GROUP ─── */
+    .category-group { margin-bottom: 5rem; }
+    .category-group:last-child { margin-bottom: 0; }
+    .category-group.hidden { display: none; }
+
+
+    .category-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 700;
+      color: var(--06);
+      line-height: 1.2;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e8e4da;
+    }
+
+    /* ─── PROJECT CARDS ─── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background-color: var(--05);
+      border: 1px solid #e8e4da;
+      border-radius: 8px;
+      overflow: hidden;
+      text-decoration: none;
       display: flex;
       flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .travel-title {
-      margin-top: 0.25rem;
-      margin-bottom: 2rem;
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(9,12,8,0.08);
     }
-    
-    .travel-entry {
+
+    .card-image {
+      height: 160px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    /* placeholder tile colors per category */
+    .placeholder-marketing  { background-color: #1a3a2e; }
+    .placeholder-commercial { background-color: #1e2d3a; }
+    .placeholder-operations { background-color: #2a2318; }
+    .placeholder-sports     { background-color: #1f1a2e; }
+
+    .placeholder-label {
+      position: absolute;
+      bottom: 0.75rem;
+      left: 0.75rem;
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .card-body {
+      padding: 1.25rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-domain {
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--06);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--04);
+      line-height: 1.3;
+      margin-bottom: 0.65rem;
+    }
+
+    .card-desc {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      color: var(--08);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+
+    .card-tools {
       display: flex;
       flex-wrap: wrap;
-      gap: 5rem;
-      align-items: center;
-      margin-bottom: 3.5rem;
-      justify-content: space-between;
-    }
-    
-    .travel-entry.reverse {
-      flex-direction: row-reverse;
-    }
-    
-    .travel-text h3 {
-      font-family: var(--font-poppins);
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: var(--08);
-      position: relative;
-      text-decoration: none;
-    }
-    
-    .travel-text h3::after {
-      content: '';
-      position: absolute;
-      bottom: -0.25rem;
-      display: block;
-      left: 0;
-      width: 20%;
-      height: 4px;
-      background-color: var(--08);
-      margin-top: 1rem;
-    }
-
-    .travel-stats {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(80px, 1fr));
-      gap: 1.5rem;
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0;
-      font-family: var(--font-poppins);
-      color: var(--08);
-      justify-content: start;
-      width: fit-content;
-    }
-
-    .travel-stats li {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .stat-number {
-      font-size: 1.375rem;
-      font-weight: 700;
-      color: var(--08);
-      display: block;
-    }
-    
-    .stat-label {
-      font-size: 0.95rem;
-      margin-top: 0.25rem;
-      text-align: center;
-      color: var(--08);
-      display: block;
-    }
-
-    .stat-icon {
-      font-size: 1rem;
-      margin-top: 0.15rem;
-      text-align: center;
-    }
-
-    .slider-wrapper {
-      position: relative;
-      height: 400px; 
-      width: 100%;
-      max-width: 700px;          
-      margin: auto;        
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    
-    .slider-images {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-    
-    .slide {
-      position: absolute;
-      top: 0; 
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 0.4s ease-in-out;
-      z-index: 0;
-    }
-    
-    .slide.active {
-      opacity: 1;
-      z-index: 1;
-    }
-      
-    .slider-dots {
-      position: absolute;
-      bottom: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      display: flex;
-      gap: 10px;
-    }
-    
-    .slider-dots .dot {
-      width: 10px;
-      height: 10px;
-      background-color: white;
-      border-radius: 50%;
-      transition: background-color 0.2s ease, transform 0.2s ease;
-    }
-    
-    .slider-dots .dot.active {
-      background-color: var(--06);
-      transform: scale(1.2);
-    }
-
-    .contact-section {
-      background-color: var(--06);
-      padding: 4rem 2rem 6rem;
-      text-align: center;
-    } 
-
-    .contact-container {
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    .contact-title {
-      color: var(--02);
-    }
-
-    .contact-subtitle {
-      font-family: var(--font-poppins);
-      font-size: 1rem;
-      color: var(--05);
-      margin-bottom: 2.375rem;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 0.75rem 1rem;
+      gap: 0.35rem;
       margin-bottom: 1rem;
-      font-size: 1rem;
-      font-family: var(--font-poppins);
-      border: none;
-      border-radius: 5px;
-      background-color: var(--05);
-      color: var(--04);
-    }
-    
-    .contact-form textarea {
-      resize: vertical;
     }
 
-    .contact-submit {
-      background-color: var(--03);
-      color: var(--05);
-      padding: 1rem 1.5rem;
+    .tool-tag {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      color: var(--08);
+      background-color: #f3f1eb;
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+    }
+
+    .card-link {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
       font-weight: 600;
-      font-size: 1.125rem;
-      border: none;
-      border-radius: 10px;
-      text-align: center;
+      color: var(--06);
       text-decoration: none;
-      transition: all 0.2s ease-in-out;
-      outline: none;
-      box-shadow: none;
+      letter-spacing: 0.04em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: opacity 0.2s;
     }
 
-    .thank-you {
-      margin-top: 2rem;
-      font-size: 1.125rem;
-      font-weight: 500;
-      font-style: italic;
-      color: var(--02);
-      text-align: center;
-      font-family: var(--font-playfair);
-    }
-    
+    .card-link:hover { opacity: 0.7; }
+
+    /* ─── FOOTER ─── */
     .site-footer {
       background-color: var(--04);
-      color: var(--05);
-      padding: 4rem 2rem 5rem;
+      border-top: 1px solid rgba(182,176,159,0.18);
+      padding: 4rem 2rem 2.5rem;
     }
-    
+
     .footer-container {
       max-width: 1200px;
       margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0 2rem;
-      gap: 5rem;
-      justify-content: space-between;
-      align-items: flex-start;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 4rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-    
-    .footer-contact h3, .footer-nav h3 {
-      font-family: var(--font-poppins);
-      font-size: 1.5rem;
-      font-weight: 900;
+
+    .footer-brand-name {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      font-weight: 700;
       color: var(--02);
+      letter-spacing: 0.02em;
       margin-bottom: 0.5rem;
-    }
-    
-    .footer-contact ul,
-    .footer-nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    .footer-contact li,
-    .footer-nav li {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: var(--05);
-      margin-bottom: 0.5rem;
-    }
-    
-    .footer-contact a,
-    .footer-nav a {
-      color: var(--05);
-      text-decoration: none;
-      transition: color 0.2s ease;
     }
 
-    .footer-icon {
-      width: 24px;
-      height: 24px;
-      margin-right: 1rem;
-      margin-top: 0.5rem;
+    .footer-brand-sub { max-width: 280px; }
+
+    .footer-body-text {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: var(--05);
+      line-height: 1.8;
     }
-    
-/* Responsive for mobile */
+
+    .footer-body-text a { color: var(--05); text-decoration: none; transition: color 0.2s; }
+    .footer-body-text a:hover { color: var(--02); }
+
+    .footer-col-label {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--02);
+      opacity: 0.8;
+      margin-bottom: 1rem;
+    }
+
+    .footer-social { display: flex; gap: 0.75rem; margin-top: 1rem; }
+    .footer-social a img { width: 22px; height: 22px; opacity: 0.5; transition: opacity 0.2s; }
+    .footer-social a:hover img { opacity: 1; }
+
+    .footer-contact-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.45rem; }
+
+    .footer-bottom { max-width: 1200px; margin: 2rem auto 0; text-align: center; }
+    .footer-bottom p { font-family: var(--font-body); font-size: 0.76rem; color: var(--08); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-container { grid-template-columns: 1fr 1fr; }
+    }
+
     @media (max-width: 768px) {
-      .nav-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem;
-      }
+      .nav-container { flex-direction: column; align-items: center; padding: 1rem; }
+      .logo { font-size: 1.6rem; margin-bottom: 0.25rem; }
 
-      .logo, .footer-brand h2 {
-        font-size: 28px;
-        margin-bottom: 0.5rem;
-      }
-
-      .menu-toggle {
-        display: block;
-        position: absolute;
-        right: 2rem;
-        top: 1rem;
-      }
+      .menu-toggle { display: block; position: absolute; right: 2rem; top: 1rem; }
 
       .nav-menu {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 0.75rem;
-        width: 100%;
-        background-color: var(--04);
-        padding: 0;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        overflow: hidden;
-        max-height: 0;
-        opacity: 0;
+        flex-direction: column; align-items: center; gap: 0.75rem;
+        width: 100%; background-color: var(--04);
+        position: absolute; top: 70px; left: 0;
+        overflow: hidden; max-height: 0; opacity: 0;
         transition: all 0.3s ease;
       }
 
-      .nav-menu.show {
-        max-height: 500px;
-        padding: 1rem 0;
-        opacity: 1;
-      }
+      .nav-menu.show { max-height: 500px; padding: 1rem 0; opacity: 1; }
+      .nav-menu a { width: 100%; text-align: center; padding: 0.75rem 0; }
 
-      .nav-menu a {
-        width: 100%;
-        text-align: center;
-        padding: 0.75rem 0;
-      }
+      .filters-bar { top: 70px; }
+      .cards-grid { grid-template-columns: 1fr; }
 
-      .intro-section {
-        background-color: var(--02);
-        padding: 8rem 2rem 2.5rem;
-      }  
-      
-      .intro-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .intro-content, .dance-content, .music-content, .travel-text, .travel-image {
-        flex: 1 1 100%;
-      }
-      
-      .dance-grid, .music-grid {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      
-      .dance-title, .music-title, .travel-title {
-        font-size: 1.5rem;
-        text-align: center;
-        margin-bottom: 1.75rem;
-      }
-
-      .dance-label, .music-label, .travel-label {
-        text-align: center;
-        display: block;
-        width: 100%;
-        margin-bottom: 1.25rem;
-      }
-
-      .intro-content p, .dance-content p, .music-content p, .travel-text p, .travel-stats li, .stat-label {
-        font-size: 0.875rem;
-      }
-      
-      .travel-entry {
-        flex-direction: column;
-        gap: 1.375rem;
-      }
-      
-      .travel-image {
-        align-self: center;
-      } 
-      
-      .travel-text h3, .stat-number {
-        font-size: 1.25rem;
-      }
-      
-      .travel-stats {
-        grid-template-columns: repeat(3, 1fr);
-        justify-content: center;
-        width: 100%;
-      }
-
-      .slider-wrapper {
-        height: 300px;                
-        width: 300px;
-        align-items: center;
-        margin-top: 0.75rem;
-      }
-      
-      .contact-title {
-        font-size: 1.625rem;
-      }
-      
-      .contact-subtitle, .contact-form input, .contact-form textarea {
-        font-size: 0.95rem;
-      }
-
-      .thank-you {
-        font-size: 1rem;
-      }
-      
-      .footer-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.75rem;
-      }
-
-      .footer-contact h3, .footer-nav h3, .footer-contact ul, .footer-nav ul, .footer-contact li, .footer-nav li {
-        text-align: center;
-      }
+      .footer-container { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
+      .footer-brand-name { font-size: 1.6rem; text-align: center; }
+      .footer-body-text  { text-align: center; }
+      .footer-brand-sub  { max-width: 100%; }
+      .footer-col-label  { text-align: center; }
+      .footer-social     { justify-content: center; }
+      .footer-contact-list { align-items: center; }
     }
   </style>
 </head>
-  
+
 <body>
+
+  <!-- NAV -->
   <header class="site-header">
     <div class="nav-container">
-      <div class="logo">PHUONG VU</div>
-
-      <!-- Hamburger icon toggles open/close -->
+      <a href="https://plvu99.github.io/website/" class="logo">Phuong Vu</a>
       <button class="menu-toggle" id="menu-toggle">☰</button>
-
       <nav class="nav-menu" id="nav-menu">
-        <a href="https://plvu99.github.io/website/">HOME</a>
-        <a href="https://plvu99.github.io/website/story/">MY STORY</a>
-        <a href="https://plvu99.github.io/website/experience/">MY EXPERIENCE</a>
-        <a href="https://github.com/plvu99">MY WORK</a>
-        <a href="#contact" class="btn-contact">CONTACT ME</a>
+        <a href="https://plvu99.github.io/website/">Home</a>
+        <a href="https://plvu99.github.io/website/portfolio/" class="active">Portfolio</a>
+        <a href="https://plvu99.github.io/website/work-samples/">Work Samples</a>
+        <a href="https://plvu99.github.io/website/about/">About</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="intro-section">
-      <div class="intro-container">
-        <div class="intro-content">
-          <h1>MY STORY</h1>
-          <p>From a turning point shaping who I am today to the adventures, movement, and meaningful experiences I’ve embraced along the way.</p>
-        </div>
-      </div>
-    </section>
 
-    <section class="dance-section">
-      <div class="dance-grid">
-        <div class="dance-image">
-          <img src="../Images/Story/VUG 2.jpg" alt="VUG">
-          <img src="../Images/Story/VUG 1.jpg" alt="VUG">
-        </div>        
-        <div class="dance-content">
-          <div class="dance-label">A TURNING POINT</div>
-          <h2 class="dance-title">DANCING SHAPED MY COLLABORATION, RESILIENCE, AND COURAGE</h2>
-          <p>In my first year, I joined a dance competition with a team I had just met. None of us had battle experience, but we shared a love for dance and a desire to challenge ourselves on one of the biggest stages for university students.</p>
-          <p>For 5 months, we trained from scratch: learning basics, practicing tricks, and building strength. We juggled conflicting schedules, long rehearsals, and even injuries. Despite all the chaos and self-doubt, we kept pushing forward, and ultimately, delivered performances we were genuinely proud of.</p>
-          <p>Since then, dance has become more than a hobby. It’s how I recharge, express myself, and stay grounded. What seems unrelated has actually shaped how I work with others, adapt under pressure, and keep going when things get tough.</p>
-          <p>That experience laid the foundation for the values I carry into my work today: collaboration, resilience, and courage.<p>
-        </div>
-      </div>
-    </section>
-
-    <section class="music-section">
-      <div class="music-grid">
-        <div class="music-content">
-          <div class="music-label">SOUNDTRACK OF ME</div>
-          <h2 class="music-title">MUSIC ECHOES WITH WHAT I'M FEELING INSIDE</h2>
-          <p>Music has always been my emotional anchor. I don’t stick to one genre — I follow whatever matches my mood. </p>
-          <p>When I’m feeling joyful, I reach for upbeat songs with cheerful melodies. When I need encouragement or energy, I turn to lyrics that speak to me. And when I want to relieve stress, I let the rhythm take over — dancing it out and letting my body process what words can’t.</p>
-          <p>Through every high and low, music connects with my emotions, softens the hard days, and gives me space to just be. That said, when I’m in deep focus mode, I prefer complete silence — no background music, just clarity and concentration.</p>
-        </div>
-        <div class="music-image">
-          <iframe style="border-radius:10px" 
-            src="https://open.spotify.com/embed/playlist/0iltlDawDrj9Uuh9ZbGg0H?utm_source=generator&theme=0" 
-            width="100%" 
-            height="400" 
-            frameborder="0" 
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-            loading="lazy">
-          </iframe>
-        </div>        
-      </div>
-    </section>
-
-    <section class="travel-section">
-      <div class="travel-container">
-        <div class="travel-label">WANDER TO WONDER</div>
-        <h2 class="travel-title">TRAVELING FUELS MY CURIOSITY TO EXPLORE AND EXPERIENCE AS MUCH AS POSSIBLE</h2>
-     
-        <!-- WEST COAST -->
-        <div class="travel-entry">
-          <div class="travel-text">
-            <h3>WEST COAST (03/2025)</h3>
-            <p>This was my first solo trip ever during Spring Break! I flew to Seattle and took the Amtrak back to Los Angeles, stopping to explore Portland, Sacramento, Oakland, and San Francisco. It rained for most of the trip, but on the last day, I was rewarded with a stunning sunset view from the Amtrak Coast Starlight.</p>
-            <ul class="travel-stats">
-              <li><span class="stat-number">7</span><span class="stat-label">DAYS</span></li>
-              <li><span class="stat-number">3</span><span class="stat-label">STATES</span></li>
-              <li><span class="stat-number">5</span><span class="stat-label">CITIES</span></li>
-              <li><span class="stat-number">70+</span><span class="stat-label">ATTRACTIONS</span></li>
-              <li><span class="stat-number">5</span><span class="stat-label">HOTELS</span></li>
-              <li><span class="stat-number">33K+</span><span class="stat-label">STEPS</span></li>
-              <li><span class="stat-number">2K+</span><span class="stat-label">MILES</span><span class="stat-icon">✈️ 🚆 🚍</span></li>
-            </ul>
-          </div>
-          <div class="travel-image">
-            <div class="slider-wrapper">
-              <div class="slider-images" id="slider-west">
-                <img src="../Images/Story/West Coast 1.jpeg" class="slide active" alt="West Coast 1">
-                <img src="../Images/Story/West Coast 2.jpeg" class="slide" alt="West Coast 2">
-                <img src="../Images/Story/West Coast 3.jpeg" class="slide" alt="West Coast 3">
-                <img src="../Images/Story/West Coast 4.jpeg" class="slide" alt="West Coast 4">
-                <img src="../Images/Story/West Coast 5.jpeg" class="slide" alt="West Coast 5">
-                <div class="slider-dots">
-                  <span onclick="showSlide('slider-west', 0)" class="dot active"></span>
-                  <span onclick="showSlide('slider-west', 1)" class="dot"></span>
-                  <span onclick="showSlide('slider-west', 2)" class="dot"></span>
-                  <span onclick="showSlide('slider-west', 3)" class="dot"></span>
-                  <span onclick="showSlide('slider-west', 4)" class="dot"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    
-        <!-- EAST COAST -->
-        <div class="travel-entry reverse">
-          <div class="travel-text">
-            <h3>EAST COAST (12/2024 – 01/2025)</h3>
-            <p>This was my first road trip during Winter Break! I flew from Los Angeles to Georgia to meet my cousin, then we drove to New York and back. I also spent a few days exploring Atlanta before flying home. Along the way, I experienced all kinds of weather: ☀️ ☁️ ⛈️ 🌨️ 💨</p>
-            <ul class="travel-stats">
-              <li><span class="stat-number">25</span><span class="stat-label">DAYS</span></li>
-              <li><span class="stat-number">10</span><span class="stat-label">STATES</span></li>
-              <li><span class="stat-number">20+</span><span class="stat-label">CITIES</span></li>
-              <li><span class="stat-number">200+</span><span class="stat-label">ATTRACTIONS</span></li>
-              <li><span class="stat-number">10</span><span class="stat-label">ACCOMS</span></li>
-              <li><span class="stat-number">15</span><span class="stat-label">CUISINES</span></li>
-              <li><span class="stat-number">7K+</span><span class="stat-label">MILES</span><span class="stat-icon">✈️ 🚘 🚆 🚍</span></li>            
-              <li><span class="stat-number">335K+</span><span class="stat-label">STEPS</span></li>
-            </ul>
-          </div>
-          <div class="travel-image">
-            <div class="slider-wrapper">
-              <div class="slider-images" id="slider-east">
-                <img src="../Images/Story/East Coast 5.jpeg" class="slide active" alt="East Coast 1">
-                <img src="../Images/Story/East Coast 2.jpeg" class="slide" alt="East Coast 2">
-                <img src="../Images/Story/East Coast 3.jpeg" class="slide" alt="East Coast 3">
-                <img src="../Images/Story/East Coast 4.jpeg" class="slide" alt="East Coast 4">
-                <img src="../Images/Story/East Coast 1.jpeg" class="slide" alt="East Coast 5">
-                <div class="slider-dots">
-                  <span onclick="showSlide('slider-east', 0)" class="dot active"></span>
-                  <span onclick="showSlide('slider-east', 1)" class="dot"></span>
-                  <span onclick="showSlide('slider-east', 2)" class="dot"></span>
-                  <span onclick="showSlide('slider-east', 3)" class="dot"></span>
-                  <span onclick="showSlide('slider-east', 4)" class="dot"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    
-        <!-- INDONESIA -->
-        <div class="travel-entry">
-          <div class="travel-text">
-            <h3>INDONESIA (05/2024)</h3>
-            <p>This was my last trip with colleagues before studying abroad. I took 5 flights in 10 days, traveling from Hanoi to 3 different cities and back.</p>
-            <p>I explored Bali as a curious tourist, stepped back in time in historic Yogyakarta, and experienced the modern, Vietnam-like energy of Jakarta. Fun fact—one of my Indonesian colleagues later used my Bali itinerary for his family trip!</p>
-            <p>The food was amazing—though quite spicy, probably because I was traveling with locals. I got to try many kinds of rice dishes with a variety of proteins.</p>
-          </div>
-          <div class="travel-image">
-            <div class="slider-wrapper">
-              <div class="slider-images" id="slider-indonesia">
-                <img src="../Images/Story/Indonesia 4.JPG" class="slide active" alt="Indonesia 1">
-                <img src="../Images/Story/Indonesia 2.JPG" class="slide" alt="Indonesia 2">
-                <img src="../Images/Story/Indonesia 3.JPG" class="slide" alt="Indonesia 3">
-                <img src="../Images/Story/Indonesia 1.JPG" class="slide" alt="Indonesia 4">
-                <img src="../Images/Story/Indonesia 5.JPG" class="slide" alt="Indonesia 5">
-                <div class="slider-dots">
-                  <span onclick="showSlide('slider-indonesia', 0)" class="dot active"></span>
-                  <span onclick="showSlide('slider-indonesia', 1)" class="dot"></span>
-                  <span onclick="showSlide('slider-indonesia', 2)" class="dot"></span>
-                  <span onclick="showSlide('slider-indonesia', 3)" class="dot"></span>
-                  <span onclick="showSlide('slider-indonesia', 4)" class="dot"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    
-        <!-- TREKKING -->
-        <div class="travel-entry reverse">
-          <div class="travel-text">
-            <h3>TREKKING (02/2024)</h3>
-            <p>This was my first trip of the year—and maybe a sign of the challenges ahead. As a first-time hiker, I somehow found myself climbing Vietnam’s 9th highest mountain (~9,728 ft).</p>
-            <p>Every step felt like a struggle—I staggered, got pushed around by the wind, and slipped on my butt more times than I could count on the way down.</p>
-            <p>Despite all that, I was genuinely fulfilled. I completed my first 12-mile trek, watched the sunrise as I reached the summit, met new friends, and heard crazy stories that were actually true.</p>
-          </div>
-          <div class="travel-image">
-            <div class="slider-wrapper">
-              <div class="slider-images" id="slider-trekking">
-                <img src="../Images/Story/Trekking 4.jpeg" class="slide active" alt="Trekking 1">
-                <img src="../Images/Story/Trekking 2.jpeg" class="slide" alt="Trekking 2">
-                <img src="../Images/Story/Trekking 3.jpeg" class="slide" alt="Trekking 3">
-                <img src="../Images/Story/Trekking 1.jpeg" class="slide" alt="Trekking 4">
-                <img src="../Images/Story/Trekking 5.JPG" class="slide" alt="Trekking 5">
-                <div class="slider-dots">
-                  <span onclick="showSlide('slider-trekking', 0)" class="dot active"></span>
-                  <span onclick="showSlide('slider-trekking', 1)" class="dot"></span>
-                  <span onclick="showSlide('slider-trekking', 2)" class="dot"></span>
-                  <span onclick="showSlide('slider-trekking', 3)" class="dot"></span>
-                  <span onclick="showSlide('slider-trekking', 4)" class="dot"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    
-        <!-- SINGAPORE -->
-        <div class="travel-entry">
-          <div class="travel-text">
-            <h3>SINGAPORE (08, 11/2023)</h3>
-            <p>This trip was a dream come true—I finally saw my longtime favorite singer live in concert. Though it was short, my friend and I made the most of it—zipping between sights on the MRT and buses, then covering almost everything on foot. I even managed to catch up with my team for dinner.</p>
-            <p>Surprisingly, I returned just 3 months later for a week-long company workshop. We worked hard during the day and played hard at night. The vibe was incredible, and this time, I experienced the city like a local—not a tourist.</p>
-          </div>
-          <div class="travel-image">
-            <div class="slider-wrapper">
-              <div class="slider-images" id="slider-singapore">
-                <img src="../Images/Story/Singapore 2.JPG" class="slide active" alt="Singapore 1">
-                <img src="../Images/Story/Singapore 1.JPG" class="slide" alt="Singapore 2">
-                <img src="../Images/Story/Singapore 3.JPG" class="slide" alt="Singapore 3">
-                <img src="../Images/Story/Singapore 4.JPG" class="slide" alt="Singapore 4">
-                <img src="../Images/Story/Singapore 5.JPG" class="slide" alt="Singapore 5">
-                <div class="slider-dots">
-                  <span onclick="showSlide('slider-singapore', 0)" class="dot active"></span>
-                  <span onclick="showSlide('slider-singapore', 1)" class="dot"></span>
-                  <span onclick="showSlide('slider-singapore', 2)" class="dot"></span>
-                  <span onclick="showSlide('slider-singapore', 3)" class="dot"></span>
-                  <span onclick="showSlide('slider-singapore', 4)" class="dot"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-section" id="contact">
-      <div class="contact-container">
-        <h2 class="contact-title">I’D LOVE TO CONNECT!</h2>
-        <p class="contact-subtitle">Schedule a coffee chat with me.</p>
-    
-        <form id="contactForm" class="contact-form" action="#" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <input type="url" name="linkedin" placeholder="Your LinkedIn" required/>
-          <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-          <input type="hidden" name="source" value="Story">
-          <button type="submit" class="contact-submit">SUBMIT</button>
-        </form>
-        <div id="thankYouMessage" class="thank-you" style="display: none;">
-          <p>Thank you! I can’t wait to connect with you!</p>
-        </div>
-      </div>
-    </section>
-  </main>
-  
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <h2>PHUONG VU</h2>
-      </div>
-  
-      <div class="footer-contact">
-        <h3>CONTACT</h3>
-        <ul>
-          <li><a href="tel:+12135665734">213-566-5734</a></li>
-          <li><a href="mailto:plvu@marshall.usc.edu">plvu@marshall.usc.edu</a></li>
-          <li>Los Angeles, CA, United States</li>
-          <li><a href="https://www.linkedin.com/in/phuong-vu-lan/" target="_blank"><img src="../Images/Logos/LinkedIn.webp" alt="LinkedIn" class="footer-icon" /></a> <a href="https://github.com/plvu99" target="_blank"><img src="../Images/Logos/GitHub.png" alt="GitHub" class="footer-icon" /></a></li>
-        </ul>
-      </div>
-  
-      <div class="footer-nav">
-        <h3>NAVIGATION</h3>
-        <ul>
-          <li><a href="https://plvu99.github.io/website/">Home</a></li>
-          <li><a href="https://plvu99.github.io/website/story/">My Story</a></li>
-          <li><a href="https://plvu99.github.io/website/experience/">My Experience</a></li>
-          <li><a href="https://github.com/plvu99">My Work</a></li>
-        </ul>
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="page-header-inner">
+        <div class="section-eyebrow">Portfolio</div>
+        <h1 class="page-title">From segmentation to predictive modeling — across 4 analytical domains.</h1>
+        <p class="page-desc">Hands-on analytical work spanning marketing, commercial, operations, and sports analytics — each with a clear problem, method, and outcome.</p>
       </div>
     </div>
+
+    <!-- FILTERS -->
+    <div class="filters-bar">
+      <div class="filters-inner">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="marketing">Customer &amp; User Analytics</button>
+        <button class="filter-btn" data-filter="commercial">Commercial &amp; Revenue Analytics</button>
+        <button class="filter-btn" data-filter="operations">Operations &amp; Behavioral Analytics</button>
+        <button class="filter-btn" data-filter="sports">Sports &amp; Entertainment</button>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="projects-body">
+      <div class="projects-inner">
+
+        <!-- CUSTOMER & USER ANALYTICS -->
+        <div class="category-group" data-category="marketing">
+          <h2 class="category-title">Customer &amp; User Analytics</h2>
+          <div class="cards-grid">
+
+            <a href="https://github.com/plvu99/Analysis-of-Starbucks-Promotional-Campaign-and-Customer-Segmentation" class="project-card" target="_blank">
+              <div class="card-image" style="background-image:url('Images/Projects/Campaign Analysis & Segmentation.webp');"></div>
+              <div class="card-body">
+                <div class="card-domain">Marketing Analytics · Segmentation</div>
+                <div class="card-title">Starbucks Campaign Analysis &amp; Customer Segmentation</div>
+                <div class="card-desc">Analyzed 306K+ campaign events across 17K customers and 10 promotional offers. Applied K-Means clustering and classification to identify 5 customer personas and key behavioral drivers of offer completion.</div>
+                <div class="card-tools">
+                  <span class="tool-tag">Python</span><span class="tool-tag">K-Means</span><span class="tool-tag">Random Forest</span><span class="tool-tag">Pandas</span>
+                </div>
+                <span class="card-link">View on GitHub →</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/plvu99/Early-Spender-and-Retention-Behavior-Analysis-in-a-Squad-RPG-Game" class="project-card" target="_blank">
+              <div class="card-image placeholder-marketing">
+                <span class="placeholder-label">Add image → Early Player Segmentation</span>
+              </div>
+              <div class="card-body">
+                <div class="card-domain">Games Analytics · Segmentation</div>
+                <div class="card-title">Early Player Segmentation &amp; Retention Analysis</div>
+                <div class="card-desc">Segmented 42K+ players by spending and engagement into 4 retention cohorts using K-Means and DBSCAN. Identified 4,800+ behavioral outliers to inform targeted lifecycle and monetization strategies.</div>
+                <div class="card-tools">
+                  <span class="tool-tag">Python</span><span class="tool-tag">K-Means</span><span class="tool-tag">DBSCAN</span><span class="tool-tag">NumPy</span>
+                </div>
+                <span class="card-link">View on GitHub →</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/plvu99/Predicting-Day-14-Player-Retention-Using-Machine-Learning" class="project-card" target="_blank">
+              <div class="card-image placeholder-marketing">
+                <span class="placeholder-label">Add image → Day-14 Retention</span>
+              </div>
+              <div class="card-body">
+                <div class="card-domain">Games Analytics · Predictive Modeling</div>
+                <div class="card-title">Predicting Day-14 Player Retention</div>
+                <div class="card-desc">Built Logistic Regression, Random Forest, and XGBoost models to forecast 14-day retention across 42K+ player records. Evaluated feature importance to identify session frequency and playtime as key engagement drivers.</div>
+                <div class="card-tools">
+                  <span class="tool-tag">Python</span><span class="tool-tag">XGBoost</span><span class="tool-tag">Random Forest</span><span class="tool-tag">Scikit-learn</span>
+                </div>
+                <span class="card-link">View on GitHub →</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- COMMERCIAL & REVENUE ANALYTICS -->
+        <div class="category-group" data-category="commercial">
+          <h2 class="category-title">Commercial &amp; Revenue Analytics</h2>
+          <div class="cards-grid">
+
+            <a href="https://github.com/plvu99/SQL-Driven-Analysis-of-Sales-Performance-and-Customer-Behavior" class="project-card" target="_blank">
+              <div class="card-image" style="background-image:url('Images/Projects/Sales Performance.webp');"></div>
+              <div class="card-body">
+                <div class="card-domain">Commercial Analytics · SQL</div>
+                <div class="card-title">Sales Performance &amp; Customer Behavior Analysis</div>
+                <div class="card-desc">Integrated 8 relational datasets using joins, CTEs, and window functions to surface revenue trends, high-value customer segments, top-performing sales reps, and key commercial drivers.</div>
+                <div class="card-tools">
+                  <span class="tool-tag">SQL</span><span class="tool-tag">CTEs</span><span class="tool-tag">Window Functions</span><span class="tool-tag">Aggregation</span>
+                </div>
+                <span class="card-link">View on GitHub →</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/plvu99/Exploring-Retail-Sales-Patterns-and-Holiday-Season-Effects" class="project-card" target="_blank">
+              <div class="card-image placeholder-commercial">
+                <span class="placeholder-label">Add image → Retail Sales</span>
+              </div>
+              <div class="card-body">
+                <div class="card-domain">Retail Analytics · Statistical Testing</div>
+                <div class="card-title">Retail Store Performance &amp; Holiday Sales Analysis</div>
+                <div class="card-desc">Analyzed 421K+ transactions across 45 stores to identify demand patterns and seasonal trends. Quantified 10–18% sales uplift during holidays and promotions using regression and statistical testing.</div>
+                <div class="card-tools">
+                  <span class="tool-tag">Python</span><span class="tool-tag">Pandas</span><span class="tool-tag">Regression</span><span class="tool-tag">Statistical Testing</span>
+                </div>
+                <span class="card-link">View on GitHub →</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/plvu99/Car-Insurance-Loss-Analytics" class="project-card" target="_blank">
+              <div class="card-image" style="background-image:url('Images/Projects/Car Insurance.avif');"></div>
+              <div class="card-body">
+                <div class="card-domain">Risk Analytics · Predictive Modeling</div>
+                <div class="card-title">Insurance Loss Prediction &amp; Risk-Based Pricing</div>
+                <div class="card-desc">Built Tweedie Regression, LightGBM, XGBoost, and Neural Network models on 37K+ policies to predict loss cost and claim likelihood. Achieved best ROC-AUC of 0.74 with 5-fold cross-validation.</div>
+                <div class="card-tools">
+                  <span class="tool-tag">Python</span><span class="tool-tag">LightGBM</span><span class="tool-tag">XGBoost</span><span class="tool-tag">Neural Networks</span>
+                </div>
+                <span class="card-link">View on GitHub →</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- OPERATIONS & BEHAVIORAL ANALYTICS -->
+        <div class="category-group" data-category="operations">
+          <h2 class="category-title">Operations &amp; Behavioral Analytics</h2>
+          <div class="cards-grid">
+
+            <a href="https://github.com/plvu99/Clustering-and-Trend-Analysis-for-Ride-Sharing-Demand-and-Behavior" class="project-card" target="_blank">
+              <div class="card-image" style="background-image:url('Images/Projects/Ride Sharing.jpg');"></div>
+              <div class="card-body">
+                <div class="card-domain">Operations Analytics · Clustering</div>
+                <div class="card-title">Ride-Sharing Demand Hotspot Detection</div>
+                <div class="card-desc">Processed 4.5M+ Uber pickup records to identify spatial and temporal demand patterns. Applied K-Means to detect 5 high-demand zones and generate driver allocation insights to reduce wait times.</div>
+                <div class="card-tools">
+                  <span class="tool-tag">Python</span><span class="tool-tag">K-Means</span><span class="tool-tag">Geospatial</span><span class="tool-tag">Regression</span>
+                </div>
+                <span class="card-link">View on GitHub →</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/plvu99/Impact-of-Uber-Rides-on-Taxi-Rides" class="project-card" target="_blank">
+              <div class="card-image placeholder-operations">
+                <span class="placeholder-label">Add image → Uber vs Taxi</span>
+              </div>
+              <div class="card-body">
+                <div class="card-domain">Market Analytics · Regression</div>
+                <div class="card-title">Ride-Sharing Impact on Traditional Taxi Demand</div>
+                <div class="card-desc">Analyzed 20M+ NYC ride records across Uber, Yellow Cabs, and Green Cabs. OLS regression showed Uber volume explains ~52% of taxi demand variation, revealing shared commuter-driven demand patterns.</div>
+                <div class="card-tools">
+                  <span class="tool-tag">Python</span><span class="tool-tag">OLS Regression</span><span class="tool-tag">EDA</span><span class="tool-tag">Pandas</span>
+                </div>
+                <span class="card-link">View on GitHub →</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/plvu99/EV-Smart-Charging-Optimization-Emissions-Reduction" class="project-card" target="_blank">
+              <div class="card-image placeholder-operations">
+                <span class="placeholder-label">Add image → EV Charging</span>
+              </div>
+              <div class="card-body">
+                <div class="card-domain">Sustainability Analytics · Predictive Modeling</div>
+                <div class="card-title">Reducing EV Charging Emissions with Smart Charging</div>
+                <div class="card-desc">Analyzed 150K+ EV charging sessions and grid carbon intensity data. Built predictive models to optimize charging timing, achieving 11.9% emissions reduction — capturing 88% of theoretical maximum savings.</div>
+                <div class="card-tools">
+                  <span class="tool-tag">Python</span><span class="tool-tag">XGBoost</span><span class="tool-tag">Random Forest</span><span class="tool-tag">Logistic Regression</span>
+                </div>
+                <span class="card-link">View on GitHub →</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/plvu99/Impact-of-Salary-Hikes-on-Employee-Attrition" class="project-card" target="_blank">
+              <div class="card-image" style="background-image:url('Images/Projects/Salary Hikes.avif');"></div>
+              <div class="card-body">
+                <div class="card-domain">HR Analytics · Causal Inference</div>
+                <div class="card-title">Impact of Salary Hikes on Employee Attrition</div>
+                <div class="card-desc">Applied Logistic Regression and Difference-in-Differences to evaluate the causal impact of salary increases on attrition. Found job satisfaction and work-life balance to be stronger retention drivers than pay.</div>
+                <div class="card-tools">
+                  <span class="tool-tag">Python</span><span class="tool-tag">Logistic Regression</span><span class="tool-tag">DiD</span><span class="tool-tag">Statsmodels</span>
+                </div>
+                <span class="card-link">View on GitHub →</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- SPORTS & ENTERTAINMENT -->
+        <div class="category-group" data-category="sports">
+          <h2 class="category-title">Sports &amp; Entertainment Analytics</h2>
+          <div class="cards-grid">
+
+            <a href="https://github.com/plvu99/Home-Team-Bias-in-MLB-Umpiring" class="project-card" target="_blank">
+              <div class="card-image" style="background-image:url('Images/Projects/MLB Games.webp');"></div>
+              <div class="card-body">
+                <div class="card-domain">Sports Analytics · Predictive Modeling</div>
+                <div class="card-title">Home-Team Bias in MLB Umpiring</div>
+                <div class="card-desc">Analyzed 18K+ MLB games using Linear Regression, Logistic Regression, and Decision Trees to quantify umpire bias and its impact on game outcomes. Clustered umpires into 3 behavioral profiles by accuracy and run impact.</div>
+                <div class="card-tools">
+                  <span class="tool-tag">Python</span><span class="tool-tag">Logistic Regression</span><span class="tool-tag">Decision Trees</span><span class="tool-tag">Clustering</span>
+                </div>
+                <span class="card-link">View on GitHub →</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/plvu99/Athlete-Valuation-for-Performance-and-Brand-Alignment" class="project-card" target="_blank">
+              <div class="card-image placeholder-sports">
+                <span class="placeholder-label">Add image → Athlete Valuation</span>
+              </div>
+              <div class="card-body">
+                <div class="card-domain">Sports Analytics · Composite Scoring</div>
+                <div class="card-title">Athlete Valuation Using Performance &amp; Social Analytics</div>
+                <div class="card-desc">Developed a multi-factor valuation framework integrating performance, behavioral, wellness, and social network data. Built composite scoring models for athlete evaluation and brand partnership decisions. Ranked top 4 of 18 teams.</div>
+                <div class="card-tools">
+                  <span class="tool-tag">Python</span><span class="tool-tag">Composite Scoring</span><span class="tool-tag">Network Analysis</span><span class="tool-tag">Dashboards</span>
+                </div>
+                <span class="card-link">View on GitHub →</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER / CONTACT -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-container">
+      <div>
+        <div class="footer-brand-name">Phuong Vu</div>
+        <p class="footer-brand-sub footer-body-text">
+          Marketing, Growth &amp; Product Data Analyst<br>
+          MS Business Analytics · USC Marshall 2026
+        </p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/phuong-vu-lan/" target="_blank"><img src="../Images/Logos/LinkedIn.webp" alt="LinkedIn"></a>
+          <a href="https://github.com/plvu99" target="_blank"><img src="../Images/Logos/GitHub.png" alt="GitHub"></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-label">Contact</div>
+        <ul class="footer-contact-list">
+          <li><a href="tel:+12135665734" class="footer-body-text">(213) 566-5734</a></li>
+          <li><a href="mailto:plvu@marshall.usc.edu" class="footer-body-text">plvu@marshall.usc.edu</a></li>
+          <li><span class="footer-body-text">Los Angeles, CA</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-label">Availability</div>
+        <p class="footer-body-text">
+          F-1 OPT + STEM Extension<br>
+          36 months · No sponsorship required<br>
+          Open to relocation
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Phuong Vu</p>
+    </div>
   </footer>
-      
-<!-- Toggle menu visibility and icon -->
-<script>
-  const toggleBtn = document.getElementById('menu-toggle');
-  const navMenu = document.getElementById('nav-menu');
-    
-  function toggleMenu() {
-    navMenu.classList.toggle('show');
-    toggleBtn.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
-  }
-    
-  toggleBtn.addEventListener('click', toggleMenu);
-</script>
 
-<!-- Clickable slider -->
-<script>
-  function showSlide(containerId, index) {
-    const slider = document.getElementById(containerId);
-    const slides = slider.querySelectorAll('.slide');
-    const dots = slider.querySelectorAll('.dot');
-  
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === index);
-    });
-  
-    dots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === index);
-    });
-  }
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const navMenu   = document.getElementById('nav-menu');
 
-  // Show the first slide by default
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.slider-images').forEach(slider => {
-      const slides = slider.querySelectorAll('.slide');
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === 0);
+    toggleBtn.addEventListener('click', function () {
+      navMenu.classList.toggle('show');
+      toggleBtn.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
+    });
+
+    navMenu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navMenu.classList.remove('show');
+        toggleBtn.textContent = '☰';
       });
     });
-  });
-</script>
 
-<script>
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyPSmnqisTEkMmzWS_gb_lBsIG3vQKQ4rECTF7S6MLXv3m5DNADmSzToQV9ujp5ymJb9Q/exec';
+    // category filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const groups     = document.querySelectorAll('.category-group');
 
-document.getElementById('contactForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-  const form = this;
-  const formData = new FormData(form);
-
-  fetch(scriptURL, {
-    method: 'POST',
-    body: formData
-  })
-  .then(response => {
-    if (response.ok) {
-      gtag('event', 'form_submit', {
-        event_category: 'Contact',
-        event_label: 'Story' // change per page
+    filterBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        filterBtns.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        groups.forEach(function(group) {
+          if (filter === 'all' || group.dataset.category === filter) {
+            group.classList.remove('hidden');
+          } else {
+            group.classList.add('hidden');
+          }
+        });
       });
-      
-      form.style.display = 'none';
-      document.getElementById('thankYouMessage').style.display = 'block';
-    } else {
-      alert('Submission failed. Please try again.');
-    }
-  })
-  .catch(error => alert('Sorry, something went wrong!'));
-});
-</script>
-  
+    });
+  </script>
+
 </body>
 </html>
