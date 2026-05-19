@@ -113,9 +113,9 @@
 
     .section-eyebrow {
       font-family: var(--font-body);
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       font-weight: 600;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--08);
       margin-bottom: 0.65rem;
@@ -123,7 +123,7 @@
 
     .page-title {
       font-family: var(--font-display);
-      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      font-size: clamp(2rem, 4vw, 3.6rem);
       font-weight: 700;
       color: var(--06);
       line-height: 1.1;
@@ -135,7 +135,7 @@
       font-size: 0.95rem;
       color: var(--04);
       line-height: 1.75;
-      max-width: 560px;
+      max-width: 600px;
     }
 
     /* ─── FILTERS ─── */
@@ -444,7 +444,7 @@
         <button class="filter-btn" data-filter="marketing">Customer &amp; User Analytics</button>
         <button class="filter-btn" data-filter="commercial">Commercial &amp; Revenue Analytics</button>
         <button class="filter-btn" data-filter="operations">Operations &amp; Behavioral Analytics</button>
-        <button class="filter-btn" data-filter="sports">Sports &amp; Entertainment</button>
+        <button class="filter-btn" data-filter="sports">Sports &amp; Entertainment Analytics</button>
       </div>
     </div>
 
@@ -464,7 +464,7 @@
                 <div class="card-title">Starbucks Campaign Analysis &amp; Customer Segmentation</div>
                 <div class="card-desc">Analyzed 306K+ campaign events across 17K customers and 10 promotional offers. Applied K-Means clustering and classification to identify 5 customer personas and key behavioral drivers of offer completion.</div>
                 <div class="card-tools">
-                  <span class="tool-tag">Python</span><span class="tool-tag">K-Means</span><span class="tool-tag">Random Forest</span><span class="tool-tag">Pandas</span>
+                  <span class="tool-tag">Python</span><span class="tool-tag">Pandas</span><span class="tool-tag">NumPy</span><span class="tool-tag">Matplotlib</span><span class="tool-tag">Seaborn</span><span class="tool-tag">Logistic Regression</span><span class="tool-tag">Random Forest</span><span class="tool-tag">K-Means</span>
                 </div>
                 <span class="card-link">View on GitHub →</span>
               </div>
@@ -479,7 +479,7 @@
                 <div class="card-title">Early Player Segmentation &amp; Retention Analysis</div>
                 <div class="card-desc">Segmented 42K+ players by spending and engagement into 4 retention cohorts using K-Means and DBSCAN. Identified 4,800+ behavioral outliers to inform targeted lifecycle and monetization strategies.</div>
                 <div class="card-tools">
-                  <span class="tool-tag">Python</span><span class="tool-tag">K-Means</span><span class="tool-tag">DBSCAN</span><span class="tool-tag">NumPy</span>
+                  <span class="tool-tag">Python</span><span class="tool-tag">Pandas</span><span class="tool-tag">NumPy</span><span class="tool-tag">K-Means</span><span class="tool-tag">DBSCAN</span>
                 </div>
                 <span class="card-link">View on GitHub →</span>
               </div>
@@ -494,7 +494,7 @@
                 <div class="card-title">Predicting Day-14 Player Retention</div>
                 <div class="card-desc">Built Logistic Regression, Random Forest, and XGBoost models to forecast 14-day retention across 42K+ player records. Evaluated feature importance to identify session frequency and playtime as key engagement drivers.</div>
                 <div class="card-tools">
-                  <span class="tool-tag">Python</span><span class="tool-tag">XGBoost</span><span class="tool-tag">Random Forest</span><span class="tool-tag">Scikit-learn</span>
+                  <span class="tool-tag">Python</span><span class="tool-tag">Pandas</span><span class="tool-tag">NumPy</span><span class="tool-tag">Logistic Regression</span><span class="tool-tag">Random Forest</span><span class="tool-tag">XGBoost</span>
                 </div>
                 <span class="card-link">View on GitHub →</span>
               </div>
@@ -515,7 +515,7 @@
                 <div class="card-title">Sales Performance &amp; Customer Behavior Analysis</div>
                 <div class="card-desc">Integrated 8 relational datasets using joins, CTEs, and window functions to surface revenue trends, high-value customer segments, top-performing sales reps, and key commercial drivers.</div>
                 <div class="card-tools">
-                  <span class="tool-tag">SQL</span><span class="tool-tag">CTEs</span><span class="tool-tag">Window Functions</span><span class="tool-tag">Aggregation</span>
+                  <span class="tool-tag">SQL</span><span class="tool-tag">Joins</span><span class="tool-tag">Aggregations</span><span class="tool-tag">Subqueries</span><span class="tool-tag">CTEs</span><span class="tool-tag">Window Functions</span>
                 </div>
                 <span class="card-link">View on GitHub →</span>
               </div>
@@ -530,7 +530,7 @@
                 <div class="card-title">Retail Store Performance &amp; Holiday Sales Analysis</div>
                 <div class="card-desc">Analyzed 421K+ transactions across 45 stores to identify demand patterns and seasonal trends. Quantified 10–18% sales uplift during holidays and promotions using regression and statistical testing.</div>
                 <div class="card-tools">
-                  <span class="tool-tag">Python</span><span class="tool-tag">Pandas</span><span class="tool-tag">Regression</span><span class="tool-tag">Statistical Testing</span>
+                  <span class="tool-tag">Python</span><span class="tool-tag">Pandas</span><span class="tool-tag">NumPy</span><span class="tool-tag">Matplotlib</span><span class="tool-tag">Seaborn</span><span class="tool-tag">Feature Engineering</span><span class="tool-tag">Time Series</span>
                 </div>
                 <span class="card-link">View on GitHub →</span>
               </div>
@@ -543,7 +543,7 @@
                 <div class="card-title">Insurance Loss Prediction &amp; Risk-Based Pricing</div>
                 <div class="card-desc">Built Tweedie Regression, LightGBM, XGBoost, and Neural Network models on 37K+ policies to predict loss cost and claim likelihood. Achieved best ROC-AUC of 0.74 with 5-fold cross-validation.</div>
                 <div class="card-tools">
-                  <span class="tool-tag">Python</span><span class="tool-tag">LightGBM</span><span class="tool-tag">XGBoost</span><span class="tool-tag">Neural Networks</span>
+                  <span class="tool-tag">Python</span><span class="tool-tag">LightGBM</span><span class="tool-tag">XGBoost</span><span class="tool-tag">Tweedie Regression</span><span class="tool-tag">Neural Networks</span>
                 </div>
                 <span class="card-link">View on GitHub →</span>
               </div>
@@ -564,7 +564,7 @@
                 <div class="card-title">Ride-Sharing Demand Hotspot Detection</div>
                 <div class="card-desc">Processed 4.5M+ Uber pickup records to identify spatial and temporal demand patterns. Applied K-Means to detect 5 high-demand zones and generate driver allocation insights to reduce wait times.</div>
                 <div class="card-tools">
-                  <span class="tool-tag">Python</span><span class="tool-tag">K-Means</span><span class="tool-tag">Geospatial</span><span class="tool-tag">Regression</span>
+                  <span class="tool-tag">Python</span><span class="tool-tag">K-Means</span><span class="tool-tag">Regression</span><span class="tool-tag">Geospatial</span>
                 </div>
                 <span class="card-link">View on GitHub →</span>
               </div>
@@ -579,7 +579,7 @@
                 <div class="card-title">Ride-Sharing Impact on Traditional Taxi Demand</div>
                 <div class="card-desc">Analyzed 20M+ NYC ride records across Uber, Yellow Cabs, and Green Cabs. OLS regression showed Uber volume explains ~52% of taxi demand variation, revealing shared commuter-driven demand patterns.</div>
                 <div class="card-tools">
-                  <span class="tool-tag">Python</span><span class="tool-tag">OLS Regression</span><span class="tool-tag">EDA</span><span class="tool-tag">Pandas</span>
+                  <span class="tool-tag">Python</span><span class="tool-tag">Data cleaning</span><span class="tool-tag">EDA</span><span class="tool-tag">Regression</span>
                 </div>
                 <span class="card-link">View on GitHub →</span>
               </div>
@@ -594,7 +594,7 @@
                 <div class="card-title">Reducing EV Charging Emissions with Smart Charging</div>
                 <div class="card-desc">Analyzed 150K+ EV charging sessions and grid carbon intensity data. Built predictive models to optimize charging timing, achieving 11.9% emissions reduction — capturing 88% of theoretical maximum savings.</div>
                 <div class="card-tools">
-                  <span class="tool-tag">Python</span><span class="tool-tag">XGBoost</span><span class="tool-tag">Random Forest</span><span class="tool-tag">Logistic Regression</span>
+                  <span class="tool-tag">Python</span><span class="tool-tag">EDA</span><span class="tool-tag">Logistic Regression</span><span class="tool-tag">Random Forest</span><span class="tool-tag">XGBoost</span><span class="tool-tag">Feature Importance</span><span class="tool-tag">SHAP</span>
                 </div>
                 <span class="card-link">View on GitHub →</span>
               </div>
@@ -607,7 +607,7 @@
                 <div class="card-title">Impact of Salary Hikes on Employee Attrition</div>
                 <div class="card-desc">Applied Logistic Regression and Difference-in-Differences to evaluate the causal impact of salary increases on attrition. Found job satisfaction and work-life balance to be stronger retention drivers than pay.</div>
                 <div class="card-tools">
-                  <span class="tool-tag">Python</span><span class="tool-tag">Logistic Regression</span><span class="tool-tag">DiD</span><span class="tool-tag">Statsmodels</span>
+                  <span class="tool-tag">Python</span><span class="tool-tag">Logistic Regression</span><span class="tool-tag">Difference-in-Differences</span>
                 </div>
                 <span class="card-link">View on GitHub →</span>
               </div>
@@ -628,7 +628,7 @@
                 <div class="card-title">Home-Team Bias in MLB Umpiring</div>
                 <div class="card-desc">Analyzed 18K+ MLB games using Linear Regression, Logistic Regression, and Decision Trees to quantify umpire bias and its impact on game outcomes. Clustered umpires into 3 behavioral profiles by accuracy and run impact.</div>
                 <div class="card-tools">
-                  <span class="tool-tag">Python</span><span class="tool-tag">Logistic Regression</span><span class="tool-tag">Decision Trees</span><span class="tool-tag">Clustering</span>
+                  <span class="tool-tag">Python</span><span class="tool-tag">Linear Regression</span><span class="tool-tag">Logistic Regression</span><span class="tool-tag">Decision Trees</span><span class="tool-tag">Clustering</span>
                 </div>
                 <span class="card-link">View on GitHub →</span>
               </div>
@@ -643,7 +643,7 @@
                 <div class="card-title">Athlete Valuation Using Performance &amp; Social Analytics</div>
                 <div class="card-desc">Developed a multi-factor valuation framework integrating performance, behavioral, wellness, and social network data. Built composite scoring models for athlete evaluation and brand partnership decisions. Ranked top 4 of 18 teams.</div>
                 <div class="card-tools">
-                  <span class="tool-tag">Python</span><span class="tool-tag">Composite Scoring</span><span class="tool-tag">Network Analysis</span><span class="tool-tag">Dashboards</span>
+                  <span class="tool-tag">Composite Scoring</span><span class="tool-tag">Performance Modeling</span><span class="tool-tag">Behavioral Analytics</span><span class="tool-tag">Network Analysis</span>
                 </div>
                 <span class="card-link">View on GitHub →</span>
               </div>
